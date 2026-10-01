@@ -13,7 +13,7 @@ export const Final: React.FC<{f: number; variant: 'organic' | 'paid'}> = ({f, va
 	const paid = variant === 'paid';
 	return (
 		<>
-			<div style={{position: 'absolute', left: 0, right: 0, top: 610}}>
+			<div style={{position: 'absolute', left: 0, right: 0, top: 700}}>
 				<MaskLine f={f} inAt={T.FINAL_LINE_1} align="center" text={COPY.finalLine1} style={{fontSize: 66, fontWeight: 560, letterSpacing: '-0.035em', color: COLORS.textDim, lineHeight: 1.05}} />
 				<div style={{height: 22}} />
 				<MaskLine f={f} inAt={T.FINAL_LINE_2} align="center" text={COPY.finalLine2[0]} style={{fontSize: 96, fontWeight: 680, letterSpacing: '-0.05em', color: COLORS.text, lineHeight: 1.0}} />
@@ -23,7 +23,7 @@ export const Final: React.FC<{f: number; variant: 'organic' | 'paid'}> = ({f, va
 				style={{
 					position: 'absolute',
 					left: 540 - 290,
-					top: 1040 + (1 - cta) * 40,
+					top: 1130 + (1 - cta) * 40,
 					width: 580,
 					height: 136,
 					borderRadius: 26,
@@ -45,11 +45,11 @@ export const Final: React.FC<{f: number; variant: 'organic' | 'paid'}> = ({f, va
 				</svg>
 			</div>
 			{paid && (
-				<div style={{position: 'absolute', left: 0, right: 0, top: 1206}}>
+				<div style={{position: 'absolute', left: 0, right: 0, top: 1296}}>
 					<MaskLine f={f} inAt={T.FINAL_CTA + 6} align="center" text={COPY.paidOffer} style={{fontSize: 36, fontWeight: 560, letterSpacing: '-0.02em', color: COLORS.text, lineHeight: 1.1}} />
 				</div>
 			)}
-			<div style={{position: 'absolute', left: 0, right: 0, top: paid ? 1268 : 1222}}>
+			<div style={{position: 'absolute', left: 0, right: 0, top: paid ? 1358 : 1312}}>
 				<MaskLine f={f} inAt={T.FINAL_URL} align="center" text={COPY.url} style={{fontFamily: FONTS.sans, fontSize: 40, fontWeight: 500, letterSpacing: '-0.01em', color: COLORS.textDim, lineHeight: 1.1}} />
 			</div>
 		</>

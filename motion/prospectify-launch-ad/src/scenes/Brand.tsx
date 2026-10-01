@@ -8,10 +8,10 @@ import {lerp, ramp} from '../motion/anim';
 // Lockup states
 const BIG = {logo: 240, logoX: 540 - 120, logoY: 600, wordSize: 116, wordX: 540, wordY: 892, wordShift: -50};
 const HEADER = {logo: 60, logoX: 90, logoY: 186, wordSize: 46, wordX: 168, wordY: 192, wordShift: 0};
-const FINAL = {logo: 190, logoX: 540 - 95, logoY: 330};
+const FINAL = {logo: 190, logoX: 540 - 95, logoY: 420};
 
 export const HEADER_DOCKED = T.LOGO_TO_HEADER + 18;
-const TO_FINAL_START = T.FINAL_BRAND - 10;
+const TO_FINAL_START = T.FINAL_BRAND - 2;
 
 /**
  * One continuous brand object: reveals big (3.2s), docks into the header and
@@ -35,11 +35,7 @@ export const Brand: React.FC<{f: number}> = ({f}) => {
 	const blur = (1 - reveal) * 22;
 	const revealScale = lerp(0.86, 1, reveal);
 
-	const wordSize = lerp(BIG.wordSize, HEADER.wordSize, dock);
-	const wordX = lerp(BIG.wordX, HEADER.wordX, dock);
-	const wordY = lerp(BIG.wordY, HEADER.wordY, dock);
-	const wordShift = lerp(BIG.wordShift, HEADER.wordShift, dock);
-	const wordOut = ramp(f, TO_FINAL_START, 8, EASE.exit);
+	const wordOut = ramp(f, T.FINAL_BRAND - 14, 8, EASE.exit);
 
 	// Header recedes slightly while the user is "in" the external builder.
 	const inBuilder = ramp(f, T.BUILD_START, 10) * (1 - ramp(f, T.SELL_START, 10));
@@ -77,23 +73,31 @@ export const Brand: React.FC<{f: number}> = ({f}) => {
 			>
 				<Mark size={logo} />
 			</div>
-			{wordOut < 1 && (
-				<div
-					style={{
-						position: 'absolute',
-						left: wordX,
-						top: wordY,
-						transform: `translateX(${wordShift}%)`,
-						opacity: (1 - wordOut) * (dock > 0 ? headerOpacity : 1),
-						filter: blur > 0.3 ? `blur(${blur * 0.6}px)` : undefined,
-					}}
-				>
+			{/* Big wordmark: exits through its mask before the logo travels (no collision). */}
+			{f < T.LOGO_TO_HEADER + 10 && (
+				<div style={{position: 'absolute', left: BIG.wordX, top: BIG.wordY, transform: 'translateX(-50%)', filter: blur > 0.3 ? `blur(${blur * 0.6}px)` : undefined}}>
 					<MaskLine
 						f={f}
 						inAt={T.PROSPECTIFY_REVEAL + 4}
+						outAt={T.LOGO_TO_HEADER - 2}
 						text={COPY.wordmark}
 						inDur={16}
-						style={{fontSize: wordSize, fontWeight: 650, letterSpacing: '-0.045em', color: COLORS.text, lineHeight: 1}}
+						outDur={8}
+						style={{fontSize: BIG.wordSize, fontWeight: 650, letterSpacing: '-0.045em', color: COLORS.text, lineHeight: 1}}
+					/>
+				</div>
+			)}
+			{/* Header wordmark: rises in once the logo has docked; exits before the logo returns to centre. */}
+			{f >= HEADER_DOCKED - 6 && wordOut < 1 && (
+				<div style={{position: 'absolute', left: HEADER.wordX, top: HEADER.wordY, opacity: headerOpacity}}>
+					<MaskLine
+						f={f}
+						inAt={HEADER_DOCKED - 6}
+						outAt={T.FINAL_BRAND - 14}
+						text={COPY.wordmark}
+						inDur={12}
+						outDur={6}
+						style={{fontSize: HEADER.wordSize, fontWeight: 650, letterSpacing: '-0.04em', color: COLORS.text, lineHeight: 1}}
 					/>
 				</div>
 			)}

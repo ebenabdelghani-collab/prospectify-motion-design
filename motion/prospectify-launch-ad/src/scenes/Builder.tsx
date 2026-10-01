@@ -160,15 +160,15 @@ export const Builder: React.FC<{f: number}> = ({f}) => {
 						<MaskLine f={f} inAt={T.BUILD_START + 4} outAt={T.SITE_READY - 6} text={COPY.building} style={{...HEADLINE_STYLE, color: COLORS.textDim}} inDur={10} outDur={6} />
 					</div>
 					<div style={{position: 'absolute', left: 0, top: 0, display: 'flex', alignItems: 'center', gap: 22}}>
-						<MaskLine f={f} inAt={T.SITE_READY - 2} outAt={T.SELL_START} text={COPY.siteReady} style={HEADLINE_STYLE} inDur={10} outDur={6} />
-						{f >= T.SITE_READY && f < T.SELL_START + 6 && (
-							<div style={{opacity: 1 - ramp(f, T.SELL_START, 6, EASE.exit)}}>
+						<MaskLine f={f} inAt={T.SITE_READY - 2} outAt={T.SELL_START - 6} text={COPY.siteReady} style={HEADLINE_STYLE} inDur={10} outDur={6} />
+						{f >= T.SITE_READY && f < T.SELL_START && (
+							<div style={{opacity: 1 - ramp(f, T.SELL_START - 6, 5, EASE.exit)}}>
 								<Check size={72} t={ramp(f, T.SITE_READY, 14, EASE.lock)} />
 							</div>
 						)}
 					</div>
 					<div style={{position: 'absolute', left: 0, top: 0}}>
-						<MaskLine f={f} inAt={T.SELL_START + 4} outAt={T.SOLD - 5} text={COPY.readyToSell} style={{...HEADLINE_STYLE, color: COLORS.textDim}} inDur={10} outDur={5} />
+						<MaskLine f={f} inAt={T.SELL_START + 2} outAt={T.SOLD - 5} text={COPY.readyToSell} style={{...HEADLINE_STYLE, color: COLORS.textDim}} inDur={10} outDur={5} />
 					</div>
 					<div style={{position: 'absolute', left: 0, top: 0, display: 'flex', alignItems: 'center', gap: 22}}>
 						<MaskLine f={f} inAt={T.SOLD} outAt={T.FINAL_BRAND - 10} text={COPY.sold} style={{...HEADLINE_STYLE, fontSize: 132}} inDur={9} outDur={7} />

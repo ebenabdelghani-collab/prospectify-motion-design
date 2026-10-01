@@ -139,8 +139,8 @@ export const ProspectFlow: React.FC<{f: number}> = ({f}) => {
 			{/* Headline A */}
 			{f < T.FILE_EXPAND_END && (
 				<div style={{position: 'absolute', left: 90, top: LAYOUT.headlineY}}>
-					<MaskLine f={f} inAt={T.SEARCH_BAR_IN + 4} outAt={T.LEAD_SELECTED} text={COPY.findHeadline[0]} style={HEADLINE_STYLE} />
-					<MaskLine f={f} inAt={T.SEARCH_BAR_IN + 8} outAt={T.LEAD_SELECTED + 2} text={COPY.findHeadline[1]} style={{...HEADLINE_STYLE, color: COLORS.textDim}} />
+					<MaskLine f={f} inAt={T.SEARCH_BAR_IN + 14} outAt={T.LEAD_SELECTED} text={COPY.findHeadline[0]} style={HEADLINE_STYLE} />
+					<MaskLine f={f} inAt={T.SEARCH_BAR_IN + 18} outAt={T.LEAD_SELECTED + 2} text={COPY.findHeadline[1]} style={{...HEADLINE_STYLE, color: COLORS.textDim}} />
 				</div>
 			)}
 
