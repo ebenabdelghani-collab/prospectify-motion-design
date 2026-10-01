@@ -1,0 +1,33 @@
+{
+  "_doc": "Mix levels in dB (relative, pre-master). Read by scripts/build_audio.py.",
+  "sampleRate": 48000,
+  "masterLufs": -14,
+  "truePeak": -1.0,
+  "music": {
+    "pad": -27,
+    "pulseKick": -19,
+    "hat": -36,
+    "pluck": -28,
+    "bass": -25,
+    "riser": -24
+  },
+  "sfx": {
+    "key": -21,
+    "click": -17,
+    "clickDeep": -15,
+    "hover": -33,
+    "tick": -25,
+    "resultTick": -25,
+    "lock": -18,
+    "lockHero": -13,
+    "sweep": -19,
+    "scan": -24,
+    "tabCut": -15,
+    "subHit": -11,
+    "motif": -16,
+    "dataTexture": -31,
+    "construct": -22,
+    "success": -15,
+    "ctaImpact": -15
+  }
+}

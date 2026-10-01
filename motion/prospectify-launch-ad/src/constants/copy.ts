@@ -1,0 +1,26 @@
+// Every visible phrase, in order. Edit copy here only.
+export const COPY = {
+	hookBuild: 'Build a website',
+	hookDone: 'Done.',
+	hookClient: 'Find a client',
+	stillSearching: ['Still', 'searching?'],
+	wordmark: 'Prospectify',
+	revealTagline: 'finds the client.',
+	findHeadline: ['Find businesses', 'worth pitching.'],
+	readyWords: ['Why them.', 'Contact.', 'Outreach.'],
+	ready: 'Ready.',
+	promptHeadline: ['Even the', 'website prompt.'],
+	builderHeadline: ['Your prompt.', 'Your builder.'],
+	builderSub: 'Paste it into any AI builder.',
+	builderLegal: 'Trademarks belong to their owners. No affiliation implied.',
+	building: 'Building…',
+	siteReady: 'Website ready.',
+	readyToSell: 'Ready to sell.',
+	sold: 'Sold.',
+	finalLine1: 'You build the website.',
+	finalLine2: ['Prospectify finds', 'the client.'],
+	cta: 'Start free',
+	url: 'prospectify.net',
+	// Paid variant only — verify the offer is live before running ads.
+	paidOffer: '3 real leads free · No card',
+} as const;

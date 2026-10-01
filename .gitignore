@@ -1,0 +1,4 @@
+node_modules/
+motion/prospectify-launch-ad/renders/stills/
+motion/prospectify-launch-ad/renders/_*
+.DS_Store
