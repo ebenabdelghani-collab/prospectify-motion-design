@@ -7,3 +7,4 @@ motion/prospectify-master-ad/scripts/*.bin
 motion/prospectify-master-ad/renders/stills/
 motion/prospectify-master-ad/renders/_*
 __pycache__/
+motion/prospectify-master-ad/renders/send/
