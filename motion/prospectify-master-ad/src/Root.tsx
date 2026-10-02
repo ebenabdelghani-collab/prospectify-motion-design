@@ -2,6 +2,8 @@ import React from 'react';
 import {Composition, staticFile} from 'remotion';
 import {loadFont} from '@remotion/fonts';
 import {MasterAd} from './composition/MasterAd';
+import {Morph} from './morph/Morph';
+import MB from './morph/beats.json';
 import {DURATION, FPS, HEIGHT, WIDTH} from './constants/timeline';
 
 loadFont({family: 'Geist', url: staticFile('fonts/Geist-Variable.woff2'), weight: '100 900'});
@@ -13,5 +15,7 @@ export const Root: React.FC = () => (
 	<>
 		<Composition id="ProspectifyMaster" component={MasterAd} durationInFrames={DURATION} fps={FPS} width={WIDTH} height={HEIGHT} defaultProps={{variant: 'organic' as const, withAudio: true}} />
 		<Composition id="ProspectifyMasterPaid" component={MasterAd} durationInFrames={DURATION} fps={FPS} width={WIDTH} height={HEIGHT} defaultProps={{variant: 'paid' as const, withAudio: true}} />
+		<Composition id="ProspectifyMorph" component={Morph} durationInFrames={MB.durationInFrames} fps={60} width={1080} height={1920} defaultProps={{variant: 'organic' as const, withAudio: true}} />
+		<Composition id="ProspectifyMorphPaid" component={Morph} durationInFrames={MB.durationInFrames} fps={60} width={1080} height={1920} defaultProps={{variant: 'paid' as const, withAudio: true}} />
 	</>
 );

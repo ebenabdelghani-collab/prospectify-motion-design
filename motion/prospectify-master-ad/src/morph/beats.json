@@ -1,0 +1,43 @@
+{
+  "_doc": "Prospectify MORPH ad — one object, one continuous transformation. Frames @60fps. 120 BPM: one beat = 30 frames. Shared by src/morph/* (picture) and scripts/build_audio_morph.py (sound).",
+  "fps": 60,
+  "bpm": 120,
+  "durationInFrames": 1320,
+
+  "BAR_IN": 10,
+  "TYPE_START": 34,
+  "TYPE_TEXT": "Find clients who need a website",
+  "TYPE_STEP": 2,
+  "CHIP_OPEN": 112,
+  "MENU_HOVERS": [124, 136],
+  "MENU_SELECT": 148,
+  "SEND": 172,
+  "TILT_END": 214,
+  "TOGGLE_MORPH": 214,
+  "TOGGLE_READY": 240,
+  "PILL": [262, 292, 322],
+  "WHIP": 352,
+  "STREAKS_END": 410,
+
+  "WORDS": [
+    [392, "Plumbers"],
+    [432, "Dentists"],
+    [466, "Roofers"],
+    [496, "Barbers"],
+    [528, "Clients."]
+  ],
+  "SQUASH": 600,
+  "CARD_POP": 616,
+  "CARD_ROWS": [664, 688, 712, 736],
+  "CARD_COLLAPSE": 790,
+  "ICON": 812,
+  "BURST": 820,
+  "SLIDE": 880,
+  "CTA_IN": 892,
+  "CTA_CLICK": 952,
+  "FADE_BLACK": 1000,
+  "WORDMARK": 1024,
+  "MARK": 1100,
+  "TAGLINE": 1124,
+  "URL": 1150
+}

@@ -121,10 +121,10 @@ export const MaskLine: React.FC<{
 						key={i}
 						style={{
 							display: 'inline-block',
-							transform: `translateY(${y}%)${ital ? ` rotate(${(1 - tin) * -6}deg)` : ''}`,
+							transform: `translateY(${y}%)`,
 							whiteSpace: 'pre',
 							...(ital
-								? {fontFamily: FONTS.serif, fontStyle: 'italic', fontWeight: 400, letterSpacing: '-0.02em', fontSize: '1.12em', lineHeight: 0.9, color: hot ? COLORS.accent : undefined}
+								? {fontWeight: 760, color: COLORS.accent}
 								: {}),
 						}}
 					>

@@ -9,7 +9,9 @@ import path from 'node:path';
 const BROWSER = '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell';
 const [variant = 'organic', scaleArg = '2', out = 'renders/prospectify-master-4k60.mp4', crfArg = '12'] = process.argv.slice(2);
 const scale = Number(scaleArg);
-const id = variant === 'paid' ? 'ProspectifyMasterPaid' : 'ProspectifyMaster';
+const base = process.env.COMP ?? 'ProspectifyMaster';
+const id = variant === 'paid' ? `${base}Paid` : base;
+const audioPrefix = process.env.AUDIO ?? 'mix';
 const tmp = `renders/_video-${variant}-${scale}.mp4`;
 
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
@@ -43,6 +45,6 @@ await renderMedia({
 	},
 });
 const dur = (composition.durationInFrames / composition.fps).toFixed(6);
-execFileSync('ffmpeg', ['-y', '-v', 'error', '-i', tmp, '-i', `public/audio/mix-${variant}.wav`, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '320k', '-ar', '48000', '-t', dur, '-movflags', '+faststart', out]);
+execFileSync('ffmpeg', ['-y', '-v', 'error', '-i', tmp, '-i', `public/audio/${audioPrefix}-${variant}.wav`, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '320k', '-ar', '48000', '-t', dur, '-movflags', '+faststart', out]);
 fs.rmSync(tmp);
 console.log('done', out);
