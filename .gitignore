@@ -6,3 +6,4 @@ motion/prospectify-master-ad/scripts/*.onnx
 motion/prospectify-master-ad/scripts/*.bin
 motion/prospectify-master-ad/renders/stills/
 motion/prospectify-master-ad/renders/_*
+__pycache__/
