@@ -5,6 +5,7 @@ import {COPY} from '../constants/copy';
 import {MaskLine} from '../components/primitives';
 import {lineScale} from '../components/ui';
 import {lerp, ramp} from '../motion/anim';
+import {Bloom, IconBurst, LetterFlip, pulse} from '../fx/morphkit';
 import {LEAD} from '../constants/demoData';
 import {ClientSite} from '../components/ui';
 import {Phone} from './pain/screens';
@@ -51,14 +52,7 @@ export const Loop: React.FC<{f: number}> = ({f}) => {
 		<div style={{position: 'absolute', left: 0, right: 0, top: 540, transform: `scaleY(${out}) scale(${lerp(1.06, 1, punch)})`, transformOrigin: '50% 420px'}}>
 			{COPY.loop.map((w, i) => (
 				<div key={w} style={{height: 168}}>
-					<MaskLine
-						f={f}
-						inAt={T.LOOP_WORDS[i]}
-						text={w}
-						align="center"
-						inDur={10}
-						style={{fontSize: 156, fontWeight: 700, letterSpacing: '-0.055em', lineHeight: 1.05, color: i === active && f < T.LOOP_REPEAT ? COLORS.text : 'rgba(244,244,246,0.32)'}}
-					/>
+					<LetterFlip f={f} inAt={T.LOOP_WORDS[i]} text={w} size={156} weight={720} stagger={1.2} color={i === active && f < T.LOOP_REPEAT ? COLORS.text : 'rgba(244,244,246,0.32)'} glow={i === active && f < T.LOOP_REPEAT ? 'rgba(230,63,109,0.35)' : undefined} />
 				</div>
 			))}
 			<div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 26, marginTop: 30, opacity: rep, transform: `translateY(${(1 - rep) * 30}px)`}}>
@@ -81,11 +75,13 @@ export const Final: React.FC<{f: number; variant: 'organic' | 'paid'}> = ({f, va
 	const paid = variant === 'paid';
 	return (
 		<>
+			<Bloom x={540} y={1200} r={620} o={pulse(f, T.FINAL_CTA, 50) * 0.9} />
+			<IconBurst f={f} at={T.FINAL_CTA} x={540} y={1200} n={18} />
 			<div style={{position: 'absolute', left: 0, right: 0, top: 690}}>
 				<MaskLine f={f} inAt={T.FINAL_LINE_1} align="center" text={COPY.finalLine1} style={{fontSize: 68, fontWeight: 560, letterSpacing: '-0.035em', color: COLORS.textDim, lineHeight: 1.05}} />
 				<div style={{height: 24}} />
-				<MaskLine f={f} inAt={T.FINAL_LINE_2} align="center" text={COPY.finalLine2[0]} style={{fontSize: 100, fontWeight: 680, letterSpacing: '-0.05em', color: COLORS.text, lineHeight: 1.0}} />
-				<MaskLine f={f} inAt={T.FINAL_LINE_2 + 5} align="center" text={COPY.finalLine2[1]} style={{fontSize: 100, fontWeight: 680, letterSpacing: '-0.05em', color: COLORS.text, lineHeight: 1.0}} />
+				<LetterFlip f={f} inAt={T.FINAL_LINE_2} text="Prospectify finds" size={100} weight={700} stagger={1.1} />
+				<LetterFlip f={f} inAt={T.FINAL_LINE_2 + 12} text="the client." size={100} weight={760} stagger={1.3} color={COLORS.accent} glow="rgba(230,63,109,0.5)" />
 			</div>
 			<div
 				style={{
@@ -107,7 +103,7 @@ export const Final: React.FC<{f: number; variant: 'organic' | 'paid'}> = ({f, va
 				}}
 			>
 				<div style={{position: 'absolute', top: 0, bottom: 0, width: 140, left: lerp(-200, 660, sheen), background: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 100%)', transform: 'skewX(-18deg)'}} />
-				<div style={{fontFamily: FONTS.sans, fontSize: 56, fontWeight: 660, letterSpacing: '-0.035em', color: '#FFFFFF'}}>{COPY.cta}</div>
+				<LetterFlip f={f} inAt={T.FINAL_CTA + 2} text={COPY.cta} size={56} weight={680} stagger={1.2} color="#FFFFFF" />
 				<svg width={46} height={46} viewBox="0 0 24 24">
 					<path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="#fff" strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" />
 				</svg>

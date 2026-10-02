@@ -30,7 +30,7 @@ export const camAt = (f: number, keys: CamKey[]) => {
 	const c = at(f);
 	const n = at(f + 1);
 	const v = Math.hypot(n.cx - c.cx, n.cy - c.cy) * c.s + Math.abs(Math.log(n.s / c.s)) * 900;
-	return {...c, blur: Math.min(14, Math.max(0, (v - 8) * 0.22))};
+	return {...c, blur: Math.min(5, Math.max(0, (v - 14) * 0.08))}; // shutter blur (CameraMotionBlur) does the heavy lifting
 };
 
 export const Camera: React.FC<{

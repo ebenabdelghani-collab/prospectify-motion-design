@@ -453,6 +453,15 @@ sfx.put(sub_v(light=True), K('FINAL_CTA'), SX['cta'])
 sfx.put(click_v(), K('FINAL_CTA'), SX['cta'] - 3)
 
 sfx.put(tick_v(B6, 0.01), K('FINAL_URL'), SX['tick'] - 4)
+# VF: light streaks converge on the logo (glassy shimmer), CTA burst (pops), letter flips (ticks)
+for j in range(24):
+    sfx.put(tick_v(rng.uniform(3000, 8000), 0.02, 0.06), K('FINAL_BRAND') - 18 + rng.uniform(0, 22), SX['tick'] - 6, rng.uniform(-0.8, 0.8))
+for j in range(18):
+    sfx.put(pop_v(rng.uniform(700, 1500), rng.uniform(250, 500), 0.06), K('FINAL_CTA') + rng.uniform(0, 8), SX['data'] + 8, rng.uniform(-0.8, 0.8))
+for i in range(14):
+    sfx.put(tick_v(2400 + i * 120, 0.006, 0.03), K('FINAL_LINE_2') + i * 1.2, SX['tick'] - 5, -0.3 + 0.05 * i)
+for j in range(3):
+    sfx.put(tick_v(rng.uniform(2600, 5200), 0.02, 0.05), K('PROMPT_SEND') + j * 2, SX['tick'] - 4, -0.4)
 
 # ─────────────────────────── MUSIC ───────────────────────────
 # Chords (MIDI) — E major family
