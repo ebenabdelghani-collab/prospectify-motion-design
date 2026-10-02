@@ -8,3 +8,7 @@ motion/prospectify-master-ad/renders/stills/
 motion/prospectify-master-ad/renders/_*
 __pycache__/
 motion/prospectify-master-ad/renders/send/
+motion/prospectify-master-ad/renders/final_stills/
+motion/prospectify-master-ad/renders/final-*.log
+motion/prospectify-master-ad/renders/final-review-540.mp4
+*.video-only.mp4
