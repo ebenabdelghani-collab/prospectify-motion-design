@@ -1,0 +1,46 @@
+{
+  "_doc": "Mix levels in dB (pre-master). Hierarchy: VOICE first, music supports, SFX physical, sub for emphasis. Read by scripts/build_audio.py.",
+  "bpm": 120,
+  "masterLufs": -14,
+  "truePeak": -1.0,
+  "reverbReturn": -9,
+  "duckMusic": -14,
+  "duckSfx": -6,
+  "voice": {
+    "level": -1,
+    "room": -26
+  },
+  "music": {
+    "pad": -29,
+    "kick": -20,
+    "clap": -27,
+    "hat": -35,
+    "bass": -25,
+    "pluck": -30,
+    "arp": -30,
+    "ostinato": -31,
+    "riser": -27,
+    "drone": -24
+  },
+  "sfx": {
+    "key": -25,
+    "click": -21,
+    "clickDeep": -19,
+    "hover": -35,
+    "tick": -27,
+    "result": -27,
+    "lock": -25,
+    "lockHero": -17,
+    "sweep": -24,
+    "scan": -28,
+    "tab": -20,
+    "clock": -24,
+    "riser": -28,
+    "data": -34,
+    "construct": -27,
+    "sub": -14,
+    "motif": -20,
+    "success": -18,
+    "cta": -21
+  }
+}

@@ -2,3 +2,7 @@ node_modules/
 motion/prospectify-launch-ad/renders/stills/
 motion/prospectify-launch-ad/renders/_*
 .DS_Store
+motion/prospectify-master-ad/scripts/*.onnx
+motion/prospectify-master-ad/scripts/*.bin
+motion/prospectify-master-ad/renders/stills/
+motion/prospectify-master-ad/renders/_*

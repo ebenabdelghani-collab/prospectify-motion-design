@@ -1,0 +1,377 @@
+{
+ "voice": "Kokoro v1.0 (local, Apache-2.0) \u2014 af_heart",
+ "fps": 60,
+ "duration_s": 67.617,
+ "segments": [
+  {
+   "id": "v_build",
+   "text": "You can build a website in forty minutes now.",
+   "start_s": 0.4,
+   "end_s": 2.617,
+   "start_frame": 24,
+   "end_frame": 157,
+   "pause_before_s": 0.4,
+   "speed": 1.12
+  },
+  {
+   "id": "v_find",
+   "text": "But finding someone to sell it to?",
+   "start_s": 3.517,
+   "end_s": 5.133,
+   "start_frame": 211,
+   "end_frame": 308,
+   "pause_before_s": 0.9,
+   "speed": 1.08
+  },
+  {
+   "id": "v_night",
+   "text": "That still eats your whole night.",
+   "start_s": 5.983,
+   "end_s": 7.317,
+   "start_frame": 359,
+   "end_frame": 439,
+   "pause_before_s": 0.85,
+   "speed": 1.08
+  },
+  {
+   "id": "v_maps",
+   "text": "Maps.",
+   "start_s": 7.717,
+   "end_s": 8.25,
+   "start_frame": 463,
+   "end_frame": 495,
+   "pause_before_s": 0.4,
+   "speed": 1.14
+  },
+  {
+   "id": "v_reviews",
+   "text": "Reviews.",
+   "start_s": 8.35,
+   "end_s": 9.0,
+   "start_frame": 501,
+   "end_frame": 540,
+   "pause_before_s": 0.1,
+   "speed": 1.14
+  },
+  {
+   "id": "v_site",
+   "text": "Their website.",
+   "start_s": 9.1,
+   "end_s": 9.817,
+   "start_frame": 546,
+   "end_frame": 589,
+   "pause_before_s": 0.1,
+   "speed": 1.14
+  },
+  {
+   "id": "v_insta",
+   "text": "Their Instagram.",
+   "start_s": 9.917,
+   "end_s": 10.783,
+   "start_frame": 595,
+   "end_frame": 647,
+   "pause_before_s": 0.1,
+   "speed": 1.14
+  },
+  {
+   "id": "v_email",
+   "text": "An email... somewhere.",
+   "start_s": 10.883,
+   "end_s": 12.15,
+   "start_frame": 653,
+   "end_frame": 729,
+   "pause_before_s": 0.1,
+   "speed": 1.17
+  },
+  {
+   "id": "v_worth",
+   "text": "Is this one even worth pitching?",
+   "start_s": 12.45,
+   "end_s": 14.033,
+   "start_frame": 747,
+   "end_frame": 842,
+   "pause_before_s": 0.3,
+   "speed": 1.13
+  },
+  {
+   "id": "v_zero",
+   "text": "And you still haven't sent a single message.",
+   "start_s": 14.333,
+   "end_s": 16.333,
+   "start_frame": 860,
+   "end_frame": 980,
+   "pause_before_s": 0.3,
+   "speed": 1.13
+  },
+  {
+   "id": "v_nowebsite",
+   "text": "No website isn't the opportunity.",
+   "start_s": 18.133,
+   "end_s": 20.0,
+   "start_frame": 1088,
+   "end_frame": 1200,
+   "pause_before_s": 1.8,
+   "speed": 1.08
+  },
+  {
+   "id": "v_demand",
+   "text": "It's a business with real customers... and a website holding it back.",
+   "start_s": 20.3,
+   "end_s": 23.9,
+   "start_frame": 1218,
+   "end_frame": 1434,
+   "pause_before_s": 0.3,
+   "speed": 1.08
+  },
+  {
+   "id": "v_fifty",
+   "text": "Now find fifty of them.",
+   "start_s": 24.45,
+   "end_s": 25.717,
+   "start_frame": 1467,
+   "end_frame": 1543,
+   "pause_before_s": 0.55,
+   "speed": 1.08
+  },
+  {
+   "id": "v_time",
+   "text": "That's where your time goes.",
+   "start_s": 26.267,
+   "end_s": 27.55,
+   "start_frame": 1576,
+   "end_frame": 1653,
+   "pause_before_s": 0.55,
+   "speed": 1.08
+  },
+  {
+   "id": "v_built",
+   "text": "That's what Prospectify is built for.",
+   "start_s": 28.95,
+   "end_s": 30.95,
+   "start_frame": 1737,
+   "end_frame": 1857,
+   "pause_before_s": 1.4,
+   "speed": 1.08
+  },
+  {
+   "id": "v_pick",
+   "text": "Pick a city. Pick a niche.",
+   "start_s": 31.4,
+   "end_s": 32.767,
+   "start_frame": 1884,
+   "end_frame": 1966,
+   "pause_before_s": 0.45,
+   "speed": 1.12
+  },
+  {
+   "id": "v_finds",
+   "text": "It finds the local businesses actually worth pitching...",
+   "start_s": 33.167,
+   "end_s": 35.967,
+   "start_frame": 1990,
+   "end_frame": 2158,
+   "pause_before_s": 0.4,
+   "speed": 1.12
+  },
+  {
+   "id": "v_why",
+   "text": "and tells you why.",
+   "start_s": 36.517,
+   "end_s": 37.467,
+   "start_frame": 2191,
+   "end_frame": 2248,
+   "pause_before_s": 0.55,
+   "speed": 1.08
+  },
+  {
+   "id": "v_next",
+   "text": "Then it gets your next move ready.",
+   "start_s": 37.917,
+   "end_s": 39.367,
+   "start_frame": 2275,
+   "end_frame": 2362,
+   "pause_before_s": 0.45,
+   "speed": 1.12
+  },
+  {
+   "id": "v_contact",
+   "text": "The contact.",
+   "start_s": 39.55,
+   "end_s": 40.4,
+   "start_frame": 2373,
+   "end_frame": 2424,
+   "pause_before_s": 0.18,
+   "speed": 1.06
+  },
+  {
+   "id": "v_angle",
+   "text": "The angle.",
+   "start_s": 40.567,
+   "end_s": 41.233,
+   "start_frame": 2434,
+   "end_frame": 2474,
+   "pause_before_s": 0.18,
+   "speed": 1.06
+  },
+  {
+   "id": "v_message",
+   "text": "The first message.",
+   "start_s": 41.4,
+   "end_s": 42.417,
+   "start_frame": 2484,
+   "end_frame": 2545,
+   "pause_before_s": 0.18,
+   "speed": 1.08
+  },
+  {
+   "id": "v_prompt",
+   "text": "And the website prompt...",
+   "start_s": 43.267,
+   "end_s": 44.5,
+   "start_frame": 2596,
+   "end_frame": 2670,
+   "pause_before_s": 0.85,
+   "speed": 1.05
+  },
+  {
+   "id": "v_exact",
+   "text": "written for that exact business.",
+   "start_s": 44.7,
+   "end_s": 46.317,
+   "start_frame": 2682,
+   "end_frame": 2779,
+   "pause_before_s": 0.2,
+   "speed": 1.05
+  },
+  {
+   "id": "v_paste",
+   "text": "Paste it into whatever you build with.",
+   "start_s": 47.717,
+   "end_s": 49.5,
+   "start_frame": 2863,
+   "end_frame": 2970,
+   "pause_before_s": 1.4,
+   "speed": 1.1
+  },
+  {
+   "id": "v_buildit",
+   "text": "Build it.",
+   "start_s": 50.3,
+   "end_s": 50.917,
+   "start_frame": 3018,
+   "end_frame": 3055,
+   "pause_before_s": 0.8,
+   "speed": 1.06
+  },
+  {
+   "id": "v_pitchit",
+   "text": "Pitch it.",
+   "start_s": 51.917,
+   "end_s": 52.55,
+   "start_frame": 3115,
+   "end_frame": 3153,
+   "pause_before_s": 1.0,
+   "speed": 1.06
+  },
+  {
+   "id": "v_sells",
+   "text": "And when it sells, log it,",
+   "start_s": 53.25,
+   "end_s": 54.5,
+   "start_frame": 3195,
+   "end_frame": 3270,
+   "pause_before_s": 0.7,
+   "speed": 1.1
+  },
+  {
+   "id": "v_working",
+   "text": "and see what's actually working.",
+   "start_s": 55.35,
+   "end_s": 56.767,
+   "start_frame": 3321,
+   "end_frame": 3406,
+   "pause_before_s": 0.85,
+   "speed": 1.1
+  },
+  {
+   "id": "v_l_find",
+   "text": "Find.",
+   "start_s": 57.467,
+   "end_s": 58.05,
+   "start_frame": 3448,
+   "end_frame": 3483,
+   "pause_before_s": 0.7,
+   "speed": 1.06
+  },
+  {
+   "id": "v_l_pitch",
+   "text": "Pitch.",
+   "start_s": 58.133,
+   "end_s": 58.683,
+   "start_frame": 3488,
+   "end_frame": 3521,
+   "pause_before_s": 0.08,
+   "speed": 1.06
+  },
+  {
+   "id": "v_l_build",
+   "text": "Build.",
+   "start_s": 58.767,
+   "end_s": 59.3,
+   "start_frame": 3526,
+   "end_frame": 3558,
+   "pause_before_s": 0.08,
+   "speed": 1.06
+  },
+  {
+   "id": "v_l_sell",
+   "text": "Sell.",
+   "start_s": 59.383,
+   "end_s": 59.867,
+   "start_frame": 3563,
+   "end_frame": 3592,
+   "pause_before_s": 0.08,
+   "speed": 1.06
+  },
+  {
+   "id": "v_l_repeat",
+   "text": "Repeat.",
+   "start_s": 60.083,
+   "end_s": 60.733,
+   "start_frame": 3605,
+   "end_frame": 3644,
+   "pause_before_s": 0.22,
+   "speed": 1.06
+  },
+  {
+   "id": "v_youbuild",
+   "text": "You build the website.",
+   "start_s": 61.483,
+   "end_s": 62.6,
+   "start_frame": 3689,
+   "end_frame": 3756,
+   "pause_before_s": 0.75,
+   "speed": 1.05
+  },
+  {
+   "id": "v_wefind",
+   "text": "Prospectify finds the client.",
+   "start_s": 62.783,
+   "end_s": 64.533,
+   "start_frame": 3767,
+   "end_frame": 3872,
+   "pause_before_s": 0.18,
+   "speed": 1.05
+  },
+  {
+   "id": "v_start",
+   "text": "Start free.",
+   "start_s": 65.233,
+   "end_s": 66.067,
+   "start_frame": 3914,
+   "end_frame": 3964,
+   "pause_before_s": 0.7,
+   "speed": 1.03
+  }
+ ]
+}

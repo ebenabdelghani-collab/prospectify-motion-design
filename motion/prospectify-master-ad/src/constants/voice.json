@@ -1,0 +1,187 @@
+{
+  "v_build": {
+    "text": "You can build a website in forty minutes now.",
+    "gapBefore": 0.4,
+    "seconds": 2.2135
+  },
+  "v_find": {
+    "text": "But finding someone to sell it to?",
+    "gapBefore": 0.9,
+    "seconds": 1.6167
+  },
+  "v_night": {
+    "text": "That still eats your whole night.",
+    "gapBefore": 0.85,
+    "seconds": 1.3318
+  },
+  "v_maps": {
+    "text": "Maps.",
+    "gapBefore": 0.4,
+    "seconds": 0.5423
+  },
+  "v_reviews": {
+    "text": "Reviews.",
+    "gapBefore": 0.1,
+    "seconds": 0.6432
+  },
+  "v_site": {
+    "text": "Their website.",
+    "gapBefore": 0.1,
+    "seconds": 0.7265
+  },
+  "v_insta": {
+    "text": "Their Instagram.",
+    "gapBefore": 0.1,
+    "seconds": 0.8625
+  },
+  "v_email": {
+    "text": "An email... somewhere.",
+    "gapBefore": 0.1,
+    "seconds": 1.2617
+  },
+  "v_worth": {
+    "text": "Is this one even worth pitching?",
+    "gapBefore": 0.3,
+    "seconds": 1.5788
+  },
+  "v_zero": {
+    "text": "And you still haven't sent a single message.",
+    "gapBefore": 0.3,
+    "seconds": 2.0006
+  },
+  "v_nowebsite": {
+    "text": "No website isn't the opportunity.",
+    "gapBefore": 1.8,
+    "seconds": 1.8775
+  },
+  "v_demand": {
+    "text": "It's a business with real customers... and a website holding it back.",
+    "gapBefore": 0.3,
+    "seconds": 3.5982
+  },
+  "v_fifty": {
+    "text": "Now find fifty of them.",
+    "gapBefore": 0.55,
+    "seconds": 1.2648
+  },
+  "v_time": {
+    "text": "That's where your time goes.",
+    "gapBefore": 0.55,
+    "seconds": 1.2806
+  },
+  "v_built": {
+    "text": "That's what Prospectify is built for.",
+    "gapBefore": 1.4,
+    "seconds": 2.0032
+  },
+  "v_pick": {
+    "text": "Pick a city. Pick a niche.",
+    "gapBefore": 0.45,
+    "seconds": 1.3699
+  },
+  "v_finds": {
+    "text": "It finds the local businesses actually worth pitching...",
+    "gapBefore": 0.4,
+    "seconds": 2.7893
+  },
+  "v_why": {
+    "text": "and tells you why.",
+    "gapBefore": 0.55,
+    "seconds": 0.9482
+  },
+  "v_next": {
+    "text": "Then it gets your next move ready.",
+    "gapBefore": 0.45,
+    "seconds": 1.4541
+  },
+  "v_contact": {
+    "text": "The contact.",
+    "gapBefore": 0.18,
+    "seconds": 0.8501
+  },
+  "v_angle": {
+    "text": "The angle.",
+    "gapBefore": 0.18,
+    "seconds": 0.6537
+  },
+  "v_message": {
+    "text": "The first message.",
+    "gapBefore": 0.18,
+    "seconds": 1.0045
+  },
+  "v_prompt": {
+    "text": "And the website prompt...",
+    "gapBefore": 0.85,
+    "seconds": 1.2391
+  },
+  "v_exact": {
+    "text": "written for that exact business.",
+    "gapBefore": 0.2,
+    "seconds": 1.6187
+  },
+  "v_paste": {
+    "text": "Paste it into whatever you build with.",
+    "gapBefore": 1.4,
+    "seconds": 1.7878
+  },
+  "v_buildit": {
+    "text": "Build it.",
+    "gapBefore": 0.8,
+    "seconds": 0.6088
+  },
+  "v_pitchit": {
+    "text": "Pitch it.",
+    "gapBefore": 1.0,
+    "seconds": 0.6258
+  },
+  "v_sells": {
+    "text": "And when it sells, log it,",
+    "gapBefore": 0.7,
+    "seconds": 1.2531
+  },
+  "v_working": {
+    "text": "and see what's actually working.",
+    "gapBefore": 0.85,
+    "seconds": 1.4233
+  },
+  "v_l_find": {
+    "text": "Find.",
+    "gapBefore": 0.7,
+    "seconds": 0.5854
+  },
+  "v_l_pitch": {
+    "text": "Pitch.",
+    "gapBefore": 0.08,
+    "seconds": 0.5545
+  },
+  "v_l_build": {
+    "text": "Build.",
+    "gapBefore": 0.08,
+    "seconds": 0.5297
+  },
+  "v_l_sell": {
+    "text": "Sell.",
+    "gapBefore": 0.08,
+    "seconds": 0.488
+  },
+  "v_l_repeat": {
+    "text": "Repeat.",
+    "gapBefore": 0.22,
+    "seconds": 0.651
+  },
+  "v_youbuild": {
+    "text": "You build the website.",
+    "gapBefore": 0.75,
+    "seconds": 1.1144
+  },
+  "v_wefind": {
+    "text": "Prospectify finds the client.",
+    "gapBefore": 0.18,
+    "seconds": 1.7577
+  },
+  "v_start": {
+    "text": "Start free.",
+    "gapBefore": 0.7,
+    "seconds": 0.828
+  }
+}
