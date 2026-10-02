@@ -19,7 +19,7 @@ const Env: React.FC = () => {
 
 /** Glossy spheres burst from a point and fall under gravity — the sale "lands". Pure function of `t` (seconds). */
 export const SphereBurst: React.FC<{t: number; origin?: [number, number, number]; n?: number}> = ({t, origin = [0.25, 0.7, 0], n = 26}) => {
-	if (t < 0 || t > 1.6) return null;
+	if (t < 0 || t > 0.95) return null;
 	return (
 		<div style={{position: 'absolute', inset: 0, pointerEvents: 'none'}}>
 			<ThreeCanvas width={1080} height={1920} camera={{position: [0, 0, 10], fov: 40}}>
@@ -35,7 +35,7 @@ export const SphereBurst: React.FC<{t: number; origin?: [number, number, number]
 					const x = origin[0] + vx * t;
 					const y = origin[1] + vy * t - 0.5 * 14 * t * t;
 					const z = origin[2] + vz * t;
-					const r = (0.1 + rand(i * 2.2) * 0.17) * Math.min(1, t * 8) * (1 - Math.max(0, (t - 1.1) / 0.5));
+					const r = (0.1 + rand(i * 2.2) * 0.17) * Math.min(1, t * 8) * (1 - Math.min(1, Math.max(0, (t - 0.55) / 0.35)));
 					return (
 						<mesh key={i} position={[x, y, z]} scale={[Math.max(r, 0.0001), Math.max(r, 0.0001), Math.max(r, 0.0001)]}>
 							<sphereGeometry args={[1, 40, 40]} />

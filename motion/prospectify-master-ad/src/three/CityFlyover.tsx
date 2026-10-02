@@ -79,7 +79,7 @@ const City: React.FC<{f: number}> = ({f}) => {
 			</instancedMesh>
 			<instancedMesh ref={lit} args={[undefined, undefined, blocks.length]}>
 				<boxGeometry args={[1, 1, 1]} />
-				<meshStandardMaterial color="#000" emissive="#FFD9A0" emissiveIntensity={0.55} transparent opacity={0.3} />
+				<meshStandardMaterial color="#000" emissive="#CFDDF5" emissiveIntensity={0.3} transparent opacity={0.12} />
 			</instancedMesh>
 			{/* ground + river */}
 			<mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
