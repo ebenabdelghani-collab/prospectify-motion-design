@@ -14,7 +14,7 @@ const tmp = `renders/_video-${variant}-${scale}.mp4`;
 
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
 const inputProps = {variant, withAudio: false};
-const composition = await selectComposition({serveUrl, id, inputProps, browserExecutable: BROWSER});
+const composition = await selectComposition({serveUrl, id, inputProps, browserExecutable: BROWSER, chromiumOptions: {gl: 'angle'}});
 let last = -1;
 const t0 = Date.now();
 await renderMedia({
@@ -32,6 +32,7 @@ await renderMedia({
 	concurrency: 4,
 	muted: true,
 	browserExecutable: BROWSER,
+	chromiumOptions: {gl: 'angle'},
 	outputLocation: tmp,
 	onProgress: ({progress}) => {
 		const p = Math.floor(progress * 20);

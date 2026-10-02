@@ -5,6 +5,7 @@ import {MasterAd} from './composition/MasterAd';
 import {DURATION, FPS, HEIGHT, WIDTH} from './constants/timeline';
 
 loadFont({family: 'Geist', url: staticFile('fonts/Geist-Variable.woff2'), weight: '100 900'});
+loadFont({family: 'InstrumentSerif', url: staticFile('fonts/InstrumentSerif-Italic.woff2'), style: 'italic', weight: '400'});
 loadFont({family: 'GeistMono', url: staticFile('fonts/GeistMono-Variable.woff2'), weight: '100 900'});
 
 // Designed on a 1080×1920 grid; the master is rendered at scale 2 → 2160×3840 (true vector 4K, not upscaled).

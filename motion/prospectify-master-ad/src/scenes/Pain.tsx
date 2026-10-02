@@ -5,7 +5,8 @@ import {COPY} from '../constants/copy';
 import {lineScale} from '../components/ui';
 import {Camera, CamKey, tilt3d} from '../fx/camera';
 import {lerp, ramp, rand} from '../motion/anim';
-import {DIVE_FOCUS, Phone, SCREEN, SCREENS} from './pain/screens';
+import {DIVE_FOCUS, SCREEN, SCREENS} from './pain/screens';
+import {Phone3D, Shatter, TabSwirl} from '../fx/devices';
 
 const PW = SCREEN.w + 44;
 const PH = SCREEN.h + 44;
@@ -76,9 +77,9 @@ export const Pain: React.FC<{f: number}> = ({f}) => {
 										transform: `translate(${-c * GX * implode}px, ${-r * GY * implode}px) scale(${lerp(0.82, 1, t)})`,
 									}}
 								>
-									<Phone glow={i === lit ? 1 : 0}>
+									<Phone3D w={PW} h={PH} ry={-c * 16} rx={r * -6} glow={i === lit ? 1 : 0}>
 										<W lf={18 + ((i * 7) % 20)} />
-									</Phone>
+									</Phone3D>
 									{i === lit && <div style={{position: 'absolute', inset: -10, borderRadius: 96, border: '6px solid rgba(244,244,246,0.5)'}} />}
 								</div>
 							);
@@ -95,9 +96,9 @@ export const Pain: React.FC<{f: number}> = ({f}) => {
 							opacity: Math.min(1, enter * 1.5),
 						}}
 					>
-						<Phone>
+						<Phone3D w={PW} h={PH} ry={Math.sin(f / 34) * 9 * (1 - ramp(f, T.WORTH_START, 20))} rx={4 + Math.sin(f / 51) * 3} rz={Math.sin(f / 60) * 1.2}>
 							<Screen lf={f - start} />
-						</Phone>
+						</Phone3D>
 					</div>
 				</Camera>
 			)}
@@ -105,6 +106,8 @@ export const Pain: React.FC<{f: number}> = ({f}) => {
 			{/* keep the caption legible over a full-bleed phone */}
 			<div style={{position: 'absolute', left: 0, right: 0, top: 0, height: 640, background: `linear-gradient(180deg, ${COLORS.bg} 0%, rgba(5,5,5,0.92) 55%, rgba(5,5,5,0) 100%)`, opacity: ramp(f, T.PAIN_START, 10) * (1 - ramp(f, T.ZERO_IN, 8))}} />
 
+			<Shatter t={(f - (T.ZERO_IN - 6)) / 34} cx={540} cy={1000} />
+			{f >= T.ZERO_IN && <TabSwirl count={Math.round(lerp(23, 47, ramp(f, T.ZERO_IN, T.PAIN_END - T.ZERO_IN - 10, EASE.glide)))} spin={(f - T.ZERO_IN) / 260} y={1000} opacity={0.55 * ramp(f, T.ZERO_IN, 14) * (1 - ramp(f, T.PAIN_END - 10, 8))} />}
 			{/* 47 tabs. 0 pitches. */}
 			{f >= T.ZERO_IN && (
 				<div style={{position: 'absolute', left: 0, right: 0, top: 440, textAlign: 'center', fontFamily: FONTS.sans, transform: `scaleY(${zeroOut}) scale(${lerp(1, 1.04, ramp(f, T.ZERO_IN, T.PAIN_END - T.ZERO_IN, EASE.linear))})`, transformOrigin: '50% 400px'}}>

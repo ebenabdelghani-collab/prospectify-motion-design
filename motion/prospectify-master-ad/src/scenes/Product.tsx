@@ -15,7 +15,7 @@ const FILE = {x: 90, y: 540, w: 900, h: 960};
 export const PROMPT_RECT = {x: 90, y: 600, w: 900, h: 820};
 
 /** Row in the prospect file: pending skeleton → locks with a check. */
-const Row: React.FC<{f: number; top: number; label: string; lockAt: number; right?: React.ReactNode; pending: React.ReactNode; children: React.ReactNode}> = ({
+const Row: React.FC<{f: number; top: number; label: string; lockAt: number; right?: React.ReactNode; pending: React.ReactNode; children: React.ReactNode; lift?: number}> = ({
 	f,
 	top,
 	label,
@@ -23,10 +23,34 @@ const Row: React.FC<{f: number; top: number; label: string; lockAt: number; righ
 	right,
 	pending,
 	children,
+	lift = 0,
 }) => {
 	const locked = f >= lockAt;
+	// exploded view: pending modules float above the file and slam down as they lock
+	// `lift` = ex * (k + 1): pending modules hover below/in front of the file, then dock into their slot.
+	const slam = ramp(f, lockAt - 6, 7, EASE.exit);
+	const k = lift > 0 ? lift : 0;
+	const away = 1 - slam;
+	const z = k * 150 * away;
+	const dy = k > 0 ? (980 + (top < 400 ? 0 : top < 600 ? 1 : 2) * 175 - top) * Math.min(1, k) * away : 0;
+	const dx = k > 0 ? (k - 2) * 40 * away : 0;
+	const card = Math.min(1, k) * Math.max(away, 0.0);
 	return (
-		<div style={{position: 'absolute', left: 44, right: 44, top}}>
+		<div
+			style={{
+				position: 'absolute',
+				left: 44 - card * 18,
+				right: 44 - card * 18,
+				top: top - card * 14,
+				padding: `${card * 14}px ${card * 18}px`,
+				borderRadius: 18,
+				background: `rgba(24,24,31,${0.96 * card})`,
+				border: `1.5px solid rgba(244,244,246,${0.14 * card})`,
+				boxShadow: z > 1 ? `0 ${z * 0.3}px ${z * 0.5}px rgba(0,0,0,0.6)` : 'none',
+				transform: `translate3d(${dx}px, ${dy}px, ${z}px) rotateX(${-14 * card}deg)`,
+				transformStyle: 'preserve-3d',
+			}}
+		>
 			<div style={{display: 'flex', alignItems: 'center', gap: 16, height: 40}}>
 				{locked ? <Check size={36} t={ramp(f, lockAt, 14, EASE.lock)} /> : <div style={{width: 36, height: 36, borderRadius: 18, border: `2.5px solid ${COLORS.lineHi}`}} />}
 				<div style={{...mono, color: locked ? COLORS.text : COLORS.textDim}}>{label}</div>
@@ -68,9 +92,9 @@ const CAM: CamKey[] = [
 	[T.FILE_OPEN + 4, 540, 1010, 1.0, 0, S],
 	[T.WHY_READY - 4, 540, 1000, 1.02, 0, LIN],
 	[T.WHY_READY + 8, 540, 860, 1.22],
-	[T.CONTACT_READY - 2, 540, 880, 1.22, 0, LIN],
-	[T.CONTACT_READY + 10, 540, 1000, 1.24],
-	[T.ANGLE_READY + 10, 540, 1110, 1.26],
+	[T.NEXT_HEADLINE + 10, 540, 1060, 0.94],
+	[T.CONTACT_READY + 6, 540, 1050, 0.98, 0, LIN],
+	[T.ANGLE_READY + 10, 540, 1080, 1.02, 0, LIN],
 	[T.OUTREACH_TYPE[0] + 10, 530, 1270, 1.26],
 	[T.COPY_CLICK, 600, 1240, 1.27, 0, LIN],
 	[T.PROMPT_HOVER, 640, 1390, 1.26],
@@ -101,6 +125,8 @@ export const Product: React.FC<{f: number}> = ({f}) => {
 		h: lerp(CARD_H, FILE.h, expand),
 	};
 	const fileIn = ramp(f, T.RESULT_CARDS[0], 14, EASE.snap);
+	const ex = ramp(f, T.NEXT_HEADLINE - 8, 20, EASE.glide) * (1 - ramp(f, T.OUTREACH_TYPE[0] - 10, 18, EASE.glide));
+	const lift = (k: number) => ex * (k + 1);
 	const fold = lineScale(f, T.PROMPT_FOLD);
 	const showPrompt = f >= T.PROMPT_FOLD + 8;
 
@@ -221,8 +247,9 @@ export const Product: React.FC<{f: number}> = ({f}) => {
 						border: `2px solid ${f >= T.LEAD_HOVER ? COLORS.lineHi : COLORS.line}`,
 						boxShadow: `0 40px 120px rgba(0,0,0,${0.6 * expand})`,
 						opacity: fileIn,
-						transform: `scale(${press(f, T.LEAD_SELECTED, 3, 10)}) scaleY(${fold})`,
-						overflow: 'hidden',
+						transform: `perspective(2600px) rotateX(${ex * 34}deg) rotateZ(${-ex * 7}deg) translateY(${-ex * 200}px) scale(${press(f, T.LEAD_SELECTED, 3, 10) * (1 - ex * 0.16)}) scaleY(${fold})`,
+						transformStyle: ex > 0 ? 'preserve-3d' : undefined,
+						overflow: ex > 0 ? 'visible' : 'hidden',
 					}}
 				>
 					<div style={{position: 'absolute', left: 34, right: 34, top: 0, height: CARD_H, display: 'flex', alignItems: 'center', opacity: 1 - ramp(f, T.LEAD_SELECTED + 2, 8)}}>
@@ -241,7 +268,7 @@ export const Product: React.FC<{f: number}> = ({f}) => {
 					</div>
 
 					{f >= T.LEAD_SELECTED + 6 && (
-						<div style={{position: 'absolute', left: 0, top: 0, width: FILE.w, height: FILE.h, opacity: ramp(f, T.LEAD_SELECTED + 8, 12)}}>
+						<div style={{position: 'absolute', left: 0, top: 0, width: FILE.w, height: FILE.h, opacity: ramp(f, T.LEAD_SELECTED + 8, 12), transformStyle: 'preserve-3d'}}>
 							<div style={{position: 'absolute', left: 44, top: 34, right: 44, display: 'flex', alignItems: 'flex-start'}}>
 								<div>
 									<div style={{fontFamily: FONTS.sans, fontSize: 52, fontWeight: 650, letterSpacing: '-0.035em', color: COLORS.text}}>{LEAD.name}</div>
@@ -272,7 +299,7 @@ export const Product: React.FC<{f: number}> = ({f}) => {
 								</div>
 							</Row>
 
-							<Row f={f} top={384} label="CONTACT" lockAt={T.CONTACT_READY} pending={<div style={{display: 'flex', gap: 14}}><Skeleton w={300} h={52} f={f} seed={3} /><Skeleton w={300} h={52} f={f} seed={4} /></div>}>
+							<Row f={f} top={384} label="CONTACT" lockAt={T.CONTACT_READY} lift={lift(0)} pending={<div style={{display: 'flex', gap: 14}}><Skeleton w={300} h={52} f={f} seed={3} /><Skeleton w={300} h={52} f={f} seed={4} /></div>}>
 								<div style={{display: 'flex', gap: 12}}>
 									<Chip size={26}>
 										<svg width={26} height={26} viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" fill="none" stroke={COLORS.textDim} strokeWidth={2} strokeLinejoin="round" /></svg>
@@ -285,7 +312,7 @@ export const Product: React.FC<{f: number}> = ({f}) => {
 								</div>
 							</Row>
 
-							<Row f={f} top={520} label="ANGLE" lockAt={T.ANGLE_READY} pending={<div style={{display: 'flex', flexDirection: 'column', gap: 12}}><Skeleton w="85%" h={22} f={f} seed={5} /><Skeleton w="55%" h={22} f={f} seed={6} /></div>}>
+							<Row f={f} top={520} label="ANGLE" lockAt={T.ANGLE_READY} lift={lift(1)} pending={<div style={{display: 'flex', flexDirection: 'column', gap: 12}}><Skeleton w="85%" h={22} f={f} seed={5} /><Skeleton w="55%" h={22} f={f} seed={6} /></div>}>
 								<div style={{fontFamily: FONTS.sans, fontSize: 31, fontWeight: 560, letterSpacing: '-0.02em', color: COLORS.text, lineHeight: 1.25, whiteSpace: 'nowrap'}}>{LEAD.angle}</div>
 							</Row>
 
@@ -294,6 +321,7 @@ export const Product: React.FC<{f: number}> = ({f}) => {
 								top={636}
 								label="OUTREACH"
 								lockAt={T.OUTREACH_READY}
+								lift={lift(2)}
 								right={
 									f >= T.OUTREACH_READY ? (
 										<div

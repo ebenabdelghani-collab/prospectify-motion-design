@@ -6,6 +6,7 @@ import {Cursor} from '../components/primitives';
 import {Chip, Dot, mono} from '../components/ui';
 import {Camera, Sheen, tilt3d} from '../fx/camera';
 import {lerp, path, press, ramp, rand} from '../motion/anim';
+import {CityFlyover} from '../three/CityFlyover';
 
 const A = {x: 90, y: 660, w: 900, h: 290};
 const B = {x: 90, y: 990, w: 900, h: 420};
@@ -45,7 +46,7 @@ const CityMap: React.FC = () => (
 
 /** 17.8–28.5s: the insight, then the scale problem — told on a map. */
 export const Insight: React.FC<{f: number}> = ({f}) => {
-	if (f < T.INSIGHT_Q || f > T.BLACK + 2) return null;
+	if (f < T.INSIGHT_Q || f > T.REVEAL + 4) return null;
 
 	const aIn = ramp(f, T.CARD_A_IN, 18, EASE.snap);
 	const bIn = ramp(f, T.CARD_B_IN, 18, EASE.snap);
@@ -88,32 +89,9 @@ export const Insight: React.FC<{f: number}> = ({f}) => {
 
 	return (
 		<>
+			{/* the city, in real 3D */}
+			{f >= T.FIFTY_IN + 4 && <CityFlyover f={f} opacity={ramp(f, T.FIFTY_IN + 4, 14) * (1 - ramp(f, T.REVEAL - 2, 5))} />}
 			<Camera f={f} keys={cam}>
-				{/* the city — appears as we pull back */}
-				{mapIn > 0 && (
-					<div style={{position: 'absolute', left: 0, top: 0, opacity: mapIn * (1 - implode)}}>
-						<CityMap />
-					</div>
-				)}
-				{f >= T.FIFTY_IN + 4 &&
-					PINS.map(([x, y], i) => {
-						const at = T.FIFTY_FILL[i];
-						const t = ramp(f, at, 10, EASE.snap);
-						if (t <= 0) return null;
-						const px = lerp(x, PIN0[0], implode);
-						const py = lerp(y, PIN0[1], implode);
-						const lit = flickIdx > 0 && Math.floor(rand(flickIdx * 5.1) * 50) === i;
-						const first = i === 0;
-						return (
-							<div key={i} style={{position: 'absolute', left: px - 30, top: py - 74, width: 60, height: 74, opacity: t * (1 - implode * 0.6), transform: `translateY(${(1 - t) * -50}px) scale(${(first ? 1.25 : 1) * lerp(1, 0.3, implode)})`, transformOrigin: '30px 74px'}}>
-								<svg width={60} height={74} viewBox="0 0 44 56">
-									<path d="M22 55 C 8 36, 2 28, 2 21 A 20 20 0 1 1 42 21 C 42 28, 36 36, 22 55 Z" fill={first ? COLORS.accent : lit ? '#FFFFFF' : '#C9CBD2'} />
-								</svg>
-								<div style={{position: 'absolute', left: 0, top: 8, width: 60, textAlign: 'center', fontFamily: FONTS.sans, fontSize: 30, fontWeight: 800, color: first ? '#fff' : '#15181E'}}>{first ? 'B' : '?'}</div>
-							</div>
-						);
-					})}
-
 				{/* the A / B cards */}
 				{!cardsGone && (
 					<>
@@ -206,8 +184,8 @@ export const Insight: React.FC<{f: number}> = ({f}) => {
 				</div>
 			)}
 			{/* the implosion flash, where the logo will be born */}
-			{f >= T.SCALE_COLLAPSE + 6 && f < T.BLACK + 2 && (
-				<div style={{position: 'absolute', left: 540 - 60, top: 960 - 60, width: 120, height: 120, borderRadius: 60, background: 'radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(230,63,109,0.5) 35%, rgba(5,5,5,0) 70%)', opacity: 1 - ramp(f, T.SCALE_COLLAPSE + 6, 8), transform: `scale(${lerp(0.4, 2.2, ramp(f, T.SCALE_COLLAPSE + 6, 8, EASE.snap))})`}} />
+			{f >= T.REVEAL - 6 && f < T.REVEAL + 4 && (
+				<div style={{position: 'absolute', left: 540 - 60, top: 960 - 60, width: 120, height: 120, borderRadius: 60, background: 'radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(230,63,109,0.5) 35%, rgba(5,5,5,0) 70%)', opacity: 1 - ramp(f, T.REVEAL - 2, 6), transform: `scale(${lerp(0.4, 2.6, ramp(f, T.REVEAL - 6, 8, EASE.snap))})`}} />
 			)}
 		</>
 	);

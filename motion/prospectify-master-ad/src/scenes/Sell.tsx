@@ -6,6 +6,7 @@ import {Cursor} from '../components/primitives';
 import {Card, lineScale, mono} from '../components/ui';
 import {lerp, path, press, ramp, typed} from '../motion/anim';
 import {Camera, CamKey, Sheen} from '../fx/camera';
+import {SphereBurst} from '../three/Burst';
 
 const ROWCARD = {x: 90, y: 600, w: 900, h: 250};
 const DIALOG = {x: 130, y: 900, w: 820, h: 560};
@@ -92,6 +93,7 @@ export const Sell: React.FC<{f: number}> = ({f}) => {
 	const shake = f >= T.SOLD && f < T.SOLD + 10 ? (1 - (f - T.SOLD) / 10) * 16 : 0;
 
 	return (
+		<>
 		<Camera f={f} keys={CAM} shake={shake}>
 			{f < T.TRACK_IN + 2 && (
 				<>
@@ -220,5 +222,7 @@ export const Sell: React.FC<{f: number}> = ({f}) => {
 				</div>
 			)}
 		</Camera>
+		<SphereBurst t={(f - T.SOLD) / 60} />
+		</>
 	);
 };

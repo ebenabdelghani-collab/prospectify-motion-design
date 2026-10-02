@@ -9,8 +9,8 @@ const outDir = process.env.OUT ?? 'renders/stills';
 const id = process.env.COMP ?? 'ProspectifyMaster';
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
 const inputProps = {variant: id === 'ProspectifyMasterPaid' ? 'paid' : 'organic', withAudio: false};
-const composition = await selectComposition({serveUrl, id, inputProps, browserExecutable: BROWSER});
+const composition = await selectComposition({serveUrl, id, inputProps, browserExecutable: BROWSER, chromiumOptions: {gl: 'angle'}});
 for (const frame of frames) {
-	await renderStill({composition, serveUrl, frame, inputProps, browserExecutable: BROWSER, output: `${outDir}/f${String(frame).padStart(3, '0')}.png`, scale: 0.5});
+	await renderStill({composition, serveUrl, frame, inputProps, browserExecutable: BROWSER, chromiumOptions: {gl: 'angle'}, output: `${outDir}/f${String(frame).padStart(3, '0')}.png`, scale: 0.5});
 	console.log('frame', frame);
 }

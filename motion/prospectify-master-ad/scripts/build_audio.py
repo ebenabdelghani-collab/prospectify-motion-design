@@ -185,6 +185,35 @@ def pluck_v(freq, d=0.5, decay=0.16, bright=2600, h=9):
     return edges(lp(s, bright), r=0.05)
 
 
+def glass_v():
+    """Shatter: an impact plus a scatter of bright tinkles that decay."""
+    d = 1.2
+    t = tt(d)
+    s = hp(noise(d), 3500) * np.exp(-t / 0.05) * 0.8
+    s += lp(noise(d), 400) * np.exp(-t / 0.06) * 0.9
+    for k in range(38):
+        o = int((rng.uniform(0, 0.55) ** 1.6) * SR)
+        f0 = rng.uniform(3200, 9500)
+        tk = tt(0.05)
+        blip = np.sin(2 * np.pi * f0 * tk) * np.exp(-tk / rng.uniform(0.006, 0.02)) * rng.uniform(0.15, 0.5)
+        s[o : o + len(blip)] += blip[: max(0, min(len(blip), len(s) - o))]
+    return edges(s, r=0.1)
+
+
+def pop_v(f0=520, f1=180, d=0.09):
+    """Soft glossy pop (bubble / pin landing)."""
+    t = tt(d)
+    ph = 2 * np.pi * np.cumsum(np.geomspace(f0, f1, len(t))) / SR
+    return edges(np.sin(ph) * np.exp(-t / (d * 0.35)) + hp(noise(d), 3000) * np.exp(-t / 0.002) * 0.15)
+
+
+def hinge_v():
+    t = tt(0.35)
+    s = lp(noise(0.35), 900) * np.exp(-t / 0.05) * 0.6 + np.sin(2 * np.pi * 95 * t) * np.exp(-t / 0.09) * 0.8
+    s += hp(noise(0.35), 2500) * np.exp(-np.maximum(0, t - 0.12) / 0.004) * (t > 0.12) * 0.3
+    return edges(s, r=0.04)
+
+
 def tab_v():
     t = tt(0.05)
     s = bp(noise(0.05), rng.uniform(700, 1100), 4500) * np.exp(-t / 0.006)
@@ -250,6 +279,8 @@ for k in T['BUILD_KEYS']:
 sfx.put(click_v(), K('BUILD_ENTER'), SX['click'])
 sfx.put(sweep_v(0.22, 300, 4200, 'rise', 1.3), K('BUILD_ENTER') - 11, SX['sweep'] - 3)
 sfx.put(sub_v(light=True), K('BUILD_ENTER') + 2, SX['sub'] - 12)
+sfx.put(hinge_v(), K('BUILD_ENTER') + 2, SX['click'] + 1)
+sfx.put(hinge_v()[::-1].copy(), K('HOOK_CLEAR') - 14, SX['click'] - 4)
 for j, fr in enumerate(T['SITE_STEPS']):
     sfx.put(tick_v([hz(79), hz(83), hz(86), hz(88), hz(91)][j], 0.016), fr, SX['construct'] - 2)
 sfx.put(lock_v([hz(88), hz(95)]), K('SITE_DONE'), SX['lock'])
@@ -275,7 +306,8 @@ for i, c in enumerate(T['WORTH_FLICKS']):
     sfx.put(tab_v(), c, SX['tab'] - 3 + i * 0.3, rng.uniform(-0.6, 0.6))
 sfx.put(sweep_v((T['ZERO_IN'] - T['WORTH_START']) / FPS, 300, 3000, 'rise', q=3), K('WORTH_START'), SX['riser'])
 sfx.put(sweep_v(0.6, 4000, 400, 'bell', 1.1), K('WORTH_START'), SX['sweep'] - 2)
-sfx.put(sweep_v(9 / FPS, 3500, 200, 'rise', 1.2), K('ZERO_IN') - 9, SX['sweep'])
+sfx.put(sweep_v(9 / FPS, 3500, 200, 'rise', 1.2), K('ZERO_IN') - 15, SX['sweep'])
+sfx.put(glass_v(), K('ZERO_IN') - 6, SX['tab'] + 2)
 sfx.put(sub_v(light=True), K('ZERO_LOCK'), SX['sub'] - 4)
 
 # ACT 3
@@ -292,7 +324,13 @@ sfx.put(tick_v(hz(95) * 1.06, 0.02), K('WEBPROBLEM_SIGNALS') + 4, SX['tick'])
 sfx.put(sweep_v(16 / FPS, 2500, 500, 'rise'), K('FIFTY_IN'), SX['sweep'] - 3)
 sfx.put(sweep_v(0.9, 2800, 300, 'bell', 1.0), K('FIFTY_IN') + 16, SX['sweep'] - 6)
 for i, fr in enumerate(T['FIFTY_FILL']):
-    sfx.put(tick_v(rng.uniform(900, 1700), 0.01, 0.04), fr, SX['data'] + 5 + rng.uniform(-2, 2), rng.uniform(-0.6, 0.6))
+    sfx.put(pop_v(rng.uniform(420, 760), rng.uniform(140, 220)), fr, SX['data'] + 9 + rng.uniform(-2, 1), rng.uniform(-0.7, 0.7))
+crane = (T['TIME_LINE'] - T['FIFTY_IN']) / FPS
+sfx.put(sweep_v(crane, 180, 900, 'bell', 0.9), K('FIFTY_IN') + 10, SX['sweep'] - 7)
+# implosion: everything is sucked in, merges into one glossy sphere, which contracts to a point of light
+sfx.put(sweep_v(0.25, 3000, 300, 'rise', 1.3), K('SCALE_COLLAPSE') - 4, SX['sweep'] - 1)
+sfx.put(pop_v(420, 90, 0.45), K('SCALE_COLLAPSE') + 6, SX['sub'] - 6)
+sfx.put(sweep_v((T['REVEAL'] - T['SCALE_COLLAPSE'] - 16) / FPS, 600, 7000, 'rise', 3), K('SCALE_COLLAPSE') + 16, SX['riser'] - 2)
 for fr in T['TIME_FLICKS']:
     sfx.put(clock_v(), fr, SX['clock'] - 3, rng.uniform(-0.3, 0.3))
 sfx.put(sweep_v((T['SCALE_COLLAPSE'] - T['TIME_LINE']) / FPS, 300, 3500, 'rise', q=3), K('TIME_LINE'), SX['riser'])
@@ -331,6 +369,10 @@ sfx.put(sweep_v((K('FILE_OPEN') - K('LEAD_SELECTED')) / FPS, 500, 2400, 'bell', 
 # ACT 7 — locks step up the scale
 sfx.put(lock_v([B5, E6]), K('WHY_READY'), SX['lock'])
 sfx.put(lock_v([Cs6, Gs6]), K('CONTACT_READY'), SX['lock'] + 0.5)
+for k_ in ('CONTACT_READY', 'ANGLE_READY'):
+    sfx.put(sub_v(light=True), K(k_) - 1, SX['sub'] - 17)
+    sfx.put(sweep_v(6 / FPS, 2500, 400, 'rise'), K(k_) - 7, SX['sweep'] - 6)
+sfx.put(sweep_v(0.4, 300, 2200, 'bell', 1.1), K('NEXT_HEADLINE') - 8, SX['sweep'] - 4)
 sfx.put(lock_v([E6, B6]), K('ANGLE_READY'), SX['lock'] + 1)
 for fr in range(T['OUTREACH_TYPE'][0], T['OUTREACH_TYPE'][1], 2):
     sfx.put(key_v(0.65), fr, SX['key'] - 5, rng.uniform(-0.2, 0.2))
@@ -367,6 +409,7 @@ pp = np.linspace(0, -0.55, len(send))
 sfx.put(np.vstack([send * np.cos((pp + 1) * np.pi / 4), send * np.sin((pp + 1) * np.pi / 4)]) * np.sqrt(2), K('PROMPT_SEND'), SX['sweep'] + 1)
 sfx.put(sub_v(light=True), K('PROMPT_ARRIVE'), SX['sub'] - 7)
 sfx.put(sweep_v(0.3, 3000, 500, 'fall', 1.3), K('BUILD_START'), SX['sweep'] - 5)
+sfx.put(hinge_v(), K('BUILD_START') + 4, SX['click'])
 
 # ACT 10
 for j, fr in enumerate(T['BUILD_STEPS']):
@@ -385,6 +428,8 @@ for k in T['AMOUNT_KEYS']:
     sfx.put(key_v(0.9), k, SX['key'] - 2)
 sfx.put(click_v(), K('SAVE_CLICK'), SX['click'])
 sfx.put(sub_v(), K('SOLD'), SX['sub'] - 5)
+for j in range(16):
+    sfx.put(pop_v(rng.uniform(700, 1500), rng.uniform(250, 500), 0.06), K('SOLD') + 2 + rng.uniform(0, 22), SX['data'] + 8, rng.uniform(-0.7, 0.7))
 sfx.put(click_v(deep=True), K('SOLD'), SX['clickDeep'] + 2)
 for j, n in enumerate((E5, Gs5, B5, E6)):
     sfx.put(bell_v(n, 1.5, 0.5, 0.8), K('SOLD') + j, SX['success'] - j * 1.2, -0.2 + 0.13 * j)

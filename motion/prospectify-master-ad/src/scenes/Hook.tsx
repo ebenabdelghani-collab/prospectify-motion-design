@@ -6,6 +6,7 @@ import {Check, MaskLine} from '../components/primitives';
 import {BrowserChrome, ClientSite, lineScale} from '../components/ui';
 import {lerp, press, ramp, typed} from '../motion/anim';
 import {Camera, tilt3d} from '../fx/camera';
+import {Laptop3D} from '../fx/devices';
 
 const BAR = {x: 70, y: 300, w: 940, h: 160};
 const BAR_CENTER_Y = 880;
@@ -98,29 +99,38 @@ export const Hook: React.FC<{f: number}> = ({f}) => {
 						</div>
 					</div>
 
-					{winOpen > 0 && f < T.HOOK_CLEAR + 2 && (
-						<div style={{position: 'absolute', left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, borderRadius: 28, overflow: 'hidden', border: `2px solid ${COLORS.lineHi}`, background: COLORS.surface, boxShadow: '0 40px 140px rgba(0,0,0,0.6)', transform: `${tilt3d(ramp(f, T.BUILD_ENTER + 2, 22, EASE.snap), 32, 0, -200)} scaleY(${winOpen}) scale(${lerp(1, 1.035, ramp(f, T.SITE_STEPS[4], T.HOOK_CLEAR - T.SITE_STEPS[4], EASE.linear))})`}}>
-							<BrowserChrome
-								label="Preview"
-								progress={ramp(f, T.BUILD_ENTER, T.SITE_DONE - T.BUILD_ENTER, EASE.linear)}
-								right={
-									f < T.SITE_DONE ? (
-										<div style={{fontFamily: FONTS.mono, fontSize: 22, color: COLORS.textDim, letterSpacing: '0.04em'}}>
-											BUILDING · {Math.round(lerp(0, 40, ramp(f, T.BUILD_ENTER, T.SITE_DONE - T.BUILD_ENTER, EASE.linear)))} MIN
+					{f >= T.BUILD_ENTER && f < T.HOOK_CLEAR + 2 && (() => {
+						const openT = ramp(f, T.BUILD_ENTER, 20, EASE.snap);
+						const close = ramp(f, T.HOOK_CLEAR - 14, 13, EASE.exit);
+						const scroll = ramp(f, T.SITE_STEPS[2], T.SITE_DONE - T.SITE_STEPS[2] + 10, EASE.glide) * 330;
+						return (
+							<div style={{position: 'absolute', left: 100, top: 600, opacity: Math.min(1, openT * 2) * (1 - close * 0.6)}}>
+								<Laptop3D w={880} rx={lerp(40, 30, openT)} ry={lerp(-30, -12, ramp(f, T.BUILD_ENTER, T.HOOK_CLEAR - T.BUILD_ENTER, EASE.glide))} open={lerp(0, 104, openT) * (1 - close)}>
+									<div style={{width: 900, height: 535, transform: `scale(${841 / 900})`, transformOrigin: '0 0', position: 'relative', overflow: 'hidden', background: COLORS.surface}}>
+										<BrowserChrome
+											label="Preview"
+											progress={ramp(f, T.BUILD_ENTER, T.SITE_DONE - T.BUILD_ENTER, EASE.linear)}
+											right={
+												f < T.SITE_DONE ? (
+													<div style={{fontFamily: FONTS.mono, fontSize: 22, color: COLORS.textDim, letterSpacing: '0.04em'}}>
+														BUILDING · {Math.round(lerp(0, 40, ramp(f, T.BUILD_ENTER, T.SITE_DONE - T.BUILD_ENTER, EASE.linear)))} MIN
+													</div>
+												) : (
+													<div style={{display: 'flex', alignItems: 'center', gap: 10, fontFamily: FONTS.sans, fontSize: 24, fontWeight: 600, color: COLORS.text, opacity: ramp(f, T.SITE_DONE, 8)}}>
+														<Check size={30} t={ramp(f, T.SITE_DONE, 14, EASE.lock)} />
+														{COPY.builtChip}
+													</div>
+												)
+											}
+										/>
+										<div style={{position: 'absolute', left: 0, right: 0, top: 64, height: 860, transform: `translateY(${-scroll}px)`}}>
+											<ClientSite f={f} steps={T.SITE_STEPS} />
 										</div>
-									) : f >= T.SITE_DONE ? (
-										<div style={{display: 'flex', alignItems: 'center', gap: 10, fontFamily: FONTS.sans, fontSize: 24, fontWeight: 600, color: COLORS.text, opacity: ramp(f, T.SITE_DONE, 8)}}>
-											<Check size={30} t={ramp(f, T.SITE_DONE, 14, EASE.lock)} />
-											{COPY.builtChip}
-										</div>
-									) : null
-								}
-							/>
-							<div style={{position: 'absolute', left: 0, right: 0, top: 64, bottom: 0}}>
-								<ClientSite f={f} steps={T.SITE_STEPS} />
+									</div>
+								</Laptop3D>
 							</div>
-						</div>
-					)}
+						);
+					})()}
 				</div>
 				</Camera>
 			)}

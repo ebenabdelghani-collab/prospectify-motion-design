@@ -108,17 +108,24 @@ export const MaskLine: React.FC<{
 				...style,
 			}}
 		>
-			{words.map((w, i) => {
+			{words.map((raw, i) => {
 				const tin = ramp(f, inAt + i * stagger, inDur, EASE.snap);
 				const tout = ramp(f, outAt + i * (stagger * 0.6), outDur, EASE.exit);
 				const y = (1 - tin) * 105 - tout * 105;
+				// *word* → italic serif accent, **word** → italic serif in the brand accent
+				const hot = raw.startsWith('**');
+				const ital = raw.startsWith('*');
+				const w = raw.replace(/\*/g, '');
 				return (
 					<span
 						key={i}
 						style={{
 							display: 'inline-block',
-							transform: `translateY(${y}%)`,
+							transform: `translateY(${y}%)${ital ? ` rotate(${(1 - tin) * -6}deg)` : ''}`,
 							whiteSpace: 'pre',
+							...(ital
+								? {fontFamily: FONTS.serif, fontStyle: 'italic', fontWeight: 400, letterSpacing: '-0.02em', fontSize: '1.12em', lineHeight: 0.9, color: hot ? COLORS.accent : undefined}
+								: {}),
 						}}
 					>
 						{w}

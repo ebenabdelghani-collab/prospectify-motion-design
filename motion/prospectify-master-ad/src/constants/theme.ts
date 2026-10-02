@@ -32,6 +32,7 @@ export const COLORS = {
 export const FONTS = {
 	sans: 'Geist, system-ui, sans-serif',
 	mono: 'GeistMono, ui-monospace, monospace',
+	serif: '"InstrumentSerif", Georgia, serif',
 } as const;
 
 export const TYPE = {

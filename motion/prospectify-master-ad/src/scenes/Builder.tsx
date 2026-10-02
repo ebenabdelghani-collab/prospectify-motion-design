@@ -10,6 +10,7 @@ import {lerp, path, press, ramp} from '../motion/anim';
 import {PROMPT_RECT, PromptCard} from './Product';
 import {Camera, CamKey, Emoji, Sheen} from '../fx/camera';
 import {Phone, SCREEN} from './pain/screens';
+import {Laptop3D, Phone3D} from '../fx/devices';
 
 const TILE = 200;
 const TILE_TOP = 1080;
@@ -183,10 +184,39 @@ export const Builder: React.FC<{f: number}> = ({f}) => {
 				</div>
 			)}
 
-			{/* Builder window → site → shrinks into the pitch as an attachment */}
-			{f >= T.BUILD_START && (
+			{/* During the build: a real laptop, lid opening as we land inside the builder */}
+			{f >= T.BUILD_START && f < T.PITCH_IN + 6 && (() => {
+				const open = ramp(f, T.BUILD_START, 22, EASE.snap);
+				const out = ramp(f, T.PITCH_IN - 4, 10, EASE.exit);
+				const scroll = ramp(f, T.BUILD_STEPS[2], T.SITE_READY - T.BUILD_STEPS[2] + 12, EASE.glide) * 330;
+				return (
+					<div style={{position: 'absolute', left: 40, top: 640, opacity: 1 - out, transform: `scale(${1 - out * 0.15})`, transformOrigin: '400px 300px'}}>
+						<Laptop3D w={800} rx={lerp(36, 26, open)} ry={lerp(-30, -14, ramp(f, T.BUILD_START, T.PITCH_IN - T.BUILD_START, EASE.glide))} open={lerp(20, 104, open)}>
+							<div style={{width: 900, height: 535, transform: `scale(${(800 - 2 * 800 * 0.022) / 900})`, transformOrigin: '0 0', position: 'relative', overflow: 'hidden', background: COLORS.surface}}>
+								<BrowserChrome
+									label={
+										<>
+											<Img src={staticFile(BUILDERS[sel].src)} style={{width: 28, height: 28, objectFit: 'contain'}} />
+											Your builder · Preview
+										</>
+									}
+									right={<div style={{...mono, fontSize: 18, color: f >= T.SITE_READY ? COLORS.text : COLORS.textDim}}>{f >= T.SITE_READY ? 'READY' : 'BUILDING'}</div>}
+									progress={ramp(f, T.BUILD_START, T.SITE_READY - T.BUILD_START, EASE.linear)}
+								/>
+								<div style={{position: 'absolute', left: 0, right: 0, top: 64, height: 860, transform: `translateY(${-scroll}px)`}}>
+									<ClientSite f={f} steps={T.BUILD_STEPS} />
+								</div>
+							</div>
+						</Laptop3D>
+					</div>
+				);
+			})()}
+
+			{/* Pitch: the site shrinks into the message as an attachment */}
+			{f >= T.PITCH_IN - 2 && (
 				<div
 					style={{
+						opacity: ramp(f, T.PITCH_IN - 2, 6),
 						position: 'absolute',
 						left: win.x,
 						top: win.y,
@@ -235,9 +265,9 @@ export const Builder: React.FC<{f: number}> = ({f}) => {
 			{/* the same site, mobile — the thing their old site got wrong */}
 			{phoneIn > 0 && (
 				<div style={{position: 'absolute', left: PHONE_AT.x, top: PHONE_AT.y + (1 - phoneIn) * 220, transform: `scale(${PHONE_AT.s}) rotate(${(1 - phoneIn) * 8}deg)`, transformOrigin: '0 0', opacity: phoneIn, zIndex: 8}}>
-					<Phone>
+					<Phone3D w={600} h={1240} ry={lerp(-34, -16, phoneIn)} rx={8} rz={-2}>
 						<MobileSite f={f} />
-					</Phone>
+					</Phone3D>
 				</div>
 			)}
 		</Camera>
