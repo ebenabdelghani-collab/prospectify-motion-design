@@ -5,6 +5,7 @@ import {LEAD, PROMPT, RESULTS, SEARCH} from '../constants/demoData';
 import {Check, Cursor, Skeleton} from '../components/primitives';
 import {Chip, Dot, lineScale, mono} from '../components/ui';
 import {lerp, path, press, ramp, typed, typedSpan} from '../motion/anim';
+import {Camera, CamKey, Sheen, tilt3d} from '../fx/camera';
 
 const BAR = {x: 90, y: 556, w: 900, h: 132};
 const LIST_TOP = 724;
@@ -50,6 +51,36 @@ const msgBox: React.CSSProperties = {
 	letterSpacing: '-0.01em',
 };
 
+const lineY = (i: number) => (i < 2 ? PROMPT_RECT.y + 130 + i * 50 + 25 : PROMPT_RECT.y + 254 + (i - 2) * 70 + 35);
+const S = EASE.snap;
+const X = EASE.exit;
+const LIN = EASE.linear;
+// Follow-focus camera: it rides to whatever is happening, then breathes back out.
+const CAM: CamKey[] = [
+	[T.SEARCH_IN, 540, 960, 1.0],
+	[T.CITY_KEYS[0], 420, 760, 1.32],
+	[T.NICHE_KEYS[0], 640, 760, 1.32],
+	[T.SEARCH_HOVER, 760, 760, 1.3],
+	[T.SEARCH_CLICK + 2, 780, 720, 1.42, 0, X],
+	[T.RESULTS + 10, 540, 1010, 1.0, 0, S],
+	[T.LEAD_HOVER, 540, 1030, 1.07, 0, LIN],
+	[T.LEAD_SELECTED + 4, 560, 800, 1.32, 0, X],
+	[T.FILE_OPEN + 4, 540, 1010, 1.0, 0, S],
+	[T.WHY_READY - 4, 540, 1000, 1.02, 0, LIN],
+	[T.WHY_READY + 8, 540, 860, 1.22],
+	[T.CONTACT_READY - 2, 540, 880, 1.22, 0, LIN],
+	[T.CONTACT_READY + 10, 540, 1000, 1.24],
+	[T.ANGLE_READY + 10, 540, 1110, 1.26],
+	[T.OUTREACH_TYPE[0] + 10, 530, 1270, 1.26],
+	[T.COPY_CLICK, 600, 1240, 1.27, 0, LIN],
+	[T.PROMPT_HOVER, 640, 1390, 1.26],
+	[T.PROMPT_CLICK + 3, 760, 1440, 1.9, 0, X],
+	[T.PROMPT_FOLD + 10, 540, 1010, 1.0, 0, S],
+	...T.PROMPT_LINES.map((l, i) => [l + 8, 540, lineY(i) + 60, 1.24] as CamKey),
+	[T.PROMPT_READY - 2, 540, lineY(7) + 120, 1.26, 0, LIN],
+	[T.PROMPT_READY + 12, 540, 1010, 1.0, 0, S],
+];
+
 /** 30.3–47s: search → opportunities → prospect file → the website prompt. */
 export const Product: React.FC<{f: number}> = ({f}) => {
 	if (f < T.SEARCH_IN - 2 || f >= T.PROMPT_COMPRESS) return null;
@@ -85,11 +116,8 @@ export const Product: React.FC<{f: number}> = ({f}) => {
 	]);
 	const cursorScale = press(f, T.SEARCH_CLICK) * press(f, T.LEAD_SELECTED) * press(f, T.COPY_CLICK) * press(f, T.PROMPT_CLICK);
 
-	// Slow camera push while the voice explains the results; eases back as the lead is chosen.
-	const push = 1 + 0.03 * ramp(f, T.RESULTS + 20, T.LEAD_HOVER - T.RESULTS - 20, EASE.linear) * (1 - ramp(f, T.LEAD_SELECTED - 6, 20, EASE.glide));
-
 	return (
-		<div style={{position: 'absolute', inset: 0, transform: `scale(${push})`, transformOrigin: '540px 1000px'}}>
+		<Camera f={f} keys={CAM}>
 			{/* Search */}
 			{searchOut < 1 && (
 				<div
@@ -151,6 +179,7 @@ export const Product: React.FC<{f: number}> = ({f}) => {
 								position: 'absolute',
 								left: 90,
 								top: top + (1 - tin) * 40 + out * 60,
+								transform: tilt3d(tin, 55, 0, -320),
 								width: 900,
 								height: CARD_H,
 								borderRadius: 22,
@@ -341,7 +370,7 @@ export const Product: React.FC<{f: number}> = ({f}) => {
 			{f >= T.SEARCH_HOVER - 14 && f < T.PROMPT_FOLD + 4 && (
 				<Cursor x={cur.x} y={cur.y} scale={cursorScale} opacity={ramp(f, T.SEARCH_HOVER - 14, 6) * (1 - ramp(f, T.PROMPT_FOLD, 4))} blur={Math.min(6, cur.v * 0.12)} />
 			)}
-		</div>
+		</Camera>
 	);
 };
 
@@ -367,6 +396,7 @@ export const PromptCard: React.FC<{f: number; scaleY?: number; style?: React.CSS
 				...style,
 			}}
 		>
+			<Sheen t={ramp(f, T.PROMPT_READY, 26, EASE.glide)} width={320} opacity={0.14} />
 			<div style={{height: 96, display: 'flex', alignItems: 'center', padding: '0 40px', borderBottom: `2px solid ${COLORS.line}`, gap: 16}}>
 				<svg width={30} height={30} viewBox="0 0 24 24">
 					<path d="M12 2.5l1.9 5.6 5.6 1.9-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.9Z" fill={COLORS.text} />

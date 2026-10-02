@@ -117,11 +117,20 @@ export const Card: React.FC<{style?: React.CSSProperties; children?: React.React
 const S = COLORS.site;
 
 export const BuildStep: React.FC<{f: number; at: number; children: React.ReactNode; style?: React.CSSProperties}> = ({f, at, children, style}) => {
-	const t = ramp(f, at, 9, EASE.snap);
+	const t = ramp(f, at, 12, EASE.snap);
 	return (
-		<div style={{position: 'relative', ...style}}>
+		<div style={{position: 'relative', perspective: 1400, ...style}}>
 			<div style={{position: 'absolute', inset: 0, borderRadius: 14, border: '2px dashed rgba(16,35,61,0.18)', opacity: 1 - t}} />
-			<div style={{clipPath: `inset(0 ${(1 - t) * 100}% 0 0)`, opacity: f >= at ? 1 : 0}}>{children}</div>
+			<div
+				style={{
+					opacity: f >= at ? Math.min(1, t * 2) : 0,
+					transform: `translateY(${(1 - t) * -46}px) rotateX(${(1 - t) * 38}deg) scale(${1 + (1 - t) * 0.06})`,
+					transformOrigin: '50% 0%',
+					filter: t < 0.95 ? `blur(${(1 - t) * 6}px)` : undefined,
+				}}
+			>
+				{children}
+			</div>
 		</div>
 	);
 };

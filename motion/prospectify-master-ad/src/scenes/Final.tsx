@@ -5,6 +5,10 @@ import {COPY} from '../constants/copy';
 import {MaskLine} from '../components/primitives';
 import {lineScale} from '../components/ui';
 import {lerp, ramp} from '../motion/anim';
+import {LEAD} from '../constants/demoData';
+import {ClientSite} from '../components/ui';
+import {Phone} from './pain/screens';
+import {MapScreen} from './pain/screens';
 
 /** 56.5–60.5s: the whole loop in four words. Then Repeat. */
 export const Loop: React.FC<{f: number}> = ({f}) => {
@@ -13,8 +17,38 @@ export const Loop: React.FC<{f: number}> = ({f}) => {
 	const rep = ramp(f, T.LOOP_REPEAT, 16, EASE.snap);
 	const spin = ramp(f, T.LOOP_REPEAT, 40, EASE.glide);
 	const active = T.LOOP_WORDS.filter((w) => w <= f).length - 1;
+	const word = Math.max(0, active);
+	const wStart = T.LOOP_WORDS[word] ?? T.LOOP_IN;
+	const punch = ramp(f, wStart, 14, EASE.snap);
+	const bgOn = f >= T.LOOP_WORDS[0] && f < T.LOOP_REPEAT + 4;
+	const BG = [
+		// Find
+		<div key="find" style={{position: 'absolute', left: 240, top: 340}}>
+			<Phone>
+				<MapScreen lf={40} />
+			</Phone>
+		</div>,
+		// Pitch
+		<div key="pitch" style={{position: 'absolute', left: 90, top: 640, width: 900, padding: 50, borderRadius: 28, background: COLORS.surface, border: `2px solid ${COLORS.lineHi}`, fontFamily: FONTS.sans, fontSize: 40, lineHeight: 1.4, color: COLORS.text}}>
+			{LEAD.outreach}
+		</div>,
+		// Build
+		<div key="build" style={{position: 'absolute', left: 90, top: 520, width: 900, height: 860, borderRadius: 28, overflow: 'hidden'}}>
+			<ClientSite f={1e6} steps={[0, 0, 0, 0, 0]} />
+		</div>,
+		// Sell
+		<div key="sell" style={{position: 'absolute', left: 240, top: 820, padding: '20px 60px', border: `14px solid ${COLORS.accent}`, borderRadius: 30, fontFamily: FONTS.sans, fontSize: 200, fontWeight: 800, color: COLORS.accent, transform: 'rotate(-9deg)'}}>SOLD</div>,
+	];
+
 	return (
-		<div style={{position: 'absolute', left: 0, right: 0, top: 540, transform: `scaleY(${out})`, transformOrigin: '50% 420px'}}>
+		<>
+		{bgOn && (
+			<div style={{position: 'absolute', inset: 0, opacity: 0.3 * (1 - ramp(f, T.LOOP_REPEAT, 6)), filter: 'blur(5px)', transform: `scale(${lerp(1.18, 1.04, punch)})`, transformOrigin: '540px 960px'}}>
+				{BG[word]}
+			</div>
+		)}
+		{bgOn && <div style={{position: 'absolute', inset: 0, background: 'radial-gradient(70% 50% at 50% 50%, rgba(5,5,5,0.55) 0%, rgba(5,5,5,0.9) 100%)'}} />}
+		<div style={{position: 'absolute', left: 0, right: 0, top: 540, transform: `scaleY(${out}) scale(${lerp(1.06, 1, punch)})`, transformOrigin: '50% 420px'}}>
 			{COPY.loop.map((w, i) => (
 				<div key={w} style={{height: 168}}>
 					<MaskLine
@@ -35,6 +69,7 @@ export const Loop: React.FC<{f: number}> = ({f}) => {
 				<div style={{fontFamily: FONTS.sans, fontSize: 156, fontWeight: 700, letterSpacing: '-0.055em', color: COLORS.text, lineHeight: 1}}>{COPY.repeat}</div>
 			</div>
 		</div>
+		</>
 	);
 };
 

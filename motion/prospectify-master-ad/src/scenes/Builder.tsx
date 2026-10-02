@@ -8,11 +8,15 @@ import {Cursor} from '../components/primitives';
 import {BrowserChrome, ClientSite, lineScale, mono} from '../components/ui';
 import {lerp, path, press, ramp} from '../motion/anim';
 import {PROMPT_RECT, PromptCard} from './Product';
+import {Camera, CamKey, Emoji, Sheen} from '../fx/camera';
+import {Phone, SCREEN} from './pain/screens';
 
 const TILE = 200;
 const TILE_TOP = 1080;
 const tileX = (i: number) => 90 + i * (TILE + (900 - 4 * TILE) / 3);
-const WIN = {x: 90, y: 560, w: 900, h: 860};
+const WIN = {x: 90, y: 560, w: 900, h: 860}; // content base
+const DESK = {x: 50, y: 590, w: 770, h: 736}; // on-screen desktop rect while building
+const PHONE_AT = {x: 700, y: 860, s: 0.5};
 const PITCH = {x: 90, y: 560, w: 900, h: 700};
 const THUMB = {x: 90 + 40, y: 560 + 400, w: 220, h: 210};
 
@@ -45,19 +49,35 @@ export const Builder: React.FC<{f: number}> = ({f}) => {
 	const tilesOut = ramp(f, T.BUILD_START, 10, EASE.exit);
 
 	// build window grows out of the chosen tile
-	const expand = ramp(f, T.BUILD_START, 16, EASE.glide);
+	const expand = ramp(f, T.BUILD_START, 1, EASE.linear); // the camera dive covers the hand-off
 	const toPitch = ramp(f, T.PITCH_IN, 18, EASE.glide);
 	const win = {
-		x: lerp(lerp(tileX(sel), WIN.x, expand), THUMB.x, toPitch),
-		y: lerp(lerp(TILE_TOP, WIN.y, expand), THUMB.y, toPitch),
-		w: lerp(lerp(TILE, WIN.w, expand), THUMB.w, toPitch),
-		h: lerp(lerp(TILE, WIN.h, expand), THUMB.h, toPitch),
+		x: lerp(lerp(tileX(sel), DESK.x, expand), THUMB.x, toPitch),
+		y: lerp(lerp(TILE_TOP, DESK.y, expand), THUMB.y, toPitch),
+		w: lerp(lerp(TILE, DESK.w, expand), THUMB.w, toPitch),
+		h: lerp(lerp(TILE, DESK.h, expand), THUMB.h, toPitch),
 	};
 	const readyFlash = f >= T.SITE_READY ? Math.max(0, 1 - (f - T.SITE_READY) / 20) : 0;
 	const pitchCollapse = lineScale(f, T.SELL_IN - 8);
 
+	const tc = {x: tileX(sel) + TILE / 2, y: TILE_TOP + TILE / 2};
+	const CAM: CamKey[] = [
+		[T.PROMPT_COMPRESS, 540, 960, 1.0],
+		[T.BUILDER_SELECTED - 2, 540, 1010, 1.06, 0, EASE.linear],
+		[T.BUILDER_SELECTED + 3, 520, 1040, 1.1, 0, EASE.exit],
+		[T.PROMPT_ARRIVE - 1, tc.x, tc.y, 5.2, 0, EASE.exit],
+		[T.BUILD_START, 520, 1010, 1.7],
+		[T.BUILD_START + 14, 520, 1010, 1.0, 0, EASE.snap],
+		[T.SITE_READY, 540, 1000, 1.06, 0, EASE.linear],
+		[T.SITE_READY + 8, 540, 990, 1.1, 0, EASE.exit],
+		[T.PITCH_IN + 18, 540, 960, 1.0, 0, EASE.snap],
+		[T.PITCH_COPY, 640, 760, 1.18],
+		[T.SELL_IN, 540, 960, 1.0],
+	];
+	const phoneIn = ramp(f, T.BUILD_START + 6, 18, EASE.snap) * (1 - ramp(f, T.PITCH_IN - 4, 12, EASE.exit));
+
 	return (
-		<>
+		<Camera f={f} keys={CAM}>
 			{/* builder tiles */}
 			{f >= T.BUILDER_LOGOS[0] - 2 &&
 				tilesOut < 1 &&
@@ -71,7 +91,8 @@ export const Builder: React.FC<{f: number}> = ({f}) => {
 							style={{
 								position: 'absolute',
 								left: tileX(i),
-								top: TILE_TOP + (1 - tin) * 36 + (hov ? -8 : 0),
+								top: TILE_TOP + (1 - tin) * 60 + (hov ? -14 : 0) + Math.abs(i - 1.5) * 26,
+								transform: `perspective(1400px) rotateY(${(1.5 - i) * 14}deg) rotateX(${(1 - tin) * 50}deg) translateZ(${hov || (selected && i === sel) ? 60 : 0}px)`,
 								width: TILE,
 								opacity: tin * (selected && i !== sel ? 0.28 : 1) * (i === sel ? (f >= T.BUILD_START ? 0 : 1) : 1 - tilesOut),
 							}}
@@ -210,6 +231,57 @@ export const Builder: React.FC<{f: number}> = ({f}) => {
 					opacity={ramp(f, T.PITCH_COPY - 16, 5) * (1 - ramp(f, T.PITCH_CONFIRM + 6, 8))}
 				/>
 			)}
-		</>
+
+			{/* the same site, mobile — the thing their old site got wrong */}
+			{phoneIn > 0 && (
+				<div style={{position: 'absolute', left: PHONE_AT.x, top: PHONE_AT.y + (1 - phoneIn) * 220, transform: `scale(${PHONE_AT.s}) rotate(${(1 - phoneIn) * 8}deg)`, transformOrigin: '0 0', opacity: phoneIn, zIndex: 8}}>
+					<Phone>
+						<MobileSite f={f} />
+					</Phone>
+				</div>
+			)}
+		</Camera>
+	);
+};
+
+const MS = COLORS.site;
+const MStep: React.FC<{f: number; at: number; children: React.ReactNode; style?: React.CSSProperties}> = ({f, at, children, style}) => {
+	const t = ramp(f, at, 12, EASE.snap);
+	return <div style={{opacity: f >= at ? Math.min(1, t * 2) : 0, transform: `translateY(${(1 - t) * -40}px) scale(${1 + (1 - t) * 0.08})`, ...style}}>{children}</div>;
+};
+const MobileSite: React.FC<{f: number}> = ({f}) => {
+	const s = T.BUILD_STEPS;
+	return (
+		<div style={{position: 'absolute', inset: 0, background: MS.bg, fontFamily: FONTS.sans, color: MS.ink, padding: '70px 34px 0'}}>
+			<MStep f={f} at={s[0]} style={{display: 'flex', alignItems: 'center', height: 70}}>
+				<svg width={40} height={40} viewBox="0 0 24 24">
+					<path d="M12 2.5C9 7 6 10.2 6 14a6 6 0 0 0 12 0c0-3.8-3-7-6-11.5Z" fill={MS.brand} />
+				</svg>
+				<div style={{marginLeft: 12, fontSize: 32, fontWeight: 750, letterSpacing: '-0.03em'}}>Bellwood</div>
+				<div style={{flex: 1}} />
+				<svg width={40} height={40} viewBox="0 0 24 24">
+					<path d="M4 7h16M4 12h16M4 17h16" stroke={MS.ink} strokeWidth={2.4} strokeLinecap="round" />
+				</svg>
+			</MStep>
+			<MStep f={f} at={s[1]} style={{marginTop: 40}}>
+				<div style={{fontSize: 76, fontWeight: 780, letterSpacing: '-0.055em', lineHeight: 0.95}}>
+					Austin’s
+					<br />
+					trusted
+					<br />
+					plumbers.
+				</div>
+				<div style={{fontSize: 28, color: MS.inkDim, marginTop: 18}}>4.8★ from 126 neighbors</div>
+			</MStep>
+			<MStep f={f} at={s[2]} style={{marginTop: 30, height: 260, borderRadius: 26, background: `linear-gradient(120deg, ${MS.brand}, #1C4FB8 50%, ${MS.ink})`, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+				<Emoji c="🔧" size={110} />
+			</MStep>
+			<MStep f={f} at={s[4]} style={{marginTop: 30, height: 104, borderRadius: 22, background: MS.ink, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 36, fontWeight: 700}}>
+				📞 Call now
+			</MStep>
+			<MStep f={f} at={s[4] + 3} style={{marginTop: 16, height: 104, borderRadius: 22, border: `3px solid ${MS.ink}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 36, fontWeight: 700}}>
+				Book online
+			</MStep>
+		</div>
 	);
 };

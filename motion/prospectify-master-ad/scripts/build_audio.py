@@ -248,7 +248,8 @@ K = lambda name: T[name]  # noqa: E731
 for k in T['BUILD_KEYS']:
     sfx.put(key_v(), k, SX['key'] + rng.uniform(-1.5, 1.5), rng.uniform(-0.15, 0.15))
 sfx.put(click_v(), K('BUILD_ENTER'), SX['click'])
-sfx.put(sweep_v(0.25, 500, 3200, 'bell'), K('BUILD_ENTER') + 2, SX['sweep'] - 8)
+sfx.put(sweep_v(0.22, 300, 4200, 'rise', 1.3), K('BUILD_ENTER') - 11, SX['sweep'] - 3)
+sfx.put(sub_v(light=True), K('BUILD_ENTER') + 2, SX['sub'] - 12)
 for j, fr in enumerate(T['SITE_STEPS']):
     sfx.put(tick_v([hz(79), hz(83), hz(86), hz(88), hz(91)][j], 0.016), fr, SX['construct'] - 2)
 sfx.put(lock_v([hz(88), hz(95)]), K('SITE_DONE'), SX['lock'])
@@ -256,15 +257,25 @@ sfx.put(sweep_v(0.14, 2500, 400, 'rise'), K('HOOK_CLEAR') - 8, SX['sweep'] - 6)
 for i, k in enumerate(T['FIND_KEYS']):
     sfx.put(key_v(1 - 0.5 * i / len(T['FIND_KEYS'])), k, SX['key'] + rng.uniform(-1.5, 1), rng.uniform(-0.15, 0.15))
 # STALL → CLOCK_IN: silence. The clock then ticks — every second is a tick you lose.
-for k in range(int((T['CLOCK_ROLL_END'] - T['CLOCK_IN']) / 15) + 1):
-    sfx.put(clock_v(), T['CLOCK_IN'] + k * 15, SX['clock'] - (0 if k % 2 == 0 else 4))
+for k in range(1, 8):  # odometer: one mechanical flip per jump in time (CLOCK_STEP = 10 frames)
+    fr = T['CLOCK_IN'] + 4 + k * 10
+    sfx.put(clock_v(), fr, SX['clock'] + 1)
+    sfx.put(clock_v(), fr + 3, SX['clock'] - 5)
 
 # ACT 2
+sfx.put(sweep_v(0.32, 300, 2600, 'fall', 1.4), K('PAIN_START'), SX['sweep'] - 4)
 for i, c in enumerate(T['PAIN_CUTS']):
+    if i > 0:  # dive: air accelerates into the detail, then the next screen lands
+        sfx.put(sweep_v(11 / FPS, 500, 6000, 'rise', 1.2), c - 11, SX['sweep'] - 1, rng.uniform(-0.3, 0.3))
     sfx.put(tab_v(), c, SX['tab'] + i * 0.4, rng.uniform(-0.4, 0.4))
+    sfx.put(sub_v(light=True), c, SX['sub'] - 16)
+for j in range(12):  # map pins drop
+    sfx.put(tick_v(rng.uniform(1600, 2400), 0.008, 0.03), T['PAIN_START'] + j * 1.2 + 6, SX['data'] + 4, rng.uniform(-0.5, 0.5))
 for i, c in enumerate(T['WORTH_FLICKS']):
     sfx.put(tab_v(), c, SX['tab'] - 3 + i * 0.3, rng.uniform(-0.6, 0.6))
 sfx.put(sweep_v((T['ZERO_IN'] - T['WORTH_START']) / FPS, 300, 3000, 'rise', q=3), K('WORTH_START'), SX['riser'])
+sfx.put(sweep_v(0.6, 4000, 400, 'bell', 1.1), K('WORTH_START'), SX['sweep'] - 2)
+sfx.put(sweep_v(9 / FPS, 3500, 200, 'rise', 1.2), K('ZERO_IN') - 9, SX['sweep'])
 sfx.put(sub_v(light=True), K('ZERO_LOCK'), SX['sub'] - 4)
 
 # ACT 3
@@ -278,8 +289,10 @@ sfx.put(tick_v(hz(95), 0.02), K('WEBPROBLEM_SIGNALS'), SX['tick'] + 1)
 sfx.put(tick_v(hz(95) * 1.06, 0.02), K('WEBPROBLEM_SIGNALS') + 4, SX['tick'])
 
 # ACT 4
-for i, fr in enumerate(T['FIFTY_FILL'][1:]):
-    sfx.put(tick_v(rng.uniform(2400, 3600), 0.004, 0.03), fr, SX['data'] + rng.uniform(-2, 2), rng.uniform(-0.5, 0.5))
+sfx.put(sweep_v(16 / FPS, 2500, 500, 'rise'), K('FIFTY_IN'), SX['sweep'] - 3)
+sfx.put(sweep_v(0.9, 2800, 300, 'bell', 1.0), K('FIFTY_IN') + 16, SX['sweep'] - 6)
+for i, fr in enumerate(T['FIFTY_FILL']):
+    sfx.put(tick_v(rng.uniform(900, 1700), 0.01, 0.04), fr, SX['data'] + 5 + rng.uniform(-2, 2), rng.uniform(-0.6, 0.6))
 for fr in T['TIME_FLICKS']:
     sfx.put(clock_v(), fr, SX['clock'] - 3, rng.uniform(-0.3, 0.3))
 sfx.put(sweep_v((T['SCALE_COLLAPSE'] - T['TIME_LINE']) / FPS, 300, 3500, 'rise', q=3), K('TIME_LINE'), SX['riser'])
@@ -352,7 +365,8 @@ sfx.put(lock_v([B5, E6], 0.18), K('BUILDER_SELECTED') + 1, SX['lock'] - 3, -0.3)
 send = sweep_v((K('PROMPT_ARRIVE') - K('PROMPT_SEND')) / FPS, 600, 5000, 'rise', 1.3)
 pp = np.linspace(0, -0.55, len(send))
 sfx.put(np.vstack([send * np.cos((pp + 1) * np.pi / 4), send * np.sin((pp + 1) * np.pi / 4)]) * np.sqrt(2), K('PROMPT_SEND'), SX['sweep'] + 1)
-sfx.put(sub_v(light=True), K('PROMPT_ARRIVE'), SX['sub'] - 10)
+sfx.put(sub_v(light=True), K('PROMPT_ARRIVE'), SX['sub'] - 7)
+sfx.put(sweep_v(0.3, 3000, 500, 'fall', 1.3), K('BUILD_START'), SX['sweep'] - 5)
 
 # ACT 10
 for j, fr in enumerate(T['BUILD_STEPS']):
@@ -370,6 +384,8 @@ sfx.put(sweep_v(0.2, 700, 2500, 'bell'), K('SOLD_DIALOG'), SX['sweep'] - 10)
 for k in T['AMOUNT_KEYS']:
     sfx.put(key_v(0.9), k, SX['key'] - 2)
 sfx.put(click_v(), K('SAVE_CLICK'), SX['click'])
+sfx.put(sub_v(), K('SOLD'), SX['sub'] - 5)
+sfx.put(click_v(deep=True), K('SOLD'), SX['clickDeep'] + 2)
 for j, n in enumerate((E5, Gs5, B5, E6)):
     sfx.put(bell_v(n, 1.5, 0.5, 0.8), K('SOLD') + j, SX['success'] - j * 1.2, -0.2 + 0.13 * j)
     verb_send.put(bell_v(n, 1.5, 0.5, 0.8), K('SOLD') + j, SX['success'] - 6)

@@ -23,9 +23,12 @@ export const Brand: React.FC<{f: number}> = ({f}) => {
 	const dock = ramp(f, T.LOGO_TO_HEADER, 18, EASE.glide);
 	const toFinal = ramp(f, TO_FINAL, 22, EASE.glide);
 
+	// born at the implosion point (frame centre), rises into place
+	const born = ramp(f, T.REVEAL, 26, EASE.snap);
+	const bigY = lerp(960 - BIG.logo / 2, BIG.logoY, born);
 	let logo = lerp(BIG.logo, HEADER.logo, dock);
 	let x = lerp(BIG.logoX, HEADER.logoX, dock);
-	let y = lerp(BIG.logoY, HEADER.logoY, dock);
+	let y = lerp(bigY, HEADER.logoY, dock);
 	if (toFinal > 0) {
 		logo = lerp(HEADER.logo, FINAL_LOGO.logo, toFinal);
 		x = lerp(HEADER.logoX, FINAL_LOGO.logoX, toFinal);
@@ -54,6 +57,9 @@ export const Brand: React.FC<{f: number}> = ({f}) => {
 					opacity: glow,
 				}}
 			/>
+			{f < T.REVEAL + 40 && (
+				<div style={{position: 'absolute', left: 540 - 400, top: 960 - 400, width: 800, height: 800, borderRadius: 400, border: `3px solid rgba(230,63,109,${0.6 * (1 - ramp(f, T.REVEAL, 34))})`, transform: `scale(${lerp(0.1, 1.4, ramp(f, T.REVEAL, 34, EASE.snap))})`}} />
+			)}
 			<div
 				style={{
 					position: 'absolute',

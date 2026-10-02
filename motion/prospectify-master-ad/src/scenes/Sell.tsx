@@ -5,6 +5,7 @@ import {LEAD} from '../constants/demoData';
 import {Cursor} from '../components/primitives';
 import {Card, lineScale, mono} from '../components/ui';
 import {lerp, path, press, ramp, typed} from '../motion/anim';
+import {Camera, CamKey, Sheen} from '../fx/camera';
 
 const ROWCARD = {x: 90, y: 600, w: 900, h: 250};
 const DIALOG = {x: 130, y: 900, w: 820, h: 560};
@@ -45,8 +46,10 @@ const Field: React.FC<{label: string; value: string; placeholder?: string; activ
 	</div>
 );
 
-const Tile: React.FC<{f: number; at: number; label: string; value: string}> = ({f, at, label, value}) => {
+const Tile: React.FC<{f: number; at: number; label: string; value: number; money?: boolean}> = ({f, at, label, value: target, money}) => {
 	const t = ramp(f, at, 14, EASE.snap);
+	const n = Math.round(target * ramp(f, at + 2, 22, EASE.snap));
+	const value = money ? `$${n.toLocaleString('en-US')}` : String(n);
 	return (
 		<div style={{flex: 1, height: 200, borderRadius: 20, background: '#0E0E13', border: `2px solid ${COLORS.line}`, padding: '26px 26px', opacity: t, transform: `translateY(${(1 - t) * 24}px)`}}>
 			<div style={{...mono, fontSize: 19}}>{label}</div>
@@ -74,8 +77,22 @@ export const Sell: React.FC<{f: number}> = ({f}) => {
 		[T.SAVE_CLICK - 3, 760, 1388],
 	]);
 
+	const CAM: CamKey[] = [
+		[T.SELL_IN, 540, 960, 1.0],
+		[T.MARK_SOLD_CLICK, 700, 800, 1.28],
+		[T.SOLD_DIALOG + 10, 540, 1150, 1.08],
+		[T.SAVE_CLICK, 580, 1290, 1.14],
+		[T.SOLD + 1, 560, 760, 1.38, 0, EASE.exit],
+		[T.SOLD + 18, 540, 860, 1.12, 0, EASE.snap],
+		[T.TRACK_IN, 540, 960, 1.0],
+		[T.TRACK_TILES[0] + 6, 540, 880, 1.14],
+		[T.TRACK_ROW + 24, 540, 1000, 1.04],
+	];
+	const stamp = ramp(f, T.SOLD, 9, EASE.snap);
+	const shake = f >= T.SOLD && f < T.SOLD + 10 ? (1 - (f - T.SOLD) / 10) * 16 : 0;
+
 	return (
-		<>
+		<Camera f={f} keys={CAM} shake={shake}>
 			{f < T.TRACK_IN + 2 && (
 				<>
 					<Card style={{left: ROWCARD.x, top: ROWCARD.y, width: ROWCARD.w, height: ROWCARD.h, transform: `scaleY(${rowOpen})`}}>
@@ -156,9 +173,9 @@ export const Sell: React.FC<{f: number}> = ({f}) => {
 						<div style={{...mono, fontSize: 18, padding: '10px 14px', borderRadius: 10, border: `1.5px solid ${COLORS.line}`}}>DEMO ACCOUNT</div>
 					</div>
 					<div style={{display: 'flex', gap: 18, marginTop: 34}}>
-						<Tile f={f} at={T.TRACK_TILES[0]} label="WEBSITES SOLD" value="1" />
-						<Tile f={f} at={T.TRACK_TILES[1]} label="REVENUE" value={`$${LEAD.sale.amount}`} />
-						<Tile f={f} at={T.TRACK_TILES[2]} label="AVG. SALE" value={`$${LEAD.sale.amount}`} />
+						<Tile f={f} at={T.TRACK_TILES[0]} label="WEBSITES SOLD" value={1} />
+						<Tile f={f} at={T.TRACK_TILES[1]} label="REVENUE" value={1500} money />
+						<Tile f={f} at={T.TRACK_TILES[2]} label="AVG. SALE" value={1500} money />
 					</div>
 					<div style={{...mono, marginTop: 44}}>RECENT SALES</div>
 					<div style={{display: 'flex', alignItems: 'center', gap: 22, marginTop: 18, padding: '22px 0', borderTop: `2px solid ${COLORS.line}`, borderBottom: `2px solid ${COLORS.line}`, opacity: ramp(f, T.TRACK_ROW, 12), transform: `translateY(${(1 - ramp(f, T.TRACK_ROW, 14, EASE.snap)) * 20}px)`}}>
@@ -176,6 +193,32 @@ export const Sell: React.FC<{f: number}> = ({f}) => {
 			)}
 
 			{f >= T.SELL_IN + 4 && f < T.SOLD + 10 && <Cursor x={cur.x} y={cur.y} scale={press(f, T.MARK_SOLD_CLICK) * press(f, T.SAVE_CLICK)} opacity={ramp(f, T.SELL_IN + 4, 6) * (1 - ramp(f, T.SOLD + 2, 8))} blur={Math.min(5, cur.v * 0.1)} />}
-		</>
+			{/* SOLD stamp */}
+			{f >= T.SOLD && f < T.TRACK_IN && (
+				<div
+					style={{
+						position: 'absolute',
+						left: 560,
+						top: 610,
+						padding: '10px 30px',
+						border: `8px solid ${COLORS.accent}`,
+						borderRadius: 18,
+						fontFamily: FONTS.sans,
+						fontSize: 92,
+						fontWeight: 800,
+						letterSpacing: '0.04em',
+						color: COLORS.accent,
+						transform: `rotate(-9deg) scale(${lerp(2.6, 1, stamp)})`,
+						opacity: Math.min(1, stamp * 1.4) * (1 - ramp(f, T.TRACK_IN - 8, 8)),
+						filter: stamp < 0.95 ? `blur(${(1 - stamp) * 10}px)` : undefined,
+						background: 'rgba(5,5,5,0.88)',
+						boxShadow: `0 0 ${60 * (1 - stamp) + 20}px rgba(230,63,109,0.35)`,
+						zIndex: 20,
+					}}
+				>
+					SOLD
+				</div>
+			)}
+		</Camera>
 	);
 };

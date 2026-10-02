@@ -89,7 +89,7 @@ C['INSIGHT_END'] = E('v_demand', 0.30)
 
 # ── ACT 4 — SCALE ────────────────────────────────────────────────────────────
 C['FIFTY_IN'] = S('v_fifty', -0.10)
-C['FIFTY_FILL'] = [C['FIFTY_IN'] + 6 + round(i * 0.7) for i in range(50)]
+C['FIFTY_FILL'] = [C['FIFTY_IN'] + 14 + round(i * 0.9) for i in range(50)]
 C['TIME_LINE'] = S('v_time')
 C['TIME_FLICKS'] = keys(S('v_time'), 10, 7, -0.4)
 C['SCALE_COLLAPSE'] = E('v_time', 0.05)
@@ -168,9 +168,9 @@ C['SAVE_CLICK'] = E('v_sells', 0.05)
 C['SOLD'] = C['SAVE_CLICK'] + 3
 
 # ── ACT 12 — TRACK ───────────────────────────────────────────────────────────
-C['TRACK_IN'] = S('v_working', -0.25)
+C['TRACK_IN'] = S('v_working', 0.12)
 C['TRACK_HEADLINE'] = S('v_working')
-C['TRACK_TILES'] = [S('v_working', 0.05) + i * 6 for i in range(3)]
+C['TRACK_TILES'] = [S('v_working', 0.32) + i * 6 for i in range(3)]
 C['TRACK_ROW'] = C['TRACK_TILES'][-1] + 8
 C['TRACK_END'] = E('v_working', 0.40)
 
