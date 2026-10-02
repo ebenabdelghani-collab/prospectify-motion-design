@@ -5,6 +5,7 @@ import {renderMedia, selectComposition} from '@remotion/renderer';
 import {execFileSync} from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
+import {webpackOverride} from '../webpack-override.mjs';
 
 const BROWSER = '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell';
 const [variant = 'organic', scaleArg = '2', out = 'renders/prospectify-master-4k60.mp4', crfArg = '12'] = process.argv.slice(2);
@@ -14,7 +15,7 @@ const id = variant === 'paid' ? `${base}Paid` : base;
 const audioPrefix = process.env.AUDIO ?? 'mix';
 const tmp = `renders/_video-${variant}-${scale}.mp4`;
 
-const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
+const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts'), webpackOverride});
 const inputProps = {variant, withAudio: false};
 const composition = await selectComposition({serveUrl, id, inputProps, browserExecutable: BROWSER, chromiumOptions: {gl: 'angle'}});
 let last = -1;
