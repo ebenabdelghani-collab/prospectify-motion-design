@@ -92,7 +92,8 @@ C['WIN_OPEN'] = [
     C['MAN_BEATS'][5], C['MAN_BEATS'][5] + 6,
     C['MAN_BEATS'][6],
 ]
-C['WORTH_FLICKS'] = keys(S('v_worth', 0.15), 12, 9, -0.55)
+_a, _b = S('v_worth', 0.08), S('v_zero', -0.36)
+C['WORTH_FLICKS'] = [round(_a + (_b - _a) * (1 - (1 - i / 9) ** 1.6)) for i in range(10)]
 C['FREEZE_ZERO'] = S('v_zero', -0.30)
 C['ZERO_IN'] = S('v_zero', -0.12)
 C['ZERO_OUT'] = S('v_thing', -0.10)
@@ -100,19 +101,19 @@ C['ZERO_OUT'] = S('v_thing', -0.10)
 # ── 3 · INSIGHT ──────────────────────────────────────────────────────────────
 C['CARDS_IN'] = S('v_thing', 0.25)
 C['QUESTION_IN'] = E('v_thing', 0.05)
-C['INS_CURSOR_IN'] = E('v_thing', 0.30)
-C['INS_HOVER_A'] = E('v_thing', 0.62)
-C['INS_HOVER_B'] = E('v_thing', 1.05)
+C['INS_CURSOR_IN'] = E('v_thing', 0.08)
+C['INS_HOVER_A'] = E('v_thing', 0.30)
+C['INS_HOVER_B'] = E('v_thing', 0.62)
 C['PICK_B'] = S('v_nowebsite', -0.12)
 C['A_DIM'] = W('v_nowebsite', "doesn't")
-C['B_CENTER'] = S('v_better', -0.05)
-C['DEMAND_IN'] = S('v_demand', -0.04)
-C['DEMAND_SIGNALS'] = W('v_demand', 'customers', -0.05)
+C['B_CENTER'] = E('v_nowebsite', 0.0)
+C['DEMAND_IN'] = S('v_better', -0.04)
+C['DEMAND_SIGNALS'] = W('v_better', 'customers', -0.05)
 C['PROBLEM_IN'] = S('v_holding', -0.02)
 C['PROBLEM_SIGNALS'] = W('v_holding', 'holding', -0.05)
 
 # ── 4 · SCALE ────────────────────────────────────────────────────────────────
-C['GREAT_IN'] = S('v_great', -0.02)
+C['GREAT_IN'] = S('v_fifty', -0.35)
 C['FIFTY_IN'] = S('v_fifty', -0.06)
 C['FIFTY_FILL'] = keys(S('v_fifty', 0.15), 50, 0.9, 0.0)
 C['TIME_IN'] = S('v_time', -0.05)
@@ -120,8 +121,8 @@ C['NOISE_PEAK'] = E('v_time', 0.05)
 C['FREEZE'] = E('v_time', 0.18)
 
 # ── 5 · REVEAL ───────────────────────────────────────────────────────────────
-C['SIGNAL_IN'] = C['FREEZE'] + 16
-C['SIGNAL_SWEEP_END'] = C['SIGNAL_IN'] + 46
+C['SIGNAL_IN'] = C['FREEZE'] + 10
+C['SIGNAL_SWEEP_END'] = C['SIGNAL_IN'] + 40
 C['SURVIVOR_PUSH'] = C['SIGNAL_SWEEP_END'] - 6
 C['SCAN'] = S('v_built', -0.62)
 C['LOCK'] = S('v_built', -0.22)
@@ -144,10 +145,10 @@ C['LEAD_HOVER'] = S('v_why', -0.40)
 C['LEAD_SELECT'] = S('v_why', -0.12)
 C['WHY_IN'] = S('v_why', 0.12)
 C['WHY_REASONS'] = keys(S('v_why', 0.30), 3, 9)
-C['WHY_READY'] = E('v_why', 0.25)
+C['WHY_READY'] = E('v_why', 0.05)
 
 # ── 7 · DOSSIER: CONTACT / ANGLE / OUTREACH ──────────────────────────────────
-C['DOSSIER_IN'] = S('v_contact', -0.62)
+C['DOSSIER_IN'] = S('v_contact', -0.50)
 C['CONTACT_SIGNAL'] = S('v_contact', -0.18)
 C['CONTACT_READY'] = S('v_contact', 0.42)
 C['ANGLE_SIGNAL'] = S('v_angle', -0.12)
@@ -160,8 +161,8 @@ C['COPIED'] = C['COPY_CLICK'] + 4
 C['OUTREACH_READY'] = S('v_ready', -0.02)
 
 # ── 8 · BUILD PROMPT ─────────────────────────────────────────────────────────
-C['PROMPT_FOCUS'] = E('v_ready', 0.25)
-C['PROMPT_HOVER'] = S('v_prompt', -0.42)
+C['PROMPT_FOCUS'] = E('v_ready', 0.10)
+C['PROMPT_HOVER'] = S('v_prompt', -0.32)
 C['PROMPT_CLICK'] = S('v_prompt', -0.14)
 C['PROMPT_EXPAND'] = C['PROMPT_CLICK'] + 4
 C['PROMPT_LABELS'] = fit(S('v_prompt', 0.55), E('v_exact', -0.55), 11)
@@ -171,7 +172,7 @@ C['PROMPT_READY'] = E('v_exact', 0.10)
 # ── 9 · BUILDER CHOICE ───────────────────────────────────────────────────────
 C['BUILDER_IN'] = S('v_anywhere', -0.62)
 C['BUILDER_TILES'] = keys(S('v_anywhere', -0.30), 4, 5)
-C['BUILDER_HOVERS'] = [E('v_anywhere', -0.30), E('v_anywhere', 0.05), E('v_anywhere', 0.38)]
+C['BUILDER_HOVERS'] = [E('v_anywhere', -0.42), E('v_anywhere', -0.16), E('v_anywhere', 0.08)]
 C['BUILDER_CLICK'] = S('v_paste', -0.62)
 
 # ── 10 · TRANSFER → WEBSITE → PITCH ──────────────────────────────────────────
@@ -181,10 +182,10 @@ C['WEB_STEPS'] = keys(S('v_buildw', -0.22), 8, 10)  # grid, header, hero, CTA, s
 C['WEB_MOBILE'] = C['WEB_STEPS'][-1] + 14
 C['WEB_LOCK'] = S('v_pitch', -0.32)
 C['PITCH_IN'] = S('v_pitch', -0.06)
-C['PITCH_SENT'] = E('v_pitch', 0.25)
+C['PITCH_SENT'] = E('v_pitch', 0.05)
 
 # ── 11 · SELL + TRACK ────────────────────────────────────────────────────────
-C['SELL_IN'] = S('v_close', -0.55)
+C['SELL_IN'] = S('v_close', -0.45)
 C['SELL_STATUS'] = keys(S('v_close', -0.30), 3, 14)  # Contacted → Interested → Signed
 C['MARK_HOVER'] = E('v_close', -0.10)
 C['MARK_CLICK'] = E('v_close', 0.12)
@@ -192,14 +193,14 @@ C['MODAL_IN'] = C['MARK_CLICK'] + 4
 C['AMOUNT_KEYS'] = keys(C['MODAL_IN'] + 14, 3, 4)
 C['CONFIRM_CLICK'] = S('v_track', -0.30)
 C['SOLD'] = S('v_track', -0.12)
-C['TRACK_IN'] = W('v_track', 'actually', -0.15)
+C['TRACK_IN'] = S('v_track', 0.05)
 C['TRACK_TILES'] = keys(C['TRACK_IN'] + 6, 4, 6)
 
 # ── 12 · LOOP + CTA ──────────────────────────────────────────────────────────
-C['LOOP_IN'] = E('v_track', 0.30)
-C['LOOP_NODES'] = keys(C['LOOP_IN'] + 8, 6, 12)
-C['LOOP_CLOSE'] = C['LOOP_NODES'][-1] + 18
-C['LOOP_REPEAT'] = C['LOOP_CLOSE'] + 6
+C['LOOP_IN'] = E('v_track', 0.55)
+C['LOOP_NODES'] = keys(C['LOOP_IN'] + 6, 6, 9)
+C['LOOP_CLOSE'] = C['LOOP_NODES'][-1] + 12
+C['LOOP_REPEAT'] = C['LOOP_CLOSE'] + 3
 C['LOOP_OUT'] = S('v_youbuild', -0.30)
 C['FINAL_LOGO'] = S('v_youbuild', -0.20)
 C['LINE1'] = S('v_youbuild', -0.04)

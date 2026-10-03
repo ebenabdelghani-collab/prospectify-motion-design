@@ -5,6 +5,7 @@ import {Icon} from '../kit/icons';
 import {Glow, LockCorners, Scan, SignalLine} from '../kit/signal';
 import {Kinetic, Mono} from '../kit/type';
 import {Logo} from '../kit/ui';
+import {ALL_PHOTOS, Photo} from '../kit/media';
 
 /**
  * 4 · SCALE + 5 · REVEAL — one world.
@@ -99,24 +100,22 @@ export const Field: React.FC<{f: number}> = ({f}) => {
 									borderRadius: 16,
 									background: '#141416',
 									border: `1.5px solid ${sel > 0 ? `rgba(${C.accentRGB},${0.25 + 0.5 * sel})` : `rgba(255,255,255,${0.1 + noise * 0.06})`}`,
-									opacity: t * lerp(1, 0.07, dim),
+									opacity: t * lerp(1, 0.12, dim),
 									transform: `scale(${lerp(0.6, 1, t) * lerp(1, 0.86, dim)})`,
-									filter: dim > 0.05 ? `blur(${dim * 2}px)` : undefined,
-									padding: '12px 14px',
+									filter: dim > 0.05 ? `blur(${dim * 1.5}px) grayscale(${dim})` : undefined,
+									overflow: 'hidden',
 									boxSizing: 'border-box',
 								}}
 							>
-								<div style={{display: 'flex', alignItems: 'center', gap: 8}}>
-									<Icon n={isS && f >= T.FREEZE ? 'utensils' : ic} size={18} color={isS && sel > 0 ? C.accent : C.text2} sw={2} />
-									<div style={{fontFamily: FONT.sans, fontSize: 13.5, fontWeight: 650, color: C.text2, whiteSpace: 'nowrap', overflow: 'hidden'}}>{isS ? 'Bella Forno' : NAMES[n.i % NAMES.length]}</div>
+								<Photo n={isS ? 'pizza_4' : ALL_PHOTOS[(n.i * 7) % ALL_PHOTOS.length]} w={NW} h={60} />
+								<div style={{position: 'absolute', left: 8, top: 8, width: 26, height: 26, borderRadius: 8, background: 'rgba(0,0,0,0.55)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+									<Icon n={isS && f >= T.FREEZE ? 'utensils' : ic} size={15} color={isS && sel > 0 ? C.accentBright : '#fff'} sw={2.2} />
 								</div>
-								<div style={{marginTop: 14, height: 6, borderRadius: 3, background: 'rgba(255,255,255,0.07)', overflow: 'hidden'}}>
-									<div style={{width: `${(isS && f >= T.FREEZE ? 1 : prog) * 100}%`, height: '100%', background: isS && sel > 0 ? C.grad : 'rgba(255,255,255,0.32)'}} />
-								</div>
-								<div style={{marginTop: 10, display: 'flex', gap: 5}}>
-									{[0, 1, 2, 3].map((k) => (
-										<div key={k} style={{flex: 1, height: 5, borderRadius: 3, background: `rgba(255,255,255,${k <= Math.floor(prog * 4) ? 0.22 : 0.06})`}} />
-									))}
+								<div style={{padding: '6px 10px 0'}}>
+									<div style={{fontFamily: FONT.sans, fontSize: 13, fontWeight: 700, color: C.text, whiteSpace: 'nowrap', overflow: 'hidden'}}>{isS ? 'Bella Forno' : NAMES[n.i % NAMES.length]}</div>
+									<div style={{marginTop: 6, height: 4, borderRadius: 2, background: 'rgba(255,255,255,0.08)', overflow: 'hidden'}}>
+										<div style={{width: `${(isS && f >= T.FREEZE ? 1 : prog) * 100}%`, height: '100%', background: isS && sel > 0 ? C.grad : 'rgba(255,255,255,0.45)'}} />
+									</div>
 								</div>
 							</div>
 						);

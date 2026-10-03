@@ -17,3 +17,15 @@
 - The legacy og-image and the Vite favicon (obsolete).
 - Any third-party UI or logo in the manual-hunt act (neutral generic windows only).
 - Stock footage, stock music or AI-generated imagery.
+
+## v2 — real imagery (founder feedback: "no grey visuals, real Maps / Instagram examples")
+| Asset | Source | License | Used in |
+|---|---|---|---|
+| 83 photos (food, restaurants, cafés, nails, barber, florist, bars) | Openverse search → original hosts; each file is listed in `motion/prospectify-master-ad/public/final/photos/CREDITS.json` (title, creator, source URL) | **All CC0, public domain**: no attribution required, commercial use allowed | Manual-hunt windows (Maps sheet, list, reviews, social profile, old site), insight cards, the 50-node field, client websites, Instagram-style grids |
+| Real map of central and East Austin | OpenStreetMap standard tiles, zoom 16, 8×10 tiles fetched once and stitched → `public/final/map/east-austin-z16.png` | © OpenStreetMap contributors (ODbL); the attribution is rendered on every map view | Maps windows |
+
+**Interfaces.**
+- The Maps, social profile, search and spreadsheet windows are faithful *generic* recreations: light UI and real layouts.
+- They carry **no Google or Instagram logos or wordmarks**. The tab titles say "Maps", "@handle", "Search" and "Sheets".
+- The businesses are fictional (demo).
+- Photos of identifiable people were excluded. Review avatars are initials, not faces.

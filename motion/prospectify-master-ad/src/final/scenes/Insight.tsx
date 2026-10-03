@@ -4,6 +4,7 @@ import {Icon, Star} from '../kit/icons';
 import {Cursor} from '../kit/cursor';
 import {Kinetic, Mono} from '../kit/type';
 import {BIZ_A, BIZ_B} from '../data';
+import {BIZ_PHOTOS, Photo} from '../kit/media';
 
 /**
  * 3 · INSIGHT — a genuinely useful lesson before any product appears.
@@ -17,7 +18,7 @@ const Row: React.FC<{icon: string; text: string; hi?: number; color?: string}> =
 	</div>
 );
 
-const Card: React.FC<{letter: string; name: string; kind: string; rating: number; reviews: number; children: React.ReactNode; hover?: number; picked?: number; style?: React.CSSProperties}> = ({letter, name, kind, rating, reviews, children, hover = 0, picked = 0, style}) => (
+const Card: React.FC<{letter: string; name: string; kind: string; rating: number; reviews: number; photos: string[]; children: React.ReactNode; hover?: number; picked?: number; dimP?: number; style?: React.CSSProperties}> = ({letter, name, kind, rating, reviews, photos, children, hover = 0, picked = 0, dimP = 0, style}) => (
 	<div
 		style={{
 			position: 'absolute',
@@ -26,11 +27,16 @@ const Card: React.FC<{letter: string; name: string; kind: string; rating: number
 			background: '#141416',
 			border: `${1.5 + picked * 1}px solid rgba(255,255,255,${0.1 + hover * 0.12 + picked * 0.45})`,
 			boxShadow: `0 40px 100px rgba(0,0,0,0.5)${picked ? `, 0 0 0 ${8 * picked}px rgba(255,255,255,${0.04 * picked})` : ''}`,
-			padding: '34px 40px 30px',
+			padding: '18px 22px 24px',
 			...style,
 		}}
 	>
-		<div style={{display: 'flex', alignItems: 'flex-start', gap: 26}}>
+		<div style={{display: 'flex', gap: 6, height: 132, borderRadius: 18, overflow: 'hidden', marginBottom: 20, filter: dimP > 0 ? `grayscale(${dimP})` : undefined}}>
+			{photos.slice(0, 3).map((p, i) => (
+				<Photo key={p + i} n={p} w={i === 0 ? 400 : 240} h={132} />
+			))}
+		</div>
+		<div style={{display: 'flex', alignItems: 'flex-start', gap: 26, padding: '0 18px'}}>
 			<div style={{width: 74, height: 74, borderRadius: 20, border: `2px solid rgba(255,255,255,${0.25 + picked * 0.6})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT.sans, fontSize: 40, fontWeight: 800, color: C.text, flexShrink: 0, background: picked ? `rgba(255,255,255,${0.1 * picked})` : 'transparent'}}>{letter}</div>
 			<div style={{flex: 1}}>
 				<div style={{fontFamily: FONT.sans, fontSize: 40, fontWeight: 720, color: C.text, letterSpacing: '-0.025em'}}>{name}</div>
@@ -39,8 +45,8 @@ const Card: React.FC<{letter: string; name: string; kind: string; rating: number
 				</div>
 			</div>
 		</div>
-		<div style={{height: 1, background: C.line, margin: '24px 0 14px'}} />
-		{children}
+		<div style={{height: 1, background: C.line, margin: '18px 18px 10px'}} />
+		<div style={{padding: '0 18px'}}>{children}</div>
 	</div>
 );
 
@@ -58,13 +64,13 @@ export const Insight: React.FC<{f: number}> = ({f}) => {
 	const leave = ramp(f, T.FIFTY_IN - 2, 26, EASE.CAMERA); // hands over to the 50-node field
 	const great = ramp(f, T.GREAT_IN, 10);
 	// layout
-	const aY = lerp(lerp(700, 640, inA), 380, center) - aDim * 20;
-	const bY = lerp(lerp(1220, 1080, inB), 760, center);
+	const aY = lerp(lerp(600, 540, inA), 300, center) - aDim * 20;
+	const bY = lerp(lerp(1100, 1010, inB), 600, center);
 	const headOut = (at: number) => ramp(f, at, 10, EASE.EXIT);
 	return (
 		<div style={{position: 'absolute', inset: 0, opacity: 1 - leave, transform: `scale(${lerp(1, 0.55, leave)})`, transformOrigin: '540px 1000px', filter: leave > 0.02 ? `blur(${leave * 6}px)` : undefined}}>
 			{/* headline track */}
-			<div style={{position: 'absolute', left: 90, top: 300, width: 900}}>
+			<div style={{position: 'absolute', left: 90, top: 250, width: 900}}>
 				{f < T.PICK_B + 2 && (
 					<div style={{opacity: 1 - headOut(T.PICK_B - 2)}}>
 						<Kinetic f={f} inAt={T.QUESTION_IN} text={'Which one would\nyou pitch?'} size={86} weight={760} stagger={3} />
@@ -78,22 +84,12 @@ export const Insight: React.FC<{f: number}> = ({f}) => {
 						</div>
 					</div>
 				)}
-				{f >= T.B_CENTER - 2 && f < T.DEMAND_IN + 2 && (
-					<div style={{opacity: 1 - headOut(T.DEMAND_IN - 4)}}>
-						<Kinetic f={f} inAt={T.VO.v_better.start - 2} text="The better opportunity?" size={86} weight={760} stagger={3} />
-					</div>
-				)}
 				{f >= T.DEMAND_IN - 2 && f < T.GREAT_IN + 2 && (
 					<div style={{opacity: 1 - headOut(T.GREAT_IN - 2), position: 'absolute', top: -120}}>
 						<Kinetic f={f} inAt={T.DEMAND_IN} text="Demand first." size={112} weight={800} stagger={4} />
 						<div style={{marginTop: 10}}>
 							<Kinetic f={f} inAt={T.PROBLEM_IN} text="Website problem second." size={64} weight={680} color={C.text2} stagger={3} />
 						</div>
-					</div>
-				)}
-				{f >= T.GREAT_IN && (
-					<div style={{opacity: great * (1 - ramp(f, T.FIFTY_IN - 6, 8, EASE.EXIT))}}>
-						<Kinetic f={f} inAt={T.GREAT_IN} text="Great." size={112} weight={800} />
 					</div>
 				)}
 			</div>
@@ -104,6 +100,8 @@ export const Insight: React.FC<{f: number}> = ({f}) => {
 				kind={BIZ_A.kind}
 				rating={BIZ_A.rating}
 				reviews={BIZ_A.reviews}
+				photos={BIZ_PHOTOS.lumen}
+				dimP={aDim}
 				hover={hoverA}
 				style={{left: 90, top: aY, opacity: inA * lerp(1, 0.3, aDim) * (1 - ramp(f, T.B_CENTER, 18, EASE.EXIT)), transform: `translateX(${lerp(-60, 0, inA) - ramp(f, T.B_CENTER, 24, EASE.EXIT) * 140}px) scale(${lerp(1, 0.96, aDim)})`, filter: aDim > 0.05 ? `saturate(${1 - aDim})` : undefined}}
 			>
@@ -118,6 +116,7 @@ export const Insight: React.FC<{f: number}> = ({f}) => {
 				kind={BIZ_B.kind}
 				rating={BIZ_B.rating}
 				reviews={BIZ_B.reviews}
+				photos={BIZ_PHOTOS.bella}
 				hover={hoverB}
 				picked={picked}
 				style={{left: 90, top: bY, opacity: inB, transform: `translateX(${lerp(60, 0, inB)}px) scale(${1 + 0.05 * ramp(f, T.B_CENTER + 20, T.GREAT_IN - T.B_CENTER - 20, EASE.SOFT)})`, transformOrigin: '50% 30%'}}

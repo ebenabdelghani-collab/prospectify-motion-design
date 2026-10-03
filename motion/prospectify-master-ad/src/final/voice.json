@@ -1,261 +1,247 @@
 {
   "v_build": {
     "text": "You can build a website in forty minutes now.",
-    "gapBefore": 1.1,
-    "seconds": 2.2979,
+    "gapBefore": 0.9,
+    "seconds": 2.2022,
     "act": "hook",
-    "speed": 1.02
+    "speed": 1.12
   },
   "v_find": {
-    "text": "But finding someone worth pitching it to?",
-    "gapBefore": 0.9,
-    "seconds": 2.015,
+    "text": "But finding someone to actually pay you for it?",
+    "gapBefore": 0.5,
+    "seconds": 2.3315,
     "act": "hook",
-    "speed": 1.0
+    "speed": 1.1
   },
   "v_night": {
-    "text": "That can still take all night.",
-    "gapBefore": 1.2,
-    "seconds": 1.4895,
+    "text": "That takes all night.",
+    "gapBefore": 0.55,
+    "seconds": 1.1728,
     "act": "hook",
-    "speed": 0.98
+    "speed": 1.05
   },
   "v_maps": {
-    "text": "So you open Maps.",
-    "gapBefore": 0.4,
-    "seconds": 1.083,
+    "text": "Open Maps.",
+    "gapBefore": 0.25,
+    "seconds": 0.7849,
     "act": "manual",
-    "speed": 1.08
+    "speed": 1.18
   },
   "v_reviews": {
     "text": "Check the reviews.",
-    "gapBefore": 0.1,
-    "seconds": 0.9787,
+    "gapBefore": 0.05,
+    "seconds": 0.9446,
     "act": "manual",
-    "speed": 1.1
+    "speed": 1.2
   },
   "v_site": {
-    "text": "Open their website.",
-    "gapBefore": 0.08,
-    "seconds": 1.0735,
+    "text": "Their website.",
+    "gapBefore": 0.05,
+    "seconds": 0.7389,
     "act": "manual",
-    "speed": 1.1
+    "speed": 1.2
   },
   "v_insta": {
-    "text": "Check Instagram.",
-    "gapBefore": 0.08,
-    "seconds": 0.9419,
+    "text": "Their Instagram.",
+    "gapBefore": 0.05,
+    "seconds": 0.8623,
     "act": "manual",
-    "speed": 1.12
+    "speed": 1.2
   },
   "v_owner": {
-    "text": "Try to find the owner.",
-    "gapBefore": 0.08,
-    "seconds": 1.0646,
+    "text": "Who's the owner?",
+    "gapBefore": 0.05,
+    "seconds": 0.8574,
     "act": "manual",
-    "speed": 1.12
+    "speed": 1.18
   },
   "v_email": {
-    "text": "Find an email.",
-    "gapBefore": 0.08,
-    "seconds": 0.9138,
+    "text": "Is there even an email?",
+    "gapBefore": 0.05,
+    "seconds": 1.1813,
     "act": "manual",
-    "speed": 1.12
+    "speed": 1.18
   },
   "v_worth": {
-    "text": "Figure out if they're even worth contacting...",
-    "gapBefore": 0.1,
-    "seconds": 2.1837,
+    "text": "Is this one even worth it?",
+    "gapBefore": 0.08,
+    "seconds": 1.3811,
     "act": "manual",
-    "speed": 1.1
+    "speed": 1.16
   },
   "v_zero": {
-    "text": "and you still haven't written the pitch.",
-    "gapBefore": 0.3,
-    "seconds": 1.6893,
+    "text": "And you haven't sent a single pitch.",
+    "gapBefore": 0.2,
+    "seconds": 1.567,
     "act": "manual",
-    "speed": 1.0
+    "speed": 1.08
   },
   "v_thing": {
-    "text": "And here's the thing.",
-    "gapBefore": 1.0,
-    "seconds": 1.0515,
+    "text": "Here's the thing.",
+    "gapBefore": 0.65,
+    "seconds": 0.8571,
     "act": "insight",
-    "speed": 0.97
+    "speed": 1.08
   },
   "v_nowebsite": {
-    "text": "No website doesn't automatically mean good client.",
-    "gapBefore": 1.6,
-    "seconds": 2.8745,
+    "text": "No website doesn't mean good client.",
+    "gapBefore": 1.0,
+    "seconds": 1.972,
     "act": "insight",
-    "speed": 0.97
+    "speed": 1.08
   },
   "v_better": {
-    "text": "The better opportunity?",
-    "gapBefore": 0.35,
-    "seconds": 1.2505,
+    "text": "The best ones already have customers...",
+    "gapBefore": 0.2,
+    "seconds": 1.9848,
     "act": "insight",
-    "speed": 0.96
-  },
-  "v_demand": {
-    "text": "A business that already has customers...",
-    "gapBefore": 0.3,
-    "seconds": 2.0541,
-    "act": "insight",
-    "speed": 0.96
+    "speed": 1.08
   },
   "v_holding": {
-    "text": "but a website holding it back.",
-    "gapBefore": 0.2,
-    "seconds": 1.6531,
+    "text": "and a website that's holding them back.",
+    "gapBefore": 0.1,
+    "seconds": 1.829,
     "act": "insight",
-    "speed": 0.95
-  },
-  "v_great": {
-    "text": "Great.",
-    "gapBefore": 0.8,
-    "seconds": 0.6218,
-    "act": "scale",
-    "speed": 1.0
+    "speed": 1.08
   },
   "v_fifty": {
     "text": "Now find fifty of those.",
-    "gapBefore": 0.25,
-    "seconds": 1.4386,
+    "gapBefore": 0.4,
+    "seconds": 1.372,
     "act": "scale",
-    "speed": 1.02
+    "speed": 1.12
   },
   "v_time": {
-    "text": "That's where your time disappears.",
-    "gapBefore": 0.6,
-    "seconds": 1.5888,
+    "text": "That's your whole week, gone.",
+    "gapBefore": 0.25,
+    "seconds": 1.2283,
     "act": "scale",
-    "speed": 1.02
+    "speed": 1.1
   },
   "v_built": {
-    "text": "That's what Prospectify is built for.",
+    "text": "That's exactly what Prospectify does.",
     "gapBefore": 1.9,
-    "seconds": 2.0713,
+    "seconds": 2.1624,
     "act": "reveal",
-    "speed": 0.98
+    "speed": 1.06
   },
   "v_finds": {
     "text": "It finds local businesses worth pitching...",
-    "gapBefore": 1.5,
-    "seconds": 2.2902,
+    "gapBefore": 1.2,
+    "seconds": 2.0842,
     "act": "product",
-    "speed": 1.0
+    "speed": 1.12
   },
   "v_why": {
     "text": "and tells you why.",
-    "gapBefore": 0.4,
-    "seconds": 1.0322,
+    "gapBefore": 0.15,
+    "seconds": 0.966,
     "act": "product",
-    "speed": 0.98
+    "speed": 1.1
   },
   "v_contact": {
     "text": "The contact.",
-    "gapBefore": 0.9,
-    "seconds": 0.8625,
+    "gapBefore": 0.75,
+    "seconds": 0.8509,
     "act": "ready",
-    "speed": 1.0
+    "speed": 1.1
   },
   "v_angle": {
     "text": "The angle.",
-    "gapBefore": 0.45,
-    "seconds": 0.6895,
+    "gapBefore": 0.3,
+    "seconds": 0.6906,
     "act": "ready",
-    "speed": 1.0
+    "speed": 1.1
   },
   "v_outreach": {
-    "text": "The outreach.",
-    "gapBefore": 0.45,
-    "seconds": 0.8257,
+    "text": "The message.",
+    "gapBefore": 0.3,
+    "seconds": 0.736,
     "act": "ready",
-    "speed": 1.0
+    "speed": 1.1
   },
   "v_ready": {
     "text": "Ready.",
-    "gapBefore": 1.25,
-    "seconds": 0.6078,
+    "gapBefore": 0.85,
+    "seconds": 0.577,
     "act": "ready",
-    "speed": 0.96
+    "speed": 1.05
   },
   "v_prompt": {
-    "text": "And it even prepares the website prompt...",
-    "gapBefore": 1.0,
-    "seconds": 2.1174,
+    "text": "And it even writes the website prompt...",
+    "gapBefore": 0.75,
+    "seconds": 1.9327,
     "act": "prompt",
-    "speed": 0.95
+    "speed": 1.05
   },
   "v_exact": {
     "text": "for that exact business.",
-    "gapBefore": 0.35,
-    "seconds": 1.4218,
+    "gapBefore": 0.2,
+    "seconds": 1.3961,
     "act": "prompt",
-    "speed": 0.94
+    "speed": 1.04
   },
   "v_anywhere": {
-    "text": "Then build it wherever you want.",
-    "gapBefore": 1.15,
-    "seconds": 1.61,
+    "text": "Build it wherever you want.",
+    "gapBefore": 0.9,
+    "seconds": 1.3223,
     "act": "builder",
-    "speed": 1.0
+    "speed": 1.1
   },
   "v_paste": {
     "text": "Paste.",
-    "gapBefore": 1.35,
-    "seconds": 0.6193,
+    "gapBefore": 0.95,
+    "seconds": 0.6196,
     "act": "build",
-    "speed": 1.0
+    "speed": 1.05
   },
   "v_buildw": {
     "text": "Build.",
-    "gapBefore": 0.55,
-    "seconds": 0.5718,
+    "gapBefore": 0.4,
+    "seconds": 0.5707,
     "act": "build",
-    "speed": 1.0
+    "speed": 1.05
   },
   "v_pitch": {
-    "text": "Pitch.",
-    "gapBefore": 1.75,
-    "seconds": 0.5831,
+    "text": "Pitch!",
+    "gapBefore": 1.3,
+    "seconds": 0.5686,
     "act": "build",
-    "speed": 1.0
+    "speed": 1.05
   },
   "v_close": {
-    "text": "And when you close one...",
-    "gapBefore": 0.9,
-    "seconds": 1.2253,
+    "text": "Close the deal...",
+    "gapBefore": 0.8,
+    "seconds": 0.8845,
     "act": "sell",
-    "speed": 1.0
+    "speed": 1.1
   },
   "v_track": {
-    "text": "track what's actually working.",
-    "gapBefore": 1.35,
-    "seconds": 1.4519,
+    "text": "and track what's working.",
+    "gapBefore": 0.9,
+    "seconds": 1.1888,
     "act": "track",
-    "speed": 1.0
+    "speed": 1.1
   },
   "v_youbuild": {
     "text": "You build the website.",
-    "gapBefore": 2.4,
-    "seconds": 1.2326,
+    "gapBefore": 2.45,
+    "seconds": 1.1719,
     "act": "cta",
-    "speed": 0.94
+    "speed": 1.02
   },
   "v_wefind": {
     "text": "Prospectify finds the client.",
-    "gapBefore": 0.45,
-    "seconds": 1.8814,
+    "gapBefore": 0.3,
+    "seconds": 1.812,
     "act": "cta",
-    "speed": 0.94
+    "speed": 1.02
   },
   "v_start": {
-    "text": "Start free.",
-    "gapBefore": 0.7,
-    "seconds": 0.9038,
+    "text": "Start free today.",
+    "gapBefore": 0.5,
+    "seconds": 1.117,
     "act": "cta",
-    "speed": 0.93
+    "speed": 1.0
   }
 }

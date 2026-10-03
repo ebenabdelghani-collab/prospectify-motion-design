@@ -1,0 +1,666 @@
+{
+ "pizza_0.jpg": {
+  "title": null,
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/6053101/free-public-domain-cc0-photo",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "pizza_2.jpg": {
+  "title": null,
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5942482/free-public-domain-cc0-photo",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "pizza_3.jpg": {
+  "title": "Timber Pizza Company wood fire",
+  "creator": "U.S. Department of Agriculture",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/3262100/free-photo-image-pizza-food-tomato",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "pizza_4.jpg": {
+  "title": "Wood fired pizza with meat and cheese",
+  "creator": "ChrisEdwardsCE",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://wordpress.org/photos/photo/8286329e07/",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "pizza_5.jpg": {
+  "title": "A fresh wood-fired pizza with pepperoni and banana peppers",
+  "creator": "Will Presley",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://wordpress.org/photos/photo/19162029d0/",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "pasta_0.jpg": {
+  "title": "Fresh vegetable salad white bowl",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/3298189/free-photo-image-vermicelli-pasta-dish",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "pasta_1.jpg": {
+  "title": "Fresh gnocchi pasta topped lemon",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/3304074/free-photo-image-cheese-vegetables-pasta-gnocchi",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "pasta_2.jpg": {
+  "title": "Japanese ramen bowl fresh raw",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/3304018/free-photo-image-bowl-cc0-creative-commons",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "pasta_3.jpg": {
+  "title": "Colorful ingredients pasta dish",
+  "creator": "Jakub Kapusnak",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/448650/various-fresh-pastas",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "pasta_4.jpg": {
+  "title": "Food from an Italian \u201cfast food\u201d restaurant. Pasta with marinara, steak tartar with fresh vegetables.",
+  "creator": "Topher",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://wordpress.org/photos/photo/5876671d11/",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "pasta_5.jpg": {
+  "title": "A close-up of a popular dish of Spaghetti Bolognese on a dark gray plate. The pasta is coated in a reddish-orange sauce and topped with shredded cheese and fresh green basil leaves. The plate sits on a wooden table",
+  "creator": "Alina Kakshapati",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://wordpress.org/photos/photo/69468aab10/",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "oven_0.jpg": {
+  "title": "Rustic Pizza",
+  "creator": "Eneida Nieves",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/rustic-pizza-F7EPDH2L1A",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "oven_2.jpg": {
+  "title": null,
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5942482/free-public-domain-cc0-photo",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "oven_3.jpg": {
+  "title": "Timber Pizza Company wood fire",
+  "creator": "U.S. Department of Agriculture",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/3262100/free-photo-image-pizza-food-tomato",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "oven_4.jpg": {
+  "title": null,
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5944045/free-public-domain-cc0-photo",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "oven_5.jpg": {
+  "title": "Free close pepperoni pizza oven",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5914811/image-public-domain-fire-food",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "tiramisu_1.jpg": {
+  "title": "Vegan Dessert, Ko-So Cafe, Tokyo",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5940467/vegan-dessert-ko-so-cafe-tokyo-japan",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "tiramisu_2.jpg": {
+  "title": "Free tiramisu cake dessert image",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5917181/photo-image-public-domain-coffee-food",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "tiramisu_3.jpg": {
+  "title": "Tiramisu Dessert",
+  "creator": "Michal Kulesza",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/tiramisu-dessert-32X9HJRG2N",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "tiramisu_4.jpg": {
+  "title": "Making tiramisu dessert",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/6037426/photo-image-public-domain-hand-person",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "tiramisu_5.jpg": {
+  "title": "Tiramisu dessert at an Italian restaurant",
+  "creator": "ChrisEdwardsCE",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://wordpress.org/photos/photo/514632a8d0/",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "wine_0.jpg": {
+  "title": "Strawberries Biscuit",
+  "creator": "Brooke Lark",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/strawberries-biscuit-EHEAAO4I3W",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "wine_1.jpg": {
+  "title": "Holding Glass",
+  "creator": "Helena Lopes",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/holding-glass-V0ZNGACCAS",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "wine_2.jpg": {
+  "title": "Wine Tasting",
+  "creator": "Kelly Ishmael",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/wine-tasting-T8FNYMYTHK",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "wine_3.jpg": {
+  "title": "Drink Beverage",
+  "creator": "Alice Donovan Rouse",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/drink-beverage-F367SFVXKM",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "wine_5.jpg": {
+  "title": "Wine Glass",
+  "creator": "Quentin Dr",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/wine-glass-QI10VZZPBC",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "chef_1.jpg": {
+  "title": "Rustic Vegetables",
+  "creator": "Eneida Nieves",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/rustic-vegetables-MHAEYKL7J3",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "chef_2.jpg": {
+  "title": "Pasta Flour",
+  "creator": "Jorge Zapata",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/pasta-flour-I4MIIMHZ5M",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "chef_3.jpg": {
+  "title": "Salmon Filets",
+  "creator": "Jakub Kapusnak",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/salmon-filets-LDMEHW1TYG",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "chef_4.jpg": {
+  "title": "Corn Cornonthecob",
+  "creator": "Paulina Lohunko",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/corn-cornonthecob-G1ULTO93JF",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "chef_5.jpg": {
+  "title": "Restaurant Kitchen",
+  "creator": "Michael Browning",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/restaurant-kitchen-0HCMIT272C",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "brunch_0.jpg": {
+  "title": "Breakfast Eggs",
+  "creator": "Foodie Girl",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/breakfast-eggs-KZTN4JDEIX",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "brunch_1.jpg": {
+  "title": "Breakfast Eggs",
+  "creator": "Foodie Girl",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/breakfast-eggs-FBZ8SITFMG",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "brunch_2.jpg": {
+  "title": "Breakfast Eggs",
+  "creator": "Foodie Girl",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/breakfast-eggs-BYXMHHNV5X",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "brunch_3.jpg": {
+  "title": "Breakfast Eggs",
+  "creator": "Foodie Girl",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/breakfast-eggs-WMYJNCHSOU",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "brunch_4.jpg": {
+  "title": "Breakfast Eggs",
+  "creator": "Foodie Girl",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/breakfast-eggs-KYTXVESLSI",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "brunch_5.jpg": {
+  "title": "Breakfast Eggs",
+  "creator": "Foodie Girl",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/breakfast-eggs-ZOGKPGXTYT",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "nails_0.jpg": {
+  "title": "woman getting her nails painted",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/3299322/free-photo-image-nail-polish-manicure",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "nails_1.jpg": {
+  "title": "People Hands",
+  "creator": "Freestocks.org",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/people-hands-XX356Q6EI4",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "nails_2.jpg": {
+  "title": "People Hands",
+  "creator": "Freestocks.org",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/people-hands-5M4DNCN8ZW",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "nails_3.jpg": {
+  "title": "Nail clippers manicure",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/6026960/photo-image-public-domain-clip-beauty",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "nails_4.jpg": {
+  "title": "Woman getting manicure",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/6036048/photo-image-public-domain-hand-person",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "nails_5.jpg": {
+  "title": null,
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5944541/free-public-domain-cc0-photo",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "barber_0.jpg": {
+  "title": "Barbershop Scissors",
+  "creator": "Nick Demou",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/barbershop-scissors-R9YRHH2JQY",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "barber_1.jpg": {
+  "title": "Man getting haircut barber",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/6036967/photo-image-public-domain-hand-black",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "barber_2.jpg": {
+  "title": "Free retro barbershop chair",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5925744/photo-image-public-domain-black-vintage",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "cafe_0.jpg": {
+  "title": "Coffee Hot",
+  "creator": "Nathan Dumlao",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/coffee-hot-V3RV70YNWK",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "cafe_1.jpg": {
+  "title": "Coffee Cup",
+  "creator": "phatonlaphat thongsriphong",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/coffee-cup-CQQMILRZPU",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "cafe_2.jpg": {
+  "title": null,
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5949780/free-public-domain-cc0-photo",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "cafe_3.jpg": {
+  "title": "Cappuccino latte art table",
+  "creator": "Jakub Kapusnak",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/447720/free-photo-image-coffee-house-shop",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "cafe_4.jpg": {
+  "title": "Coffee Latte",
+  "creator": "Tim Wright",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/coffee-latte-T0B45KEJ0B",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "cafe_5.jpg": {
+  "title": "Free coffee heart latte art",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5919708/photo-image-heart-public-domain-coffee",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "tacos_0.jpg": {
+  "title": "Delicious gastronomy food",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/6031668/photo-image-public-domain-food-free",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "tacos_1.jpg": {
+  "title": "Delicious vibrant tacos served fresh",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5970864/tortillas",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "tacos_2.jpg": {
+  "title": "Tacos Plate",
+  "creator": "Dan Gold",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/tacos-plate-MPCLZSMZJB",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "tacos_5.jpg": {
+  "title": "Plate salad next plates cake",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/3303738/free-photo-image-arugula-beverage-bowl",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "bbq_0.jpg": {
+  "title": "Barbecue brisket, beans, okra, collards, and macaroni and cheese",
+  "creator": "mdburnette",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://wordpress.org/photos/photo/9256203350/",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "gym_0.jpg": {
+  "title": "Gym Interior",
+  "creator": "Humphrey Muleba",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/gym-interior-LNCLN1NE6K",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "florist_0.jpg": {
+  "title": "Florist shop, pink roses. View",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/8809247/photo-image-flower-rose-pink",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "florist_1.jpg": {
+  "title": "Bunches roses plants pots displaying",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/3284488/free-photo-image-flower-shop-bouquet",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "florist_2.jpg": {
+  "title": "Rustic Table",
+  "creator": "Vintage RS",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/rustic-table-0XANHS5ZKW",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "florist_3.jpg": {
+  "title": "Oradea, Romania",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/3301854/free-photo-image-flower-shop-tulip-bouquet-bloom",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "florist_4.jpg": {
+  "title": "Bouquets various flowers florist's storefront",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/3302163/free-photo-image-aster-blossom-cc0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "florist_5.jpg": {
+  "title": "Rustic Floral",
+  "creator": "Kelly Ishmael",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/rustic-floral-LT8YJZOML6",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "flowers_3.jpg": {
+  "title": "Free flower shop image",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5906663/photo-image-public-domain-free-city",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "noodles_0.jpg": {
+  "title": "Free noodle image",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5927588/free-noodle-image-public-domain-food-cc0-photo",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "noodles_5.jpg": {
+  "title": "Free Japanese ramen bowl image",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5925771/photo-image-public-domain-food-free",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "dental_3.jpg": {
+  "title": "Dental clinic",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/6020787/dental-clinic-free-public-domain-cc0-photo",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "storefront_0.jpg": {
+  "title": "Unusual goods sale line street",
+  "creator": "Carol M Highsmith",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/8068470/photo-image-border-plant-person",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "storefront_2.jpg": {
+  "title": "Original public domain image Wikimedia",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/3292471/free-photo-image-hotel-storefront-apparel",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "bar_0.jpg": {
+  "title": "Drinking cocktails bar",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/6029310/photo-image-public-domain-person-glass",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "bar_1.jpg": {
+  "title": "Cocktail bar counter, location unknown",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/6112288/photo-image-public-domain-blue-glass",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "bar_2.jpg": {
+  "title": "Free yellow cocktail, bar background",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5926735/photo-image-public-domain-person-free",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "bar_3.jpg": {
+  "title": "Free orange cocktail bar counter",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5914196/free-orange-cocktail-bar-counter",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "bar_4.jpg": {
+  "title": "Free two cocktails bar counter",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5926622/photo-image-public-domain-person-red",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "bar_5.jpg": {
+  "title": "Free mojito cocktail bar counter",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5928405/image-public-domain-free-mint",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "salad_0.jpg": {
+  "title": "Salad Bowl",
+  "creator": "Foodie Girl",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/salad-bowl-NI4QYAXHA0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "salad_1.jpg": {
+  "title": "Salad Bowl",
+  "creator": "Healthy Living",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/salad-bowl-BZXWY3EOCG",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "salad_2.jpg": {
+  "title": "Salad Bowl",
+  "creator": "Healthy Living",
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://stocksnap.io/photo/salad-bowl-FR7W5HWV2M",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "salad_3.jpg": {
+  "title": "Free salmon salad bowl, white",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5919760/photo-image-background-public-domain-table",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "salad_4.jpg": {
+  "title": "Free healthy salad bowl image",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5913243/image-public-domain-leaf-plant",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "salad_5.jpg": {
+  "title": "Free green salad bowl top",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/5918718/photo-image-white-background-public-domain-plant",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ },
+ "burger_0.jpg": {
+  "title": "Burger restaurant",
+  "creator": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "source": "https://www.rawpixel.com/image/6027906/photo-image-public-domain-food-burger",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+ }
+}

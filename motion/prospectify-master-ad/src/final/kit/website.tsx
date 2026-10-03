@@ -1,6 +1,7 @@
 import React from 'react';
 import {C, EASE, FONT, clamp01, lerp, ramp} from '../tokens';
 import {Icon, Star} from './icons';
+import {Photo} from './media';
 
 /**
  * WebsiteAssembler — the client's site builds itself region by region.
@@ -9,7 +10,7 @@ import {Icon, Star} from './icons';
  * (The client site is deliberately NOT Prospectify-branded: its own warm palette.)
  */
 export type SiteTheme = {bg: string; ink: string; dim: string; brand: string; card: string; img: [string, string, string]};
-export type SiteContent = {name: string; kicker: string; h1: string; sub: string; cta: string; services: [string, string, string]; rating: string; booking: boolean};
+export type SiteContent = {name: string; kicker: string; h1: string; sub: string; cta: string; services: [string, string, string]; rating: string; booking: boolean; hero: string; serviceImgs: [string, string, string]};
 
 export const BELLA_THEME: SiteTheme = {bg: '#F3EDE3', ink: '#221B16', dim: '#7A6E63', brand: '#A9472A', card: '#FBF8F3', img: ['#E8A15A', '#B4532A', '#3A1E14']};
 export const BELLA: SiteContent = {
@@ -21,6 +22,8 @@ export const BELLA: SiteContent = {
 	services: ['Wood-fired pizza', 'Fresh pasta', 'Weekend brunch'],
 	rating: '4.8 · 312 Google reviews',
 	booking: true,
+	hero: 'oven_2',
+	serviceImgs: ['pizza_4', 'pasta_5', 'brunch_1'],
 };
 export const HOOK_THEME: SiteTheme = {bg: '#EEF1EC', ink: '#18211C', dim: '#66736A', brand: '#2F5E46', card: '#F8FAF7', img: ['#9CC3A4', '#4F7F61', '#1C3326']};
 export const HOOK_SITE: SiteContent = {
@@ -32,6 +35,8 @@ export const HOOK_SITE: SiteContent = {
 	services: ['Same-day bouquets', 'Weddings', 'Events'],
 	rating: '4.9 · 128 reviews',
 	booking: false,
+	hero: 'florist_1',
+	serviceImgs: ['florist_0', 'florist_3', 'florist_4'],
 };
 
 export const SITE_W = 900;
@@ -132,14 +137,14 @@ export const Website: React.FC<{f: number; steps: number[]; theme: SiteTheme; c:
 				</div>
 			</Region>
 			<Region t={t(5)} r={R.imagery}>
-				<FirePhoto theme={theme} w={R.imagery.w} h={R.imagery.h} />
+				<Photo n={c.hero} w={R.imagery.w} h={R.imagery.h} r={14} />
 			</Region>
 			<Region t={t(4)} r={R.services}>
 				<div style={{display: 'flex', gap: 24, height: '100%'}}>
 					{c.services.map((s, i) => (
 						<div key={s} style={{flex: 1, borderRadius: 14, background: theme.card, border: `1px solid ${theme.dim}22`, overflow: 'hidden', display: 'flex', flexDirection: 'column'}}>
 							<div style={{height: 108, opacity: t(5)}}>
-								<FirePhoto theme={theme} w={252} h={108} seed={i + 1} style={{borderRadius: 0}} />
+								<Photo n={c.serviceImgs[i]} w={252} h={108} />
 							</div>
 							<div style={{padding: '16px 18px', fontSize: 21, fontWeight: 700, letterSpacing: '-0.01em'}}>{s}</div>
 						</div>
@@ -177,7 +182,7 @@ export const MobileSite: React.FC<{theme: SiteTheme; c: SiteContent}> = ({theme,
 			<div style={{flex: 1}} />
 			<div style={{width: 22, height: 14, borderTop: `2.5px solid ${theme.ink}`, borderBottom: `2.5px solid ${theme.ink}`}} />
 		</div>
-		<FirePhoto theme={theme} w={344} h={190} style={{margin: '18px 18px 0', borderRadius: 14}} />
+		<Photo n={c.hero} w={344} h={190} r={14} style={{margin: '18px 18px 0'}} />
 		<div style={{padding: '18px 22px 0'}}>
 			<div style={{fontSize: 13, fontWeight: 700, letterSpacing: '0.16em', color: theme.brand, textTransform: 'uppercase'}}>{c.kicker}</div>
 			<div style={{fontSize: 40, fontWeight: 800, letterSpacing: '-0.045em', lineHeight: 0.98, marginTop: 10, whiteSpace: 'pre-line'}}>{c.h1}</div>

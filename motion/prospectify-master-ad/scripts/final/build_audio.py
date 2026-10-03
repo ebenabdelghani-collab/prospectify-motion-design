@@ -36,7 +36,7 @@ T = json.load(open(os.path.join(ROOT, 'src/final/timeline.json')))
 FPS = T['fps']
 DUR = T['durationInFrames']
 N = int(round(DUR / FPS * SR)) + SR
-BPM = 115
+BPM = 124
 BEAT_F = 60 / BPM * FPS  # frames per beat (31.30)
 rng = np.random.default_rng(5)
 CUES = []
@@ -95,7 +95,7 @@ voice_env = np.zeros(N)
 for sid, v in T['VO'].items():
     x, sr = sf.read(os.path.join(ROOT, f'public/final/voice/{sid}.wav'))
     x = hp(x, 80)
-    x = x + 0.25 * hp(x, 3500)  # presence: consonants survive phone speakers
+    x = x + 0.4 * hp(x, 3000)  # presence + air: forward, energetic read that survives phone speakers
     rms = np.sqrt(np.mean(x[np.abs(x) > 1e-3] ** 2) + 1e-12)
     x = x / rms * db(-20)
     x = np.tanh(x * 1.5) / 1.5  # gentle glue, no pumping
@@ -251,8 +251,8 @@ sig_cue(K('FINAL_LOGO') + 14, 'cta', 'final mark', 'full', -17)
 cue(K('CTA'), 'cta', 'START FREE', 'soft button', click_v(), -24, cat='MICRO')
 cue(K('URL'), 'cta', 'url', 'tick', tick_v(hz(89), 0.012), -31, cat='MICRO')
 
-# ─────────────────────────── SCORE ───────────────────────────
-# chords (MIDI)
+# ─────────────────────────── SCORE (v2 · 124 BPM, driving) ───────────────────────────
+# D minor = the grind. F major = Prospectify. Energy from the first second; two drops (reveal, website build).
 Dm9 = [50, 57, 60, 64, 65]
 Bbmaj9 = [46, 53, 57, 60, 62]
 Gm9 = [43, 50, 53, 57, 58]
@@ -263,11 +263,12 @@ Dm7 = [38, 50, 57, 60, 65]
 Bbadd9 = [46, 53, 58, 60, 62]
 Csus = [48, 55, 60, 62, 65]
 CROOT = {id(Dm9): 38, id(Bbmaj9): 34, id(Gm9): 31, id(Asus): 33, id(Fadd9): 29, id(C_E): 28, id(Dm7): 38, id(Bbadd9): 34, id(Csus): 36}
-MU = {'pad': -30, 'kick': -21, 'clap': -28, 'hat': -36, 'bass': -26, 'pluck': -31, 'arp': -31, 'ost': -32, 'riser': -29, 'drone': -27, 'perc': -33}
+MU = {'pad': -30, 'kick': -18, 'clap': -26, 'hat': -34, 'ohat': -36, 'bass': -24, 'pluck': -31, 'arp': -31, 'ost': -32, 'riser': -29, 'drone': -30, 'perc': -33, 'impact': -18, 'roll': -30}
+pump = Bus('pump')  # pads / bass / arps — sidechained to the kick
+kick_env = np.zeros(N)
 
 
 def grid(fr):
-    """snap a frame to the nearest beat of the 115 BPM grid"""
     return round(fr / BEAT_F) * BEAT_F
 
 
@@ -280,140 +281,180 @@ def beats(a, b, step=1.0):
         fr += BEAT_F * step
 
 
-def pad_span(a, b, notes, gain, cut=1400, att=0.3, rel=0.5):
+def K_(fr, g=0.0, punch=1.0):
+    music.put(kick_v(punch), fr, MU['kick'] + g)
+    s0 = fs(fr)
+    n = int(0.22 * SR)
+    seg = np.exp(-np.arange(n) / (0.07 * SR))
+    e = min(N, s0 + n)
+    kick_env[s0:e] = np.maximum(kick_env[s0:e], seg[: e - s0])
+
+
+def pad_span(a, b, notes, gain, cut=1600, att=0.15, rel=0.4, bus=None):
     if b <= a:
         return
     p = pad(notes, (b - a) / FPS + rel, cut, att, rel)
-    music.put(p, a, gain)
-    verb.put(p, a, gain - 8)
+    (bus or pump).put(p, a, gain)
+    verb.put(p, a, gain - 9)
 
 
-def bass(a, b, root, gain=0.0, step=0.5):
+def bass(a, b, root, gain=0.0, step=0.5, off=True):
     for k, fr in enumerate(beats(a, b, step)):
-        music.put(pluck_v(hz(root), 0.26, 0.1, 360) * (1.0 if k % 2 == 0 else 0.7), fr, MU['bass'] + gain)
+        t_ = fr + (BEAT_F * step / 2 if off else 0)
+        if t_ < b:
+            s = pluck_v(hz(root), 0.22, 0.09, 520) + 0.5 * pluck_v(hz(root + 12), 0.22, 0.05, 1400)
+            pump.put(s, t_, MU['bass'] + gain)
 
 
-def drums(a, b, kick=1, hats=0, clap=False, gain=0.0, perc=False):
+def drums(a, b, kick=1, clap=True, hats=2, ohat=True, gain=0.0):
     for i, fr in enumerate(beats(a, b)):
         if kick == 1 or (kick == 2 and i % 2 == 0):
-            music.put(kick_v(), fr, MU['kick'] + gain)
+            K_(fr, gain)
         if clap and i % 2 == 1:
             music.put(clap_v(), fr, MU['clap'] + gain, 0.05)
-            verb.put(clap_v(), fr, MU['clap'] - 10)
+            verb.put(clap_v(), fr, MU['clap'] - 9)
         if hats >= 1:
-            music.put(hat_v(), fr + BEAT_F / 2, MU['hat'] + gain, 0.25)
+            music.put(hat_v(), fr + BEAT_F / 2, MU['hat'] + gain + (2 if ohat else 0), 0.2)
         if hats >= 2:
-            music.put(hat_v(), fr + BEAT_F / 4, MU['hat'] - 5 + gain, -0.2)
-            music.put(hat_v(), fr + 3 * BEAT_F / 4, MU['hat'] - 5 + gain, -0.2)
-        if perc and i % 4 == 3:
-            music.put(tick_v(1200, 0.01, 0.04), fr + 3 * BEAT_F / 4, MU['perc'] + gain, 0.4)
+            music.put(hat_v(), fr + BEAT_F / 4, MU['hat'] - 4 + gain, -0.25)
+            music.put(hat_v(), fr + 3 * BEAT_F / 4, MU['hat'] - 4 + gain, -0.25)
+        if ohat and i % 2 == 1:
+            music.put(hat_v(True), fr + BEAT_F / 2, MU['ohat'] + gain, 0.3)
 
 
-def ostinato(a, b, notes, step=0.25, gain=0.0, rise=0.0):
-    n = max(1, int((b - a) / (BEAT_F * step)))
+def halftime(a, b, gain=0.0):
+    for i, fr in enumerate(beats(a, b)):
+        if i % 4 == 0 or i % 4 == 2.5:
+            K_(fr, gain - 1)
+        if i % 4 == 2:
+            music.put(clap_v(), fr, MU['clap'] + gain, 0.05)
+            verb.put(clap_v(), fr, MU['clap'] - 6)
+        if i % 4 == 3:
+            K_(fr + BEAT_F / 2, gain - 4)
+        music.put(hat_v(), fr + BEAT_F / 2, MU['hat'] + gain - 2, 0.2)
+
+
+def arp(a, b, notes, step=0.25, gain=0.0, bright=3200):
     for k, fr in enumerate(beats(a, b, step)):
-        music.put(pluck_v(hz(notes[k % len(notes)]), 0.18, 0.05, 1600 + 2600 * (k / n) * rise), fr, MU['ost'] + gain + rise * 5 * k / n, 0.25 * (-1) ** k)
+        pump.put(pluck_v(hz(notes[k % len(notes)]), 0.22, 0.06, bright), fr, MU['arp'] + gain, 0.3 * (-1) ** k)
 
 
-def progression(a, b, chords, bars=1.0, gain=0.0, cut=1500, with_bass=True, bgain=0.0):
+def roll(a, b, gain=0.0):
+    """snare roll that accelerates into b"""
+    span = b - a
+    t = 0.0
+    k = 0
+    while t < span:
+        fr = a + t
+        music.put(clap_v() * 0.8, fr, MU['roll'] + gain + 8 * (t / span), 0.05 * (-1) ** k)
+        step = BEAT_F * (0.5 if t < span * 0.5 else 0.25 if t < span * 0.8 else 0.125)
+        t += step
+        k += 1
+
+
+def riser(a, b, gain=0.0):
+    music.put(sweep_v((b - a) / FPS, 300, 6000, 'rise', 2.2), a, MU['riser'] + gain)
+
+
+def impact(fr, gain=0.0):
+    music.put(sub_v(), fr, MU['impact'] + gain)
+    music.put(hat_v(True), fr, MU['ohat'] + 6 + gain)
+    verb.put(clap_v(), fr, MU['clap'] - 2)
+
+
+def progression(a, b, chords, bars=1.0, gain=0.0, cut=1700, bgain=0.0, bstep=0.5):
     span = BEAT_F * 4 * bars
     i, fr = 0, a
     while fr < b - 1:
         c = chords[i % len(chords)]
         e = min(b, fr + span)
         pad_span(fr, e, c, MU['pad'] + gain, cut)
-        if with_bass:
-            bass(fr, e, CROOT[id(c)], bgain)
+        bass(fr, e, CROOT[id(c)], bgain, bstep)
         fr, i = e, i + 1
 
 
-# OPENING — minimal pulse, a little momentum while the site builds; drops at FIND
-pad_span(0, K('FIND_IN'), Dm9, MU['pad'] - 5, 1000, 0.6)
-for k, fr in enumerate(beats(K('PROMPT_IN') + 10, K('FIND_IN') - 4, 0.5)):
-    music.put(pluck_v(hz([62, 69, 65, 72, 69, 64][k % 6]), 0.45, 0.16, 2400), fr, MU['pluck'] - 3, 0.3 * (-1) ** k)
-for fr in beats(K('HOOK_SEND'), K('FIND_IN') - 4):
-    music.put(kick_v(0.6), fr, MU['kick'] - 7)
-drums(K('HOOK_SEND'), K('FIND_IN') - 4, kick=0, hats=1, gain=-3)
-# FIND → STALL → NIGHT: the music almost disappears (a low, quiet drone only)
-dr = (K('MAN_IN') - K('FIND_IN')) / FPS
-music.put(lp(saw(hz(26), tt(dr), 6), 160) * np.minimum(1, tt(dr) / 0.8) * np.clip((dr - tt(dr)) / 0.3, 0, 1), K('FIND_IN'), MU['drone'] - 13)
-
-# MANUAL — a repetitive percussive loop that keeps adding layers, then a hard stop
+# 1 · HOOK — energy from frame one
+H0, H1 = K('PROMPT_IN'), K('FIND_IN') - 2
+drums(H0, H1, kick=1, clap=True, hats=1, ohat=False, gain=-3)
+progression(H0, H1, [Dm9, Bbmaj9], 1.0, -2, 1500)
+arp(H0, H1, [62, 69, 65, 72, 69, 74, 65, 72], 0.25, -3)
+music.put(pad(Fadd9, 0.6, 2400, 0.005, 0.4), K('HOOK_SITE_LOCK'), MU['pad'] + 4)  # stab on the site lock
+# 2 · FIND → NIGHT — the floor drops out: filtered pad, a clock, a riser back into the grind
+pad_span(K('FIND_IN'), K('MAN_IN'), Dm9, MU['pad'] - 6, 700, 0.3, bus=music)
+riser(K('NIGHT_IN'), K('MAN_IN'), -2)
+impact(K('MAN_IN') - 2, -6)
+# 3 · MANUAL — full drive, tension climbs, snare roll into the stop
 M0, M1 = K('MAN_IN'), K('FREEZE_ZERO')
-mid = K('MAN_BEATS')[3]
-ostinato(M0, M1, [50, 50, 53, 50, 57, 50, 55, 53], 0.25, -2, rise=1.0)
-drums(M0, mid, kick=2, hats=1, gain=-2)
-drums(mid, K('WORTH_FLICKS')[0], kick=1, hats=1, gain=-1, perc=True)
-drums(K('WORTH_FLICKS')[0], M1, kick=1, hats=2, clap=True, gain=0, perc=True)
-bass(M0, M1, 38, -2, 0.5)
-
-# INSIGHT — stripped back; the "demand first" chord brightens slightly
-progression(K('CARDS_IN'), K('DEMAND_IN'), [Dm9, Bbmaj9], 2, -3, 900, with_bass=False)
-progression(K('DEMAND_IN'), K('GREAT_IN'), [Bbmaj9, Gm9], 2, -1, 1500, with_bass=True, bgain=-7)
-
-# SCALE — tension returns, then the freeze cuts everything
-ostinato(K('FIFTY_IN'), K('FREEZE'), [50, 53, 57, 53, 60, 57, 53, 57], 0.25, 0, rise=1.0)
-drums(K('FIFTY_IN'), K('FREEZE'), kick=1, hats=2, gain=-1, perc=True)
-bass(K('FIFTY_IN'), K('FREEZE'), 38, -1, 0.25)
-pad_span(K('FIFTY_IN'), K('FREEZE'), Asus, MU['pad'] - 2, 1200)
-
-# silences are never digital zero: a faint room tone under the held beats
-for a_, b_ in ((K('STALL'), K('NIGHT_IN') + 20), (K('ZERO_IN'), K('CARDS_IN') + 10), (K('FREEZE'), K('LOCK'))):
-    d_ = (b_ - a_) / FPS
-    rt = lp(hp(noise(d_), 120), 1800) * np.minimum(1, tt(d_) / 0.2) * np.clip((d_ - tt(d_)) / 0.3, 0, 1)
-    music.put(np.vstack([rt, np.roll(rt, 211)]), a_, -52)
-
-# REVEAL — structural release into F major (from the lock)
-pad_span(K('LOCK'), K('SEARCH_IN') + 40, [29, 41, 53, 57, 60, 67, 72], MU['pad'] + 1, 2200, 0.06, 0.8)
-
-# PRODUCT — cleaner rhythm: F – C/E – Dm7 – Bb
-P0 = K('SEARCH_IN')
-progression(P0, K('PROMPT_FOCUS'), [Fadd9, C_E, Dm7, Bbadd9], 1.0, -1, 1600)
-drums(K('SEARCH_CLICK'), K('PROMPT_FOCUS'), kick=1, hats=1, clap=True, gain=-2)
-# READY sequence: syncopated accents land on the off-beat before each READY
+drums(M0, M1, kick=1, clap=True, hats=2, ohat=True, gain=0)
+bass(M0, M1, 38, 0, 0.5)
+pad_span(M0, M1, Dm9, MU['pad'] - 2, 1300)
+arp(M0, M1, [50, 53, 57, 60, 57, 53, 62, 57], 0.25, -1, 2600)
+roll(K('WORTH_FLICKS')[0], M1, -1)
+riser(K('WORTH_FLICKS')[0], M1, 0)
+impact(K('ZERO_IN'), -2)
+# 4 · INSIGHT — halftime groove, warm chords (space for the idea, never dead)
+I0, I1 = K('CARDS_IN'), K('FIFTY_IN')
+halftime(I0, I1, -3)
+progression(I0, I1, [Bbmaj9, Gm9, Dm9, Asus], 1.0, -1, 1500, -3, 1.0)
+music.put(bell_v(hz(74), 1.6, 0.5, 0.9), K('DEMAND_IN'), -24)
+# 5 · SCALE — build: four-on-the-floor, 16ths, roll + riser into the freeze
+S0, S1 = K('FIFTY_IN'), K('FREEZE')
+drums(S0, S1, kick=1, clap=True, hats=2, ohat=True, gain=0)
+bass(S0, S1, 38, 0, 0.25)
+pad_span(S0, S1, Asus, MU['pad'] - 1, 1500)
+arp(S0, S1, [50, 57, 53, 60, 57, 62, 60, 65], 0.25, 0, 3600)
+roll(S0 + (S1 - S0) * 0.45, S1, 0)
+riser(S0, S1, 1)
+# (FREEZE → LOCK: silence and the scan)
+# 6 · DROP 1 — Prospectify: bright F-major groove
+P0, P1 = K('LOCK'), K('PROMPT_FOCUS')
+impact(P0, 0)
+drums(P0, P1, kick=1, clap=True, hats=2, ohat=True, gain=0)
+progression(P0, P1, [Fadd9, C_E, Dm7, Bbadd9], 1.0, 0, 2000)
+arp(P0, P1, [77, 72, 69, 72, 81, 77, 72, 77], 0.25, -2, 3800)
 for k_ in ('CONTACT_READY', 'ANGLE_READY', 'OUTREACH_READY'):
-    music.put(pluck_v(hz(77), 0.35, 0.1, 3200), K(k_) - BEAT_F / 2, MU['pluck'] + 1, 0.2)
-
-# BUILD PROMPT — harmonic lift: Bb → C sus, rising arpeggio, riser into READY
+    pump.put(pluck_v(hz(81), 0.35, 0.1, 4200), K(k_) - BEAT_F / 2, MU['pluck'] + 3, 0.2)
+# 7 · BUILD-UP — the prompt: roll, riser, open filter → hit on READY
 pf, pr = K('PROMPT_FOCUS'), K('PROMPT_READY')
-half = (pf + pr) / 2
-pad_span(pf, half, Bbadd9, MU['pad'] + 1, 2000)
-pad_span(half, pr, Csus, MU['pad'] + 2, 2600)
-bass(pf, pr, 34, -4, 1.0)
-arp = [65, 69, 72, 74, 77, 81, 84, 86]
-for k, fr in enumerate(beats(pf + 10, pr - 2, 0.25)):
-    music.put(pluck_v(hz(arp[k % 8] + (12 if k >= 24 else 0)), 0.3, 0.07, 3400), fr, MU['arp'] + min(5, k * 0.12), 0.3 * (-1) ** k)
-drums(pf, pr, kick=2, hats=0, gain=-5)
-music.put(sweep_v((pr - pf) / FPS, 400, 4500, 'rise', 2.5), pf, MU['riser'])
-# (READY → BUILDER: breath — only tails)
-
-# BUILDER — slight anticipation
-pad_span(K('BUILDER_IN'), K('TRANSFER_START'), Fadd9, MU['pad'] - 2, 1300, 0.4)
-for j, fr in enumerate(beats(K('BUILDER_IN') + 10, K('TRANSFER_START'), 0.5)):
-    music.put(pluck_v(hz([72, 69, 67, 65][j % 4]), 0.5, 0.18, 2200), fr, MU['pluck'] - 2, 0.2 * (-1) ** j)
-music.put(sweep_v((K('TRANSFER_ARRIVE') - K('BUILDER_CLICK')) / FPS, 600, 4000, 'rise', 2), K('BUILDER_CLICK'), MU['riser'] - 1)
-
-# WEBSITE BUILD — strongest momentum
-W0, W1 = K('TRANSFER_ARRIVE'), K('PITCH_SENT') + 10
-progression(W0, W1, [Fadd9, C_E, Dm7, Bbadd9], 1.0, 1, 1900)
-drums(W0, W1, kick=1, hats=2, clap=True, gain=0, perc=True)
-for k, fr in enumerate(beats(W0, W1, 0.25)):
-    music.put(pluck_v(hz([77, 81, 84, 81][k % 4]), 0.2, 0.05, 3000), fr, MU['arp'] - 2, 0.25 * (-1) ** k)
-
-# SELL / TRACK — resolution
-progression(K('SELL_IN'), K('LOOP_IN'), [Bbadd9, Fadd9], 1.0, 0, 1700)
-drums(K('SELL_IN'), K('LOOP_IN'), kick=2, hats=1, gain=-3)
-
-# LOOP — a hit on each node, a wide chord on REPEAT
+drums(pf, pr, kick=1, clap=False, hats=2, ohat=False, gain=-2)
+pad_span(pf, (pf + pr) / 2, Bbadd9, MU['pad'] + 1, 2200)
+pad_span((pf + pr) / 2, pr, Csus, MU['pad'] + 2, 3000)
+arp(pf, pr, [65, 69, 72, 74, 77, 81, 84, 86], 0.25, 0, 4200)
+roll(pf + (pr - pf) * 0.5, pr, 0)
+riser(pf, pr, 2)
+impact(pr, 0)
+# 8 · BUILDER — filtered groove, anticipation
+B0, B1 = K('BUILDER_IN'), K('TRANSFER_START')
+drums(B0, B1, kick=1, clap=False, hats=1, ohat=False, gain=-5)
+pad_span(B0, B1, Fadd9, MU['pad'] - 2, 900, bus=music)
+riser(K('BUILDER_CLICK') - 30, K('TRANSFER_ARRIVE'), 1)
+# 9 · DROP 2 — the website builds itself: everything in
+W0, W1 = K('TRANSFER_ARRIVE'), K('PITCH_SENT') + 6
+impact(W0, 0)
+drums(W0, W1, kick=1, clap=True, hats=2, ohat=True, gain=1)
+progression(W0, W1, [Fadd9, C_E, Dm7, Bbadd9], 1.0, 1, 2400, 1)
+arp(W0, W1, [77, 81, 84, 81, 89, 84, 81, 84], 0.25, 0, 4200)
+# 10 · SELL / TRACK — still moving, a touch lighter
+progression(K('SELL_IN'), K('LOOP_IN'), [Bbadd9, Fadd9, C_E, Dm7], 1.0, 0, 1900)
+drums(K('SELL_IN'), K('LOOP_IN'), kick=1, clap=True, hats=1, ohat=True, gain=-1)
+music.put(pad(Fadd9, 0.8, 2600, 0.005, 0.5), K('SOLD'), MU['pad'] + 5)
+# 11 · LOOP — a hit on every node, impact on REPEAT
 for fr in K('LOOP_NODES'):
-    music.put(kick_v(1.1), fr, MU['kick'] - 1)
-pad_span(K('LOOP_IN'), K('LOOP_REPEAT'), Dm7, MU['pad'] - 1, 1600)
-pad_span(K('LOOP_REPEAT'), K('FINAL_LOGO') + 10, [29, 41, 53, 57, 60, 67], MU['pad'] + 2, 2400, 0.02)
+    K_(fr, 1, 1.2)
+    pump.put(pluck_v(hz(77), 0.3, 0.1, 3600), fr, MU['pluck'] + 2)
+pad_span(K('LOOP_IN'), K('LOOP_REPEAT'), Dm7, MU['pad'], 1800)
+impact(K('LOOP_REPEAT'), -1)
+# 12 · CTA — confident groove under the end line, then one clean final hit and ring-out
+C0 = K('FINAL_LOGO')
+progression(C0, K('URL') + 10, [Fadd9, Bbadd9], 1.0, 0, 2100, -1)
+drums(C0, K('URL'), kick=1, clap=True, hats=1, ohat=False, gain=-3)
+impact(K('URL') + 10, -2)
+pad_span(K('URL') + 10, DUR + 40, [29, 41, 53, 57, 60, 64, 67], MU['pad'] + 2, 2400, 0.02, 1.2, bus=music)
 
-# CTA — minimal, confident, resolved; no drums
-pad_span(K('FINAL_LOGO'), DUR + 40, [29, 41, 53, 57, 60, 64, 67], MU['pad'] + 1, 2200, 0.2, 1.0)
-for k, fr in enumerate(beats(K('CTA'), DUR - 30, 1.0)):
-    music.put(pluck_v(hz([77, 72, 69, 72][k % 4]), 0.6, 0.22, 2000), fr, MU['pluck'] - 5, 0.2 * (-1) ** k)
+# sidechain: pads / bass / arps duck with every kick
+sc = np.clip(kick_env, 0, 1)
+pump.buf *= 1 - 0.55 * sc
+music.buf += pump.buf
 
 # ─────────────────────────── ROOM · DUCK · MASTER ───────────────────────────
 
@@ -437,7 +478,7 @@ for i in range(0, N, 32):
     cur = v + (cur - v) * (a_ ** 32 if v > cur else r_ ** 32)
     sm[i:i + 32] = cur
 duck = np.clip(sm, 0, 1)
-music.buf *= 1 - (1 - db(-13)) * duck
+music.buf *= 1 - (1 - db(-15)) * duck
 sfx.buf *= 1 - (1 - db(-5)) * duck
 # keep the low end out of the voice's way: music low-mids dip under speech
 music.buf = music.buf - 0.35 * np.vstack([lp(hp(music.buf[c], 180), 900) for c in range(2)]) * duck
