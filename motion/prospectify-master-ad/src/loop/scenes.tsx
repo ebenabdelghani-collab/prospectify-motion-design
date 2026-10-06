@@ -11,7 +11,7 @@ import {MobileSite, PremiumSite, SITE_DW} from '../versus/site';
 import {APP_H, APP_W, BUILDERS, Pill, ProspectifyApp} from '../versus/app';
 
 /* ───────────────────────── LEAD CARD (frame 0 = last frame) ───────────────────────── */
-const Row: React.FC<{icon: string; label: string; value: React.ReactNode; hot?: boolean}> = ({icon, label, value, hot}) => (
+export const Row: React.FC<{icon: string; label: string; value: React.ReactNode; hot?: boolean}> = ({icon, label, value, hot}) => (
 	<div style={{display: 'flex', alignItems: 'center', gap: 16, height: 62, borderTop: `1px solid ${C.line}`, fontSize: 25, color: C.text2}}>
 		<Icon n={icon} size={24} color={hot ? C.accentBright : C.text3} sw={2} />
 		<span style={{width: 130, color: C.text3}}>{label}</span>
@@ -20,7 +20,7 @@ const Row: React.FC<{icon: string; label: string; value: React.ReactNode; hot?: 
 );
 
 /** The circle a hand draws around "Website — None". */
-const Scribble: React.FC<{t: number}> = ({t}) => {
+export const Scribble: React.FC<{t: number}> = ({t}) => {
 	if (t <= 0) return null;
 	const d = 'M 30 52 C 40 8, 470 4, 520 40 C 560 70, 470 104, 260 102 C 90 100, 8 88, 22 52 C 30 30, 120 14, 230 12';
 	return (
@@ -95,7 +95,7 @@ export const Hook: React.FC<{f: number}> = ({f}) => {
 };
 
 /* ───────────────────────── PAIN: four flashes ───────────────────────── */
-const TABS: [string, string][] = [
+export const TABS: [string, string][] = [
 	['Maps – restaurants near me', '#34a853'], ['Bella Forno – Reviews (312)', '#fbbc04'], ['who owns bella forno?', '#4285f4'], ['prospects_v3.xlsx', '#188038'],
 	['bella forno email?', '#4285f4'], ['Reviews – El Sol', '#d32323'], ['search results – page 4', '#0a66c2'], ['Inbox (23)', '#ea4335'], ['Sheet2', '#188038'],
 ];
@@ -154,7 +154,7 @@ export const Pain: React.FC<{f: number}> = ({f}) => {
 };
 
 /* ───────────────────────── REVEAL: the numbered open loop ───────────────────────── */
-const STEPS = [
+export const STEPS = [
 	['1', 'Find the client', 'target'],
 	['2', 'Write the message', 'message'],
 	['3', 'Write the site prompt', 'sparkles'],
@@ -189,7 +189,7 @@ export const Reveal: React.FC<{f: number}> = ({f}) => {
 
 /* ───────────────────────── 1 · 2 · 3 : the app, then the builder ───────────────────────── */
 type Cam = [number, number, number, number];
-const camAt = (f: number, keys: Cam[]) => {
+export const camAt = (f: number, keys: Cam[]) => {
 	let i = 0;
 	while (i < keys.length - 1 && f >= keys[i + 1][0]) i++;
 	const a = keys[i];
