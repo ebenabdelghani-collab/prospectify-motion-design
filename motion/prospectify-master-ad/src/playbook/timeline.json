@@ -1,0 +1,275 @@
+{
+ "fps": 60,
+ "durationInFrames": 2355,
+ "width": 1920,
+ "height": 1080,
+ "VO": {
+  "p_time": {
+   "start": 33,
+   "end": 138,
+   "text": "It's eleven forty-six PM.",
+   "act": "night"
+  },
+  "p_built": {
+   "start": 159,
+   "end": 248,
+   "text": "The website took forty minutes.",
+   "act": "night"
+  },
+  "p_find": {
+   "start": 281,
+   "end": 362,
+   "text": "Finding someone to buy it?",
+   "act": "night"
+  },
+  "p_tabs": {
+   "start": 419,
+   "end": 481,
+   "text": "Fourteen tabs.",
+   "act": "night"
+  },
+  "p_here": {
+   "start": 514,
+   "end": 568,
+   "text": "They're over here...",
+   "act": "night"
+  },
+  "p_there": {
+   "start": 575,
+   "end": 618,
+   "text": "over there...",
+   "act": "night"
+  },
+  "p_every": {
+   "start": 625,
+   "end": 666,
+   "text": "everywhere.",
+   "act": "night"
+  },
+  "p_playbook": {
+   "start": 723,
+   "end": 840,
+   "text": "Here's the playbook that actually works!",
+   "act": "day"
+  },
+  "p_one": {
+   "start": 882,
+   "end": 1035,
+   "text": "One. Find a business that already has customers.",
+   "act": "day"
+  },
+  "p_two": {
+   "start": 1086,
+   "end": 1183,
+   "text": "Two. Know exactly what to say.",
+   "act": "day"
+  },
+  "p_three": {
+   "start": 1234,
+   "end": 1339,
+   "text": "Three. Build their site with AI.",
+   "act": "day"
+  },
+  "p_four": {
+   "start": 1405,
+   "end": 1460,
+   "text": "Four. Send it!",
+   "act": "day"
+  },
+  "p_knew": {
+   "start": 1508,
+   "end": 1594,
+   "text": "You already knew three and four.",
+   "act": "day"
+  },
+  "p_nights": {
+   "start": 1621,
+   "end": 1740,
+   "text": "One and two? That's where your nights go.",
+   "act": "day"
+  },
+  "p_does": {
+   "start": 1794,
+   "end": 1947,
+   "text": "Prospectify does both. In one search.",
+   "act": "brand"
+  },
+  "p_tag": {
+   "start": 2025,
+   "end": 2125,
+   "text": "Fewer tabs. More clients.",
+   "act": "brand"
+  },
+  "p_start": {
+   "start": 2158,
+   "end": 2211,
+   "text": "Start free!",
+   "act": "brand"
+  }
+ },
+ "CLOCK_IN": 2,
+ "CLOCK_GLITCH": [
+  30,
+  118
+ ],
+ "MINUTE_FLIP": 132,
+ "BUILD_IN": 147,
+ "PROMPT": "build a website for a local restaurant",
+ "BUILD_KEYS": [
+  153,
+  154,
+  156,
+  157,
+  158,
+  159,
+  161,
+  162,
+  163,
+  165,
+  166,
+  167,
+  169,
+  170,
+  171,
+  172,
+  174,
+  175,
+  176,
+  178,
+  179,
+  180,
+  182,
+  183,
+  184,
+  185,
+  187,
+  188,
+  189,
+  191,
+  192,
+  193,
+  195,
+  196,
+  197,
+  198,
+  200,
+  201
+ ],
+ "BUILD_STEPS": [
+  207,
+  212,
+  218,
+  223,
+  229,
+  234,
+  240,
+  245
+ ],
+ "BUILD_DONE": 251,
+ "SEARCH_IN": 266,
+ "QUERY": "who needs a website near me?",
+ "SEARCH_KEYS": [
+  278,
+  281,
+  284,
+  287,
+  290,
+  293,
+  296,
+  299,
+  302,
+  305,
+  308,
+  311,
+  314,
+  317,
+  320,
+  323,
+  326,
+  329,
+  332,
+  335,
+  338,
+  341,
+  344,
+  347,
+  350,
+  353,
+  356,
+  359
+ ],
+ "SEARCH_BURST": 374,
+ "TABS_IN": 382,
+ "TAB_STEPS": [
+  382,
+  394,
+  407,
+  419
+ ],
+ "TABS_OUT": 507,
+ "HERE_IN": 512,
+ "THERE_IN": 573,
+ "EVERY_IN": 623,
+ "SPLAT": 684,
+ "PB_TITLE": 717,
+ "PB_STEPS": [
+  754,
+  788,
+  821,
+  855
+ ],
+ "STEP1": 876,
+ "ONE_MAP": 888,
+ "ONE_PINS": [
+  897,
+  901,
+  904,
+  908,
+  912,
+  916,
+  919,
+  923,
+  927,
+  931,
+  934,
+  938
+ ],
+ "ONE_CARD": 941,
+ "ONE_RANK": 951,
+ "STEP2": 1080,
+ "TWO_TYPE": [
+  1098,
+  1198
+ ],
+ "TWO_COPY": 1207,
+ "STEP3": 1228,
+ "THREE_PICK": 1290,
+ "THREE_STEPS": [
+  1305,
+  1313,
+  1322,
+  1330,
+  1338,
+  1346,
+  1355,
+  1363
+ ],
+ "STEP4": 1399,
+ "FOUR_SENT": 1469,
+ "KNEW": 1505,
+ "KNEW_CHECKS": [
+  1551,
+  1582
+ ],
+ "NIGHTS": 1618,
+ "NIGHTS_HIT": 1708,
+ "DOES": 1782,
+ "MERGE": 1862,
+ "LOGO": 1878,
+ "ONE_SEARCH": 1893,
+ "TAG1": 2023,
+ "TAG2": 2073,
+ "CTA": 2152,
+ "CTA_SUB": 2166,
+ "URL": 2178
+}

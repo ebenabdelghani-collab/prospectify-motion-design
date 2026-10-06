@@ -5,6 +5,7 @@ import {MasterAd} from './composition/MasterAd';
 import {Morph} from './morph/Morph';
 import {StackCheck} from './stack-check/StackCheck';
 import {Film, FILM_DURATION} from './final/Film';
+import {Playbook, PLAYBOOK_DURATION} from './playbook/Playbook';
 import MB from './morph/beats.json';
 import {DURATION, FPS, HEIGHT, WIDTH} from './constants/timeline';
 
@@ -20,6 +21,7 @@ export const Root: React.FC = () => (
 		<Composition id="ProspectifyMorph" component={Morph} durationInFrames={MB.durationInFrames} fps={60} width={1080} height={1920} defaultProps={{variant: 'organic' as const, withAudio: true}} />
 		<Composition id="ProspectifyMorphPaid" component={Morph} durationInFrames={MB.durationInFrames} fps={60} width={1080} height={1920} defaultProps={{variant: 'paid' as const, withAudio: true}} />
 		<Composition id="ProspectifyFinal" component={Film} durationInFrames={FILM_DURATION} fps={60} width={1080} height={1920} defaultProps={{withAudio: true}} />
+		<Composition id="ProspectifyPlaybook" component={Playbook} durationInFrames={PLAYBOOK_DURATION} fps={60} width={1920} height={1080} defaultProps={{withAudio: true}} />
 		<Composition id="StackCheck" component={StackCheck} durationInFrames={105} fps={60} width={1080} height={1920} />
 	</>
 );

@@ -14,7 +14,7 @@ const scale = Number(scaleArg);
 const tmp = `${out}.video-only.mp4`;
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts'), webpackOverride});
 const inputProps = {withAudio: false};
-const composition = await selectComposition({serveUrl, id: 'ProspectifyFinal', inputProps, browserExecutable: BROWSER, chromiumOptions: {gl: 'angle'}});
+const composition = await selectComposition({serveUrl, id: process.env.COMP || 'ProspectifyFinal', inputProps, browserExecutable: BROWSER, chromiumOptions: {gl: 'angle'}});
 let last = -1;
 const t0 = Date.now();
 await renderMedia({
@@ -30,6 +30,7 @@ await renderMedia({
 	imageFormat: 'jpeg',
 	jpegQuality: 96,
 	concurrency: 4,
+	timeoutInMilliseconds: 120000,
 	muted: true,
 	browserExecutable: BROWSER,
 	chromiumOptions: {gl: 'angle'},
@@ -43,6 +44,6 @@ await renderMedia({
 	},
 });
 const dur = (composition.durationInFrames / composition.fps).toFixed(6);
-execFileSync('ffmpeg', ['-y', '-v', 'error', '-i', tmp, '-i', 'public/final/audio/prospectify-final-mix.wav', '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '320k', '-ar', '48000', '-t', dur, '-movflags', '+faststart', out]);
+execFileSync('ffmpeg', ['-y', '-v', 'error', '-i', tmp, '-i', process.env.AUDIO || 'public/final/audio/prospectify-final-mix.wav', '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '320k', '-ar', '48000', '-t', dur, '-movflags', '+faststart', out]);
 fs.rmSync(tmp);
 console.log('done', out, `${((Date.now() - t0) / 1000).toFixed(0)}s`);

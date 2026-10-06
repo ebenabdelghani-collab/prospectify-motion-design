@@ -1,0 +1,557 @@
+{
+  "p_time": {
+    "text": "It's eleven forty-six PM.",
+    "gapBefore": 0.55,
+    "seconds": 1.7422,
+    "act": "night",
+    "speed": 1.05,
+    "take": 0,
+    "words": [
+      {
+        "w": "It's",
+        "start": 0.0,
+        "end": 0.264
+      },
+      {
+        "w": "eleven",
+        "start": 0.264,
+        "end": 0.677
+      },
+      {
+        "w": "forty-six",
+        "start": 0.677,
+        "end": 1.464
+      },
+      {
+        "w": "PM",
+        "start": 1.464,
+        "end": 1.742
+      }
+    ]
+  },
+  "p_built": {
+    "text": "The website took forty minutes.",
+    "gapBefore": 0.35,
+    "seconds": 1.4957,
+    "act": "night",
+    "speed": 1.1,
+    "take": 0,
+    "words": [
+      {
+        "w": "The",
+        "start": 0.0,
+        "end": 0.087
+      },
+      {
+        "w": "website",
+        "start": 0.087,
+        "end": 0.544
+      },
+      {
+        "w": "took",
+        "start": 0.544,
+        "end": 0.805
+      },
+      {
+        "w": "forty",
+        "start": 0.805,
+        "end": 1.117
+      },
+      {
+        "w": "minutes",
+        "start": 1.117,
+        "end": 1.496
+      }
+    ]
+  },
+  "p_find": {
+    "text": "Finding someone to buy it?",
+    "gapBefore": 0.55,
+    "seconds": 1.3516,
+    "act": "night",
+    "speed": 1.08,
+    "take": 0,
+    "words": [
+      {
+        "w": "Finding",
+        "start": 0.0,
+        "end": 0.518
+      },
+      {
+        "w": "someone",
+        "start": 0.518,
+        "end": 0.846
+      },
+      {
+        "w": "to",
+        "start": 0.846,
+        "end": 1.059
+      },
+      {
+        "w": "buy",
+        "start": 1.059,
+        "end": 1.202
+      },
+      {
+        "w": "it",
+        "start": 1.202,
+        "end": 1.352
+      }
+    ]
+  },
+  "p_tabs": {
+    "text": "Fourteen tabs.",
+    "gapBefore": 0.95,
+    "seconds": 1.0282,
+    "act": "night",
+    "speed": 1.05,
+    "take": 0,
+    "words": [
+      {
+        "w": "Fourteen",
+        "start": 0.0,
+        "end": 0.651
+      },
+      {
+        "w": "tabs",
+        "start": 0.651,
+        "end": 1.028
+      }
+    ]
+  },
+  "p_here": {
+    "text": "They're over here...",
+    "gapBefore": 0.55,
+    "seconds": 0.9036,
+    "act": "night",
+    "speed": 1.12,
+    "take": 0,
+    "words": [
+      {
+        "w": "They're",
+        "start": 0.0,
+        "end": 0.346
+      },
+      {
+        "w": "over",
+        "start": 0.346,
+        "end": 0.695
+      },
+      {
+        "w": "here",
+        "start": 0.695,
+        "end": 0.904
+      }
+    ]
+  },
+  "p_there": {
+    "text": "over there...",
+    "gapBefore": 0.12,
+    "seconds": 0.7104,
+    "act": "night",
+    "speed": 1.12,
+    "take": 0,
+    "words": [
+      {
+        "w": "over",
+        "start": 0.0,
+        "end": 0.448
+      },
+      {
+        "w": "there",
+        "start": 0.448,
+        "end": 0.71
+      }
+    ]
+  },
+  "p_every": {
+    "text": "everywhere.",
+    "gapBefore": 0.12,
+    "seconds": 0.6864,
+    "act": "night",
+    "speed": 1.06,
+    "take": 0,
+    "words": [
+      {
+        "w": "everywhere",
+        "start": 0.0,
+        "end": 0.686
+      }
+    ]
+  },
+  "p_playbook": {
+    "text": "Here's the playbook that actually works!",
+    "gapBefore": 0.95,
+    "seconds": 1.9361,
+    "act": "day",
+    "speed": 1.08,
+    "take": 0,
+    "words": [
+      {
+        "w": "Here's",
+        "start": 0.0,
+        "end": 0.308
+      },
+      {
+        "w": "the",
+        "start": 0.308,
+        "end": 0.411
+      },
+      {
+        "w": "playbook",
+        "start": 0.411,
+        "end": 0.933
+      },
+      {
+        "w": "that",
+        "start": 0.933,
+        "end": 1.151
+      },
+      {
+        "w": "actually",
+        "start": 1.151,
+        "end": 1.705
+      },
+      {
+        "w": "works",
+        "start": 1.705,
+        "end": 1.936
+      }
+    ]
+  },
+  "p_one": {
+    "text": "One. Find a business that already has customers.",
+    "gapBefore": 0.7,
+    "seconds": 2.5602,
+    "act": "day",
+    "speed": 1.1,
+    "take": 0,
+    "words": [
+      {
+        "w": "One",
+        "start": 0.0,
+        "end": 0.298
+      },
+      {
+        "w": "Find",
+        "start": 0.435,
+        "end": 0.757
+      },
+      {
+        "w": "a",
+        "start": 0.757,
+        "end": 0.931
+      },
+      {
+        "w": "business",
+        "start": 0.931,
+        "end": 1.227
+      },
+      {
+        "w": "that",
+        "start": 1.227,
+        "end": 1.462
+      },
+      {
+        "w": "already",
+        "start": 1.462,
+        "end": 1.892
+      },
+      {
+        "w": "has",
+        "start": 1.892,
+        "end": 2.034
+      },
+      {
+        "w": "customers",
+        "start": 2.034,
+        "end": 2.56
+      }
+    ]
+  },
+  "p_two": {
+    "text": "Two. Know exactly what to say.",
+    "gapBefore": 0.85,
+    "seconds": 1.619,
+    "act": "day",
+    "speed": 1.1,
+    "take": 0,
+    "words": [
+      {
+        "w": "Two",
+        "start": 0.0,
+        "end": 0.327
+      },
+      {
+        "w": "Know",
+        "start": 0.398,
+        "end": 0.607
+      },
+      {
+        "w": "exactly",
+        "start": 0.607,
+        "end": 1.141
+      },
+      {
+        "w": "what",
+        "start": 1.141,
+        "end": 1.318
+      },
+      {
+        "w": "to",
+        "start": 1.318,
+        "end": 1.47
+      },
+      {
+        "w": "say",
+        "start": 1.47,
+        "end": 1.619
+      }
+    ]
+  },
+  "p_three": {
+    "text": "Three. Build their site with AI.",
+    "gapBefore": 0.85,
+    "seconds": 1.7428,
+    "act": "day",
+    "speed": 1.1,
+    "take": 0,
+    "words": [
+      {
+        "w": "Three",
+        "start": 0.0,
+        "end": 0.373
+      },
+      {
+        "w": "Build",
+        "start": 0.437,
+        "end": 0.733
+      },
+      {
+        "w": "their",
+        "start": 0.733,
+        "end": 0.985
+      },
+      {
+        "w": "site",
+        "start": 0.985,
+        "end": 1.191
+      },
+      {
+        "w": "with",
+        "start": 1.191,
+        "end": 1.494
+      },
+      {
+        "w": "AI",
+        "start": 1.494,
+        "end": 1.743
+      }
+    ]
+  },
+  "p_four": {
+    "text": "Four. Send it!",
+    "gapBefore": 1.1,
+    "seconds": 0.9236,
+    "act": "day",
+    "speed": 1.08,
+    "take": 0,
+    "words": [
+      {
+        "w": "Four",
+        "start": 0.0,
+        "end": 0.341
+      },
+      {
+        "w": "Send",
+        "start": 0.341,
+        "end": 0.761
+      },
+      {
+        "w": "it",
+        "start": 0.761,
+        "end": 0.924
+      }
+    ]
+  },
+  "p_knew": {
+    "text": "You already knew three and four.",
+    "gapBefore": 0.8,
+    "seconds": 1.4206,
+    "act": "day",
+    "speed": 1.06,
+    "take": 0,
+    "words": [
+      {
+        "w": "You",
+        "start": 0.0,
+        "end": 0.123
+      },
+      {
+        "w": "already",
+        "start": 0.123,
+        "end": 0.619
+      },
+      {
+        "w": "knew",
+        "start": 0.619,
+        "end": 0.718
+      },
+      {
+        "w": "three",
+        "start": 0.718,
+        "end": 0.968
+      },
+      {
+        "w": "and",
+        "start": 0.968,
+        "end": 1.24
+      },
+      {
+        "w": "four",
+        "start": 1.24,
+        "end": 1.421
+      }
+    ]
+  },
+  "p_nights": {
+    "text": "One and two? That's where your nights go.",
+    "gapBefore": 0.45,
+    "seconds": 1.9886,
+    "act": "day",
+    "speed": 1.06,
+    "take": 0,
+    "words": [
+      {
+        "w": "One",
+        "start": 0.0,
+        "end": 0.255
+      },
+      {
+        "w": "and",
+        "start": 0.255,
+        "end": 0.552
+      },
+      {
+        "w": "two",
+        "start": 0.552,
+        "end": 0.682
+      },
+      {
+        "w": "That's",
+        "start": 0.869,
+        "end": 1.1
+      },
+      {
+        "w": "where",
+        "start": 1.1,
+        "end": 1.272
+      },
+      {
+        "w": "your",
+        "start": 1.272,
+        "end": 1.508
+      },
+      {
+        "w": "nights",
+        "start": 1.508,
+        "end": 1.83
+      },
+      {
+        "w": "go",
+        "start": 1.83,
+        "end": 1.989
+      }
+    ]
+  },
+  "p_does": {
+    "text": "Prospectify does both. In one search.",
+    "gapBefore": 0.9,
+    "seconds": 2.5587,
+    "act": "brand",
+    "speed": 1.04,
+    "take": 0,
+    "words": [
+      {
+        "w": "Prospectify",
+        "start": 0.0,
+        "end": 0.914
+      },
+      {
+        "w": "does",
+        "start": 0.914,
+        "end": 1.128
+      },
+      {
+        "w": "both",
+        "start": 1.128,
+        "end": 1.377
+      },
+      {
+        "w": "In",
+        "start": 1.647,
+        "end": 1.821
+      },
+      {
+        "w": "one",
+        "start": 1.821,
+        "end": 2.113
+      },
+      {
+        "w": "search",
+        "start": 2.113,
+        "end": 2.559
+      }
+    ]
+  },
+  "p_tag": {
+    "text": "Fewer tabs. More clients.",
+    "gapBefore": 1.3,
+    "seconds": 1.6663,
+    "act": "brand",
+    "speed": 1.0,
+    "take": 0,
+    "words": [
+      {
+        "w": "Fewer",
+        "start": 0.0,
+        "end": 0.344
+      },
+      {
+        "w": "tabs",
+        "start": 0.344,
+        "end": 0.768
+      },
+      {
+        "w": "More",
+        "start": 0.847,
+        "end": 1.046
+      },
+      {
+        "w": "clients",
+        "start": 1.046,
+        "end": 1.666
+      }
+    ]
+  },
+  "p_start": {
+    "text": "Start free!",
+    "gapBefore": 0.55,
+    "seconds": 0.8772,
+    "act": "brand",
+    "speed": 1.0,
+    "take": 0,
+    "words": [
+      {
+        "w": "Start",
+        "start": 0.0,
+        "end": 0.593
+      },
+      {
+        "w": "free",
+        "start": 0.593,
+        "end": 0.877
+      }
+    ]
+  }
+}
