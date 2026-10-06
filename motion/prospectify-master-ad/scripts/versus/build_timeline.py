@@ -30,8 +30,12 @@ def E(s, o=0.0):
     return VO[s]['end'] + round(o * FPS)
 
 
+NUMW = {'40': 'forty', '14': 'fourteen', '2': 'two', '3': 'three', '0': 'zero'}
+
+
 def clean(w):
-    return re.sub(r"[^a-z0-9']", '', w.lower())
+    w = re.sub(r"[^a-z0-9']", '', w.lower())
+    return NUMW.get(w, w)
 
 
 def W(s, word, o=0.0, nth=0):

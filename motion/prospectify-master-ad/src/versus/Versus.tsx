@@ -13,7 +13,6 @@ loadGeist();
 
 /** SAME NIGHT — 16:9 acquisition film: the viewer's night without Prospectify, then the same night with it. */
 const BLUR: [number, number][] = [
-	[P.H_ZERO - 2, P.H_ZERO + 14],
 	[P.W_MAPS - 6, P.W_MAPS + 12],
 	[P.T_WITH - 6, P.T_WITH + 18],
 	[P.F_IN - 4, P.F_IN + 18],

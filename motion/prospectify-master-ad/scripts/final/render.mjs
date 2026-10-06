@@ -29,7 +29,7 @@ await renderMedia({
 	scale,
 	imageFormat: 'jpeg',
 	jpegQuality: 96,
-	concurrency: 4,
+	concurrency: Number(process.env.CONC || 4),
 	timeoutInMilliseconds: 120000,
 	muted: true,
 	browserExecutable: BROWSER,

@@ -276,7 +276,7 @@ def limit(x, ceiling_db):
     return x * o
 
 
-MUSIC_GAIN = float(os.environ.get('MUSIC_GAIN', '-11'))
+MUSIC_GAIN = float(os.environ.get('MUSIC_GAIN', '-13'))
 n_out = int(round(DUR / FPS * SR))
 stems = {'voice': voice.buf, 'music': music.buf * db(MUSIC_GAIN), 'sfx': sfx.buf}
 mix = sum(stems.values())

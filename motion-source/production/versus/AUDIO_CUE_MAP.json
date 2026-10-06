@@ -1,0 +1,1690 @@
+{
+ "fps": 60,
+ "sampleRate": 48000,
+ "music": {
+  "title": "Right Now (Original Mix)",
+  "artist": "Spencer Newton",
+  "license": "CC BY 3.0",
+  "url": "https://www.jamendo.com/track/1674218",
+  "bpm": 128.005
+ },
+ "integratedLUFS": -14.03,
+ "truePeak_dBTP": -1.05,
+ "voiceOverMusic_dB_median": 8.5,
+ "cues": [
+  {
+   "frame": 4,
+   "time": 0.067,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 11,
+   "time": 0.183,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 18,
+   "time": 0.3,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 25,
+   "time": 0.417,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 32,
+   "time": 0.533,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 39,
+   "time": 0.65,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 46,
+   "time": 0.767,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 53,
+   "time": 0.883,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 60,
+   "time": 1.0,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 67,
+   "time": 1.117,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 74,
+   "time": 1.233,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 81,
+   "time": 1.35,
+   "scene": "hook",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 88,
+   "time": 1.467,
+   "scene": "hook",
+   "event": "40 min ✓",
+   "sound": "lock",
+   "category": "MEDIUM",
+   "volume_db": -22
+  },
+  {
+   "frame": 201,
+   "time": 3.35,
+   "scene": "hook",
+   "event": "0 clients",
+   "sound": "glitch hit + sub",
+   "category": "MACRO",
+   "volume_db": -14
+  },
+  {
+   "frame": 282,
+   "time": 4.7,
+   "scene": "without",
+   "event": "cold world",
+   "sound": "downer sweep",
+   "category": "MACRO",
+   "volume_db": -22
+  },
+  {
+   "frame": 401,
+   "time": 6.683,
+   "scene": "without",
+   "event": "clock jumps (W_MAPS)",
+   "sound": "clock glitch",
+   "category": "MICRO",
+   "volume_db": -24
+  },
+  {
+   "frame": 502,
+   "time": 8.367,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 504,
+   "time": 8.4,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 506,
+   "time": 8.433,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 508,
+   "time": 8.467,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 510,
+   "time": 8.5,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 512,
+   "time": 8.533,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 514,
+   "time": 8.567,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 516,
+   "time": 8.6,
+   "scene": "without",
+   "event": "clock jumps (W_TABS)",
+   "sound": "clock glitch",
+   "category": "MICRO",
+   "volume_db": -24
+  },
+  {
+   "frame": 516,
+   "time": 8.6,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 518,
+   "time": 8.633,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 518,
+   "time": 8.633,
+   "scene": "without",
+   "event": "14 tabs.",
+   "sound": "glitch hit",
+   "category": "MEDIUM",
+   "volume_db": -18
+  },
+  {
+   "frame": 520,
+   "time": 8.667,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 522,
+   "time": 8.7,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 524,
+   "time": 8.733,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 526,
+   "time": 8.767,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 528,
+   "time": 8.8,
+   "scene": "without",
+   "event": "tab opens",
+   "sound": "tab pop",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 601,
+   "time": 10.017,
+   "scene": "without",
+   "event": "clock jumps (W_GUESS)",
+   "sound": "clock glitch",
+   "category": "MICRO",
+   "volume_db": -24
+  },
+  {
+   "frame": 613,
+   "time": 10.217,
+   "scene": "without",
+   "event": "? stamp",
+   "sound": "stamp",
+   "category": "MEDIUM",
+   "volume_db": -22
+  },
+  {
+   "frame": 619,
+   "time": 10.317,
+   "scene": "without",
+   "event": "? stamp",
+   "sound": "stamp",
+   "category": "MEDIUM",
+   "volume_db": -22
+  },
+  {
+   "frame": 625,
+   "time": 10.417,
+   "scene": "without",
+   "event": "? stamp",
+   "sound": "stamp",
+   "category": "MEDIUM",
+   "volume_db": -22
+  },
+  {
+   "frame": 700,
+   "time": 11.667,
+   "scene": "without",
+   "event": "⌘V",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -18
+  },
+  {
+   "frame": 702,
+   "time": 11.7,
+   "scene": "without",
+   "event": "clock jumps (W_COLD)",
+   "sound": "clock glitch",
+   "category": "MICRO",
+   "volume_db": -24
+  },
+  {
+   "frame": 706,
+   "time": 11.767,
+   "scene": "without",
+   "event": "sent",
+   "sound": "send",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 710,
+   "time": 11.833,
+   "scene": "without",
+   "event": "⌘V",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -18
+  },
+  {
+   "frame": 716,
+   "time": 11.933,
+   "scene": "without",
+   "event": "sent",
+   "sound": "send",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 720,
+   "time": 12.0,
+   "scene": "without",
+   "event": "⌘V",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -18
+  },
+  {
+   "frame": 726,
+   "time": 12.1,
+   "scene": "without",
+   "event": "sent",
+   "sound": "send",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 730,
+   "time": 12.167,
+   "scene": "without",
+   "event": "⌘V",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -18
+  },
+  {
+   "frame": 736,
+   "time": 12.267,
+   "scene": "without",
+   "event": "sent",
+   "sound": "send",
+   "category": "MICRO",
+   "volume_db": -28
+  },
+  {
+   "frame": 840,
+   "time": 14.0,
+   "scene": "without",
+   "event": "clock jumps (W_SEEN)",
+   "sound": "clock glitch",
+   "category": "MICRO",
+   "volume_db": -24
+  },
+  {
+   "frame": 860,
+   "time": 14.333,
+   "scene": "without",
+   "event": "seen ✓✓",
+   "sound": "tick",
+   "category": "MEDIUM",
+   "volume_db": -26
+  },
+  {
+   "frame": 880,
+   "time": 14.667,
+   "scene": "without",
+   "event": "No reply.",
+   "sound": "glitch hit",
+   "category": "MACRO",
+   "volume_db": -17
+  },
+  {
+   "frame": 936,
+   "time": 15.6,
+   "scene": "without",
+   "event": "clock jumps (W_GENERIC)",
+   "sound": "clock glitch",
+   "category": "MICRO",
+   "volume_db": -24
+  },
+  {
+   "frame": 936,
+   "time": 15.6,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 938,
+   "time": 15.633,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 940,
+   "time": 15.667,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 942,
+   "time": 15.7,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 944,
+   "time": 15.733,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 946,
+   "time": 15.767,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 948,
+   "time": 15.8,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 950,
+   "time": 15.833,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 952,
+   "time": 15.867,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 954,
+   "time": 15.9,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 956,
+   "time": 15.933,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 958,
+   "time": 15.967,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 960,
+   "time": 16.0,
+   "scene": "without",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -32
+  },
+  {
+   "frame": 1065,
+   "time": 17.75,
+   "scene": "without",
+   "event": "clock jumps (W_LATE)",
+   "sound": "clock glitch",
+   "category": "MICRO",
+   "volume_db": -24
+  },
+  {
+   "frame": 1066,
+   "time": 17.767,
+   "scene": "without",
+   "event": "2:07 AM",
+   "sound": "glitch hit",
+   "category": "MEDIUM",
+   "volume_db": -18
+  },
+  {
+   "frame": 1129,
+   "time": 18.817,
+   "scene": "without",
+   "event": "0 clients.",
+   "sound": "low hit",
+   "category": "MACRO",
+   "volume_db": -14
+  },
+  {
+   "frame": 1200,
+   "time": 20.0,
+   "scene": "turn",
+   "event": "clock rewinds",
+   "sound": "tape rewind",
+   "category": "MACRO",
+   "volume_db": -20
+  },
+  {
+   "frame": 1200,
+   "time": 20.0,
+   "scene": "turn",
+   "event": "riser",
+   "sound": "noise riser",
+   "category": "MACRO",
+   "volume_db": -26
+  },
+  {
+   "frame": 1320,
+   "time": 22.0,
+   "scene": "turn",
+   "event": "DROP · With Prospectify",
+   "sound": "impact",
+   "category": "MACRO",
+   "volume_db": -12
+  },
+  {
+   "frame": 1388,
+   "time": 23.133,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1391,
+   "time": 23.183,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1393,
+   "time": 23.217,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1396,
+   "time": 23.267,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1398,
+   "time": 23.3,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1401,
+   "time": 23.35,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1403,
+   "time": 23.383,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1406,
+   "time": 23.433,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1408,
+   "time": 23.467,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1411,
+   "time": 23.517,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1413,
+   "time": 23.55,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1416,
+   "time": 23.6,
+   "scene": "with",
+   "event": "typing",
+   "sound": "key",
+   "category": "MICRO",
+   "volume_db": -30
+  },
+  {
+   "frame": 1420,
+   "time": 23.667,
+   "scene": "with",
+   "event": "scan",
+   "sound": "scan sweep",
+   "category": "MEDIUM",
+   "volume_db": -27
+  },
+  {
+   "frame": 1442,
+   "time": 24.033,
+   "scene": "with",
+   "event": "lead 1",
+   "sound": "pop",
+   "category": "MICRO",
+   "volume_db": -26
+  },
+  {
+   "frame": 1447,
+   "time": 24.117,
+   "scene": "with",
+   "event": "lead 2",
+   "sound": "pop",
+   "category": "MICRO",
+   "volume_db": -26
+  },
+  {
+   "frame": 1452,
+   "time": 24.2,
+   "scene": "with",
+   "event": "lead 3",
+   "sound": "pop",
+   "category": "MICRO",
+   "volume_db": -26
+  },
+  {
+   "frame": 1457,
+   "time": 24.283,
+   "scene": "with",
+   "event": "lead 4",
+   "sound": "pop",
+   "category": "MICRO",
+   "volume_db": -26
+  },
+  {
+   "frame": 1462,
+   "time": 24.367,
+   "scene": "with",
+   "event": "lead 5",
+   "sound": "pop",
+   "category": "MICRO",
+   "volume_db": -26
+  },
+  {
+   "frame": 1527,
+   "time": 25.45,
+   "scene": "with",
+   "event": "Client found",
+   "sound": "lock",
+   "category": "MEDIUM",
+   "volume_db": -18
+  },
+  {
+   "frame": 1606,
+   "time": 26.767,
+   "scene": "with",
+   "event": "outreach tab",
+   "sound": "whoosh",
+   "category": "MEDIUM",
+   "volume_db": -26
+  },
+  {
+   "frame": 1681,
+   "time": 28.017,
+   "scene": "with",
+   "event": "R_WA",
+   "sound": "tab click",
+   "category": "MEDIUM",
+   "volume_db": -21
+  },
+  {
+   "frame": 1708,
+   "time": 28.467,
+   "scene": "with",
+   "event": "R_EMAIL",
+   "sound": "tab click",
+   "category": "MEDIUM",
+   "volume_db": -21
+  },
+  {
+   "frame": 1742,
+   "time": 29.033,
+   "scene": "with",
+   "event": "R_PHONE",
+   "sound": "tab click",
+   "category": "MEDIUM",
+   "volume_db": -21
+  },
+  {
+   "frame": 1782,
+   "time": 29.7,
+   "scene": "with",
+   "event": "Copied!",
+   "sound": "lock",
+   "category": "MEDIUM",
+   "volume_db": -20
+  },
+  {
+   "frame": 1787,
+   "time": 29.783,
+   "scene": "with",
+   "event": "AI prompt tab",
+   "sound": "whoosh",
+   "category": "MEDIUM",
+   "volume_db": -26
+  },
+  {
+   "frame": 1809,
+   "time": 30.15,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1814,
+   "time": 30.233,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1819,
+   "time": 30.317,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1824,
+   "time": 30.4,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1829,
+   "time": 30.483,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1834,
+   "time": 30.567,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1839,
+   "time": 30.65,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1844,
+   "time": 30.733,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1849,
+   "time": 30.817,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1854,
+   "time": 30.9,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1859,
+   "time": 30.983,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1864,
+   "time": 31.067,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1869,
+   "time": 31.15,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1874,
+   "time": 31.233,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1879,
+   "time": 31.317,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1884,
+   "time": 31.4,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1889,
+   "time": 31.483,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1894,
+   "time": 31.567,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1899,
+   "time": 31.65,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1904,
+   "time": 31.733,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1909,
+   "time": 31.817,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1914,
+   "time": 31.9,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1919,
+   "time": 31.983,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1924,
+   "time": 32.067,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1929,
+   "time": 32.15,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1934,
+   "time": 32.233,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1939,
+   "time": 32.317,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1944,
+   "time": 32.4,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1949,
+   "time": 32.483,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1954,
+   "time": 32.567,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1959,
+   "time": 32.65,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1964,
+   "time": 32.733,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1969,
+   "time": 32.817,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1974,
+   "time": 32.9,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1979,
+   "time": 32.983,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1984,
+   "time": 33.067,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1989,
+   "time": 33.15,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1994,
+   "time": 33.233,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 1999,
+   "time": 33.317,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 2004,
+   "time": 33.4,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 2009,
+   "time": 33.483,
+   "scene": "with",
+   "event": "prompt streams",
+   "sound": "type",
+   "category": "MICRO",
+   "volume_db": -34
+  },
+  {
+   "frame": 2020,
+   "time": 33.667,
+   "scene": "with",
+   "event": "Ready to paste",
+   "sound": "lock",
+   "category": "MEDIUM",
+   "volume_db": -18
+  },
+  {
+   "frame": 2020,
+   "time": 33.667,
+   "scene": "with",
+   "event": "builders",
+   "sound": "whoosh",
+   "category": "MACRO",
+   "volume_db": -22
+  },
+  {
+   "frame": 2028,
+   "time": 33.8,
+   "scene": "with",
+   "event": "⌘V paste",
+   "sound": "key + whoosh",
+   "category": "MEDIUM",
+   "volume_db": -16
+  },
+  {
+   "frame": 2032,
+   "time": 33.867,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2038,
+   "time": 33.967,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2044,
+   "time": 34.067,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2050,
+   "time": 34.167,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2056,
+   "time": 34.267,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2062,
+   "time": 34.367,
+   "scene": "with",
+   "event": "builder logo",
+   "sound": "pop",
+   "category": "MICRO",
+   "volume_db": -24
+  },
+  {
+   "frame": 2062,
+   "time": 34.367,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2068,
+   "time": 34.467,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2074,
+   "time": 34.567,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2080,
+   "time": 34.667,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2086,
+   "time": 34.767,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2092,
+   "time": 34.867,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2098,
+   "time": 34.967,
+   "scene": "with",
+   "event": "builder logo",
+   "sound": "pop",
+   "category": "MICRO",
+   "volume_db": -24
+  },
+  {
+   "frame": 2098,
+   "time": 34.967,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2104,
+   "time": 35.067,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2110,
+   "time": 35.167,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2116,
+   "time": 35.267,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2122,
+   "time": 35.367,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2128,
+   "time": 35.467,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2134,
+   "time": 35.567,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2140,
+   "time": 35.667,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2146,
+   "time": 35.767,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2152,
+   "time": 35.867,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2158,
+   "time": 35.967,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2164,
+   "time": 36.067,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2170,
+   "time": 36.167,
+   "scene": "with",
+   "event": "builder logo",
+   "sound": "pop",
+   "category": "MICRO",
+   "volume_db": -24
+  },
+  {
+   "frame": 2170,
+   "time": 36.167,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2176,
+   "time": 36.267,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2182,
+   "time": 36.367,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2188,
+   "time": 36.467,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2194,
+   "time": 36.567,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2200,
+   "time": 36.667,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2206,
+   "time": 36.767,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2212,
+   "time": 36.867,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2213,
+   "time": 36.883,
+   "scene": "with",
+   "event": "D_FOUND",
+   "sound": "lock",
+   "category": "MEDIUM",
+   "volume_db": -16
+  },
+  {
+   "frame": 2218,
+   "time": 36.967,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2224,
+   "time": 37.067,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2230,
+   "time": 37.167,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2236,
+   "time": 37.267,
+   "scene": "with",
+   "event": "site builds",
+   "sound": "ui tick",
+   "category": "MICRO",
+   "volume_db": -33
+  },
+  {
+   "frame": 2266,
+   "time": 37.767,
+   "scene": "with",
+   "event": "D_READY",
+   "sound": "lock",
+   "category": "MEDIUM",
+   "volume_db": -16
+  },
+  {
+   "frame": 2270,
+   "time": 37.833,
+   "scene": "with",
+   "event": "message sent",
+   "sound": "send swoosh",
+   "category": "MEDIUM",
+   "volume_db": -22
+  },
+  {
+   "frame": 2307,
+   "time": 38.45,
+   "scene": "with",
+   "event": "D_BUILT",
+   "sound": "lock",
+   "category": "MEDIUM",
+   "volume_db": -16
+  },
+  {
+   "frame": 2364,
+   "time": 39.4,
+   "scene": "recap",
+   "event": "split",
+   "sound": "whoosh",
+   "category": "MACRO",
+   "volume_db": -20
+  },
+  {
+   "frame": 2419,
+   "time": 40.317,
+   "scene": "recap",
+   "event": "All night.",
+   "sound": "low tick",
+   "category": "MEDIUM",
+   "volume_db": -22
+  },
+  {
+   "frame": 2497,
+   "time": 41.617,
+   "scene": "recap",
+   "event": "One search.",
+   "sound": "lock",
+   "category": "MEDIUM",
+   "volume_db": -15
+  },
+  {
+   "frame": 2556,
+   "time": 42.6,
+   "scene": "cta",
+   "event": "brand",
+   "sound": "whoosh",
+   "category": "MEDIUM",
+   "volume_db": -22
+  },
+  {
+   "frame": 2665,
+   "time": 44.417,
+   "scene": "cta",
+   "event": "Start free",
+   "sound": "pop",
+   "category": "MEDIUM",
+   "volume_db": -20
+  },
+  {
+   "frame": 2782,
+   "time": 46.374,
+   "scene": "cta",
+   "event": "final downbeat",
+   "sound": "music hit",
+   "category": "MACRO",
+   "volume_db": -2
+  },
+  {
+   "frame": 2827,
+   "time": 47.117,
+   "scene": "cta",
+   "event": "cursor click",
+   "sound": "click",
+   "category": "MEDIUM",
+   "volume_db": -16
+  }
+ ]
+}
