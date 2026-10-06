@@ -167,6 +167,7 @@ cue(K('TAG1'), 'brand', 'Fewer tabs.', 'tabs fall away', sweep_v(0.6, 3000, 300,
 cue(K('TAG2'), 'brand', 'More clients.', 'hit', click_v(deep=True), -19)
 sig_cue(K('CTA') + 4, 'cta', 'CTA', 'partial', -19)
 cue(K('URL'), 'cta', 'url', 'tick', tick_v(hz(89), 0.012), -28, cat='MICRO')
+cue(K('URL') + 34, 'cta', 'cursor clicks Start free', 'click', click_v(), -21, 0.2)
 
 
 

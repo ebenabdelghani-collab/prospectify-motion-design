@@ -57,7 +57,7 @@ export const Day: React.FC<{f: number}> = ({f}) => {
 	const stepsT = (P.PB_STEPS as unknown as number[]).map((s) => ramp(f, s, 18, EASE.FAST_LOCK));
 	const stepAt = [P.STEP1, P.STEP2, P.STEP3, P.STEP4];
 	const active = stepAt.filter((s) => f >= s).length - 1;
-	const playOut = ramp(f, P.KNEW, 16, EASE.EXIT); // step stages end
+	const playOut = ramp(f, P.KNEW - 4, 12, EASE.EXIT); // step stages end
 	const knew = (P.KNEW_CHECKS as unknown as number[]).map((k) => ramp(f, k, 12, EASE.FAST_LOCK));
 	const nights = ramp(f, P.NIGHTS_HIT, 10, EASE.FAST_LOCK);
 	const merge = ramp(f, P.MERGE, 26, EASE.CAMERA);
@@ -227,7 +227,7 @@ export const Day: React.FC<{f: number}> = ({f}) => {
 			{/* ── CONTRAST: 3 & 4 take minutes, 1 & 2 take all night ── */}
 			{f >= P.KNEW && f < P.LOGO + 6 && (
 				<div style={{position: 'absolute', left: STAGE.x, top: STAGE.y + 120, width: STAGE.w, opacity: 1 - ramp(f, P.MERGE - 6, 12, EASE.EXIT)}}>
-					<div style={{opacity: ramp(f, P.KNEW, 12) * lerp(1, 0.35, nights), transform: `translateY(${(1 - ramp(f, P.KNEW, 18, EASE.FAST_LOCK)) * 40}px)`}}>
+					<div style={{opacity: ramp(f, P.KNEW + 8, 12) * lerp(1, 0.35, nights), transform: `translateY(${(1 - ramp(f, P.KNEW + 8, 18, EASE.FAST_LOCK)) * 40}px)`}}>
 						<div style={{fontFamily: FONT.sans, fontSize: 40, fontWeight: 700, color: 'rgba(22,19,26,0.55)'}}>Steps 3 + 4</div>
 						<Big text="40" accent="minutes." size={170} color={INK} accentColor={INK} />
 					</div>
@@ -279,13 +279,21 @@ export const Day: React.FC<{f: number}> = ({f}) => {
 
 			{/* ── CTA ── */}
 			{ctaT > 0 && (
-				<div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+				<div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', transform: `scale(${lerp(1, 1.07, ramp(f, P.CTA, P.durationInFrames - P.CTA, EASE.SOFT))})`}}>
 					<div style={{display: 'flex', alignItems: 'center', gap: 24, opacity: ctaT, transform: `translateY(${(1 - ctaT) * 30}px)`}}>
 						<Logo size={110} />
 						<div style={{fontFamily: FONT.sans, fontSize: 120, fontWeight: 800, letterSpacing: '-0.05em', color: INK}}>Prospectify</div>
 					</div>
-					<div style={{marginTop: 50, width: 560, opacity: ramp(f, P.CTA + 6, 14), transform: `scale(${lerp(0.94, 1, ramp(f, P.CTA + 6, 18, EASE.FAST_LOCK))})`}}>
-						<GradButton label="Start free" h={110} fs={46} sheen={clamp01((f - P.CTA - 24) / 40)} />
+					<div style={{position: 'relative', marginTop: 50, width: 560, opacity: ramp(f, P.CTA + 6, 14), transform: `scale(${lerp(0.94, 1, ramp(f, P.CTA + 6, 18, EASE.FAST_LOCK))})`}}>
+						<div style={{transform: `scale(${1 - 0.05 * Math.sin(Math.PI * clamp01((f - P.URL - 34) / 10))})`, boxShadow: `0 0 0 ${ramp(f, P.URL + 38, 30) * 60}px rgba(244,37,98,${0.25 * (1 - ramp(f, P.URL + 38, 30))})`, borderRadius: 999}}>
+							<GradButton label="Start free" h={110} fs={46} sheen={clamp01((f - P.CTA - 24) / 40)} />
+						</div>
+						{/* the viewer's cursor arrives and clicks */}
+						{f > P.URL + 6 && (
+							<svg width={54} height={54} viewBox="0 0 24 24" style={{position: 'absolute', left: lerp(900, 340, ramp(f, P.URL + 6, 28, EASE.CAMERA)), top: lerp(520, 70, ramp(f, P.URL + 6, 28, EASE.CAMERA)), transform: `scale(${1 - 0.15 * Math.sin(Math.PI * clamp01((f - P.URL - 34) / 10))})`, filter: 'drop-shadow(0 6px 10px rgba(0,0,0,0.3))'}}>
+								<path d="M4 2 L4 19 L8.5 14.8 L11.5 21.5 L14.3 20.3 L11.3 13.7 L17.5 13.7 Z" fill="#16131a" stroke="#fff" strokeWidth={1.4} strokeLinejoin="round" />
+							</svg>
+						)}
 					</div>
 					<div style={{marginTop: 26, fontFamily: FONT.sans, fontSize: 30, fontWeight: 600, color: 'rgba(22,19,26,0.65)', opacity: ramp(f, P.CTA_SUB, 14)}}>3 real leads free · No card required</div>
 					<div style={{marginTop: 10, fontFamily: FONT.sans, fontSize: 34, fontWeight: 750, color: INK, opacity: ramp(f, P.URL, 14)}}>prospectify.net</div>

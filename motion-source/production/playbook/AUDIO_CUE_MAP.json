@@ -3,7 +3,7 @@
  "sampleRate": 48000,
  "bpm": 124,
  "integratedLUFS": -14.08,
- "truePeak_dBTP": -0.96,
+ "truePeak_dBTP": -0.98,
  "mixPriority": [
   "voice",
   "music",
@@ -2063,6 +2063,18 @@
    "category": "MICRO",
    "volume_db": -28,
    "pan": 0.0,
+   "ducking": "sfx −5 dB under VO",
+   "notes": ""
+  },
+  {
+   "frame": 2212,
+   "time": 36.867,
+   "scene": "cta",
+   "event": "cursor clicks Start free",
+   "sound": "click",
+   "category": "MEDIUM",
+   "volume_db": -21,
+   "pan": 0.2,
    "ducking": "sfx −5 dB under VO",
    "notes": ""
   }
