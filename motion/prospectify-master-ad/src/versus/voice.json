@@ -1,0 +1,798 @@
+{
+ "v_hook1": {
+  "text": "You can build a website in forty minutes.",
+  "gapBefore": 0.3,
+  "seconds": 3.075,
+  "act": "hook",
+  "words": [
+   {
+    "w": "You",
+    "start": 0.05,
+    "end": 0.335
+   },
+   {
+    "w": "can",
+    "start": 0.335,
+    "end": 0.62
+   },
+   {
+    "w": "build",
+    "start": 0.62,
+    "end": 1.055
+   },
+   {
+    "w": "a",
+    "start": 1.055,
+    "end": 1.19
+   },
+   {
+    "w": "website",
+    "start": 1.19,
+    "end": 1.775
+   },
+   {
+    "w": "in",
+    "start": 1.775,
+    "end": 1.985
+   },
+   {
+    "w": "forty",
+    "start": 1.985,
+    "end": 2.42
+   },
+   {
+    "w": "minutes",
+    "start": 2.42,
+    "end": 3.005
+   }
+  ],
+  "provisional": true
+ },
+ "v_hook2": {
+  "text": "So why don't you have a single client?",
+  "gapBefore": 0.15,
+  "seconds": 2.85,
+  "act": "hook",
+  "words": [
+   {
+    "w": "So",
+    "start": 0.05,
+    "end": 0.26
+   },
+   {
+    "w": "why",
+    "start": 0.26,
+    "end": 0.545
+   },
+   {
+    "w": "don't",
+    "start": 0.545,
+    "end": 0.98
+   },
+   {
+    "w": "you",
+    "start": 0.98,
+    "end": 1.265
+   },
+   {
+    "w": "have",
+    "start": 1.265,
+    "end": 1.625
+   },
+   {
+    "w": "a",
+    "start": 1.625,
+    "end": 1.76
+   },
+   {
+    "w": "single",
+    "start": 1.76,
+    "end": 2.27
+   },
+   {
+    "w": "client",
+    "start": 2.27,
+    "end": 2.78
+   }
+  ],
+  "provisional": true
+ },
+ "v_without": {
+  "text": "Here's your night without Prospectify.",
+  "gapBefore": 0.45,
+  "seconds": 2.895,
+  "act": "without",
+  "words": [
+   {
+    "w": "Here's",
+    "start": 0.05,
+    "end": 0.56
+   },
+   {
+    "w": "your",
+    "start": 0.56,
+    "end": 0.92
+   },
+   {
+    "w": "night",
+    "start": 0.92,
+    "end": 1.355
+   },
+   {
+    "w": "without",
+    "start": 1.355,
+    "end": 1.94
+   },
+   {
+    "w": "Prospectify",
+    "start": 1.94,
+    "end": 2.825
+   }
+  ],
+  "provisional": true
+ },
+ "v_maps": {
+  "text": "Hours scrolling Maps.",
+  "gapBefore": 0.25,
+  "seconds": 1.65,
+  "act": "without",
+  "words": [
+   {
+    "w": "Hours",
+    "start": 0.05,
+    "end": 0.485
+   },
+   {
+    "w": "scrolling",
+    "start": 0.485,
+    "end": 1.22
+   },
+   {
+    "w": "Maps",
+    "start": 1.22,
+    "end": 1.58
+   }
+  ],
+  "provisional": true
+ },
+ "v_tabs": {
+  "text": "Fourteen tabs.",
+  "gapBefore": 0.12,
+  "seconds": 1.14,
+  "act": "without",
+  "words": [
+   {
+    "w": "Fourteen",
+    "start": 0.05,
+    "end": 0.71
+   },
+   {
+    "w": "tabs",
+    "start": 0.71,
+    "end": 1.07
+   }
+  ],
+  "provisional": true
+ },
+ "v_guess": {
+  "text": "Guessing who even needs a site.",
+  "gapBefore": 0.12,
+  "seconds": 2.355,
+  "act": "without",
+  "words": [
+   {
+    "w": "Guessing",
+    "start": 0.05,
+    "end": 0.71
+   },
+   {
+    "w": "who",
+    "start": 0.71,
+    "end": 0.995
+   },
+   {
+    "w": "even",
+    "start": 0.995,
+    "end": 1.355
+   },
+   {
+    "w": "needs",
+    "start": 1.355,
+    "end": 1.79
+   },
+   {
+    "w": "a",
+    "start": 1.79,
+    "end": 1.925
+   },
+   {
+    "w": "site",
+    "start": 1.925,
+    "end": 2.285
+   }
+  ],
+  "provisional": true
+ },
+ "v_cold": {
+  "text": "Copy, paste, the same cold message.",
+  "gapBefore": 0.18,
+  "seconds": 2.505,
+  "act": "without",
+  "words": [
+   {
+    "w": "Copy",
+    "start": 0.05,
+    "end": 0.41
+   },
+   {
+    "w": "paste",
+    "start": 0.41,
+    "end": 0.845
+   },
+   {
+    "w": "the",
+    "start": 0.845,
+    "end": 1.13
+   },
+   {
+    "w": "same",
+    "start": 1.13,
+    "end": 1.49
+   },
+   {
+    "w": "cold",
+    "start": 1.49,
+    "end": 1.85
+   },
+   {
+    "w": "message",
+    "start": 1.85,
+    "end": 2.435
+   }
+  ],
+  "provisional": true
+ },
+ "v_seen": {
+  "text": "Seen. No reply.",
+  "gapBefore": 0.25,
+  "seconds": 1.125,
+  "act": "without",
+  "words": [
+   {
+    "w": "Seen",
+    "start": 0.05,
+    "end": 0.41
+   },
+   {
+    "w": "No",
+    "start": 0.41,
+    "end": 0.62
+   },
+   {
+    "w": "reply",
+    "start": 0.62,
+    "end": 1.055
+   }
+  ],
+  "provisional": true
+ },
+ "v_generic": {
+  "text": "Generic prompt. Generic site.",
+  "gapBefore": 0.25,
+  "seconds": 2.16,
+  "act": "without",
+  "words": [
+   {
+    "w": "Generic",
+    "start": 0.05,
+    "end": 0.635
+   },
+   {
+    "w": "prompt",
+    "start": 0.635,
+    "end": 1.145
+   },
+   {
+    "w": "Generic",
+    "start": 1.145,
+    "end": 1.73
+   },
+   {
+    "w": "site",
+    "start": 1.73,
+    "end": 2.09
+   }
+  ],
+  "provisional": true
+ },
+ "v_late": {
+  "text": "Two AM. Still zero clients.",
+  "gapBefore": 0.3,
+  "seconds": 1.995,
+  "act": "without",
+  "words": [
+   {
+    "w": "Two",
+    "start": 0.05,
+    "end": 0.335
+   },
+   {
+    "w": "AM",
+    "start": 0.335,
+    "end": 0.545
+   },
+   {
+    "w": "Still",
+    "start": 0.545,
+    "end": 0.98
+   },
+   {
+    "w": "zero",
+    "start": 0.98,
+    "end": 1.34
+   },
+   {
+    "w": "clients",
+    "start": 1.34,
+    "end": 1.925
+   }
+  ],
+  "provisional": true
+ },
+ "v_turn": {
+  "text": "Now. Same night. With Prospectify.",
+  "gapBefore": 0.7,
+  "seconds": 2.445,
+  "act": "turn",
+  "words": [
+   {
+    "w": "Now",
+    "start": 0.05,
+    "end": 0.335
+   },
+   {
+    "w": "Same",
+    "start": 0.335,
+    "end": 0.695
+   },
+   {
+    "w": "night",
+    "start": 0.695,
+    "end": 1.13
+   },
+   {
+    "w": "With",
+    "start": 1.13,
+    "end": 1.49
+   },
+   {
+    "w": "Prospectify",
+    "start": 1.49,
+    "end": 2.375
+   }
+  ],
+  "provisional": true
+ },
+ "v_find": {
+  "text": "It finds local businesses that need a website, and scores every one.",
+  "gapBefore": 0.3,
+  "seconds": 4.965,
+  "act": "with",
+  "words": [
+   {
+    "w": "It",
+    "start": 0.05,
+    "end": 0.26
+   },
+   {
+    "w": "finds",
+    "start": 0.26,
+    "end": 0.695
+   },
+   {
+    "w": "local",
+    "start": 0.695,
+    "end": 1.13
+   },
+   {
+    "w": "businesses",
+    "start": 1.13,
+    "end": 1.94
+   },
+   {
+    "w": "that",
+    "start": 1.94,
+    "end": 2.3
+   },
+   {
+    "w": "need",
+    "start": 2.3,
+    "end": 2.66
+   },
+   {
+    "w": "a",
+    "start": 2.66,
+    "end": 2.795
+   },
+   {
+    "w": "website",
+    "start": 2.795,
+    "end": 3.38
+   },
+   {
+    "w": "and",
+    "start": 3.38,
+    "end": 3.665
+   },
+   {
+    "w": "scores",
+    "start": 3.665,
+    "end": 4.175
+   },
+   {
+    "w": "every",
+    "start": 4.175,
+    "end": 4.61
+   },
+   {
+    "w": "one",
+    "start": 4.61,
+    "end": 4.895
+   }
+  ],
+  "provisional": true
+ },
+ "v_reach": {
+  "text": "It writes your outreach. WhatsApp, email, or a phone script.",
+  "gapBefore": 0.25,
+  "seconds": 4.245,
+  "act": "with",
+  "words": [
+   {
+    "w": "It",
+    "start": 0.05,
+    "end": 0.26
+   },
+   {
+    "w": "writes",
+    "start": 0.26,
+    "end": 0.77
+   },
+   {
+    "w": "your",
+    "start": 0.77,
+    "end": 1.13
+   },
+   {
+    "w": "outreach",
+    "start": 1.13,
+    "end": 1.79
+   },
+   {
+    "w": "WhatsApp",
+    "start": 1.79,
+    "end": 2.45
+   },
+   {
+    "w": "email",
+    "start": 2.45,
+    "end": 2.885
+   },
+   {
+    "w": "or",
+    "start": 2.885,
+    "end": 3.095
+   },
+   {
+    "w": "a",
+    "start": 3.095,
+    "end": 3.23
+   },
+   {
+    "w": "phone",
+    "start": 3.23,
+    "end": 3.665
+   },
+   {
+    "w": "script",
+    "start": 3.665,
+    "end": 4.175
+   }
+  ],
+  "provisional": true
+ },
+ "v_prompt": {
+  "text": "Then it writes the prompt for a premium site, made for that exact business.",
+  "gapBefore": 0.25,
+  "seconds": 5.46,
+  "act": "with",
+  "words": [
+   {
+    "w": "Then",
+    "start": 0.05,
+    "end": 0.41
+   },
+   {
+    "w": "it",
+    "start": 0.41,
+    "end": 0.62
+   },
+   {
+    "w": "writes",
+    "start": 0.62,
+    "end": 1.13
+   },
+   {
+    "w": "the",
+    "start": 1.13,
+    "end": 1.415
+   },
+   {
+    "w": "prompt",
+    "start": 1.415,
+    "end": 1.925
+   },
+   {
+    "w": "for",
+    "start": 1.925,
+    "end": 2.21
+   },
+   {
+    "w": "a",
+    "start": 2.21,
+    "end": 2.345
+   },
+   {
+    "w": "premium",
+    "start": 2.345,
+    "end": 2.93
+   },
+   {
+    "w": "site",
+    "start": 2.93,
+    "end": 3.29
+   },
+   {
+    "w": "made",
+    "start": 3.29,
+    "end": 3.65
+   },
+   {
+    "w": "for",
+    "start": 3.65,
+    "end": 3.935
+   },
+   {
+    "w": "that",
+    "start": 3.935,
+    "end": 4.295
+   },
+   {
+    "w": "exact",
+    "start": 4.295,
+    "end": 4.73
+   },
+   {
+    "w": "business",
+    "start": 4.73,
+    "end": 5.39
+   }
+  ],
+  "provisional": true
+ },
+ "v_tools": {
+  "text": "Paste it into Lovable, Bolt, or Base44.",
+  "gapBefore": 0.15,
+  "seconds": 2.79,
+  "act": "with",
+  "words": [
+   {
+    "w": "Paste",
+    "start": 0.05,
+    "end": 0.485
+   },
+   {
+    "w": "it",
+    "start": 0.485,
+    "end": 0.695
+   },
+   {
+    "w": "into",
+    "start": 0.695,
+    "end": 1.055
+   },
+   {
+    "w": "Lovable",
+    "start": 1.055,
+    "end": 1.64
+   },
+   {
+    "w": "Bolt",
+    "start": 1.64,
+    "end": 2.0
+   },
+   {
+    "w": "or",
+    "start": 2.0,
+    "end": 2.21
+   },
+   {
+    "w": "Base44",
+    "start": 2.21,
+    "end": 2.72
+   }
+  ],
+  "provisional": true
+ },
+ "v_done": {
+  "text": "Client found. Message ready. Site built.",
+  "gapBefore": 0.3,
+  "seconds": 2.88,
+  "act": "with",
+  "words": [
+   {
+    "w": "Client",
+    "start": 0.05,
+    "end": 0.56
+   },
+   {
+    "w": "found",
+    "start": 0.56,
+    "end": 0.995
+   },
+   {
+    "w": "Message",
+    "start": 0.995,
+    "end": 1.58
+   },
+   {
+    "w": "ready",
+    "start": 1.58,
+    "end": 2.015
+   },
+   {
+    "w": "Site",
+    "start": 2.015,
+    "end": 2.375
+   },
+   {
+    "w": "built",
+    "start": 2.375,
+    "end": 2.81
+   }
+  ],
+  "provisional": true
+ },
+ "v_recap": {
+  "text": "Without it, all night. With it, one search.",
+  "gapBefore": 0.45,
+  "seconds": 3.0,
+  "act": "recap",
+  "words": [
+   {
+    "w": "Without",
+    "start": 0.05,
+    "end": 0.635
+   },
+   {
+    "w": "it",
+    "start": 0.635,
+    "end": 0.845
+   },
+   {
+    "w": "all",
+    "start": 0.845,
+    "end": 1.13
+   },
+   {
+    "w": "night",
+    "start": 1.13,
+    "end": 1.565
+   },
+   {
+    "w": "With",
+    "start": 1.565,
+    "end": 1.925
+   },
+   {
+    "w": "it",
+    "start": 1.925,
+    "end": 2.135
+   },
+   {
+    "w": "one",
+    "start": 2.135,
+    "end": 2.42
+   },
+   {
+    "w": "search",
+    "start": 2.42,
+    "end": 2.93
+   }
+  ],
+  "provisional": true
+ },
+ "v_first": {
+  "text": "Your first client is already out there.",
+  "gapBefore": 0.4,
+  "seconds": 2.94,
+  "act": "cta",
+  "words": [
+   {
+    "w": "Your",
+    "start": 0.05,
+    "end": 0.41
+   },
+   {
+    "w": "first",
+    "start": 0.41,
+    "end": 0.845
+   },
+   {
+    "w": "client",
+    "start": 0.845,
+    "end": 1.355
+   },
+   {
+    "w": "is",
+    "start": 1.355,
+    "end": 1.565
+   },
+   {
+    "w": "already",
+    "start": 1.565,
+    "end": 2.15
+   },
+   {
+    "w": "out",
+    "start": 2.15,
+    "end": 2.435
+   },
+   {
+    "w": "there",
+    "start": 2.435,
+    "end": 2.87
+   }
+  ],
+  "provisional": true
+ },
+ "v_start": {
+  "text": "Start free. Three leads, no card.",
+  "gapBefore": 0.2,
+  "seconds": 2.355,
+  "act": "cta",
+  "words": [
+   {
+    "w": "Start",
+    "start": 0.05,
+    "end": 0.485
+   },
+   {
+    "w": "free",
+    "start": 0.485,
+    "end": 0.845
+   },
+   {
+    "w": "Three",
+    "start": 0.845,
+    "end": 1.28
+   },
+   {
+    "w": "leads",
+    "start": 1.28,
+    "end": 1.715
+   },
+   {
+    "w": "no",
+    "start": 1.715,
+    "end": 1.925
+   },
+   {
+    "w": "card",
+    "start": 1.925,
+    "end": 2.285
+   }
+  ],
+  "provisional": true
+ }
+}

@@ -1,0 +1,209 @@
+{
+ "fps": 60,
+ "durationInFrames": 3624,
+ "width": 1920,
+ "height": 1080,
+ "VO": {
+  "v_hook1": {
+   "start": 18,
+   "end": 202,
+   "text": "You can build a website in forty minutes.",
+   "act": "hook"
+  },
+  "v_hook2": {
+   "start": 212,
+   "end": 382,
+   "text": "So why don't you have a single client?",
+   "act": "hook"
+  },
+  "v_without": {
+   "start": 410,
+   "end": 583,
+   "text": "Here's your night without Prospectify.",
+   "act": "without"
+  },
+  "v_maps": {
+   "start": 598,
+   "end": 697,
+   "text": "Hours scrolling Maps.",
+   "act": "without"
+  },
+  "v_tabs": {
+   "start": 704,
+   "end": 773,
+   "text": "Fourteen tabs.",
+   "act": "without"
+  },
+  "v_guess": {
+   "start": 780,
+   "end": 921,
+   "text": "Guessing who even needs a site.",
+   "act": "without"
+  },
+  "v_cold": {
+   "start": 932,
+   "end": 1082,
+   "text": "Copy, paste, the same cold message.",
+   "act": "without"
+  },
+  "v_seen": {
+   "start": 1097,
+   "end": 1165,
+   "text": "Seen. No reply.",
+   "act": "without"
+  },
+  "v_generic": {
+   "start": 1180,
+   "end": 1310,
+   "text": "Generic prompt. Generic site.",
+   "act": "without"
+  },
+  "v_late": {
+   "start": 1328,
+   "end": 1447,
+   "text": "Two AM. Still zero clients.",
+   "act": "without"
+  },
+  "v_turn": {
+   "start": 1489,
+   "end": 1636,
+   "text": "Now. Same night. With Prospectify.",
+   "act": "turn"
+  },
+  "v_find": {
+   "start": 1654,
+   "end": 1952,
+   "text": "It finds local businesses that need a website, and scores every one.",
+   "act": "with"
+  },
+  "v_reach": {
+   "start": 1967,
+   "end": 2222,
+   "text": "It writes your outreach. WhatsApp, email, or a phone script.",
+   "act": "with"
+  },
+  "v_prompt": {
+   "start": 2236,
+   "end": 2564,
+   "text": "Then it writes the prompt for a premium site, made for that exact business.",
+   "act": "with"
+  },
+  "v_tools": {
+   "start": 2573,
+   "end": 2740,
+   "text": "Paste it into Lovable, Bolt, or Base44.",
+   "act": "with"
+  },
+  "v_done": {
+   "start": 2758,
+   "end": 2931,
+   "text": "Client found. Message ready. Site built.",
+   "act": "with"
+  },
+  "v_recap": {
+   "start": 2958,
+   "end": 3138,
+   "text": "Without it, all night. With it, one search.",
+   "act": "recap"
+  },
+  "v_first": {
+   "start": 3162,
+   "end": 3339,
+   "text": "Your first client is already out there.",
+   "act": "cta"
+  },
+  "v_start": {
+   "start": 3351,
+   "end": 3492,
+   "text": "Start free. Three leads, no card.",
+   "act": "cta"
+  }
+ },
+ "QUERY": "Restaurants \u00b7 Austin, TX",
+ "H_BUILD": 4,
+ "H_FORTY": 137,
+ "H_ZERO": 315,
+ "W_IN": 403,
+ "W_MAPS": 593,
+ "W_TABS": 702,
+ "W_GUESS": 776,
+ "W_COLD": 928,
+ "W_SEEN": 1092,
+ "W_SEEN_TYPING": 1106,
+ "W_SEEN_STOP": 1114,
+ "W_NOREPLY": 1120,
+ "W_GENERIC": 1174,
+ "W_GSITE": 1246,
+ "W_LATE": 1324,
+ "W_ZERO": 1384,
+ "T_IN": 1462,
+ "T_SAME": 1507,
+ "T_WITH": 1554,
+ "F_IN": 1636,
+ "F_KEYS": [
+  1645,
+  1647,
+  1649,
+  1652,
+  1654,
+  1656,
+  1658,
+  1661,
+  1663,
+  1665,
+  1667,
+  1669,
+  1672,
+  1674,
+  1676,
+  1678,
+  1680,
+  1683,
+  1685,
+  1687,
+  1689,
+  1692,
+  1694,
+  1696
+ ],
+ "F_SCAN": 1699,
+ "F_ROWS": 1721,
+ "F_ROWS_EACH": [
+  1721,
+  1726,
+  1731,
+  1736,
+  1741
+ ],
+ "F_SCORE": 1873,
+ "R_IN": 1960,
+ "R_WA": 2071,
+ "R_EMAIL": 2111,
+ "R_PHONE": 2158,
+ "R_COPY": 2225,
+ "P_IN": 2229,
+ "P_TOOL": 2245,
+ "P_TYPE0": 2251,
+ "P_TYPE1": 2558,
+ "P_READY": 2564,
+ "TL_IN": 2564,
+ "TL_LOGOS": [
+  2633,
+  2668,
+  2703
+ ],
+ "TL_PASTE": 2575,
+ "D_IN": 2753,
+ "D_FOUND": 2759,
+ "D_READY": 2816,
+ "D_BUILT": 2877,
+ "D_SEND": 2820,
+ "RC_IN": 2949,
+ "RC_ALL": 3007,
+ "RC_WITH": 3049,
+ "RC_ONE": 3084,
+ "CTA_IN": 3153,
+ "CTA_START": 3347,
+ "CTA_FREE": 3399,
+ "CTA_CLICK": 3519
+}

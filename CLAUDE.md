@@ -18,4 +18,7 @@ The founder writes in French; answer in French.
 - **Acquisition:** the process is the subject (Lovable-style); Prospectify is the missing piece, not the hero. The goal is virality first, then conversion.
 - **Voice:** the tone must fit each line, lean on the key words, and stay energetic. No flat read.
 - **Look:** "motion designer", not "AI-made": kinetic type, chromatic hits, a liquid transition, real UI fragments.
+- **Palette:** the Prospectify dark (`#09090b`) with `#f42562 → #ff3b5f → #ff5a45` only. **No light or pastel pink**, and no cream "day" world with pink glows: the founder flagged it as off-palette.
+- **Sound:** generic synthesised music and a flat TTS "put him to sleep". Use real produced music (CC0 / CC BY, credited) edited to picture, with the drop on the reveal. Use an expressive voice: Chatterbox (`scripts/versus/build_voice.py`, venv `/root/venvs/cb`), checked by Whisper.
+- **Story:** show the pain fully ("without"), then the same night with Prospectify. Name its three jobs clearly: find the client, write the outreach (WhatsApp / email / phone script), write the prompt for a premium site.
 - **Delivery:** send the video directly in the chat (a compressed copy under about 20 MB). The full quality version goes in `renders/`.
