@@ -1,0 +1,768 @@
+{
+ "fps": 60,
+ "durationInFrames": 1829,
+ "width": 1920,
+ "height": 1080,
+ "VO": {
+  "h_pizzeria": {
+   "start": 9,
+   "end": 187,
+   "text": "This pizzeria has three hundred and twelve reviews...",
+   "act": "hook"
+  },
+  "h_noweb": {
+   "start": 194,
+   "end": 262,
+   "text": "and no website.",
+   "act": "hook"
+  },
+  "h_client": {
+   "start": 277,
+   "end": 343,
+   "text": "That's your next client.",
+   "act": "hook"
+  },
+  "p_pain": {
+   "start": 358,
+   "end": 505,
+   "text": "But finding them takes all night.",
+   "act": "pain"
+  },
+  "r_three": {
+   "start": 523,
+   "end": 652,
+   "text": "Prospectify does three things for you.",
+   "act": "reveal"
+  },
+  "n1": {
+   "start": 667,
+   "end": 871,
+   "text": "One. It finds businesses like this one, and scores them.",
+   "act": "one"
+  },
+  "n2": {
+   "start": 886,
+   "end": 1138,
+   "text": "Two. It writes the message. WhatsApp, email, or a call script.",
+   "act": "two"
+  },
+  "n3": {
+   "start": 1153,
+   "end": 1324,
+   "text": "Three. It writes the prompt for a premium site.",
+   "act": "three"
+  },
+  "n3b": {
+   "start": 1331,
+   "end": 1519,
+   "text": "Paste it into Lovable, Bolt, or Base forty-four.",
+   "act": "three"
+  },
+  "cta": {
+   "start": 1537,
+   "end": 1652,
+   "text": "Ten free leads. No card.",
+   "act": "cta"
+  },
+  "loop": {
+   "start": 1667,
+   "end": 1808,
+   "text": "Your first one could be... this pizzeria.",
+   "act": "loop"
+  }
+ },
+ "QUERY": "Austin",
+ "CAPS": [
+  {
+   "words": [
+    {
+     "w": "This",
+     "a": 9,
+     "b": 25,
+     "accent": false
+    },
+    {
+     "w": "pizzeria",
+     "a": 25,
+     "b": 59,
+     "accent": true
+    },
+    {
+     "w": "has",
+     "a": 59,
+     "b": 80,
+     "accent": false
+    }
+   ],
+   "a": 7,
+   "b": 77
+  },
+  {
+   "words": [
+    {
+     "w": "312",
+     "a": 80,
+     "b": 125,
+     "accent": true
+    },
+    {
+     "w": "reviews.",
+     "a": 125,
+     "b": 169,
+     "accent": false
+    }
+   ],
+   "a": 78,
+   "b": 191
+  },
+  {
+   "words": [
+    {
+     "w": "And",
+     "a": 194,
+     "b": 213,
+     "accent": false
+    },
+    {
+     "w": "no",
+     "a": 213,
+     "b": 225,
+     "accent": false
+    },
+    {
+     "w": "website.",
+     "a": 225,
+     "b": 247,
+     "accent": true
+    }
+   ],
+   "a": 192,
+   "b": 274
+  },
+  {
+   "words": [
+    {
+     "w": "That's",
+     "a": 277,
+     "b": 299,
+     "accent": false
+    },
+    {
+     "w": "your",
+     "a": 299,
+     "b": 303,
+     "accent": false
+    }
+   ],
+   "a": 275,
+   "b": 300
+  },
+  {
+   "words": [
+    {
+     "w": "next",
+     "a": 303,
+     "b": 315,
+     "accent": false
+    },
+    {
+     "w": "client.",
+     "a": 315,
+     "b": 332,
+     "accent": true
+    }
+   ],
+   "a": 301,
+   "b": 355
+  },
+  {
+   "words": [
+    {
+     "w": "But",
+     "a": 358,
+     "b": 366,
+     "accent": false
+    },
+    {
+     "w": "finding",
+     "a": 366,
+     "b": 386,
+     "accent": false
+    },
+    {
+     "w": "them",
+     "a": 386,
+     "b": 406,
+     "accent": false
+    }
+   ],
+   "a": 356,
+   "b": 403
+  },
+  {
+   "words": [
+    {
+     "w": "takes",
+     "a": 406,
+     "b": 423,
+     "accent": false
+    },
+    {
+     "w": "all",
+     "a": 423,
+     "b": 459,
+     "accent": false
+    },
+    {
+     "w": "night.",
+     "a": 459,
+     "b": 485,
+     "accent": true
+    }
+   ],
+   "a": 404,
+   "b": 520
+  },
+  {
+   "words": [
+    {
+     "w": "Prospectify",
+     "a": 523,
+     "b": 571,
+     "accent": false
+    },
+    {
+     "w": "does",
+     "a": 571,
+     "b": 593,
+     "accent": false
+    },
+    {
+     "w": "three",
+     "a": 593,
+     "b": 609,
+     "accent": true
+    }
+   ],
+   "a": 521,
+   "b": 606
+  },
+  {
+   "words": [
+    {
+     "w": "things",
+     "a": 609,
+     "b": 623,
+     "accent": false
+    },
+    {
+     "w": "for",
+     "a": 623,
+     "b": 636,
+     "accent": false
+    },
+    {
+     "w": "you.",
+     "a": 636,
+     "b": 645,
+     "accent": false
+    }
+   ],
+   "a": 607,
+   "b": 664
+  },
+  {
+   "words": [
+    {
+     "w": "One,",
+     "a": 667,
+     "b": 683,
+     "accent": true
+    }
+   ],
+   "a": 665,
+   "b": 705
+  },
+  {
+   "words": [
+    {
+     "w": "it",
+     "a": 708,
+     "b": 717,
+     "accent": false
+    },
+    {
+     "w": "finds",
+     "a": 717,
+     "b": 735,
+     "accent": true
+    },
+    {
+     "w": "businesses",
+     "a": 735,
+     "b": 757,
+     "accent": false
+    }
+   ],
+   "a": 706,
+   "b": 754
+  },
+  {
+   "words": [
+    {
+     "w": "like",
+     "a": 757,
+     "b": 777,
+     "accent": false
+    },
+    {
+     "w": "this",
+     "a": 777,
+     "b": 789,
+     "accent": false
+    },
+    {
+     "w": "one",
+     "a": 789,
+     "b": 804,
+     "accent": true
+    }
+   ],
+   "a": 755,
+   "b": 801
+  },
+  {
+   "words": [
+    {
+     "w": "and",
+     "a": 804,
+     "b": 822,
+     "accent": false
+    },
+    {
+     "w": "scores",
+     "a": 822,
+     "b": 842,
+     "accent": true
+    },
+    {
+     "w": "them.",
+     "a": 842,
+     "b": 863,
+     "accent": false
+    }
+   ],
+   "a": 802,
+   "b": 883
+  },
+  {
+   "words": [
+    {
+     "w": "Two,",
+     "a": 886,
+     "b": 898,
+     "accent": true
+    }
+   ],
+   "a": 884,
+   "b": 920
+  },
+  {
+   "words": [
+    {
+     "w": "it",
+     "a": 923,
+     "b": 932,
+     "accent": false
+    },
+    {
+     "w": "writes",
+     "a": 932,
+     "b": 946,
+     "accent": false
+    }
+   ],
+   "a": 921,
+   "b": 943
+  },
+  {
+   "words": [
+    {
+     "w": "the",
+     "a": 946,
+     "b": 957,
+     "accent": false
+    },
+    {
+     "w": "message,",
+     "a": 957,
+     "b": 981,
+     "accent": true
+    }
+   ],
+   "a": 944,
+   "b": 1007
+  },
+  {
+   "words": [
+    {
+     "w": "WhatsApp,",
+     "a": 1010,
+     "b": 1023,
+     "accent": false
+    }
+   ],
+   "a": 1008,
+   "b": 1045
+  },
+  {
+   "words": [
+    {
+     "w": "email,",
+     "a": 1048,
+     "b": 1060,
+     "accent": false
+    }
+   ],
+   "a": 1046,
+   "b": 1081
+  },
+  {
+   "words": [
+    {
+     "w": "or",
+     "a": 1084,
+     "b": 1090,
+     "accent": false
+    },
+    {
+     "w": "a",
+     "a": 1090,
+     "b": 1101,
+     "accent": false
+    }
+   ],
+   "a": 1082,
+   "b": 1098
+  },
+  {
+   "words": [
+    {
+     "w": "call",
+     "a": 1101,
+     "b": 1109,
+     "accent": false
+    },
+    {
+     "w": "script.",
+     "a": 1109,
+     "b": 1124,
+     "accent": false
+    }
+   ],
+   "a": 1099,
+   "b": 1150
+  },
+  {
+   "words": [
+    {
+     "w": "Three.",
+     "a": 1153,
+     "b": 1167,
+     "accent": true
+    }
+   ],
+   "a": 1151,
+   "b": 1188
+  },
+  {
+   "words": [
+    {
+     "w": "It",
+     "a": 1191,
+     "b": 1197,
+     "accent": false
+    },
+    {
+     "w": "writes",
+     "a": 1197,
+     "b": 1213,
+     "accent": false
+    },
+    {
+     "w": "the",
+     "a": 1213,
+     "b": 1225,
+     "accent": false
+    }
+   ],
+   "a": 1189,
+   "b": 1222
+  },
+  {
+   "words": [
+    {
+     "w": "prompt",
+     "a": 1225,
+     "b": 1242,
+     "accent": true
+    },
+    {
+     "w": "for",
+     "a": 1242,
+     "b": 1259,
+     "accent": false
+    },
+    {
+     "w": "a",
+     "a": 1259,
+     "b": 1268,
+     "accent": false
+    }
+   ],
+   "a": 1223,
+   "b": 1265
+  },
+  {
+   "words": [
+    {
+     "w": "premium",
+     "a": 1268,
+     "b": 1287,
+     "accent": true
+    },
+    {
+     "w": "site.",
+     "a": 1287,
+     "b": 1309,
+     "accent": false
+    }
+   ],
+   "a": 1266,
+   "b": 1328
+  },
+  {
+   "words": [
+    {
+     "w": "Paste",
+     "a": 1331,
+     "b": 1344,
+     "accent": false
+    },
+    {
+     "w": "it",
+     "a": 1344,
+     "b": 1354,
+     "accent": false
+    }
+   ],
+   "a": 1329,
+   "b": 1351
+  },
+  {
+   "words": [
+    {
+     "w": "into",
+     "a": 1354,
+     "b": 1367,
+     "accent": false
+    },
+    {
+     "w": "Lovable,",
+     "a": 1367,
+     "b": 1390,
+     "accent": true
+    }
+   ],
+   "a": 1352,
+   "b": 1405
+  },
+  {
+   "words": [
+    {
+     "w": "Bolt,",
+     "a": 1408,
+     "b": 1423,
+     "accent": false
+    }
+   ],
+   "a": 1406,
+   "b": 1449
+  },
+  {
+   "words": [
+    {
+     "w": "or",
+     "a": 1452,
+     "b": 1457,
+     "accent": false
+    },
+    {
+     "w": "Base44.",
+     "a": 1457,
+     "b": 1494,
+     "accent": true
+    }
+   ],
+   "a": 1450,
+   "b": 1534
+  },
+  {
+   "words": [
+    {
+     "w": "10",
+     "a": 1537,
+     "b": 1555,
+     "accent": true
+    },
+    {
+     "w": "free",
+     "a": 1555,
+     "b": 1573,
+     "accent": true
+    },
+    {
+     "w": "leads,",
+     "a": 1573,
+     "b": 1596,
+     "accent": false
+    }
+   ],
+   "a": 1535,
+   "b": 1614
+  },
+  {
+   "words": [
+    {
+     "w": "no",
+     "a": 1617,
+     "b": 1625,
+     "accent": false
+    },
+    {
+     "w": "card.",
+     "a": 1625,
+     "b": 1638,
+     "accent": false
+    }
+   ],
+   "a": 1615,
+   "b": 1664
+  },
+  {
+   "words": [
+    {
+     "w": "Your",
+     "a": 1667,
+     "b": 1673,
+     "accent": false
+    },
+    {
+     "w": "first",
+     "a": 1673,
+     "b": 1684,
+     "accent": false
+    },
+    {
+     "w": "one",
+     "a": 1684,
+     "b": 1693,
+     "accent": true
+    }
+   ],
+   "a": 1665,
+   "b": 1690
+  },
+  {
+   "words": [
+    {
+     "w": "could",
+     "a": 1693,
+     "b": 1702,
+     "accent": false
+    },
+    {
+     "w": "be",
+     "a": 1702,
+     "b": 1720,
+     "accent": false
+    }
+   ],
+   "a": 1691,
+   "b": 1717
+  },
+  {
+   "words": [
+    {
+     "w": "this",
+     "a": 1720,
+     "b": 1752,
+     "accent": false
+    },
+    {
+     "w": "pizzeria.",
+     "a": 1752,
+     "b": 1791,
+     "accent": true
+    }
+   ],
+   "a": 1718,
+   "b": 1799
+  }
+ ],
+ "HK_NOWEB": 222,
+ "HK_SCORE": 312,
+ "PN_IN": 353,
+ "PN_FLASH": [
+  355,
+  400,
+  445,
+  490
+ ],
+ "PN_OUT": 508,
+ "RV_IN": 514,
+ "RV_THREE": 590,
+ "N1_IN": 660,
+ "F_KEYS": [
+  667,
+  671,
+  675,
+  680,
+  684,
+  688
+ ],
+ "F_SCAN": 691,
+ "F_ROWS": 709,
+ "F_ROWS_EACH": [
+  709,
+  713,
+  717,
+  721,
+  725,
+  729
+ ],
+ "F_SCORE": 819,
+ "N2_IN": 879,
+ "R_WA": 1007,
+ "R_EMAIL": 1045,
+ "R_PHONE": 1098,
+ "R_COPY": 1138,
+ "N3_IN": 1146,
+ "P_TOOL": 1165,
+ "P_TYPE0": 1171,
+ "P_TYPE1": 1321,
+ "P_READY": 1324,
+ "TL_IN": 1325,
+ "TL_LOGOS": [
+  1364,
+  1405,
+  1454
+ ],
+ "TL_PASTE": 1330,
+ "SITE_END": 1534,
+ "CTA_IN": 1528,
+ "CTA_NOCARD": 1614,
+ "LP_IN": 1664,
+ "LP_PIZ": 1714,
+ "END": 1829
+}

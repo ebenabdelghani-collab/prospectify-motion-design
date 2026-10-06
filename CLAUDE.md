@@ -14,7 +14,8 @@ The founder writes in French; answer in French.
 - **Typography:** no serif or italic "signature" type.
 - **Pace:** an energetic voice and music; it must hook from A to Z, with fast pacing and no long static holds.
 - **Quality bar:** studio-level, "worth $10,000". Highest perceived quality wins over feature coverage.
-- **Format:** 16:9 (1920×1080, 60 fps) for the current film, `ProspectifyPlaybook` in `src/playbook/`.
+- **Format:** 16:9 (1920×1080, 60 fps). Current film: `ProspectifyLoop` (`src/loop/`, scripts in `scripts/loop/`), ~30 s retention cut. `ProspectifyVersus` (`src/versus/`) is the longer 58 s version.
+- **Retention (founder, after the 58 s cut was 'long and boring' for cold viewers):** ~30 s, proof on frame 0, pain in flashes, a numbered open loop (1 · 2 · 3) with a progress strip, word-by-word captions in the bottom band, a change every ~0.5 s, and a last frame identical to frame 0 so the video loops.
 - **Acquisition:** the process is the subject (Lovable-style); Prospectify is the missing piece, not the hero. The goal is virality first, then conversion.
 - **Voice:** the tone must fit each line, lean on the key words, and stay energetic. No flat read.
 - **Look:** "motion designer", not "AI-made": kinetic type, chromatic hits, a liquid transition, real UI fragments.
