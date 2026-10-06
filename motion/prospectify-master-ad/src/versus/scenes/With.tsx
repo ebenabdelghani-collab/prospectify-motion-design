@@ -74,12 +74,12 @@ export const With: React.FC<{f: number}> = ({f}) => {
 	const inT = appear(f, P.F_IN - 4, 16);
 	const appOut = ramp(f, P.TL_IN - 4, 22, EASE.CAMERA);
 	const cam = camAt(f, [
-		[P.F_IN, 800, 500, 0.98],
-		[P.F_ROWS, 760, 380, 1.18],
-		[P.F_SCORE, 800, 500, 0.98],
-		[P.R_IN, 1290, 420, 1.3],
-		[P.P_IN, 1290, 420, 1.3],
-		[P.TL_IN, 1290, 420, 1.3],
+		[P.F_IN, 800, 500, 0.79],
+		[P.F_ROWS, 720, 360, 0.98],
+		[P.F_SCORE, 800, 500, 0.79],
+		[P.R_IN, 896, 340, 1.25],
+		[P.P_IN, 896, 340, 1.25],
+		[P.TL_IN, 896, 340, 1.25],
 	]);
 	const keys = {
 		searchKeys: P.F_KEYS as unknown as number[],
@@ -107,20 +107,17 @@ export const With: React.FC<{f: number}> = ({f}) => {
 			<SideLabel f={f} at={P.TL_IN + 10} out={P.RC_IN} with />
 			{/* the app, framed by a camera */}
 			{appOut < 1 && (
-				<div style={{position: 'absolute', left: 0, top: 0, width: W, height: 1080, overflow: 'hidden', opacity: 1 - appOut}}>
+				// the app lives in a fixed window (x 80–1840, y 60–860); the camera moves inside it, captions sit below
+				<div style={{position: 'absolute', left: 80, top: 60, width: 1760, height: 800, borderRadius: 28, overflow: 'hidden', border: `1.5px solid ${C.lineStrong}`, boxShadow: '0 60px 160px rgba(0,0,0,0.7)', background: '#0a0a0c', opacity: 1 - appOut, transform: `scale(${lerp(1, 0.94, appOut)})`}}>
 					<div
 						style={{
 							position: 'absolute',
-							left: W / 2 - cam.cx,
-							top: 560 - cam.cy,
+							left: 880 - cam.cx,
+							top: 400 - cam.cy,
 							width: APP_W,
 							height: APP_H,
-							transform: `scale(${cam.s * lerp(1, 0.8, appOut)})`,
+							transform: `scale(${cam.s})`,
 							transformOrigin: `${cam.cx}px ${cam.cy}px`,
-							borderRadius: 26,
-							overflow: 'hidden',
-							border: `1.5px solid ${C.lineStrong}`,
-							boxShadow: '0 60px 160px rgba(0,0,0,0.7)',
 						}}
 					>
 						<ProspectifyApp f={f} k={keys} />
@@ -128,7 +125,7 @@ export const With: React.FC<{f: number}> = ({f}) => {
 				</div>
 			)}
 			{/* proof chips, bottom-left: the three things it does */}
-			<div style={{position: 'absolute', left: 72, bottom: 64, display: 'flex', gap: 18, opacity: 1 - appOut}}>
+			<div style={{position: 'absolute', left: 0, right: 0, bottom: 84, display: 'flex', justifyContent: 'center', gap: 18, opacity: 1 - appOut}}>
 				<ProofChip f={f} at={P.F_SCORE + 6} label="Client found" icon="target" />
 				<ProofChip f={f} at={P.R_IN + 6} label="Outreach written" icon="message" />
 				<ProofChip f={f} at={P.P_IN + 6} label="Site prompt ready" icon="sparkles" />

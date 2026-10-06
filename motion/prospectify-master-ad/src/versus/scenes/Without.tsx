@@ -19,7 +19,7 @@ export const Hook: React.FC<{f: number}> = ({f}) => {
 	return (
 		<div style={{position: 'absolute', inset: 0, opacity: 1 - end}}>
 			<BrandBG f={f} glow={0.8} gy={50} />
-			<div style={{position: 'absolute', left: (W - lw) / 2, top: 120, transform: `translateY(${zero * 60}px) scale(${lerp(1.02, 0.86, zero)})`, filter: zero > 0 ? `blur(${zero * 6}px) brightness(${1 - zero * 0.55})` : undefined}}>
+			<div style={{position: 'absolute', left: (W - lw) / 2, top: 120, opacity: 1 - zero, transform: `translateY(${zero * -40}px) scale(${lerp(1.02, 0.9, zero)})`, filter: zero > 0 ? `blur(${zero * 10}px)` : undefined}}>
 				<Laptop w={lw} rotX={lerp(14, 4, ramp(f, 0, 90, EASE.SOFT))} glare={lerp(0.1, 0.8, f / 200)}>
 					<Chrome url="bellaforno.com" h={40}>
 						<div style={{transform: `scale(${sc})`, transformOrigin: '0 0'}}>
@@ -55,7 +55,7 @@ const TABS: [string, string][] = [
 	['Maps – barbers near me', '#34a853'], ['Juniper Café – Reviews', '#fbbc04'], ['search results – page 4', '#0a66c2'], ['Inbox (23)', '#ea4335'],
 	['Business page', '#1877f2'], ['Sheet2', '#188038'],
 ];
-const TPOS = TABS.map((_, i) => ({x: 110 + rand(i * 3.3) * 1250, y: 150 + rand(i * 7.1) * 780, r: (rand(i * 5.5) - 0.5) * 12, s: 1.25 + rand(i * 2.2) * 0.45}));
+const TPOS = TABS.map((_, i) => ({x: 130 + rand(i * 3.3) * 1300, y: 140 + rand(i * 7.1) * 520, r: (rand(i * 5.5) - 0.5) * 12, s: 1.25 + rand(i * 2.2) * 0.45}));
 const GUESS = [
 	{n: 'Bella Forno', p: 'pizza_4', q: 'Website?'},
 	{n: 'Juniper Café', p: 'cafe_1', q: 'Owner?'},
@@ -115,7 +115,7 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 			<div style={{position: 'absolute', inset: 0, ...coldGrade}}>
 				{/* MAPS: endless scrolling */}
 				{sMaps > 0 && (
-					<div style={{position: 'absolute', left: 260, top: 150, width: 1400, height: 800, borderRadius: 18, overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.6)', opacity: sMaps, transform: `scale(${lerp(0.94, 1, sMaps)})`}}>
+					<div style={{position: 'absolute', left: 400, top: 130, width: 1120, height: 640, borderRadius: 18, overflow: 'hidden', boxShadow: '0 40px 100px rgba(0,0,0,0.6)', opacity: sMaps, transform: `scale(${lerp(0.94, 1, sMaps)})`}}>
 						<Chrome url="maps · restaurants near me" h={46} dark={false}>
 							<div style={{display: 'flex', width: '100%', height: '100%'}}>
 								<div style={{width: 380, background: '#fff', padding: 16, overflow: 'hidden'}}>
@@ -132,7 +132,7 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 									</div>
 								</div>
 								<div style={{flex: 1, position: 'relative'}}>
-									<MapView w={1020} h={760} cx={1000 + Math.sin((f - P.W_MAPS) / 14) * 260} cy={900 + ((f - P.W_MAPS) * 6) % 900} zoom={1}>
+									<MapView w={740} h={600} cx={1000 + Math.sin((f - P.W_MAPS) / 14) * 260} cy={900 + ((f - P.W_MAPS) * 6) % 900} zoom={1}>
 										{PINS.map((p, i) => (
 											<Pin key={i} x={p.x} y={p.y} s={1.1} />
 										))}
@@ -203,8 +203,8 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 				)}
 				{/* SEEN */}
 				{sSeen > 0 && (
-					<div style={{position: 'absolute', left: (W - 430) / 2, top: 60, opacity: sSeen, transform: `translateY(${(1 - sSeen) * 80}px)`}}>
-						<Phone w={430} time="1:31" rotY={-6}>
+					<div style={{position: 'absolute', left: (W - 330) / 2, top: 96, opacity: sSeen, transform: `translateY(${(1 - sSeen) * 80}px)`}}>
+						<Phone w={330} time="1:31" rotY={-6}>
 							<div style={{position: 'absolute', inset: 0, background: '#0b141a', fontFamily: GF}}>
 								<div style={{height: 150, background: '#1f2c34', display: 'flex', alignItems: 'flex-end', padding: '0 20px 16px', gap: 12}}>
 									<Photo n="pizza_4" w={46} h={46} r={23} />
@@ -235,8 +235,8 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 							› {'make a restaurant website'.slice(0, Math.round(25 * clamp01((f - P.W_GENERIC) / 22)))}
 						</div>
 						<div style={{marginTop: 30, opacity: appear(f, P.W_GSITE, 14), transform: `translateY(${(1 - appear(f, P.W_GSITE, 14)) * 40}px)`}}>
-							<Laptop w={900} rotX={6}>
-								<div style={{transform: `scale(${(900 - 2 * 900 * 0.018) / SITE_DW})`, transformOrigin: '0 0'}}>
+							<Laptop w={760} rotX={6}>
+								<div style={{transform: `scale(${(760 - 2 * 760 * 0.018) / SITE_DW})`, transformOrigin: '0 0'}}>
 									<GenericSite b={clamp01((f - P.W_GSITE) / 30)} />
 								</div>
 							</Laptop>
@@ -245,20 +245,20 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 				)}
 			</div>
 			{/* kinetic captions — the pain, one word per beat */}
-			<div style={{position: 'absolute', left: 0, right: 0, bottom: 70, display: 'flex', justifyContent: 'center'}}>
-				{f >= P.W_MAPS && f < P.W_TABS - 8 && <Kword f={f} at={P.W_MAPS} text="3 hours." size={130} color={COLD.ink} out={P.W_TABS - 12} />}
+			<div style={{position: 'absolute', left: 0, right: 0, bottom: 92, display: 'flex', justifyContent: 'center'}}>
+				{f >= P.W_MAPS && f < P.W_TABS - 8 && <Kword f={f} at={P.W_MAPS} text="3 hours." size={104} color={COLD.ink} out={P.W_TABS - 12} />}
 				{f >= P.W_TABS && f < P.W_GUESS && (
 					<Chroma f={f} hits={[P.W_TABS + 2]}>
-						<Kword f={f} at={P.W_TABS} text="14 tabs." size={150} color="#fff" out={P.W_GUESS - 4} />
+						<Kword f={f} at={P.W_TABS} text="14 tabs." size={112} color="#fff" out={P.W_GUESS - 4} />
 					</Chroma>
 				)}
-				{f >= P.W_COLD && f < P.W_SEEN && <Kword f={f} at={W_COLD_WORD()} text="Same message." size={120} color={COLD.ink} out={P.W_SEEN - 4} />}
+				{f >= P.W_COLD && f < P.W_SEEN && <Kword f={f} at={W_COLD_WORD()} text="Same message." size={104} color={COLD.ink} out={P.W_SEEN - 4} />}
 				{f >= P.W_SEEN && f < P.W_GENERIC && (
 					<Chroma f={f} hits={[P.W_NOREPLY]}>
-						<Kword f={f} at={P.W_NOREPLY} text="No reply." size={150} color="#fff" out={P.W_GENERIC - 4} />
+						<Kword f={f} at={P.W_NOREPLY} text="No reply." size={112} color="#fff" out={P.W_GENERIC - 4} />
 					</Chroma>
 				)}
-				{f >= P.W_GSITE && f < P.W_LATE && <Kword f={f} at={P.W_GSITE} text="Generic." size={130} color={COLD.ink} out={P.W_LATE - 4} />}
+				{f >= P.W_GSITE && f < P.W_LATE && <Kword f={f} at={P.W_GSITE} text="Generic." size={104} color={COLD.ink} out={P.W_LATE - 4} />}
 			</div>
 			{/* LATE: 2:07 AM, zero */}
 			{sLate > 0 && (

@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 """SAME NIGHT — mix: real music edit + voice + sound design → public/versus/audio/versus-mix.wav (48 kHz, −14 LUFS).
 
-MUSIC: "Right Now (Original Mix)" by Spencer Newton — CC BY 3.0 (jamendo.com/track/1674218), see
-public/versus/audio/MUSIC_CREDITS.md. 128.005 BPM, bar 1.875 s. Its vocal chops are removed with Demucs
-(htdemucs, two-stem) so nothing sings over the voiceover. The edit follows the film:
-  hook     → the intro groove (bar 8), full energy from frame one;
-  without  → the track's build (bars 40-47) under a low-pass that opens from 520 Hz to full as the night
-             gets worse — tension you feel without noticing;
-  turn     → tape-rewind + riser, and the DROP (bar 48) lands exactly on the word "With";
-  with/cta → the drop, full, then a clean final hit.
+MUSIC: "Vittoro" by Blue Dot Sessions — CC BY 3.0 (jamendo.com/track/1365339), see
+public/versus/audio/MUSIC_CREDITS.md. 127.97 BPM, warm, major, instrumental. One continuous performance:
+  the hook rides its groove; the night sits on its breakdown under a gentle low-pass that opens;
+  its full re-entry (bar 35) lands exactly on "With"; a soft fade ends it under the CTA.
+Sound design is deliberately discreet (premium): soft ticks and locks, no harsh hits.
 """
 import json
 import os
@@ -32,9 +29,10 @@ DUR = T['durationInFrames']
 N = int(round(DUR / FPS * SR)) + SR
 rng = np.random.default_rng(7)
 CUES = []
-MUSIC_SRC = os.environ.get('MUSIC_SRC', os.path.join(ROOT, 'renders/_music/rightnow_no_vocals.wav'))
-BPM = 128.005
-BEAT0 = 0.146
+MUSIC_SRC = os.environ.get('MUSIC_SRC', os.path.join(ROOT, 'renders/_music/vittoro.wav'))
+BPM = 127.97
+BEAT0 = 0.256
+REENTRY_BAR = 35  # full band re-enters after the breakdown
 BAR = 4 * 60 / BPM
 
 
@@ -96,69 +94,39 @@ for sid, v in T['VO'].items():
     s0 = fs(v['start'])
     voice_env[s0:s0 + len(x)] = np.maximum(voice_env[s0:s0 + len(x)], np.abs(x) / np.max(np.abs(x)))
 
-# ─────────────────────────── MUSIC EDIT ───────────────────────────
+# ─────────────────────────── MUSIC ───────────────────────────
+# "Vittoro" plays as one continuous performance (no edits), positioned so its re-entry after the
+# breakdown (bar 35) lands exactly on "With". The night is a gentle low-pass that opens into that bar.
 src, msr = sf.read(MUSIC_SRC)
 if src.ndim == 1:
     src = np.vstack([src, src]).T
 if msr != SR:
     src = resample_poly(src, 160, 147, axis=0) if msr == 44100 else resample_poly(src, SR, msr, axis=0)
 src = src.T  # (2, n)
-
-
-def take(t0, t1):
-    a, b = int(t0 * SR), int(t1 * SR)
-    return src[:, a:b].copy()
-
-
-def fade(x, fi=0.004, fo=0.004):
-    n1, n2 = int(fi * SR), int(fo * SR)
-    if n1:
-        x[:, :n1] *= np.linspace(0, 1, n1)
-    if n2:
-        x[:, -n2:] *= np.linspace(1, 0, n2)
-    return x
-
-
 W_IN, T_IN, T_WITH = K('W_IN'), K('T_IN'), K('T_WITH')
-# hook: intro groove from bar 8, starting with a downbeat on frame 0
-hook_len = (W_IN - 0) / FPS
-hook = fade(take(bar_t(8), bar_t(8) + hook_len + 0.25), 0.002, 0.25)
-# tape-stop on the last 0.35 s of the hook (the night "stops" you)
-ts = int(0.35 * SR)
-seg = hook[:, -ts - int(0.25 * SR):-int(0.25 * SR)]
-idx = np.cumsum(np.linspace(1, 0.15, ts))
-idx = np.clip(idx, 0, ts - 1).astype(int)
-hook[:, -ts - int(0.25 * SR):-int(0.25 * SR)] = seg[:, idx] * np.linspace(1, 0.4, ts)
-hook[:, -int(0.25 * SR):] *= 0.0
-music.put(hook, 0, 0.0)
-# without: the build, mapped so its end (bar 48 = the drop) lands on T_WITH
-w_len = (T_WITH - W_IN) / FPS
-w = take(bar_t(48) - w_len, bar_t(48))
-n = w.shape[1]
-# time-varying low-pass: 520 Hz → 18 kHz, exponential, in 64 blocks
-out = np.zeros_like(w)
-blocks = 64
+off = bar_t(REENTRY_BAR) - T_WITH / FPS  # track time at film frame 0
+a0 = int(off * SR)
+seg = src[:, a0:a0 + N].copy()
+if seg.shape[1] < N:
+    seg = np.pad(seg, ((0, 0), (0, N - seg.shape[1])))
+seg[:, : int(0.6 * SR)] *= np.linspace(0, 1, int(0.6 * SR)) ** 0.5  # soft fade-in on frame 0
+# night: low-pass 1100 Hz → open, over W_IN..T_WITH (blocks)
+s0, s1 = fs(W_IN), fs(T_WITH)
+n = s1 - s0
+blocks = 48
 for i in range(blocks):
-    a, b = i * n // blocks, (i + 1) * n // blocks
-    p = (i + 0.5) / blocks
-    fc = 520 * (18000 / 520) ** (p ** 2.2)
+    a, b = s0 + i * n // blocks, s0 + (i + 1) * n // blocks
+    p_ = (i + 0.5) / blocks
+    fc = 1100 * (18000 / 1100) ** (p_ ** 2.5)
     sos = butter(2, min(fc, 20000), 'low', fs=SR, output='sos')
     pad = int(0.05 * SR)
     lo = max(0, a - pad)
-    y = sosfilt(sos, w[:, lo:b], axis=1)
-    out[:, a:b] = y[:, a - lo:]
-w = fade(out * np.linspace(db(-4), db(0), n), 0.03, 0.002)
-music.put(w, W_IN, 0.0)
-# with: the drop from bar 48 to the end
-d_len = (DUR - T_WITH) / FPS + 0.5
-d = take(bar_t(48), bar_t(48) + d_len)
-music.put(fade(d, 0.001, 0.5), T_WITH, 0.0)
-# ending: cut the groove on the last downbeat before the end, let a hit ring
-end_bar = T_WITH + int(np.floor(((DUR - 70) - T_WITH) / FPS / BAR)) * BAR * FPS
-e0 = fs(end_bar)
-music.buf[:, e0:] *= np.exp(-np.arange(N - e0) / (0.12 * SR))
-music.put(take(bar_t(48), bar_t(48) + 2.0) * np.exp(-tt(2.0) / 0.45), end_bar, -2.0)  # the drop's downbeat as a final hit
-CUES.append({'frame': int(end_bar), 'time': round(end_bar / FPS, 3), 'scene': 'cta', 'event': 'final downbeat', 'sound': 'music hit', 'category': 'MACRO', 'volume_db': -2})
+    yb = sosfilt(sos, seg[:, lo:b], axis=1)
+    seg[:, a:b] = yb[:, a - lo:] * (db(-2.5) + (1 - db(-2.5)) * p_)
+# gentle ending: fade the last 2.6 s
+e0 = fs(DUR) - int(2.6 * SR)
+seg[:, e0:] *= np.linspace(1, 0, seg.shape[1] - e0) ** 1.6
+music.put(seg, 0, 0.0)
 
 # ─────────────────────────── SOUND DESIGN ───────────────────────────
 def glitch():
@@ -276,9 +244,10 @@ def limit(x, ceiling_db):
     return x * o
 
 
-MUSIC_GAIN = float(os.environ.get('MUSIC_GAIN', '-13'))
+MUSIC_GAIN = float(os.environ.get('MUSIC_GAIN', '-8.5'))
+SFX_GAIN = float(os.environ.get('SFX_GAIN', '-5'))
 n_out = int(round(DUR / FPS * SR))
-stems = {'voice': voice.buf, 'music': music.buf * db(MUSIC_GAIN), 'sfx': sfx.buf}
+stems = {'voice': voice.buf, 'music': music.buf * db(MUSIC_GAIN), 'sfx': sfx.buf * db(SFX_GAIN)}
 mix = sum(stems.values())
 mix = np.vstack([hp(ch, 28) for ch in mix])[:, :n_out]
 nf = int(0.25 * SR)
@@ -302,7 +271,7 @@ for v in T['VO'].values():
     vm.append(20 * np.log10(ev / em))
 CUES.sort(key=lambda c: c['frame'])
 os.makedirs(os.path.join(REPO, 'motion-source/production/versus'), exist_ok=True)
-json.dump({'fps': FPS, 'sampleRate': SR, 'music': {'title': 'Right Now (Original Mix)', 'artist': 'Spencer Newton', 'license': 'CC BY 3.0', 'url': 'https://www.jamendo.com/track/1674218', 'bpm': BPM},
+json.dump({'fps': FPS, 'sampleRate': SR, 'music': {'title': 'Vittoro', 'artist': 'Blue Dot Sessions', 'license': 'CC BY 3.0', 'url': 'https://www.jamendo.com/track/1365339', 'bpm': BPM},
            'integratedLUFS': round(I1, 2), 'truePeak_dBTP': round(TP, 2), 'voiceOverMusic_dB_median': round(float(np.median(vm)), 1), 'cues': CUES},
           open(os.path.join(REPO, 'motion-source/production/versus/AUDIO_CUE_MAP.json'), 'w'), indent=1, ensure_ascii=False)
 print(f'mix {out.shape[1] / SR:.3f}s · {I1:.2f} LUFS · TP {TP:.2f} dBTP · voice/music median {np.median(vm):.1f} dB (min {np.min(vm):.1f}) · {len(CUES)} cues')

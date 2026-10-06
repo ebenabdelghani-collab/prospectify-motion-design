@@ -29,13 +29,14 @@ os.makedirs(OUT, exist_ok=True)
 os.makedirs(CACHE, exist_ok=True)
 SEEDS = [11, 23]
 EXTRA_SEEDS = [37, 51, 73]  # only when no clean take yet
-TEMPO = 1.1  # brisker delivery; ffmpeg atempo keeps the pitch
-CFG = 0.4
+TEMPO = 1.0  # natural pace (the founder found 1.1 too fast)
+CFG = 0.5
 TEMP = 0.8
 # Female voice: Chatterbox takes its timbre from a short reference clip. The reference is itself synthetic
-# (Kokoro af_bella/af_heart, upbeat read; public/versus/voice/_ref_female.wav) so no real person is cloned.
-VOICE_REF = os.path.join(ROOT, 'public/versus/voice/_ref_female.wav')
-EX_BOOST = 0.3  # brighter, more playful read across every line
+# (Kokoro af_heart/af_sarah, warm soft read; public/versus/voice/_ref_female_soft.wav) so no real person is cloned.
+VOICE_REF = os.path.join(ROOT, 'public/versus/voice/_ref_female_soft.wav')
+EX_BOOST = 0.0
+EX_SCALE = (0.3, 0.45)  # soft but alive: exaggeration = a + b * line intensity (0.6–1.0 → 0.57–0.75)
 
 _tts = None
 _asr = None
@@ -62,14 +63,14 @@ def asr():
 
 
 def synth(text, ex, seed):
-    key = hashlib.sha1(f'cb|{text}|{ex}|{CFG}|{TEMP}|{seed}|{VOICE_REF}|{EX_BOOST}'.encode()).hexdigest()[:16]
+    key = hashlib.sha1(f'cb|{text}|{ex}|{CFG}|{TEMP}|{seed}|{VOICE_REF}|{EX_BOOST}|{EX_SCALE}'.encode()).hexdigest()[:16]
     path = os.path.join(CACHE, key + '.wav')
     if not os.path.exists(path):
         import torch
 
         torch.manual_seed(seed)
         m = tts()
-        wav = m.generate(text, audio_prompt_path=VOICE_REF, exaggeration=min(1.3, ex + EX_BOOST), cfg_weight=CFG, temperature=TEMP)
+        wav = m.generate(text, audio_prompt_path=VOICE_REF, exaggeration=EX_SCALE[0] + EX_SCALE[1] * ex + EX_BOOST, cfg_weight=CFG, temperature=TEMP)
         sf.write(path, wav.squeeze(0).numpy(), m.sr)
         print('   synth', seed, flush=True)
     return sf.read(path)
@@ -135,7 +136,7 @@ if __name__ == '__main__':
         best = None
         for seed in SEEDS + EXTRA_SEEDS:
             nw = len(text.split())
-            slow = best is not None and nw >= 8 and (len(best[2]) / best[3]) / nw > 0.4
+            slow = best is not None and nw >= 8 and abs((len(best[2]) / best[3]) / nw - 0.42) > 0.08
             if seed in EXTRA_SEEDS and best is not None and best[6] == 0 and not slow:
                 break
             x, sr = synth(text, ex, seed)
@@ -145,7 +146,7 @@ if __name__ == '__main__':
             hyp, words = transcribe(tmp)
             e = wer(text, hyp)
             mel = melodic(y, sr)
-            score = -e * 10 + mel * 0.35 - 4.0 * (len(y) / sr) / max(1, len(text.split()))  # clean > lively > brisk
+            score = -e * 10 + mel * 0.25 - 4.0 * abs((len(y) / sr) / max(1, len(text.split())) - 0.42)  # clean > natural pace (~145 wpm) > lively
             print(f'{sid:10s} seed {seed}  wer {e:.2f}  mel {mel:.2f}  {len(y) / sr:.2f}s  “{hyp}”', flush=True)
             if best is None or score > best[0]:
                 best = (score, seed, y, sr, words, hyp, e)

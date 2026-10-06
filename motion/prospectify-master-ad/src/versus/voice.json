@@ -2,313 +2,313 @@
   "v_hook1": {
     "text": "You can build a website in forty minutes.",
     "gapBefore": 0.3,
-    "seconds": 1.94,
+    "seconds": 2.1876,
     "act": "hook",
     "exaggeration": 0.75,
-    "seed": 11,
+    "seed": 37,
     "asr": "You can build a website in 40 minutes.",
     "wer": 0.0,
     "words": [
       {
         "w": "You",
         "start": 0.0,
-        "end": 0.127
+        "end": 0.14
       },
       {
         "w": "can",
-        "start": 0.127,
-        "end": 0.255
+        "start": 0.14,
+        "end": 0.28
       },
       {
         "w": "build",
-        "start": 0.255,
-        "end": 0.4
+        "start": 0.28,
+        "end": 0.46
       },
       {
         "w": "a",
-        "start": 0.4,
-        "end": 0.527
+        "start": 0.46,
+        "end": 0.6
       },
       {
         "w": "website",
-        "start": 0.527,
-        "end": 0.782
+        "start": 0.6,
+        "end": 0.94
       },
       {
         "w": "in",
-        "start": 0.782,
-        "end": 1.0
+        "start": 0.94,
+        "end": 1.26
       },
       {
         "w": "40",
-        "start": 1.0,
-        "end": 1.364
+        "start": 1.26,
+        "end": 1.58
       },
       {
         "w": "minutes.",
-        "start": 1.364,
-        "end": 1.655
+        "start": 1.58,
+        "end": 1.86
       }
     ]
   },
   "v_hook2": {
     "text": "So why don't you have a single client?",
     "gapBefore": 0.15,
-    "seconds": 2.0437,
+    "seconds": 2.034,
     "act": "hook",
     "exaggeration": 0.85,
-    "seed": 11,
-    "asr": "So, why don't you have a single client?",
+    "seed": 23,
+    "asr": "So why don't you have a single client?",
     "wer": 0.0,
     "words": [
       {
-        "w": "So,",
+        "w": "So",
         "start": 0.0,
-        "end": 0.291
+        "end": 0.16
       },
       {
         "w": "why",
-        "start": 0.455,
-        "end": 0.618
+        "start": 0.16,
+        "end": 0.34
       },
       {
         "w": "don't",
-        "start": 0.618,
-        "end": 0.855
+        "start": 0.34,
+        "end": 0.5
       },
       {
         "w": "you",
-        "start": 0.855,
-        "end": 0.945
+        "start": 0.5,
+        "end": 0.62
       },
       {
         "w": "have",
-        "start": 0.945,
-        "end": 1.073
+        "start": 0.62,
+        "end": 0.86
       },
       {
         "w": "a",
-        "start": 1.073,
-        "end": 1.218
+        "start": 0.86,
+        "end": 1.12
       },
       {
         "w": "single",
-        "start": 1.218,
-        "end": 1.473
+        "start": 1.12,
+        "end": 1.4
       },
       {
         "w": "client?",
-        "start": 1.473,
-        "end": 1.782
+        "start": 1.4,
+        "end": 1.74
       }
     ]
   },
   "v_without": {
     "text": "Here's your night without Prospectify.",
     "gapBefore": 0.45,
-    "seconds": 1.7819,
+    "seconds": 1.8042,
     "act": "without",
     "exaggeration": 0.7,
-    "seed": 11,
+    "seed": 37,
     "asr": "Here's your night without prospectify.",
     "wer": 0.0,
     "words": [
       {
         "w": "Here's",
         "start": 0.0,
-        "end": 0.255
+        "end": 0.28
       },
       {
         "w": "your",
-        "start": 0.255,
-        "end": 0.364
+        "start": 0.28,
+        "end": 0.4
       },
       {
         "w": "night",
-        "start": 0.364,
-        "end": 0.545
+        "start": 0.4,
+        "end": 0.62
       },
       {
         "w": "without",
-        "start": 0.545,
-        "end": 0.855
+        "start": 0.62,
+        "end": 0.94
       },
       {
         "w": "prospectify.",
-        "start": 0.855,
-        "end": 1.564
+        "start": 0.94,
+        "end": 1.56
       }
     ]
   },
   "v_maps": {
     "text": "Three hours scrolling Maps.",
     "gapBefore": 0.25,
-    "seconds": 2.1886,
+    "seconds": 2.6033,
     "act": "without",
     "exaggeration": 0.65,
     "seed": 23,
-    "asr": "3 hours scrolling. Maps.",
+    "asr": "Three hours scrolling. Maps.",
     "wer": 0.0,
     "words": [
       {
-        "w": "3",
+        "w": "Three",
         "start": 0.0,
-        "end": 0.255
+        "end": 0.26
       },
       {
         "w": "hours",
-        "start": 0.255,
-        "end": 0.6
+        "start": 0.26,
+        "end": 0.68
       },
       {
         "w": "scrolling.",
-        "start": 0.6,
-        "end": 1.055
+        "start": 0.68,
+        "end": 1.28
       },
       {
         "w": "Maps.",
-        "start": 1.564,
-        "end": 1.855
+        "start": 1.92,
+        "end": 2.26
       }
     ]
   },
   "v_tabs": {
     "text": "Fourteen tabs.",
     "gapBefore": 0.12,
-    "seconds": 1.1511,
+    "seconds": 0.9052,
     "act": "without",
     "exaggeration": 0.7,
-    "seed": 23,
+    "seed": 11,
     "asr": "14 tabs.",
     "wer": 0.0,
     "words": [
       {
         "w": "14",
         "start": 0.0,
-        "end": 0.418
+        "end": 0.4
       },
       {
         "w": "tabs.",
-        "start": 0.418,
-        "end": 0.782
+        "start": 0.4,
+        "end": 0.7
       }
     ]
   },
   "v_guess": {
     "text": "Guessing who even needs a site.",
     "gapBefore": 0.12,
-    "seconds": 1.4596,
+    "seconds": 1.9678,
     "act": "without",
     "exaggeration": 0.65,
     "seed": 23,
-    "asr": "Guessing who even needs a sight!",
+    "asr": "guessing who even needs a site.",
     "wer": 0.0,
     "words": [
       {
-        "w": "Guessing",
+        "w": "guessing",
         "start": 0.0,
-        "end": 0.255
+        "end": 0.34
       },
       {
         "w": "who",
-        "start": 0.255,
-        "end": 0.418
+        "start": 0.34,
+        "end": 0.66
       },
       {
         "w": "even",
-        "start": 0.418,
-        "end": 0.618
+        "start": 0.66,
+        "end": 1.02
       },
       {
         "w": "needs",
-        "start": 0.618,
-        "end": 0.8
+        "start": 1.02,
+        "end": 1.32
       },
       {
         "w": "a",
-        "start": 0.8,
-        "end": 0.945
+        "start": 1.32,
+        "end": 1.52
       },
       {
-        "w": "sight!",
-        "start": 0.945,
-        "end": 1.2
+        "w": "site.",
+        "start": 1.52,
+        "end": 1.72
       }
     ]
   },
   "v_cold": {
     "text": "Copy, paste, the same cold message.",
     "gapBefore": 0.18,
-    "seconds": 2.6863,
+    "seconds": 2.6699,
     "act": "without",
     "exaggeration": 0.65,
-    "seed": 11,
-    "asr": "Copy, paste, the same cold message.",
+    "seed": 23,
+    "asr": "Copy. Paste. The same cold message.",
     "wer": 0.0,
     "words": [
       {
-        "w": "Copy,",
+        "w": "Copy.",
         "start": 0.0,
-        "end": 0.327
+        "end": 0.32
       },
       {
-        "w": "paste,",
-        "start": 0.564,
-        "end": 0.8
+        "w": "Paste.",
+        "start": 0.72,
+        "end": 1.0
       },
       {
-        "w": "the",
-        "start": 1.255,
-        "end": 1.345
+        "w": "The",
+        "start": 1.4,
+        "end": 1.42
       },
       {
         "w": "same",
-        "start": 1.345,
-        "end": 1.673
+        "start": 1.42,
+        "end": 1.74
       },
       {
         "w": "cold",
-        "start": 1.673,
-        "end": 1.982
+        "start": 1.74,
+        "end": 2.04
       },
       {
         "w": "message.",
-        "start": 1.982,
-        "end": 2.382
+        "start": 2.04,
+        "end": 2.44
       }
     ]
   },
   "v_seen": {
     "text": "Seen. No reply.",
     "gapBefore": 0.25,
-    "seconds": 1.613,
+    "seconds": 1.6254,
     "act": "without",
     "exaggeration": 0.6,
-    "seed": 23,
-    "asr": "Scene, no reply",
+    "seed": 37,
+    "asr": "Seen, no reply.",
     "wer": 0.0,
     "words": [
       {
-        "w": "Scene,",
+        "w": "Seen,",
         "start": 0.0,
-        "end": 0.382
+        "end": 0.36
       },
       {
         "w": "no",
-        "start": 0.782,
-        "end": 0.982
+        "start": 0.74,
+        "end": 0.94
       },
       {
-        "w": "reply",
-        "start": 0.982,
-        "end": 1.327
+        "w": "reply.",
+        "start": 0.94,
+        "end": 1.32
       }
     ]
   },
   "v_generic": {
     "text": "Generic prompt. Generic site.",
     "gapBefore": 0.25,
-    "seconds": 2.1817,
+    "seconds": 2.3555,
     "act": "without",
     "exaggeration": 0.65,
     "seed": 11,
@@ -318,29 +318,29 @@
       {
         "w": "generic",
         "start": 0.0,
-        "end": 0.473
+        "end": 0.42
       },
       {
         "w": "prompt,",
-        "start": 0.473,
-        "end": 0.909
+        "start": 0.42,
+        "end": 0.9
       },
       {
         "w": "generic",
-        "start": 1.4,
-        "end": 1.491
+        "start": 1.44,
+        "end": 1.68
       },
       {
         "w": "site.",
-        "start": 1.491,
-        "end": 1.945
+        "start": 1.68,
+        "end": 2.08
       }
     ]
   },
   "v_late": {
     "text": "Two AM. Still zero clients.",
     "gapBefore": 0.3,
-    "seconds": 2.4999,
+    "seconds": 2.2243,
     "act": "without",
     "exaggeration": 0.7,
     "seed": 11,
@@ -350,520 +350,520 @@
       {
         "w": "2",
         "start": 0.0,
-        "end": 0.182
+        "end": 0.18
       },
       {
         "w": "a",
-        "start": 0.182,
-        "end": 0.327
+        "start": 0.18,
+        "end": 0.34
       },
       {
         "w": ".m.",
-        "start": 0.327,
-        "end": 0.636
+        "start": 0.34,
+        "end": 0.58
       },
       {
         "w": "Still",
-        "start": 1.164,
-        "end": 1.327
+        "start": 0.92,
+        "end": 1.08
       },
       {
         "w": "zero",
-        "start": 1.327,
-        "end": 1.8
+        "start": 1.08,
+        "end": 1.52
       },
       {
         "w": "clients.",
-        "start": 1.8,
-        "end": 2.182
+        "start": 1.52,
+        "end": 1.9
       }
     ]
   },
   "v_turn": {
     "text": "Now. Same night. With Prospectify.",
     "gapBefore": 0.7,
-    "seconds": 2.1521,
+    "seconds": 2.9729,
     "act": "turn",
     "exaggeration": 0.95,
-    "seed": 23,
+    "seed": 11,
     "asr": "Now, same night, with Prospectify.",
     "wer": 0.0,
     "words": [
       {
         "w": "Now,",
         "start": 0.0,
-        "end": 0.273
+        "end": 0.34
       },
       {
         "w": "same",
-        "start": 0.618,
-        "end": 0.727
+        "start": 0.96,
+        "end": 1.16
       },
       {
         "w": "night,",
-        "start": 0.727,
-        "end": 1.018
+        "start": 1.16,
+        "end": 1.64
       },
       {
         "w": "with",
-        "start": 1.218,
-        "end": 1.345
+        "start": 2.02,
+        "end": 2.16
       },
       {
         "w": "Prospectify.",
-        "start": 1.345,
-        "end": 1.909
+        "start": 2.16,
+        "end": 2.76
       }
     ]
   },
   "v_find": {
     "text": "It finds local businesses that need a website, and scores every one.",
     "gapBefore": 0.3,
-    "seconds": 3.7226,
+    "seconds": 4.129,
     "act": "with",
     "exaggeration": 0.9,
-    "seed": 37,
-    "asr": "It finds local businesses that need a website and scores everyone.",
+    "seed": 11,
+    "asr": "it finds local businesses that need a website and scores everyone.",
     "wer": 0.0,
     "words": [
       {
-        "w": "It",
+        "w": "it",
         "start": 0.0,
-        "end": 0.091
+        "end": 0.16
       },
       {
         "w": "finds",
-        "start": 0.091,
-        "end": 0.327
+        "start": 0.16,
+        "end": 0.44
       },
       {
         "w": "local",
-        "start": 0.327,
-        "end": 0.655
+        "start": 0.44,
+        "end": 0.78
       },
       {
         "w": "businesses",
-        "start": 0.655,
-        "end": 1.036
+        "start": 0.78,
+        "end": 1.18
       },
       {
         "w": "that",
-        "start": 1.036,
-        "end": 1.291
+        "start": 1.18,
+        "end": 1.5
       },
       {
         "w": "need",
-        "start": 1.291,
-        "end": 1.436
+        "start": 1.5,
+        "end": 1.78
       },
       {
         "w": "a",
-        "start": 1.436,
-        "end": 1.564
+        "start": 1.78,
+        "end": 1.94
       },
       {
         "w": "website",
-        "start": 1.564,
-        "end": 1.909
+        "start": 1.94,
+        "end": 2.28
       },
       {
         "w": "and",
-        "start": 1.909,
-        "end": 2.273
+        "start": 2.28,
+        "end": 2.56
       },
       {
         "w": "scores",
-        "start": 2.273,
-        "end": 2.655
+        "start": 2.56,
+        "end": 3.02
       },
       {
         "w": "everyone.",
-        "start": 2.655,
-        "end": 3.345
+        "start": 3.02,
+        "end": 3.72
       }
     ]
   },
   "v_reach": {
     "text": "It writes your outreach. WhatsApp, email, or a phone script.",
     "gapBefore": 0.25,
-    "seconds": 3.9133,
+    "seconds": 3.6773,
     "act": "with",
     "exaggeration": 0.9,
     "seed": 11,
-    "asr": "It writes your outreach, WhatsApp, email, or a phone script.",
+    "asr": "It writes your outreach, Whatsapp, email, or a phone script.",
     "wer": 0.0,
     "words": [
       {
         "w": "It",
         "start": 0.0,
-        "end": 0.145
+        "end": 0.16
       },
       {
         "w": "writes",
-        "start": 0.145,
-        "end": 0.418
+        "start": 0.16,
+        "end": 0.4
       },
       {
         "w": "your",
-        "start": 0.418,
-        "end": 0.673
+        "start": 0.4,
+        "end": 0.58
       },
       {
         "w": "outreach,",
-        "start": 0.673,
-        "end": 1.145
+        "start": 0.58,
+        "end": 1.06
       },
       {
-        "w": "WhatsApp,",
-        "start": 1.745,
-        "end": 1.982
+        "w": "Whatsapp,",
+        "start": 1.64,
+        "end": 1.98
       },
       {
         "w": "email,",
-        "start": 2.364,
-        "end": 2.564
+        "start": 2.26,
+        "end": 2.46
       },
       {
         "w": "or",
-        "start": 2.964,
-        "end": 3.0
+        "start": 2.86,
+        "end": 2.9
       },
       {
         "w": "a",
-        "start": 3.0,
-        "end": 3.127
+        "start": 2.9,
+        "end": 3.0
       },
       {
         "w": "phone",
-        "start": 3.127,
-        "end": 3.345
+        "start": 3.0,
+        "end": 3.16
       },
       {
         "w": "script.",
-        "start": 3.345,
-        "end": 3.673
+        "start": 3.16,
+        "end": 3.44
       }
     ]
   },
   "v_prompt": {
     "text": "Then it writes the prompt for a premium site, made for that exact business.",
     "gapBefore": 0.25,
-    "seconds": 4.6256,
+    "seconds": 5.145,
     "act": "with",
     "exaggeration": 0.95,
-    "seed": 11,
-    "asr": "Then, it writes the prompt for a premium site made for that exact business.",
+    "seed": 37,
+    "asr": "Then, it writes the prompt for a premium site, made for that exact business.",
     "wer": 0.0,
     "words": [
       {
         "w": "Then,",
         "start": 0.0,
-        "end": 0.364
+        "end": 0.36
       },
       {
         "w": "it",
-        "start": 0.509,
-        "end": 0.618
+        "start": 0.6,
+        "end": 0.8
       },
       {
         "w": "writes",
-        "start": 0.618,
-        "end": 0.909
+        "start": 0.8,
+        "end": 1.06
       },
       {
         "w": "the",
-        "start": 0.909,
-        "end": 1.127
+        "start": 1.06,
+        "end": 1.26
       },
       {
         "w": "prompt",
-        "start": 1.127,
-        "end": 1.4
+        "start": 1.26,
+        "end": 1.54
       },
       {
         "w": "for",
-        "start": 1.4,
-        "end": 1.636
+        "start": 1.54,
+        "end": 1.82
       },
       {
         "w": "a",
-        "start": 1.636,
-        "end": 1.964
+        "start": 1.82,
+        "end": 1.94
       },
       {
         "w": "premium",
-        "start": 1.964,
-        "end": 2.182
+        "start": 1.94,
+        "end": 2.18
       },
       {
-        "w": "site",
-        "start": 2.182,
-        "end": 2.691
+        "w": "site,",
+        "start": 2.18,
+        "end": 2.62
       },
       {
         "w": "made",
-        "start": 2.691,
-        "end": 3.218
+        "start": 3.2,
+        "end": 3.3
       },
       {
         "w": "for",
-        "start": 3.218,
-        "end": 3.455
+        "start": 3.3,
+        "end": 3.6
       },
       {
         "w": "that",
-        "start": 3.455,
-        "end": 3.564
+        "start": 3.6,
+        "end": 3.78
       },
       {
         "w": "exact",
-        "start": 3.564,
-        "end": 3.927
+        "start": 3.78,
+        "end": 4.22
       },
       {
         "w": "business.",
-        "start": 3.927,
-        "end": 4.327
+        "start": 4.22,
+        "end": 4.8
       }
     ]
   },
   "v_tools": {
     "text": "Paste it into Lovable, Bolt, or Base44.",
     "gapBefore": 0.15,
-    "seconds": 2.8752,
+    "seconds": 3.4358,
     "act": "with",
     "exaggeration": 0.85,
-    "seed": 23,
-    "asr": "paste it into lovable bolt or base for four",
+    "seed": 37,
+    "asr": "paste it into lovable, bolt, or base for four.",
     "wer": 0.0,
     "words": [
       {
         "w": "paste",
         "start": 0.0,
-        "end": 0.2
+        "end": 0.22
       },
       {
         "w": "it",
-        "start": 0.2,
-        "end": 0.364
+        "start": 0.22,
+        "end": 0.44
       },
       {
         "w": "into",
-        "start": 0.364,
-        "end": 0.564
+        "start": 0.44,
+        "end": 0.84
       },
       {
-        "w": "lovable",
-        "start": 0.564,
-        "end": 0.909
+        "w": "lovable,",
+        "start": 0.84,
+        "end": 1.38
       },
       {
-        "w": "bolt",
-        "start": 0.909,
-        "end": 1.345
+        "w": "bolt,",
+        "start": 1.62,
+        "end": 2.02
       },
       {
         "w": "or",
-        "start": 1.345,
-        "end": 1.709
+        "start": 2.4,
+        "end": 2.46
       },
       {
         "w": "base",
-        "start": 1.709,
-        "end": 2.0
+        "start": 2.46,
+        "end": 2.72
       },
       {
         "w": "for",
-        "start": 2.0,
-        "end": 2.255
+        "start": 2.72,
+        "end": 2.94
       },
       {
-        "w": "four",
-        "start": 2.255,
-        "end": 2.6
+        "w": "four.",
+        "start": 2.94,
+        "end": 3.22
       }
     ]
   },
   "v_done": {
     "text": "Client found. Message ready. Site built.",
     "gapBefore": 0.3,
-    "seconds": 2.8166,
+    "seconds": 2.7723,
     "act": "with",
     "exaggeration": 1.0,
     "seed": 11,
-    "asr": "Client found. Message ready. Site built.",
+    "asr": "Client found, message ready, site built.",
     "wer": 0.0,
     "words": [
       {
         "w": "Client",
         "start": 0.0,
-        "end": 0.273
+        "end": 0.26
       },
       {
-        "w": "found.",
-        "start": 0.273,
-        "end": 0.618
+        "w": "found,",
+        "start": 0.26,
+        "end": 0.62
       },
       {
-        "w": "Message",
-        "start": 1.145,
-        "end": 1.291
+        "w": "message",
+        "start": 0.94,
+        "end": 1.28
       },
       {
-        "w": "ready.",
-        "start": 1.291,
-        "end": 1.582
+        "w": "ready,",
+        "start": 1.28,
+        "end": 1.62
       },
       {
-        "w": "Site",
-        "start": 2.218,
-        "end": 2.255
+        "w": "site",
+        "start": 1.94,
+        "end": 2.2
       },
       {
         "w": "built.",
-        "start": 2.255,
-        "end": 2.564
+        "start": 2.2,
+        "end": 2.5
       }
     ]
   },
   "v_recap": {
     "text": "Without it, all night. With it, one search.",
     "gapBefore": 0.45,
-    "seconds": 2.772,
+    "seconds": 3.4334,
     "act": "recap",
     "exaggeration": 0.95,
-    "seed": 37,
-    "asr": "Without it, all night, with it, one search.",
+    "seed": 23,
+    "asr": "Without it, all night. With it, one search.",
     "wer": 0.0,
     "words": [
       {
         "w": "Without",
         "start": 0.0,
-        "end": 0.255
+        "end": 0.36
       },
       {
         "w": "it,",
-        "start": 0.255,
-        "end": 0.473
+        "start": 0.36,
+        "end": 0.64
       },
       {
         "w": "all",
-        "start": 0.655,
-        "end": 0.836
+        "start": 0.8,
+        "end": 1.04
       },
       {
-        "w": "night,",
-        "start": 0.836,
-        "end": 1.164
+        "w": "night.",
+        "start": 1.04,
+        "end": 1.34
       },
       {
-        "w": "with",
-        "start": 1.509,
-        "end": 1.582
+        "w": "With",
+        "start": 1.96,
+        "end": 2.0
       },
       {
         "w": "it,",
-        "start": 1.582,
-        "end": 1.8
+        "start": 2.0,
+        "end": 2.24
       },
       {
         "w": "one",
-        "start": 2.055,
-        "end": 2.218
+        "start": 2.6,
+        "end": 2.84
       },
       {
         "w": "search.",
-        "start": 2.218,
-        "end": 2.527
+        "start": 2.84,
+        "end": 3.18
       }
     ]
   },
   "v_first": {
     "text": "Your first client is already out there.",
     "gapBefore": 0.4,
-    "seconds": 1.9261,
+    "seconds": 1.9631,
     "act": "cta",
     "exaggeration": 0.9,
-    "seed": 11,
-    "asr": "Your first client is already out there!",
+    "seed": 23,
+    "asr": "your first client is already out there.",
     "wer": 0.0,
     "words": [
       {
-        "w": "Your",
+        "w": "your",
         "start": 0.0,
-        "end": 0.2
+        "end": 0.12
       },
       {
         "w": "first",
-        "start": 0.2,
-        "end": 0.491
+        "start": 0.12,
+        "end": 0.34
       },
       {
         "w": "client",
-        "start": 0.491,
-        "end": 0.855
+        "start": 0.34,
+        "end": 0.64
       },
       {
         "w": "is",
-        "start": 0.855,
-        "end": 1.018
+        "start": 0.64,
+        "end": 0.86
       },
       {
         "w": "already",
-        "start": 1.018,
-        "end": 1.273
+        "start": 0.86,
+        "end": 1.3
       },
       {
         "w": "out",
-        "start": 1.273,
-        "end": 1.527
+        "start": 1.3,
+        "end": 1.6
       },
       {
-        "w": "there!",
-        "start": 1.527,
-        "end": 1.782
+        "w": "there.",
+        "start": 1.6,
+        "end": 1.82
       }
     ]
   },
   "v_start": {
     "text": "Start free. Three leads, no card.",
     "gapBefore": 0.2,
-    "seconds": 2.3,
+    "seconds": 2.0346,
     "act": "cta",
     "exaggeration": 1.0,
-    "seed": 23,
-    "asr": "Start free, three leads, no card.",
+    "seed": 37,
+    "asr": "Start free. Three leads, no card.",
     "wer": 0.0,
     "words": [
       {
         "w": "Start",
         "start": 0.0,
-        "end": 0.273
+        "end": 0.24
       },
       {
-        "w": "free,",
-        "start": 0.273,
-        "end": 0.545
+        "w": "free.",
+        "start": 0.24,
+        "end": 0.46
       },
       {
-        "w": "three",
-        "start": 0.909,
-        "end": 1.073
+        "w": "Three",
+        "start": 0.74,
+        "end": 0.9
       },
       {
         "w": "leads,",
-        "start": 1.073,
-        "end": 1.4
+        "start": 0.9,
+        "end": 1.18
       },
       {
         "w": "no",
-        "start": 1.636,
-        "end": 1.8
+        "start": 1.48,
+        "end": 1.6
       },
       {
         "w": "card.",
-        "start": 1.8,
-        "end": 2.055
+        "start": 1.6,
+        "end": 1.8
       }
     ]
   }

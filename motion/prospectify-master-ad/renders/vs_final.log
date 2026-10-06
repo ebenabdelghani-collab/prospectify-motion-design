@@ -1,92 +1,92 @@
 Detected differing memory amounts:
-Memory reported by CGroup: 8796093015133.90 MB
-Memory reported by /proc/meminfo: 14576.73 MB
-Memory reported by Node: 14576.73 MB
+Memory reported by CGroup: 8796093013907.86 MB
+Memory reported by /proc/meminfo: 14591.47 MB
+Memory reported by Node: 14591.47 MB
 You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
 Using the lower amount of memory for calculation.
 Detected differing memory amounts:
-Memory reported by CGroup: 8796093014958.55 MB
-Memory reported by /proc/meminfo: 14529.40 MB
-Memory reported by Node: 14529.40 MB
+Memory reported by CGroup: 8796093013846.98 MB
+Memory reported by /proc/meminfo: 14560.26 MB
+Memory reported by Node: 14560.26 MB
 You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
 Using the lower amount of memory for calculation.
 Detected differing memory amounts:
-Memory reported by CGroup: 8796093015002.16 MB
-Memory reported by /proc/meminfo: 14467.78 MB
-Memory reported by Node: 14467.78 MB
+Memory reported by CGroup: 8796093013906.15 MB
+Memory reported by /proc/meminfo: 14515.58 MB
+Memory reported by Node: 14515.58 MB
 You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
 Using the lower amount of memory for calculation.
 Detected differing memory amounts:
-Memory reported by CGroup: 8796093014969.11 MB
-Memory reported by /proc/meminfo: 14461.15 MB
-Memory reported by Node: 14461.15 MB
+Memory reported by CGroup: 8796093013879.87 MB
+Memory reported by /proc/meminfo: 14492.21 MB
+Memory reported by Node: 14492.21 MB
 You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
 Using the lower amount of memory for calculation.
 x1 0%  0s
 Detected differing memory amounts:
-Memory reported by CGroup: 8796093014879.34 MB
-Memory reported by /proc/meminfo: 14426.88 MB
-Memory reported by Node: 14426.88 MB
+Memory reported by CGroup: 8796093013783.43 MB
+Memory reported by /proc/meminfo: 14477.70 MB
+Memory reported by Node: 14477.70 MB
 You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
 Using the lower amount of memory for calculation.
 Detected differing memory amounts:
-Memory reported by CGroup: 8796093014877.80 MB
-Memory reported by /proc/meminfo: 14419.03 MB
-Memory reported by Node: 14419.03 MB
+Memory reported by CGroup: 8796093013783.43 MB
+Memory reported by /proc/meminfo: 14477.70 MB
+Memory reported by Node: 14477.70 MB
 You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
 Using the lower amount of memory for calculation.
 Detected differing memory amounts:
-Memory reported by CGroup: 8796093014877.80 MB
-Memory reported by /proc/meminfo: 14419.03 MB
-Memory reported by Node: 14419.03 MB
+Memory reported by CGroup: 8796093013781.91 MB
+Memory reported by /proc/meminfo: 14478.50 MB
+Memory reported by Node: 14478.50 MB
 You might have inadvertently set the --memory flag of `docker run` to a value that is higher than the global Docker memory limit.
 Using the lower amount of memory for calculation.
-x1 2%  14s
-x1 4%  29s
-x1 6%  44s
-x1 8%  66s
-x1 10%  76s
-x1 12%  89s
-x1 14%  107s
-x1 16%  119s
-x1 18%  126s
-x1 20%  133s
-x1 22%  140s
-x1 24%  145s
-x1 26%  150s
-x1 28%  164s
-x1 30%  177s
-x1 32%  188s
-x1 34%  200s
-x1 36%  204s
-x1 38%  209s
-x1 40%  213s
-x1 42%  221s
-x1 44%  238s
-x1 46%  246s
-x1 48%  253s
-x1 50%  262s
-x1 52%  279s
-x1 54%  286s
-x1 56%  294s
-x1 58%  305s
-x1 60%  309s
-x1 62%  317s
-x1 64%  325s
-x1 66%  345s
-x1 68%  365s
-x1 70%  380s
-x1 72%  396s
-x1 74%  410s
-x1 76%  421s
-x1 78%  441s
-x1 80%  446s
-x1 82%  452s
-x1 84%  457s
-x1 86%  463s
-x1 88%  469s
-x1 90%  475s
-x1 92%  480s
-x1 94%  486s
-x1 100%  487s
-done renders/prospectify-same-night-1920x1080-60.mp4 491s
+x1 2%  15s
+x1 4%  30s
+x1 6%  46s
+x1 8%  56s
+x1 10%  61s
+x1 12%  82s
+x1 14%  97s
+x1 16%  110s
+x1 18%  119s
+x1 20%  126s
+x1 22%  133s
+x1 24%  139s
+x1 26%  144s
+x1 28%  157s
+x1 30%  171s
+x1 32%  184s
+x1 34%  197s
+x1 36%  202s
+x1 38%  206s
+x1 40%  210s
+x1 42%  217s
+x1 44%  230s
+x1 46%  236s
+x1 48%  242s
+x1 50%  252s
+x1 52%  270s
+x1 54%  278s
+x1 56%  287s
+x1 58%  300s
+x1 60%  305s
+x1 62%  314s
+x1 64%  323s
+x1 66%  340s
+x1 68%  366s
+x1 70%  382s
+x1 72%  399s
+x1 74%  417s
+x1 76%  438s
+x1 78%  467s
+x1 80%  473s
+x1 82%  479s
+x1 84%  485s
+x1 86%  491s
+x1 88%  497s
+x1 90%  504s
+x1 92%  510s
+x1 94%  516s
+x1 100%  518s
+done renders/prospectify-same-night-1920x1080-60.mp4 523s
