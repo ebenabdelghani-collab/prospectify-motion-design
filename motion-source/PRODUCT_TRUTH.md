@@ -1,5 +1,34 @@
 # PRODUCT_TRUTH — what Prospectify is, verified
 
+# ⚠ UPDATE 2026-10-06 — the live site changed (re-verified on prospectify.net)
+This section **supersedes** older lines below where they conflict. Evidence: screenshots + production bundle
+`index-BO3UaEVJ.js` / `index-CvFqll2r.css` captured 2026-10-06.
+
+- **Hero:** "Find businesses that need a website. Sell them one." / "Prospectify finds local businesses with no
+  website on Google Maps, writes the message to send them, and gives you the prompt to build their site with AI."
+  Chips: "3 free leads · No card required · Any country".
+- **Typeface is now Geist** (headings 600, tight tracking). Colour tokens unchanged (#09090b, #f42562 → #ff3b5f →
+  #ff5a45). Buttons are pills (radius 980 px) with a #ff3b5f → #f42562 gradient and a sheen; cards 16 px radius.
+- **App (current UI):** sidebar Home / Find / My leads / Analytics / Method. "Find clients": city field +
+  industry select + "Search"; "15 businesses · Highest score first"; rows = score · business photo · name ·
+  niche · city · ★ rating (reviews) · status badge (No website / Social media only / Basic website) · price
+  range (e.g. $400–750) · phone. Lead panel: the business's **Google Maps photo** (credited "Photo: author ·
+  Google Maps"), name, score, chips, tabs **Message / Website prompt**, tones **Friendly / Formal / Direct**,
+  Copy, **Mark as contacted**. Also "Website sold" + amount, "Replied to your WhatsApp" notifications.
+- **What it does (site's own list):** finds businesses whose Google listing has no website; shows their real
+  phone, address, rating and reviews; writes the first message, the follow-up and a call script; writes the
+  prompt to build their site with an AI builder. Messages in the business's language, several tones.
+- **What it does NOT do (site's own list):** send messages for you; guarantee clients or income; **build the
+  site itself (your AI builder does, from the prompt)**; lock you in (cancel anytime from Settings).
+- **Prompts ready for:** Lovable, Bolt.new, Base44, Cursor, Claude, Replit, Framer, Webflow.
+- **Pricing (monthly):** Free $0 — 3 leads to try it, no card. Starter $9.99 first month, then $19.99/month —
+  100 new leads every month. Pro $19.99 first month, then $39.99/month — 300 new leads every month. Payments by
+  Stripe. (The older $25 / $45 / lead-pack lines below are obsolete.)
+- **Closing CTA:** "Your first three leads are free. Start with your own city." Button: "Get 3 free leads".
+- The "$600 · Website sold" card and the "Do the math" slider are illustrations ("A simple division, not a
+  forecast") — never present them as results.
+
+
 **Sources.** Every line below comes from one of these, all fetched on 2026-10-02:
 - the live production site https://prospectify.net (landing + public routes);
 - its production JS bundle `index-DAduTZ6l.js`;

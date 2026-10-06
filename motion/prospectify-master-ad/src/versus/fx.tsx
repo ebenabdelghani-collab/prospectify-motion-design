@@ -2,6 +2,17 @@ import React from 'react';
 import TL from './timeline.json';
 import {C, EASE, FONT, clamp01, lerp, rand, ramp} from '../final/tokens';
 import {Logo} from '../final/kit/ui';
+import {staticFile} from 'remotion';
+import {loadFont} from '@remotion/fonts';
+
+/** Geist — the typeface prospectify.net uses today (OFL). */
+export const GF = '"Geist", system-ui, -apple-system, sans-serif';
+let geist = false;
+export const loadGeist = () => {
+	if (geist) return;
+	geist = true;
+	loadFont({family: 'Geist', url: staticFile('fonts/Geist-Variable.woff2'), weight: '100 900'});
+};
 
 /**
  * SAME NIGHT — visual vocabulary.
@@ -38,8 +49,8 @@ export const SideLabel: React.FC<{f: number; at: number; out?: number; with?: bo
 	if (t <= 0) return null;
 	return (
 		<div style={{position: 'absolute', left: 72, top: 60, display: 'flex', alignItems: 'center', gap: 16, opacity: t, transform: `translateX(${(1 - t) * -30}px)`}}>
-			{w ? <Logo size={40} /> : <div style={{width: 40, height: 40, borderRadius: 12, border: `2px solid ${COLD.dim}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT.sans, fontWeight: 800, fontSize: 22, color: COLD.dim}}>✕</div>}
-			<div style={{fontFamily: FONT.sans, fontWeight: 800, fontSize: 26, letterSpacing: '0.2em', color: w ? C.text : COLD.dim}}>
+			{w ? <Logo size={40} /> : <div style={{width: 40, height: 40, borderRadius: 12, border: `2px solid ${COLD.dim}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: GF, fontWeight: 800, fontSize: 22, color: COLD.dim}}>✕</div>}
+			<div style={{fontFamily: GF, fontWeight: 800, fontSize: 26, letterSpacing: '0.2em', color: w ? C.text : COLD.dim}}>
 				{w ? 'WITH ' : 'WITHOUT '}
 				<span style={w ? {background: C.grad, WebkitBackgroundClip: 'text', color: 'transparent'} : {}}>PROSPECTIFY</span>
 			</div>
@@ -66,11 +77,11 @@ export const Chroma: React.FC<{f: number; hits: number[]; children: React.ReactN
 };
 
 /** Kinetic word(s): per-letter rise + unblur; `grad` paints the brand gradient. */
-export const Kword: React.FC<{f: number; at: number; text: string; size: number; color?: string; grad?: boolean; out?: number; weight?: number; stagger?: number; style?: React.CSSProperties}> = ({f, at, text, size, color = '#fff', grad = false, out = 1e9, weight = 800, stagger = 1.2, style}) => {
+export const Kword: React.FC<{f: number; at: number; text: string; size: number; color?: string; grad?: boolean; out?: number; weight?: number; stagger?: number; style?: React.CSSProperties}> = ({f, at, text, size, color = '#fff', grad = false, out = 1e9, weight = 700, stagger = 1.2, style}) => {
 	const o = ramp(f, out, 10, EASE.EXIT);
 	if (f < at || o >= 1) return null;
 	return (
-		<div style={{display: 'inline-flex', fontFamily: FONT.sans, fontSize: size, fontWeight: weight, letterSpacing: '-0.05em', lineHeight: 1, whiteSpace: 'pre', opacity: 1 - o, transform: `translateY(${-o * 30}px)`, ...style}}>
+		<div style={{display: 'inline-flex', fontFamily: GF, fontSize: size, fontWeight: weight, letterSpacing: '-0.055em', lineHeight: 1, whiteSpace: 'pre', opacity: 1 - o, transform: `translateY(${-o * 30}px)`, ...style}}>
 			{text.split('').map((ch, i) => {
 				const t = ramp(f, at + i * stagger, 14, EASE.FAST_LOCK);
 				return (
@@ -103,7 +114,7 @@ export const clockStr = (mins: number) => {
 export const Clock: React.FC<{mins: number; size: number; color?: string; apColor?: string; style?: React.CSSProperties}> = ({mins, size, color = COLD.ink, apColor = COLD.dim, style}) => {
 	const c = clockStr(mins);
 	return (
-		<div style={{fontFamily: FONT.sans, fontWeight: 800, fontSize: size, letterSpacing: '-0.04em', color, lineHeight: 1, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap', ...style}}>
+		<div style={{fontFamily: GF, fontWeight: 800, fontSize: size, letterSpacing: '-0.04em', color, lineHeight: 1, fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap', ...style}}>
 			{c.hm}
 			<span style={{fontSize: size * 0.34, marginLeft: size * 0.1, color: apColor, letterSpacing: '0.04em'}}>{c.ap}</span>
 		</div>

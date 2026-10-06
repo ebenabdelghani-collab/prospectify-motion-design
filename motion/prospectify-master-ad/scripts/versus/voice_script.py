@@ -13,7 +13,7 @@ SEGMENTS = [
     ('v_hook2', "So why don't you have a single client?", 0.15, 'hook', 0.85),
     # WITHOUT — the pain, fast and specific
     ('v_without', "Here's your night without Prospectify.", 0.45, 'without', 0.70),
-    ('v_maps', "Hours scrolling Maps.", 0.25, 'without', 0.65),
+    ('v_maps', "Three hours scrolling Maps.", 0.25, 'without', 0.65),
     ('v_tabs', "Fourteen tabs.", 0.12, 'without', 0.70),
     ('v_guess', "Guessing who even needs a site.", 0.12, 'without', 0.65),
     ('v_cold', "Copy, paste, the same cold message.", 0.18, 'without', 0.65),

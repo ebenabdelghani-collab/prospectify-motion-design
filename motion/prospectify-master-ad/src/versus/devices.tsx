@@ -1,5 +1,5 @@
 import React from 'react';
-import {FONT} from '../final/tokens';
+import {GF} from './fx';
 
 /**
  * Premium hardware, drawn in CSS (no third-party marks): a titanium phone with a dynamic island and a
@@ -40,7 +40,7 @@ export const Phone: React.FC<{
 					<div style={{position: 'relative', width: '100%', height: '100%', borderRadius: r - w * 0.044, overflow: 'hidden', background: '#000'}}>
 						{children}
 						{/* status bar */}
-						<div style={{position: 'absolute', left: 0, right: 0, top: 0, height: w * 0.13, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: `0 ${w * 0.085}px`, fontFamily: FONT.sans, fontWeight: 700, fontSize: w * 0.048, color: ink, pointerEvents: 'none'}}>
+						<div style={{position: 'absolute', left: 0, right: 0, top: 0, height: w * 0.13, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: `0 ${w * 0.085}px`, fontFamily: GF, fontWeight: 700, fontSize: w * 0.048, color: ink, pointerEvents: 'none'}}>
 							<span>{time}</span>
 							<span style={{display: 'flex', gap: w * 0.015, alignItems: 'center'}}>
 								<span style={{display: 'flex', gap: w * 0.006, alignItems: 'flex-end'}}>
@@ -101,7 +101,7 @@ export const Chrome: React.FC<{url: string; children: React.ReactNode; h: number
 					<div key={c} style={{width: h * 0.26, height: h * 0.26, borderRadius: '50%', background: c}} />
 				))}
 			</div>
-			<div style={{flex: 1, height: h * 0.62, borderRadius: h * 0.2, background: dark ? '#2a2a30' : '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT.sans, fontSize: h * 0.3, fontWeight: 600, color: dark ? '#b9b9c2' : '#555'}}>
+			<div style={{flex: 1, height: h * 0.62, borderRadius: h * 0.2, background: dark ? '#2a2a30' : '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: GF, fontSize: h * 0.3, fontWeight: 600, color: dark ? '#b9b9c2' : '#555'}}>
 				{url}
 			</div>
 			<div style={{width: h * 1.2}} />

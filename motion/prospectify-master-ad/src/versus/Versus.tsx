@@ -3,12 +3,13 @@ import {AbsoluteFill, Audio, staticFile, useCurrentFrame} from 'remotion';
 import {CameraMotionBlur} from '@remotion/motion-blur';
 import {loadFinalFonts} from '../final/tokens';
 import {Grain} from '../fx/camera';
-import {P} from './fx';
+import {P, loadGeist} from './fx';
 import {Hook, Without} from './scenes/Without';
 import {Turn, With} from './scenes/With';
 import {CTA, Recap} from './scenes/End';
 
 loadFinalFonts();
+loadGeist();
 
 /** SAME NIGHT — 16:9 acquisition film: the viewer's night without Prospectify, then the same night with it. */
 const BLUR: [number, number][] = [

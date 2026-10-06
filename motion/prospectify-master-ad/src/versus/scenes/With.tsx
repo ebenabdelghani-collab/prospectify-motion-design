@@ -4,7 +4,7 @@ import {C, EASE, FONT, clamp01, lerp, rand, ramp} from '../../final/tokens';
 import {Logo} from '../../final/kit/ui';
 import {Icon} from '../../final/kit/icons';
 import {Photo} from '../../final/kit/media';
-import {BrandBG, Chroma, Clock, Kword, P, SideLabel, W, appear, gone} from '../fx';
+import {GF, BrandBG, Chroma, Clock, Kword, P, SideLabel, W, appear, gone} from '../fx';
 import {Chrome, Laptop, Phone} from '../devices';
 import {MobileSite, PremiumSite, SITE_DW} from '../site';
 import {APP_H, APP_W, BUILDERS, MESSAGES, PROMPT, ProspectifyApp} from '../app';
@@ -35,10 +35,10 @@ export const Turn: React.FC<{f: number}> = ({f}) => {
 				<div style={{marginTop: -70, opacity: flood, transform: `scale(${lerp(0.8, 1, flood)})`}}>
 					<div style={{display: 'flex', alignItems: 'center', gap: 34}}>
 						<Logo size={150} />
-						<div style={{fontFamily: FONT.sans, fontSize: 150, fontWeight: 800, letterSpacing: '-0.05em', color: C.text}}>Prospectify</div>
+						<div style={{fontFamily: GF, fontSize: 150, fontWeight: 800, letterSpacing: '-0.05em', color: C.text}}>Prospectify</div>
 					</div>
 				</div>
-				<div style={{marginTop: 26, fontFamily: FONT.sans, fontWeight: 800, fontSize: 34, letterSpacing: '0.22em', color: C.text2, opacity: appear(f, P.T_SAME, 12)}}>SAME NIGHT. <span style={{background: C.grad, WebkitBackgroundClip: 'text', color: 'transparent'}}>DIFFERENT TOOL.</span></div>
+				<div style={{marginTop: 26, fontFamily: GF, fontWeight: 800, fontSize: 34, letterSpacing: '0.22em', color: C.text2, opacity: appear(f, P.T_SAME, 12)}}>SAME NIGHT. <span style={{background: C.grad, WebkitBackgroundClip: 'text', color: 'transparent'}}>DIFFERENT TOOL.</span></div>
 			</div>
 		</div>
 	);
@@ -60,7 +60,7 @@ const ProofChip: React.FC<{f: number; at: number; label: string; icon: string}> 
 	const t = appear(f, at, 14);
 	if (t <= 0) return null;
 	return (
-		<div style={{display: 'flex', alignItems: 'center', gap: 14, height: 76, padding: '0 28px 0 18px', borderRadius: 22, background: 'rgba(22,22,26,0.92)', border: `1.5px solid rgba(${C.accentRGB},0.45)`, boxShadow: `0 20px 50px rgba(0,0,0,0.5), 0 0 40px rgba(${C.accentRGB},0.18)`, fontFamily: FONT.sans, fontSize: 32, fontWeight: 800, color: C.text, letterSpacing: '-0.02em', opacity: t, transform: `translateY(${(1 - t) * 30}px) scale(${lerp(0.9, 1, t)})`, backdropFilter: 'blur(14px)'}}>
+		<div style={{display: 'flex', alignItems: 'center', gap: 14, height: 76, padding: '0 28px 0 18px', borderRadius: 22, background: 'rgba(22,22,26,0.92)', border: `1.5px solid rgba(${C.accentRGB},0.45)`, boxShadow: `0 20px 50px rgba(0,0,0,0.5), 0 0 40px rgba(${C.accentRGB},0.18)`, fontFamily: GF, fontSize: 32, fontWeight: 800, color: C.text, letterSpacing: '-0.02em', opacity: t, transform: `translateY(${(1 - t) * 30}px) scale(${lerp(0.9, 1, t)})`, backdropFilter: 'blur(14px)'}}>
 			<div style={{width: 46, height: 46, borderRadius: 14, background: C.grad, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
 				<Icon n={icon} size={26} color="#fff" sw={2.6} />
 			</div>
@@ -75,11 +75,11 @@ export const With: React.FC<{f: number}> = ({f}) => {
 	const appOut = ramp(f, P.TL_IN - 4, 22, EASE.CAMERA);
 	const cam = camAt(f, [
 		[P.F_IN, 800, 500, 0.98],
-		[P.F_ROWS, 720, 430, 1.12],
+		[P.F_ROWS, 760, 380, 1.18],
 		[P.F_SCORE, 800, 500, 0.98],
-		[P.R_IN, 1180, 470, 1.3],
-		[P.P_IN, 1180, 470, 1.3],
-		[P.TL_IN, 1180, 470, 1.3],
+		[P.R_IN, 1290, 420, 1.3],
+		[P.P_IN, 1290, 420, 1.3],
+		[P.TL_IN, 1290, 420, 1.3],
 	]);
 	const keys = {
 		searchKeys: P.F_KEYS as unknown as number[],
@@ -142,13 +142,13 @@ export const With: React.FC<{f: number}> = ({f}) => {
 							return (
 								<div key={b.n} style={{height: 84, padding: '0 30px', borderRadius: 24, background: C.surface2, border: `1.5px solid ${i === 0 ? C.accent : C.lineStrong}`, display: 'flex', alignItems: 'center', gap: 14, opacity: t, transform: `scale(${lerp(0.8, 1, t)})`}}>
 									<Img src={staticFile(b.src)} style={{width: b.w * 1.4, height: b.h * 1.4}} />
-									{!b.word && <span style={{fontFamily: FONT.sans, fontSize: 30, fontWeight: 800, color: C.text}}>{b.n}</span>}
+									{!b.word && <span style={{fontFamily: GF, fontSize: 30, fontWeight: 800, color: C.text}}>{b.n}</span>}
 								</div>
 							);
 						})}
-						<div style={{height: 84, padding: '0 26px', borderRadius: 24, background: C.grad, display: 'flex', alignItems: 'center', fontFamily: FONT.sans, fontSize: 30, fontWeight: 800, color: '#fff', opacity: appear(f, P.TL_PASTE - 8, 10), transform: `scale(${f >= P.TL_PASTE && f < P.TL_PASTE + 6 ? 0.92 : 1})`}}>⌘V Paste prompt</div>
+						<div style={{height: 84, padding: '0 26px', borderRadius: 24, background: C.grad, display: 'flex', alignItems: 'center', fontFamily: GF, fontSize: 30, fontWeight: 800, color: '#fff', opacity: appear(f, P.TL_PASTE - 8, 10), transform: `scale(${f >= P.TL_PASTE && f < P.TL_PASTE + 6 ? 0.92 : 1})`}}>⌘V Paste prompt</div>
 					</div>
-					<div style={{position: 'absolute', left: 0, right: 0, top: 168, textAlign: 'center', fontFamily: FONT.sans, fontSize: 18, fontWeight: 600, color: C.text3, opacity: tl * (1 - appear(f, P.D_IN - 6, 14))}}>Use the builder you already use · No affiliation implied</div>
+					<div style={{position: 'absolute', left: 0, right: 0, top: 168, textAlign: 'center', fontFamily: GF, fontSize: 18, fontWeight: 600, color: C.text3, opacity: tl * (1 - appear(f, P.D_IN - 6, 14))}}>Use the builder you already use · No affiliation implied</div>
 					{/* laptop */}
 					<div style={{position: 'absolute', left: 170, top: 250, opacity: devicesT, transform: `translateY(${(1 - devicesT) * 80}px) scale(${lerp(0.92, 1, devicesT)})`}}>
 						<Laptop w={lw} rotY={8} rotX={4} glare={lerp(0.1, 0.9, (f - P.TL_PASTE) / 200)}>
@@ -188,7 +188,7 @@ const WhatsAppSend: React.FC<{f: number}> = ({f}) => {
 	const t = appear(f, P.D_SEND, 14);
 	const sent = f >= P.D_SEND + 22;
 	return (
-		<div style={{position: 'absolute', inset: 0, background: '#0b141a', fontFamily: FONT.sans}}>
+		<div style={{position: 'absolute', inset: 0, background: '#0b141a', fontFamily: GF}}>
 			<div style={{height: 140, background: '#1f2c34', display: 'flex', alignItems: 'flex-end', padding: '0 18px 14px', gap: 12}}>
 				<Photo n="pizza_4" w={44} h={44} r={22} />
 				<div style={{color: '#e9edef', fontSize: 19, fontWeight: 700}}>

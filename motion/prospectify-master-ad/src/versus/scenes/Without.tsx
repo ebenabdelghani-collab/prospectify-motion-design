@@ -2,7 +2,7 @@ import React from 'react';
 import {C, EASE, FONT, clamp01, lerp, rand, ramp} from '../../final/tokens';
 import {MapView, Photo, Pin} from '../../final/kit/media';
 import {Star} from '../../final/kit/icons';
-import {Chroma, Clock, COLD, ColdBG, BrandBG, H, Kword, P, SideLabel, W, appear, coldGrade, gone} from '../fx';
+import {GF, Chroma, Clock, COLD, ColdBG, BrandBG, H, Kword, P, SideLabel, W, appear, coldGrade, gone} from '../fx';
 import {Chrome, Laptop, Phone} from '../devices';
 import {GenericSite, PremiumSite, SITE_DW} from '../site';
 import {TabChip} from '../../playbook/fx';
@@ -29,7 +29,7 @@ export const Hook: React.FC<{f: number}> = ({f}) => {
 				</Laptop>
 			</div>
 			{/* build timer */}
-			<div style={{position: 'absolute', right: 150, top: 92, height: 64, padding: '0 22px', borderRadius: 32, background: 'rgba(255,255,255,0.06)', border: `1.5px solid ${C.lineStrong}`, display: 'flex', alignItems: 'center', gap: 12, fontFamily: FONT.sans, fontWeight: 800, fontSize: 30, color: C.text, opacity: appear(f, P.H_BUILD) * (1 - zero), backdropFilter: 'blur(10px)'}}>
+			<div style={{position: 'absolute', right: 150, top: 92, height: 64, padding: '0 22px', borderRadius: 32, background: 'rgba(255,255,255,0.06)', border: `1.5px solid ${C.lineStrong}`, display: 'flex', alignItems: 'center', gap: 12, fontFamily: GF, fontWeight: 800, fontSize: 30, color: C.text, opacity: appear(f, P.H_BUILD) * (1 - zero), backdropFilter: 'blur(10px)'}}>
 				<div style={{width: 12, height: 12, borderRadius: 6, background: mins >= 40 ? '#34D399' : C.accent}} />
 				{mins} min
 				{mins >= 40 && <span style={{color: '#34D399'}}>✓</span>}
@@ -37,7 +37,7 @@ export const Hook: React.FC<{f: number}> = ({f}) => {
 			{zero > 0 && (
 				<div style={{position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
 					<Chroma f={f} hits={[P.H_ZERO, P.H_ZERO + 5]}>
-						<div style={{display: 'flex', alignItems: 'baseline', gap: 36, fontFamily: FONT.sans, fontWeight: 800, letterSpacing: '-0.06em', transform: `scale(${lerp(1.4, 1, zero)})`, opacity: zero}}>
+						<div style={{display: 'flex', alignItems: 'baseline', gap: 36, fontFamily: GF, fontWeight: 800, letterSpacing: '-0.06em', transform: `scale(${lerp(1.4, 1, zero)})`, opacity: zero}}>
 							<span style={{fontSize: 330, color: '#fff', lineHeight: 0.9}}>0</span>
 							<span style={{fontSize: 150, color: '#fff'}}>clients.</span>
 						</div>
@@ -66,7 +66,7 @@ const PINS = Array.from({length: 26}).map((_, i) => ({x: 300 + rand(i * 2.7) * 1
 const Card: React.FC<{c: (typeof GUESS)[number]; w: number}> = ({c, w}) => (
 	<div style={{width: w, borderRadius: 22, overflow: 'hidden', background: '#fff', boxShadow: '0 30px 70px rgba(0,0,0,0.5)'}}>
 		<Photo n={c.p} w={w} h={w * 0.62} />
-		<div style={{padding: '16px 20px 20px', fontFamily: FONT.sans}}>
+		<div style={{padding: '16px 20px 20px', fontFamily: GF}}>
 			<div style={{fontSize: 26, fontWeight: 800, color: '#1d1d1f'}}>{c.n}</div>
 			<div style={{display: 'flex', alignItems: 'center', gap: 6, marginTop: 6, fontSize: 18, color: '#666', fontWeight: 600}}>
 				<Star size={18} /> 4.7 · Restaurant
@@ -121,7 +121,7 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 								<div style={{width: 380, background: '#fff', padding: 16, overflow: 'hidden'}}>
 									<div style={{transform: `translateY(${-((f - P.W_MAPS) * 9) % 900}px)`}}>
 										{Array.from({length: 14}).map((_, i) => (
-											<div key={i} style={{display: 'flex', gap: 12, padding: '12px 0', borderBottom: '1px solid #eee', fontFamily: FONT.sans}}>
+											<div key={i} style={{display: 'flex', gap: 12, padding: '12px 0', borderBottom: '1px solid #eee', fontFamily: GF}}>
 												<Photo n={['pizza_4', 'cafe_1', 'tacos_0', 'barber_0', 'bbq_0', 'noodles_0', 'brunch_1'][i % 7]} w={84} h={70} r={10} />
 												<div>
 													<div style={{fontSize: 18, fontWeight: 700, color: '#222'}}>{['Bella Forno', 'Juniper Café', 'El Sol Taquería', 'Kinfolk Barbers', 'Southside BBQ', 'Noodle Theory', 'Sunny Side'][i % 7]}</div>
@@ -164,7 +164,7 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 							return (
 								<div key={c.n} style={{position: 'relative', transform: `translateY(${(1 - t) * 80}px) rotate(${(i - 1) * 4}deg)`, opacity: t}}>
 									<Card c={c} w={400} />
-									<div style={{position: 'absolute', right: -24, top: -26, height: 64, padding: '0 22px', borderRadius: 18, background: '#ffcc00', color: '#1d1d1f', fontFamily: FONT.sans, fontWeight: 800, fontSize: 30, display: 'flex', alignItems: 'center', transform: `scale(${q}) rotate(6deg)`, boxShadow: '0 12px 30px rgba(0,0,0,0.4)'}}>{c.q}</div>
+									<div style={{position: 'absolute', right: -24, top: -26, height: 64, padding: '0 22px', borderRadius: 18, background: '#ffcc00', color: '#1d1d1f', fontFamily: GF, fontWeight: 800, fontSize: 30, display: 'flex', alignItems: 'center', transform: `scale(${q}) rotate(6deg)`, boxShadow: '0 12px 30px rgba(0,0,0,0.4)'}}>{c.q}</div>
 								</div>
 							);
 						})}
@@ -178,7 +178,7 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 							const t = ramp(f, at, 12, EASE.FAST_LOCK);
 							if (t <= 0) return null;
 							return (
-								<div key={i} style={{position: 'absolute', left: 430 + i * 70, top: 170 + i * 60, width: 980, borderRadius: 18, background: '#fff', boxShadow: '0 30px 80px rgba(0,0,0,0.55)', overflow: 'hidden', fontFamily: FONT.sans, opacity: t, transform: `translateY(${(1 - t) * 50}px)`}}>
+								<div key={i} style={{position: 'absolute', left: 430 + i * 70, top: 170 + i * 60, width: 980, borderRadius: 18, background: '#fff', boxShadow: '0 30px 80px rgba(0,0,0,0.55)', overflow: 'hidden', fontFamily: GF, opacity: t, transform: `translateY(${(1 - t) * 50}px)`}}>
 									<div style={{height: 54, background: '#f2f2f5', display: 'flex', alignItems: 'center', padding: '0 22px', fontSize: 20, fontWeight: 700, color: '#333'}}>New message</div>
 									<div style={{padding: '14px 24px', fontSize: 20, color: '#666', borderBottom: '1px solid #eee'}}>To: {['info@bellaforno.com', 'hello@junipercafe.co', 'elsol.taqueria@gmail.com', 'contact@kinfolk.com'][i]}</div>
 									<div style={{padding: '14px 24px', fontSize: 20, color: '#666', borderBottom: '1px solid #eee'}}>Subject: Website?</div>
@@ -193,7 +193,7 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 								const at = P.W_COLD + i * 10 - 2;
 								const press = f >= at && f < at + 6;
 								return (
-									<div key={i} style={{width: 120, height: 120, borderRadius: 24, background: press ? '#dfe6ef' : '#1a2029', border: '2px solid rgba(255,255,255,0.15)', color: press ? '#111' : COLD.ink, fontFamily: FONT.sans, fontWeight: 800, fontSize: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: ramp(f, at - 4, 6), transform: `translateY(${press ? 6 : 0}px)`, boxShadow: press ? 'none' : '0 6px 0 rgba(0,0,0,0.6)'}}>
+									<div key={i} style={{width: 120, height: 120, borderRadius: 24, background: press ? '#dfe6ef' : '#1a2029', border: '2px solid rgba(255,255,255,0.15)', color: press ? '#111' : COLD.ink, fontFamily: GF, fontWeight: 800, fontSize: 38, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: ramp(f, at - 4, 6), transform: `translateY(${press ? 6 : 0}px)`, boxShadow: press ? 'none' : '0 6px 0 rgba(0,0,0,0.6)'}}>
 										{k}
 									</div>
 								);
@@ -205,7 +205,7 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 				{sSeen > 0 && (
 					<div style={{position: 'absolute', left: (W - 430) / 2, top: 60, opacity: sSeen, transform: `translateY(${(1 - sSeen) * 80}px)`}}>
 						<Phone w={430} time="1:31" rotY={-6}>
-							<div style={{position: 'absolute', inset: 0, background: '#0b141a', fontFamily: FONT.sans}}>
+							<div style={{position: 'absolute', inset: 0, background: '#0b141a', fontFamily: GF}}>
 								<div style={{height: 150, background: '#1f2c34', display: 'flex', alignItems: 'flex-end', padding: '0 20px 16px', gap: 12}}>
 									<Photo n="pizza_4" w={46} h={46} r={23} />
 									<div style={{color: '#e9edef', fontSize: 20, fontWeight: 700}}>
@@ -231,7 +231,7 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 				{/* GENERIC */}
 				{sGen > 0 && (
 					<div style={{position: 'absolute', left: 0, right: 0, top: 110, display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: sGen}}>
-						<div style={{width: 900, height: 76, borderRadius: 20, background: '#1a2029', border: `1.5px solid ${COLD.line}`, display: 'flex', alignItems: 'center', padding: '0 26px', fontFamily: FONT.sans, fontSize: 30, color: COLD.ink, fontWeight: 600}}>
+						<div style={{width: 900, height: 76, borderRadius: 20, background: '#1a2029', border: `1.5px solid ${COLD.line}`, display: 'flex', alignItems: 'center', padding: '0 26px', fontFamily: GF, fontSize: 30, color: COLD.ink, fontWeight: 600}}>
 							› {'make a restaurant website'.slice(0, Math.round(25 * clamp01((f - P.W_GENERIC) / 22)))}
 						</div>
 						<div style={{marginTop: 30, opacity: appear(f, P.W_GSITE, 14), transform: `translateY(${(1 - appear(f, P.W_GSITE, 14)) * 40}px)`}}>
@@ -246,7 +246,7 @@ export const Without: React.FC<{f: number}> = ({f}) => {
 			</div>
 			{/* kinetic captions — the pain, one word per beat */}
 			<div style={{position: 'absolute', left: 0, right: 0, bottom: 70, display: 'flex', justifyContent: 'center'}}>
-				{f >= P.W_MAPS && f < P.W_TABS - 8 && <Kword f={f} at={P.W_MAPS} text="Hours." size={130} color={COLD.ink} out={P.W_TABS - 12} />}
+				{f >= P.W_MAPS && f < P.W_TABS - 8 && <Kword f={f} at={P.W_MAPS} text="3 hours." size={130} color={COLD.ink} out={P.W_TABS - 12} />}
 				{f >= P.W_TABS && f < P.W_GUESS && (
 					<Chroma f={f} hits={[P.W_TABS + 2]}>
 						<Kword f={f} at={P.W_TABS} text="14 tabs." size={150} color="#fff" out={P.W_GUESS - 4} />
