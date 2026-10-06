@@ -1,5 +1,8 @@
 # PRODUCT_TRUTH — what Prospectify is, verified
 
+# ⚠ FOUNDER UPDATE 2026-10-06 — free trial is now **10 free leads** (stated by the founder; the live site still
+# showed 3 on capture day). Films use "10 free leads · No card required".
+
 # ⚠ UPDATE 2026-10-06 — the live site changed (re-verified on prospectify.net)
 This section **supersedes** older lines below where they conflict. Evidence: screenshots + production bundle
 `index-BO3UaEVJ.js` / `index-CvFqll2r.css` captured 2026-10-06.

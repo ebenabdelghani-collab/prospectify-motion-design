@@ -76,13 +76,13 @@ def synth(text, ex, seed):
     return sf.read(path)
 
 
-NUM = {'0': 'zero', '1': 'one', '2': 'two', '3': 'three', '4': 'four', '14': 'fourteen', '40': 'forty', '44': 'forty four', '100': 'hundred'}
+NUM = {'0': 'zero', '1': 'one', '2': 'two', '3': 'three', '4': 'four', '14': 'fourteen', '40': 'forty', '44': 'forty four', '10': 'ten', '100': 'hundred'}
 
 
 def norm(s):
     s = s.lower().replace('base44', 'base 44').replace('a.m.', 'am').replace('a m', 'am')
     s = re.sub(r'\d+', lambda m: ' ' + NUM.get(m.group(0), m.group(0)) + ' ', s)
-    s = s.replace('-', ' ').replace('scene', 'seen').replace('sight', 'site').replace('for four', 'forty four').replace('everyone', 'every one')
+    s = s.replace('-', ' ').replace('scene', 'seen').replace('sight', 'site').replace('everyone', 'every one')
     s = re.sub(r"[^a-z0-9' ]", ' ', s)
     return s.split()
 

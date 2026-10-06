@@ -1,6 +1,6 @@
 {
  "fps": 60,
- "durationInFrames": 3451,
+ "durationInFrames": 3468,
  "width": 1920,
  "height": 1080,
  "VO": {
@@ -90,32 +90,32 @@
   },
   "v_tools": {
    "start": 2419,
-   "end": 2625,
-   "text": "Paste it into Lovable, Bolt, or Base44.",
+   "end": 2607,
+   "text": "Paste it into Lovable, Bolt, or Base forty-four.",
    "act": "with"
   },
   "v_done": {
-   "start": 2643,
-   "end": 2810,
+   "start": 2625,
+   "end": 2792,
    "text": "Client found. Message ready. Site built.",
    "act": "with"
   },
   "v_recap": {
-   "start": 2837,
-   "end": 3043,
+   "start": 2819,
+   "end": 3025,
    "text": "Without it, all night. With it, one search.",
    "act": "recap"
   },
   "v_first": {
-   "start": 3067,
-   "end": 3185,
+   "start": 3049,
+   "end": 3166,
    "text": "Your first client is already out there.",
    "act": "cta"
   },
   "v_start": {
-   "start": 3197,
-   "end": 3319,
-   "text": "Start free. Three leads, no card.",
+   "start": 3178,
+   "end": 3336,
+   "text": "Start free. Ten leads, no card.",
    "act": "cta"
   }
  },
@@ -188,22 +188,22 @@
  "P_READY": 2410,
  "TL_IN": 2410,
  "TL_LOGOS": [
-  2466,
-  2513,
-  2598
+  2452,
+  2493,
+  2542
  ],
  "TL_PASTE": 2418,
- "D_IN": 2638,
- "D_FOUND": 2641,
- "D_READY": 2698,
- "D_BUILT": 2758,
- "D_SEND": 2702,
- "RC_IN": 2828,
- "RC_ALL": 2883,
- "RC_WITH": 2952,
- "RC_ONE": 2991,
- "CTA_IN": 3058,
- "CTA_START": 3193,
- "CTA_FREE": 3239,
- "CTA_CLICK": 3346
+ "D_IN": 2620,
+ "D_FOUND": 2623,
+ "D_READY": 2680,
+ "D_BUILT": 2740,
+ "D_SEND": 2684,
+ "RC_IN": 2810,
+ "RC_ALL": 2865,
+ "RC_WITH": 2934,
+ "RC_ONE": 2973,
+ "CTA_IN": 3040,
+ "CTA_START": 3174,
+ "CTA_FREE": 3245,
+ "CTA_CLICK": 3363
 }

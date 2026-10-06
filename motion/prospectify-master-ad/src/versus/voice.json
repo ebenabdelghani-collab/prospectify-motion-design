@@ -628,59 +628,54 @@
     ]
   },
   "v_tools": {
-    "text": "Paste it into Lovable, Bolt, or Base44.",
+    "text": "Paste it into Lovable, Bolt, or Base forty-four.",
     "gapBefore": 0.15,
-    "seconds": 3.4358,
+    "seconds": 3.1339,
     "act": "with",
     "exaggeration": 0.85,
-    "seed": 37,
-    "asr": "paste it into lovable, bolt, or base for four.",
+    "seed": 23,
+    "asr": "Paste it into lovable, bolt, or base 44.",
     "wer": 0.0,
     "words": [
       {
-        "w": "paste",
+        "w": "Paste",
         "start": 0.0,
         "end": 0.22
       },
       {
         "w": "it",
         "start": 0.22,
-        "end": 0.44
+        "end": 0.38
       },
       {
         "w": "into",
-        "start": 0.44,
-        "end": 0.84
+        "start": 0.38,
+        "end": 0.6
       },
       {
         "w": "lovable,",
-        "start": 0.84,
-        "end": 1.38
+        "start": 0.6,
+        "end": 0.98
       },
       {
         "w": "bolt,",
-        "start": 1.62,
-        "end": 2.02
+        "start": 1.28,
+        "end": 1.54
       },
       {
         "w": "or",
-        "start": 2.4,
-        "end": 2.46
+        "start": 2.02,
+        "end": 2.1
       },
       {
         "w": "base",
-        "start": 2.46,
+        "start": 2.1,
+        "end": 2.34
+      },
+      {
+        "w": "44.",
+        "start": 2.34,
         "end": 2.72
-      },
-      {
-        "w": "for",
-        "start": 2.72,
-        "end": 2.94
-      },
-      {
-        "w": "four.",
-        "start": 2.94,
-        "end": 3.22
       }
     ]
   },
@@ -826,44 +821,44 @@
     ]
   },
   "v_start": {
-    "text": "Start free. Three leads, no card.",
+    "text": "Start free. Ten leads, no card.",
     "gapBefore": 0.2,
-    "seconds": 2.0346,
+    "seconds": 2.6229,
     "act": "cta",
     "exaggeration": 1.0,
-    "seed": 37,
-    "asr": "Start free. Three leads, no card.",
+    "seed": 11,
+    "asr": "Start free, 10 leads, no card.",
     "wer": 0.0,
     "words": [
       {
         "w": "Start",
         "start": 0.0,
-        "end": 0.24
+        "end": 0.32
       },
       {
-        "w": "free.",
-        "start": 0.24,
-        "end": 0.46
+        "w": "free,",
+        "start": 0.32,
+        "end": 0.62
       },
       {
-        "w": "Three",
-        "start": 0.74,
-        "end": 0.9
+        "w": "10",
+        "start": 1.16,
+        "end": 1.22
       },
       {
         "w": "leads,",
-        "start": 0.9,
-        "end": 1.18
+        "start": 1.22,
+        "end": 1.62
       },
       {
         "w": "no",
-        "start": 1.48,
-        "end": 1.6
+        "start": 1.96,
+        "end": 2.06
       },
       {
         "w": "card.",
-        "start": 1.6,
-        "end": 1.8
+        "start": 2.06,
+        "end": 2.38
       }
     ]
   }

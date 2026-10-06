@@ -97,7 +97,7 @@ export const CTA: React.FC<{f: number}> = ({f}) => {
 				</div>
 				<div style={{position: 'relative', marginTop: 54, width: 600, opacity: btn, transform: `scale(${lerp(0.9, 1, btn) * pressS})`}}>
 					<div style={{borderRadius: 999, boxShadow: `0 0 0 ${ramp(f, clickAt + 2, 30) * 70}px rgba(${C.accentRGB},${0.3 * (1 - ramp(f, clickAt + 2, 30))})`}}>
-						<Pill h={118} fs={50} sheen={clamp01((f - P.CTA_START - 10) / 40)} style={{width: '100%'}}>Get 3 free leads</Pill>
+						<Pill h={118} fs={50} sheen={clamp01((f - P.CTA_START - 10) / 40)} style={{width: '100%'}}>Get 10 free leads</Pill>
 					</div>
 					{f > clickAt - 30 && (
 						<svg width={60} height={60} viewBox="0 0 24 24" style={{position: 'absolute', left: lerp(980, 380, cur), top: lerp(420, 70, cur), transform: `scale(${1 - 0.15 * Math.sin(Math.PI * clamp01((f - clickAt) / 10))})`, filter: 'drop-shadow(0 6px 10px rgba(0,0,0,0.5))'}}>

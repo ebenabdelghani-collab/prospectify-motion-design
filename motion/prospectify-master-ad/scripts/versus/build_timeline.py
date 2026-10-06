@@ -30,7 +30,7 @@ def E(s, o=0.0):
     return VO[s]['end'] + round(o * FPS)
 
 
-NUMW = {'40': 'forty', '14': 'fourteen', '2': 'two', '3': 'three', '0': 'zero'}
+NUMW = {'10': 'ten', '40': 'forty', '14': 'fourteen', '2': 'two', '3': 'three', '0': 'zero'}
 
 
 def clean(w):
@@ -95,7 +95,7 @@ C['P_TYPE0'] = S('v_prompt', 0.25)
 C['P_TYPE1'] = E('v_prompt', -0.10)
 C['P_READY'] = E('v_prompt', 0.0)
 C['TL_IN'] = S('v_tools', -0.15)
-C['TL_LOGOS'] = [W('v_tools', 'Lovable', -0.05), W('v_tools', 'Bolt', -0.05), W('v_tools', 'Base44', -0.05) if any(clean(w['w']) == 'base44' for w in voice['v_tools']['words']) else E('v_tools', -0.45)]
+C['TL_LOGOS'] = [W('v_tools', 'Lovable', -0.05), W('v_tools', 'Bolt', -0.05), W('v_tools', 'Base', -0.05)]
 C['TL_PASTE'] = W('v_tools', 'Paste', -0.02)
 C['D_IN'] = S('v_done', -0.08)
 C['D_FOUND'] = W('v_done', 'Client', -0.03)
@@ -110,7 +110,7 @@ C['RC_ONE'] = W('v_recap', 'one', -0.03)
 # CTA
 C['CTA_IN'] = S('v_first', -0.15)
 C['CTA_START'] = S('v_start', -0.06)
-C['CTA_FREE'] = W('v_start', 'Three', -0.04)
+C['CTA_FREE'] = W('v_start', 'Ten', -0.04)
 C['CTA_CLICK'] = E('v_start', 0.45)
 
 out = {'fps': FPS, 'durationInFrames': END, 'width': 1920, 'height': 1080, 'VO': VO, 'QUERY': QUERY, **C}

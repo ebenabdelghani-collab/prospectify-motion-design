@@ -26,12 +26,12 @@ SEGMENTS = [
     ('v_find', "It finds local businesses that need a website, and scores every one.", 0.30, 'with', 0.90),
     ('v_reach', "It writes your outreach. WhatsApp, email, or a phone script.", 0.25, 'with', 0.90),
     ('v_prompt', "Then it writes the prompt for a premium site, made for that exact business.", 0.25, 'with', 0.95),
-    ('v_tools', "Paste it into Lovable, Bolt, or Base44.", 0.15, 'with', 0.85),
+    ('v_tools', "Paste it into Lovable, Bolt, or Base forty-four.", 0.15, 'with', 0.85),
     ('v_done', "Client found. Message ready. Site built.", 0.30, 'with', 1.00),
     # RECAP + OFFER
     ('v_recap', "Without it, all night. With it, one search.", 0.45, 'recap', 0.95),
     ('v_first', "Your first client is already out there.", 0.40, 'cta', 0.90),
-    ('v_start', "Start free. Three leads, no card.", 0.20, 'cta', 1.00),
+    ('v_start', "Start free. Ten leads, no card.", 0.20, 'cta', 1.00),
 ]
 
 TAIL_SECONDS = 2.2
