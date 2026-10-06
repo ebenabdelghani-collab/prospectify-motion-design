@@ -28,8 +28,14 @@ CACHE = os.path.join(ROOT, 'renders/_voicecache_versus')
 os.makedirs(OUT, exist_ok=True)
 os.makedirs(CACHE, exist_ok=True)
 SEEDS = [11, 23]
+EXTRA_SEEDS = [37, 51, 73]  # only when no clean take yet
+TEMPO = 1.1  # brisker delivery; ffmpeg atempo keeps the pitch
 CFG = 0.4
 TEMP = 0.8
+# Female voice: Chatterbox takes its timbre from a short reference clip. The reference is itself synthetic
+# (Kokoro af_bella/af_heart, upbeat read; public/versus/voice/_ref_female.wav) so no real person is cloned.
+VOICE_REF = os.path.join(ROOT, 'public/versus/voice/_ref_female.wav')
+EX_BOOST = 0.3  # brighter, more playful read across every line
 
 _tts = None
 _asr = None
@@ -56,14 +62,14 @@ def asr():
 
 
 def synth(text, ex, seed):
-    key = hashlib.sha1(f'cb|{text}|{ex}|{CFG}|{TEMP}|{seed}'.encode()).hexdigest()[:16]
+    key = hashlib.sha1(f'cb|{text}|{ex}|{CFG}|{TEMP}|{seed}|{VOICE_REF}|{EX_BOOST}'.encode()).hexdigest()[:16]
     path = os.path.join(CACHE, key + '.wav')
     if not os.path.exists(path):
         import torch
 
         torch.manual_seed(seed)
         m = tts()
-        wav = m.generate(text, exaggeration=ex, cfg_weight=CFG, temperature=TEMP)
+        wav = m.generate(text, audio_prompt_path=VOICE_REF, exaggeration=min(1.3, ex + EX_BOOST), cfg_weight=CFG, temperature=TEMP)
         sf.write(path, wav.squeeze(0).numpy(), m.sr)
         print('   synth', seed, flush=True)
     return sf.read(path)
@@ -75,7 +81,7 @@ NUM = {'0': 'zero', '1': 'one', '2': 'two', '3': 'three', '4': 'four', '14': 'fo
 def norm(s):
     s = s.lower().replace('base44', 'base 44').replace('a.m.', 'am').replace('a m', 'am')
     s = re.sub(r'\d+', lambda m: ' ' + NUM.get(m.group(0), m.group(0)) + ' ', s)
-    s = s.replace('-', ' ')
+    s = s.replace('-', ' ').replace('scene', 'seen').replace('sight', 'site').replace('for four', 'forty four').replace('everyone', 'every one')
     s = re.sub(r"[^a-z0-9' ]", ' ', s)
     return s.split()
 
@@ -127,7 +133,11 @@ if __name__ == '__main__':
     meta = {}
     for sid, text, gap, act, ex in SEGMENTS:
         best = None
-        for seed in SEEDS:
+        for seed in SEEDS + EXTRA_SEEDS:
+            nw = len(text.split())
+            slow = best is not None and nw >= 8 and (len(best[2]) / best[3]) / nw > 0.4
+            if seed in EXTRA_SEEDS and best is not None and best[6] == 0 and not slow:
+                break
             x, sr = synth(text, ex, seed)
             y, off = trim(x, sr)
             tmp = os.path.join(CACHE, f'_{sid}_{seed}.wav')
@@ -135,14 +145,32 @@ if __name__ == '__main__':
             hyp, words = transcribe(tmp)
             e = wer(text, hyp)
             mel = melodic(y, sr)
-            score = -e * 10 + mel * 0.2
+            score = -e * 10 + mel * 0.35 - 4.0 * (len(y) / sr) / max(1, len(text.split()))  # clean > lively > brisk
             print(f'{sid:10s} seed {seed}  wer {e:.2f}  mel {mel:.2f}  {len(y) / sr:.2f}s  “{hyp}”', flush=True)
             if best is None or score > best[0]:
                 best = (score, seed, y, sr, words, hyp, e)
-            if e <= 0.08:  # clean take: no need for another seed
-                break
+
         score, seed, y, sr, words, hyp, e = best
-        y48 = resample_poly(y, 2, 1) if sr == 24000 else y
+        # a hallucinated tail ("…every one go!"): cut right after the script's last word
+        last = norm(text)[-1]
+        hw = [w for w in words]
+        if norm(hyp) and norm(hyp)[-1] != last:
+            ends = [w for w in hw if norm(w['w']) and norm(w['w'])[-1] == last]
+            if ends:
+                cut = int((ends[-1]['end'] + 0.08) * sr)
+                y = y[:cut].copy()
+                f = int(0.012 * sr)
+                y[-f:] *= np.linspace(1, 0, f)
+                words = [w for w in hw if w['start'] < ends[-1]['end']]
+                hyp = ' '.join(w['w'] for w in words)
+                e = wer(text, hyp)
+                print(f'   cut hallucinated tail → “{hyp}”')
+        import subprocess
+        tin, tout = os.path.join(CACHE, '_tin.wav'), os.path.join(CACHE, '_tout.wav')
+        sf.write(tin, y, sr)
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', tin, '-af', f'atempo={TEMPO}', '-ar', '48000', tout], check=True)
+        y48, _ = sf.read(tout)
+        words = [{'w': w['w'], 'start': w['start'] / TEMPO, 'end': w['end'] / TEMPO} for w in words]
         sf.write(os.path.join(OUT, f'{sid}.wav'), y48.astype(np.float32), 48000, subtype='FLOAT')
         meta[sid] = {'text': text, 'gapBefore': gap, 'seconds': round(len(y48) / 48000, 4), 'act': act, 'exaggeration': ex, 'seed': seed, 'asr': hyp, 'wer': round(e, 3), 'words': [{'w': w['w'], 'start': round(w['start'], 3), 'end': round(w['end'], 3)} for w in words]}
     json.dump(meta, open(os.path.join(ROOT, 'src/versus/voice.json'), 'w'), indent=2)
