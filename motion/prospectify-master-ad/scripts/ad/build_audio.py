@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""THE AD — mix: ElevenLabs voice + "Smooth Stone" (Blue Dot Sessions, CC BY 3.0) + discreet design
+"""THE AD — mix: ElevenLabs voice + "Dream keeper" (CC BY, Openverse) + discreet design
 → public/ad/audio/ad-mix.wav (48 kHz, −14 LUFS).
 
 Per the founder's reference reel on virality: no corporate music, an impact that stops the scroll on
@@ -77,13 +77,13 @@ s0 = fs(VO_AT)
 voice_env[s0:s0 + len(x)] = np.abs(x[: max(0, N - s0)]) / np.max(np.abs(x))
 
 # ── MUSIC: one continuous performance, soft, no edit ──
-src, msr = sf.read(os.path.join(ROOT, 'renders/_music/smoothstone.wav'))
+src, msr = sf.read(os.path.join(ROOT, 'renders/_music/dreamkeeper.wav'))
 if src.ndim == 1:
     src = np.vstack([src, src]).T
 if msr != SR:
     src = resample_poly(src, SR, msr, axis=0)
 src = src.T
-OFF = int(float(os.environ.get('MUSIC_OFFSET', '14')) * SR)  # into the track, where it is full
+OFF = int(float(os.environ.get('MUSIC_OFFSET', '30')) * SR)  # into the track, where it is full
 seg = src[:, OFF:OFF + N].copy()
 if seg.shape[1] < N:
     seg = np.pad(seg, ((0, 0), (0, N - seg.shape[1])))
@@ -131,17 +131,11 @@ for i, fr in enumerate(K('ROWS')):
 sfx.put(lock_v([hz(86), hz(91)], 0.18), K('ROWS')[-1] + 6, -20)
 riser(0.7, -21, K('MSG_IN'))
 impact(K('MSG_IN'), -16)
-for fr in range(K('MSG_IN') + 6, K('PROMPT_IN') - 6, 7):
-    sfx.put(key_v(0.7), fr, -32, rng.uniform(-0.25, 0.25))
 riser(0.7, -21, K('PROMPT_IN'))
 impact(K('PROMPT_IN'), -16)
-for fr in range(K('PROMPT_IN') + 6, K('PASTE') - 8, 6):
-    sfx.put(tick_v(rng.uniform(2400, 3400), 0.007, 0.05), fr, -33, rng.uniform(-0.4, 0.4))
 riser(0.75, -19, K('PASTE'))
 sfx.put(mixs(key_v(1.3), 0.5 * sweep_v(0.4, 300, 4000, 'rise', 1.4)), K('PASTE'), -15)   # ⌘V
 impact(K('PASTE') + 2, -15)
-for fr in range(K('PASTE') + 8, K('CTA_IN') - 10, 7):
-    sfx.put(tick_v(rng.uniform(2600, 3600), 0.006, 0.045), fr, -34, rng.uniform(-0.5, 0.5))
 riser(1.0, -17, K('CTA_IN'))                   # the big one, before the offer
 impact(K('CTA_IN'), -12, big=True)
 sfx.put(pop_v(700, 350, 0.08), K('CTA_FREE'), -20)
@@ -190,7 +184,7 @@ def limit(a, ceiling_db):
     return a * o
 
 
-MUSIC_GAIN = float(os.environ.get('MUSIC_GAIN', '-9'))
+MUSIC_GAIN = float(os.environ.get('MUSIC_GAIN', '-12'))
 SFX_GAIN = float(os.environ.get('SFX_GAIN', '0'))
 n_out = int(round(DUR / FPS * SR))
 stems = {'voice': voice.buf, 'music': music.buf * db(MUSIC_GAIN), 'sfx': sfx.buf * db(SFX_GAIN)}

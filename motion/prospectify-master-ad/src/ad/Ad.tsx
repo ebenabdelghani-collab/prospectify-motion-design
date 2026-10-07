@@ -72,15 +72,15 @@ const Captions: React.FC<{f: number}> = ({f}) => {
 const Card: React.FC<{f: number}> = ({f}) => {
 	const noweb = ramp(f, P.HK_NOWEB, 14, EASE.SOFT);
 	const score = ramp(f, P.HK_SCORE, 14, EASE.UI);
-	const inT = ramp(f, 0, 16, EASE.FAST_LOCK);
+	const inT = ramp(f, 0, 11, EASE.FAST_LOCK);
 	const out = ramp(f, P.PR_IN - 14, 14, EASE.EXIT);
 	if (out >= 1) return null;
 	const circle = 'M 28 50 C 36 10, 440 6, 486 38 C 524 64, 440 98, 244 96 C 86 94, 8 84, 20 50 C 28 30, 112 14, 214 12';
 	return (
-		<div style={{position: 'absolute', left: (VW - 900) / 2, top: 300, opacity: inT * (1 - out), transform: `scale(${lerp(0.93, 1, inT) * lerp(1, 1.05, ramp(f, 0, P.PR_IN, EASE.SOFT)) * lerp(1, 0.92, out)}) translateY(${out * -40}px)`, filter: out > 0 ? `blur(${out * 16}px)` : undefined}}>
+		<div style={{position: 'absolute', left: (VW - 900) / 2, top: 300, opacity: inT * (1 - out), transform: `scale(${lerp(1.14, 1, inT) * lerp(1, 1.06, ramp(f, 0, P.PR_IN, EASE.SOFT)) * lerp(1, 0.92, out)}) translateY(${out * -40}px)`, filter: out > 0 ? `blur(${out * 16}px)` : undefined}}>
 			<div style={{width: 900, borderRadius: 40, background: 'rgba(18,18,22,0.84)', border: '1.5px solid rgba(255,255,255,0.14)', boxShadow: '0 60px 160px rgba(0,0,0,0.7)', backdropFilter: 'blur(30px)', overflow: 'hidden', fontFamily: GF, position: 'relative'}}>
 				<div style={{height: 480, overflow: 'hidden', position: 'relative'}}>
-					<Img src={photo('pizza_4')} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.05 + 0.05 * ramp(f, 0, 400, EASE.LINEAR)})`}} />
+					<Img src={photo('oven_0')} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${1.05 + 0.05 * ramp(f, 0, 400, EASE.LINEAR)})`}} />
 					<div style={{position: 'absolute', inset: 0, background: 'linear-gradient(0deg, rgba(18,18,22,0.9) 0%, rgba(18,18,22,0) 45%)'}} />
 					<div style={{position: 'absolute', left: 22, bottom: 14, fontSize: 19, color: 'rgba(255,255,255,0.7)'}}>Sample business</div>
 				</div>
