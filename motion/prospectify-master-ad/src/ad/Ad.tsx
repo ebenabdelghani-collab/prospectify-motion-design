@@ -182,7 +182,9 @@ const Build: React.FC<{f: number}> = ({f}) => {
 			<div style={{position: 'absolute', left: (VW - 520) / 2, top: 380, transform: `translateY(${(1 - ramp(f, P.PASTE + 4, 22, EASE.FAST_LOCK)) * 80}px)`}}>
 				<Phone w={520} rotY={-6} rotX={3} time="11:52" glare={lerp(0.1, 0.9, (f - P.PASTE) / 120)}>
 					<div style={{position: 'absolute', inset: 0, overflow: 'hidden'}}>
-						<MobileSite b={b} f={f - P.PASTE} scroll={lerp(0, 300, ramp(f, P.PASTE + 46, 70, EASE.SOFT))} />
+						<div style={{width: 390, transform: `scale(${(520 * 0.912) / 390})`, transformOrigin: '0 0'}}>
+							<MobileSite b={b} f={f - P.PASTE} scroll={lerp(0, 230, ramp(f, P.PASTE + 46, 70, EASE.SOFT))} />
+						</div>
 					</div>
 				</Phone>
 			</div>

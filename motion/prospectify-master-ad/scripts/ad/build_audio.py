@@ -2,8 +2,8 @@
 """THE AD — mix: ElevenLabs voice + "Dream keeper" (CC BY, Openverse) + discreet design
 → public/ad/audio/ad-mix.wav (48 kHz, −14 LUFS).
 
-Per the founder's reference reel on virality: no corporate music, an impact that stops the scroll on
-frame 0 and on every reveal, and risers that build anticipation before each payoff.
+Sound design is deliberately sparse: one impact on frame 0 to stop the scroll, soft locks and pops on
+the product beats, and one impact on the offer. No risers (the founder found them repetitive).
 """
 import json
 import os
@@ -117,30 +117,16 @@ def whoosh(d, at, gain, up=True):
 
 # ── SOUND DESIGN: impacts stop the scroll, risers build the wait ──
 impact(0, -13, big=True)                       # frame 0: the scroll-stopper
-riser(0.55, -22, K('HK_NOWEB'))
-impact(K('HK_NOWEB'), -16)                     # "and no website"
 sfx.put(lp(hp(noise(0.3), 2400), 7000) * np.minimum(1, tt(0.3) / 0.02) * np.exp(-tt(0.3) / 0.26), K('HK_NOWEB'), -21)  # pencil circle
-riser(0.8, -20, K('HK_SCORE'))
 impact(K('HK_SCORE'), -14)                     # the 94 badge lands
 sfx.put(lock_v([hz(84), hz(88), hz(91)], 0.22), K('HK_SCORE'), -18)
-riser(0.9, -19, K('PR_IN'))
-impact(K('PR_IN'), -14)                        # "Prospectify"
-whoosh(0.4, K('PR_IN'), -22)
 for i, fr in enumerate(K('ROWS')):
     sfx.put(pop_v(880 + i * 70, 500, 0.05), fr, -27, -0.4 + i * 0.16)
 sfx.put(lock_v([hz(86), hz(91)], 0.18), K('ROWS')[-1] + 6, -20)
-riser(0.7, -21, K('MSG_IN'))
-impact(K('MSG_IN'), -16)
-riser(0.7, -21, K('PROMPT_IN'))
-impact(K('PROMPT_IN'), -16)
-riser(0.75, -19, K('PASTE'))
 sfx.put(mixs(key_v(1.3), 0.5 * sweep_v(0.4, 300, 4000, 'rise', 1.4)), K('PASTE'), -15)   # ⌘V
-impact(K('PASTE') + 2, -15)
-riser(1.0, -17, K('CTA_IN'))                   # the big one, before the offer
 impact(K('CTA_IN'), -12, big=True)
 sfx.put(pop_v(700, 350, 0.08), K('CTA_FREE'), -20)
 sfx.put(click_v(), K('CTA_CLICK'), -17)
-riser(0.9, -18, DUR - 2)                        # final riser peaks on the loop point
 impact(DUR - 2, -14, big=True)
 
 # ── ROOM · DUCK · MASTER ──
