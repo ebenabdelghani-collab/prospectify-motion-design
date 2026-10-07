@@ -1,3 +1,19 @@
+# What the creator actually says (audio transcript, 2026-10-07) — THE TIPS ARE ABOUT SOUND
+
+> "If every time you upload your video like this, here are three stupidly simple changes you can do to make it look like this.
+> 90% of you do number one and it's painful to watch. **#1 Stop using corporate music** — it screams unoriginal, boring energy.
+> But if you want to stop the scroll, this is where **#2 comes in: use impact sounds** (free websites exist) — all this does is stop people scrolling past your video.
+> So you have a hook and good music, but how do you get people to watch till the end? **#3: use risers** — sound effects that build anticipation to get people to wait.
+> Just like what I did right now."
+
+Rules that follow (apply to every Prospectify cut):
+1. **Music:** not "corporate" / stock-inspirational. Original-feeling, current, with character.
+2. **Impact sounds:** a clear hit in the first ~1 s and on every key reveal. They are what stops the scroll. Do not mix them so softly that they disappear.
+3. **Risers:** a riser before each reveal and one before the end, so the viewer waits for the payoff. The riser should peak exactly on the loop point so the restart lands on an impact.
+4. The video must demonstrate its own tip ("just like what I did right now").
+
+---- Earlier structural analysis (from frames only) below ----
+
 # Lessons — retention-style reel (founder reference, 2026-10-06)
 
 Source: https://www.instagram.com/reel/DYU9ZblO5D_/
