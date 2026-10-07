@@ -3,7 +3,7 @@
 → public/ad/audio/ad-mix.wav (48 kHz, −14 LUFS).
 
 Sound design is deliberately sparse: one impact on frame 0 to stop the scroll, soft locks and pops on
-the product beats, and one impact on the offer. No risers (the founder found them repetitive).
+the product beats, and one impact on the offer. Two soft risers only — into the site reveal and into the offer — so viewers wait for the payoff.
 """
 import json
 import os
@@ -94,15 +94,18 @@ seg[:, e0:] *= np.linspace(1, 0, seg.shape[1] - e0) ** 1.4
 music.put(seg, 0, 0.0)
 
 
-def riser(dur_s, gain, at, peak_extra=0.0):
-    """noise riser that peaks exactly on `at` (frames)."""
+def riser(dur_s, gain, at):
+    """Soft riser: low-passed noise plus a quiet rising tone. Builds the wait without hiss."""
     n = int(dur_s * SR)
     t = np.arange(n) / SR
-    env = (t / dur_s) ** 2.2
-    sw = hp(noise(dur_s), 900) * env
-    sw += 0.5 * np.sin(2 * np.pi * np.cumsum(np.linspace(220, 1400, n)) / SR) * env
+    env = (t / dur_s) ** 2.6
+    sw = lp(hp(noise(dur_s), 400), 2600) * env * 0.8
+    sw += 0.45 * np.sin(2 * np.pi * np.cumsum(np.linspace(150, 520, n)) / SR) * env
+    f = int(0.05 * SR)
+    sw[:f] *= np.linspace(0, 1, f)
+    sw[-int(0.02 * SR):] *= np.linspace(1, 0, int(0.02 * SR))
     sfx.put(sw, at - dur_s * FPS, gain)
-    verb.put(sw, at - dur_s * FPS, gain - 8)
+    verb.put(sw, at - dur_s * FPS, gain - 10)
 
 
 def impact(at, gain, big=False):
@@ -123,7 +126,9 @@ sfx.put(lock_v([hz(84), hz(88), hz(91)], 0.22), K('HK_SCORE'), -18)
 for i, fr in enumerate(K('ROWS')):
     sfx.put(pop_v(880 + i * 70, 500, 0.05), fr, -27, -0.4 + i * 0.16)
 sfx.put(lock_v([hz(86), hz(91)], 0.18), K('ROWS')[-1] + 6, -20)
+riser(1.5, -29, K('PASTE'))                     # soft build into the site reveal
 sfx.put(mixs(key_v(1.3), 0.5 * sweep_v(0.4, 300, 4000, 'rise', 1.4)), K('PASTE'), -15)   # ⌘V
+riser(1.8, -27, K('CTA_IN'))                    # the one that holds them to the offer
 impact(K('CTA_IN'), -12, big=True)
 sfx.put(pop_v(700, 350, 0.08), K('CTA_FREE'), -20)
 sfx.put(click_v(), K('CTA_CLICK'), -17)
