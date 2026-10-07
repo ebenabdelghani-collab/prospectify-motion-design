@@ -1,0 +1,369 @@
+{
+ "fps": 60,
+ "durationInFrames": 1103,
+ "width": 1080,
+ "height": 1920,
+ "CAPS": [
+  {
+   "words": [
+    {
+     "w": "This",
+     "a": 17,
+     "b": 42,
+     "accent": false
+    },
+    {
+     "w": "pizzeria",
+     "a": 35,
+     "b": 74,
+     "accent": false
+    },
+    {
+     "w": "has",
+     "a": 67,
+     "b": 94,
+     "accent": false
+    }
+   ],
+   "a": 16,
+   "b": 85
+  },
+  {
+   "words": [
+    {
+     "w": "312",
+     "a": 87,
+     "b": 148,
+     "accent": true
+    },
+    {
+     "w": "reviews",
+     "a": 141,
+     "b": 194,
+     "accent": false
+    },
+    {
+     "w": "and",
+     "a": 187,
+     "b": 245,
+     "accent": false
+    }
+   ],
+   "a": 86,
+   "b": 236
+  },
+  {
+   "words": [
+    {
+     "w": "no",
+     "a": 238,
+     "b": 257,
+     "accent": false
+    },
+    {
+     "w": "website.",
+     "a": 250,
+     "b": 280,
+     "accent": true
+    }
+   ],
+   "a": 237,
+   "b": 316
+  },
+  {
+   "words": [
+    {
+     "w": "That's",
+     "a": 321,
+     "b": 340,
+     "accent": false
+    },
+    {
+     "w": "your",
+     "a": 333,
+     "b": 344,
+     "accent": false
+    }
+   ],
+   "a": 320,
+   "b": 335
+  },
+  {
+   "words": [
+    {
+     "w": "next",
+     "a": 337,
+     "b": 358,
+     "accent": false
+    },
+    {
+     "w": "client.",
+     "a": 351,
+     "b": 382,
+     "accent": true
+    }
+   ],
+   "a": 336,
+   "b": 418
+  },
+  {
+   "words": [
+    {
+     "w": "Prospectify",
+     "a": 427,
+     "b": 463,
+     "accent": true
+    },
+    {
+     "w": "finds",
+     "a": 456,
+     "b": 491,
+     "accent": true
+    },
+    {
+     "w": "businesses",
+     "a": 484,
+     "b": 515,
+     "accent": false
+    }
+   ],
+   "a": 426,
+   "b": 506
+  },
+  {
+   "words": [
+    {
+     "w": "like",
+     "a": 508,
+     "b": 538,
+     "accent": false
+    },
+    {
+     "w": "this",
+     "a": 531,
+     "b": 551,
+     "accent": false
+    },
+    {
+     "w": "one,",
+     "a": 544,
+     "b": 570,
+     "accent": false
+    }
+   ],
+   "a": 507,
+   "b": 573
+  },
+  {
+   "words": [
+    {
+     "w": "writes",
+     "a": 575,
+     "b": 601,
+     "accent": false
+    },
+    {
+     "w": "the",
+     "a": 594,
+     "b": 613,
+     "accent": false
+    },
+    {
+     "w": "message",
+     "a": 606,
+     "b": 630,
+     "accent": true
+    }
+   ],
+   "a": 574,
+   "b": 621
+  },
+  {
+   "words": [
+    {
+     "w": "to",
+     "a": 623,
+     "b": 647,
+     "accent": false
+    },
+    {
+     "w": "send",
+     "a": 640,
+     "b": 656,
+     "accent": false
+    },
+    {
+     "w": "them,",
+     "a": 649,
+     "b": 674,
+     "accent": false
+    }
+   ],
+   "a": 622,
+   "b": 686
+  },
+  {
+   "words": [
+    {
+     "w": "and",
+     "a": 688,
+     "b": 708,
+     "accent": false
+    },
+    {
+     "w": "the",
+     "a": 701,
+     "b": 716,
+     "accent": false
+    },
+    {
+     "w": "prompt",
+     "a": 709,
+     "b": 730,
+     "accent": true
+    }
+   ],
+   "a": 687,
+   "b": 721
+  },
+  {
+   "words": [
+    {
+     "w": "to",
+     "a": 723,
+     "b": 748,
+     "accent": false
+    },
+    {
+     "w": "build",
+     "a": 741,
+     "b": 757,
+     "accent": false
+    }
+   ],
+   "a": 722,
+   "b": 748
+  },
+  {
+   "words": [
+    {
+     "w": "their",
+     "a": 750,
+     "b": 768,
+     "accent": false
+    },
+    {
+     "w": "site.",
+     "a": 761,
+     "b": 786,
+     "accent": false
+    }
+   ],
+   "a": 749,
+   "b": 822
+  },
+  {
+   "words": [
+    {
+     "w": "Paste",
+     "a": 825,
+     "b": 839,
+     "accent": false
+    },
+    {
+     "w": "it",
+     "a": 832,
+     "b": 850,
+     "accent": false
+    }
+   ],
+   "a": 824,
+   "b": 841
+  },
+  {
+   "words": [
+    {
+     "w": "into",
+     "a": 843,
+     "b": 864,
+     "accent": false
+    },
+    {
+     "w": "Lovable.",
+     "a": 857,
+     "b": 884,
+     "accent": true
+    }
+   ],
+   "a": 842,
+   "b": 920
+  },
+  {
+   "words": [
+    {
+     "w": "10",
+     "a": 928,
+     "b": 942,
+     "accent": true
+    },
+    {
+     "w": "free",
+     "a": 935,
+     "b": 959,
+     "accent": true
+    },
+    {
+     "w": "leads,",
+     "a": 952,
+     "b": 984,
+     "accent": false
+    }
+   ],
+   "a": 927,
+   "b": 1003
+  },
+  {
+   "words": [
+    {
+     "w": "no",
+     "a": 1005,
+     "b": 1020,
+     "accent": false
+    },
+    {
+     "w": "card",
+     "a": 1013,
+     "b": 1038,
+     "accent": false
+    },
+    {
+     "w": "required.",
+     "a": 1031,
+     "b": 1067,
+     "accent": false
+    }
+   ],
+   "a": 1004,
+   "b": 1099
+  }
+ ],
+ "VO_AT": 18,
+ "HK_NOWEB": 239,
+ "HK_SCORE": 322,
+ "PR_IN": 428,
+ "ROWS": [
+  457,
+  462,
+  467,
+  472,
+  477,
+  482
+ ],
+ "MSG_IN": 576,
+ "PROMPT_IN": 710,
+ "PASTE": 826,
+ "LOVABLE": 858,
+ "CTA_IN": 929,
+ "CTA_FREE": 936,
+ "CTA_CLICK": 1077
+}
