@@ -10,6 +10,7 @@ import {Versus, VERSUS_DURATION} from './versus/Versus';
 import {Loop, LOOP_DURATION} from './loop/Loop';
 import {LoopVertical} from './loop/Vertical';
 import {Ad, AD_DURATION} from './ad/Ad';
+import {Fr, FR_DURATION} from './fr/Fr';
 import MB from './morph/beats.json';
 import {DURATION, FPS, HEIGHT, WIDTH} from './constants/timeline';
 
@@ -25,6 +26,7 @@ export const Root: React.FC = () => (
 		<Composition id="ProspectifyMorph" component={Morph} durationInFrames={MB.durationInFrames} fps={60} width={1080} height={1920} defaultProps={{variant: 'organic' as const, withAudio: true}} />
 		<Composition id="ProspectifyMorphPaid" component={Morph} durationInFrames={MB.durationInFrames} fps={60} width={1080} height={1920} defaultProps={{variant: 'paid' as const, withAudio: true}} />
 		<Composition id="ProspectifyFinal" component={Film} durationInFrames={FILM_DURATION} fps={60} width={1080} height={1920} defaultProps={{withAudio: true}} />
+		<Composition id="ProspectifyFR" component={Fr} durationInFrames={FR_DURATION} fps={30} width={1080} height={1920} defaultProps={{withAudio: false}} />
 		<Composition id="ProspectifyAd" component={Ad} durationInFrames={AD_DURATION} fps={60} width={1080} height={1920} defaultProps={{withAudio: false}} />
 		<Composition id="ProspectifyLoopVertical" component={LoopVertical} durationInFrames={LOOP_DURATION} fps={60} width={1080} height={1920} defaultProps={{withAudio: false}} />
 		<Composition id="ProspectifyLoop" component={Loop} durationInFrames={LOOP_DURATION} fps={60} width={1920} height={1080} defaultProps={{withAudio: false}} />
