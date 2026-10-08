@@ -30,9 +30,9 @@ rien n'est redessiné ni inventé.
 > Tu crées des sites avec l'IA ? Mais trouver quelqu'un à qui les vendre ? Ça, c'est une autre histoire.
 > *(chuchoté)* Et si t'en as encore jamais vendu… écoute bien.
 > Google Maps. Les avis. Les sites. Instagram. Les contacts. Les messages. Et tu recommences… pour chaque entreprise. Tu passes plus de temps à chercher qu'à construire.
-> C'est exactement cette partie que Prospectify simplifie.
-> Tu identifies des entreprises, tu comprends pourquoi elles peuvent être intéressantes, tu retrouves les contacts disponibles et tu prépares ton message.
-> Et attends… Il prépare même ce que tu pourrais construire pour chaque entreprise. Avec un prompt adapté, prêt à copier dans Lovable.
+> C'est exactement tout ça que Prospectify fait à ta place.
+> Il trouve les entreprises qui ont besoin d'un site. Il prépare le message personnalisé, que tu envoies directement depuis Prospectify.
+> Et attends… il écrit même le prompt IA ultra détaillé pour chaque prospect, prêt à coller dans Lovable.
 > Moins de recherche. Plus de prospection. Plus de création. Teste Prospectify : 10 prospects gratuits. Sans carte bancaire.
 
 Les sous-titres affichent ce script ; ils sont alignés sur la prise par `difflib` (les écarts de
