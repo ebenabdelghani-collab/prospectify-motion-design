@@ -309,8 +309,8 @@ const AppShot: React.FC<{f: number}> = ({f}) => {
 		[P.PR_IN - 14, 620, 430, 0.62],
 		[P.PR_IN + 16, 560, 430, 0.95],
 		[P.SCORE, 700, 430, 1.2],
-		[P.CONTACTS, 1310, 470, 1.5],
 		[P.MSG_IN, 1310, 430, 1.5],
+		[P.SEND, 1310, 470, 1.5],
 		[P.PROMPT_IN, 1310, 430, 1.45],
 	]);
 	const keys = {
@@ -320,7 +320,7 @@ const AppShot: React.FC<{f: number}> = ({f}) => {
 		select: P.SCORE - 8,
 		panel: P.SCORE - 2,
 		tab: [P.SCORE - 2, P.MSG_IN - 6, P.PROMPT_IN - 26] as [number, number, number],
-		channel: [P.MSG_IN - 2, 1e9, 1e9] as [number, number, number],
+		channel: [P.SEND - 4, 1e9, 1e9] as [number, number, number],
 		copy: P.PASTE - 14,
 		tool: P.PROMPT_IN - 18,
 		promptType: [P.PROMPT_IN - 22, P.PASTE - 16] as [number, number],

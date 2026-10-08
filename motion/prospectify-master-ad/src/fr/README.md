@@ -1,6 +1,6 @@
 # Publicité française — `ProspectifyFR`
 
-1080 × 1920 · 30 fps · 1341 images (44,70 s) · H.264 + AAC.
+1080 × 1920 · 30 fps · 1350 images (45,00 s) · H.264 + AAC.
 
 ## Rendre
 
@@ -18,7 +18,7 @@ COMP=ProspectifyFR AUDIO=public/fr/audio/fr-mix.wav CONC=4 \
 | `src/fr/Fr.tsx` | la composition : accroche, chuchotement, chaos, déclic, produit, prompt, offre |
 | `src/fr/words.json` | horodatage mot à mot de la prise, mesuré par Whisper (`faster-whisper`, FR) |
 | `src/fr/timeline.json` | repères d'images + blocs de sous-titres, générés |
-| `public/fr/audio/vo.wav` | la voix, prise unique ElevenLabs (`eleven_ttv_v3`, voix conçue FR femme), ralentie/accélérée à 1,07× |
+| `public/fr/audio/vo.wav` | la voix, prise unique ElevenLabs (`eleven_ttv_v3`, voix conçue FR femme), accélérée à 1,085×, silences resserrés ; la phrase chuchotée est greffée depuis la prise précédente de la même voix (chuchotement réellement non voisé) |
 | `public/fr/audio/fr-mix.wav` | le mix final, −14 LUFS, −1,35 dBTP |
 
 L'interface Prospectify (`src/versus/app.tsx`), le téléphone (`src/versus/devices.tsx`), le site
@@ -36,7 +36,7 @@ rien n'est redessiné ni inventé.
 > Moins de recherche. Plus de prospection. Plus de création. Teste Prospectify : 10 prospects gratuits. Sans carte bancaire.
 
 Les sous-titres affichent ce script ; ils sont alignés sur la prise par `difflib` (les écarts de
-transcription sont tous des homophones : « il prépare » / « ils préparent », « teste » / « test »,
+transcription sont tous des homophones : « il trouve » / « ils trouvent », « teste » / « test »,
 « sans carte » / « cent cartes »).
 
 ## Crédits

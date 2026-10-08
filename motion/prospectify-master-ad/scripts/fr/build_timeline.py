@@ -20,13 +20,13 @@ W = json.load(open(os.path.join(ROOT, 'src/fr/words.json')))
 SCRIPT = """Tu crées des sites avec l'IA ? | Mais trouver quelqu'un à qui les vendre ? | Ça, c'est une autre histoire.
 Et si t'en as encore jamais vendu… | écoute bien.
 Google Maps. | Les avis. | Les sites. | Instagram. | Les contacts. | Les messages. | Et tu recommences… | pour chaque entreprise. | Tu passes plus de temps | à chercher | qu'à construire.
-C'est exactement cette partie | que Prospectify simplifie.
-Tu identifies des entreprises, | tu comprends pourquoi | elles peuvent être intéressantes, | tu retrouves les contacts disponibles | et tu prépares ton message.
-Et attends… | Il prépare même ce que tu pourrais construire | pour chaque entreprise. | Avec un prompt adapté, | prêt à copier dans Lovable.
+C'est exactement tout ça | que Prospectify fait à ta place.
+Il trouve les entreprises | qui ont besoin d'un site. | Il prépare le message personnalisé, | que tu envoies | directement depuis Prospectify.
+Et attends… | il écrit même le prompt IA | ultra détaillé | pour chaque prospect, | prêt à coller dans Lovable.
 Moins de recherche. | Plus de prospection. | Plus de création. | Teste Prospectify : | 10 prospects gratuits. | Sans carte bancaire."""
 
 ACCENT = {'ia', 'vendre', 'histoire', 'bien', 'recommences', 'chercher', 'construire', 'prospectify',
-          'simplifie', 'intéressantes', 'disponibles', 'message', 'prompt', 'lovable', 'moins',
+          'trouve', 'prépare', 'personnalisé', 'prompt', 'détaillé', 'lovable', 'moins',
           'plus', '10', 'gratuits', 'sans'}
 
 
@@ -96,13 +96,13 @@ T = {
     'BARS': at('passes'),
     'DECLIC': at('exactement'),
     'BRAND': at('Prospectify'),
-    'PR_IN': at('identifies'),
-    'SCORE': at('comprends'),
-    'CONTACTS': at('retrouves'),
-    'MSG_IN': at('prépares'),
+    'PR_IN': at('trouve'),
+    'SCORE': at('besoin'),
+    'SEND': at('envoies'),
+    'MSG_IN': at('prépare'),
     'ATTENDS': at('attends'),
     'PROMPT_IN': at('prompt'),
-    'PASTE': at('copier'),
+    'PASTE': at('coller'),
     'OUT1': at('Moins'),
     'OUT2': at('Plus', 1),
     'OUT3': at('Plus', 2),
