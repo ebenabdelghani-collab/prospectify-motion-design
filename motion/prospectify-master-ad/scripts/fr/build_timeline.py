@@ -91,6 +91,7 @@ T = {
     'HOOK_C': at('Ça,'),
     'WH_IN': at('Et'),
     'WH_OUT': round(times[[i for i, w in enumerate(flat) if norm(w) == 'bien'][0]][1] * FPS) + 6,
+    'WH_LISTEN': at('écoute'),
     'CHAOS': [at('Google'), at('avis'), at('sites', 1), at('Instagram'), at('contacts'), at('messages')],
     'REPEAT': at('recommences'),
     'BARS': at('passes'),

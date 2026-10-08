@@ -74,13 +74,14 @@ const Captions: React.FC<{f: number}> = ({f}) => {
 /* ── 1 · l'accroche : le site existe, l'acheteur manque ── */
 const Hook: React.FC<{f: number}> = ({f}) => {
 	const inT = ramp(f, 0, 10, EASE.FAST_LOCK);
-	const out = ramp(f, P.WH_IN - 10, 10, EASE.EXIT);
+	const dim = ramp(f, P.WH_IN - 10, 14, EASE.SOFT);  // pendant le chuchotement, le décor reste là, en retrait
+	const out = ramp(f, P.WH_OUT - 14, 12, EASE.EXIT);
 	if (out >= 1) return null;
 	const shift = ramp(f, P.HOOK_B, 20, EASE.SOFT);
 	const ask = ramp(f, P.HOOK_B + 6, 18, EASE.FAST_LOCK);
 	const shake = f >= P.HOOK_C && f < P.HOOK_C + 26 ? Math.sin((f - P.HOOK_C) * 1.5) * (1 - (f - P.HOOK_C) / 26) * 7 : 0;
 	return (
-		<div style={{position: 'absolute', inset: 0, opacity: inT * (1 - out)}}>
+		<div style={{position: 'absolute', inset: 0, opacity: inT * lerp(1, 0.2, dim) * (1 - out), transform: `scale(${lerp(1, 0.95, dim)})`, filter: dim > 0 ? `blur(${dim * 5}px)` : undefined}}>
 			<div style={{position: 'absolute', left: lerp(300, 86, shift), top: 300, transform: `scale(${lerp(1.1, 1, inT) * lerp(1, 0.9, shift)}) rotate(${lerp(0, -4, shift)}deg)`}}>
 				<Phone w={500} rotY={lerp(0, -10, shift)} rotX={3} time="23:41" glare={0.5}>
 					<div style={{position: 'absolute', inset: 0, overflow: 'hidden'}}>
@@ -110,23 +111,29 @@ const Hook: React.FC<{f: number}> = ({f}) => {
 	);
 };
 
-/* ── 2 · le chuchotement : tout se referme ── */
+/* ── 2 · le chuchotement : « jamais vendu » → un compteur à zéro, puis « écoute bien » ── */
 const Whisper: React.FC<{f: number}> = ({f}) => {
-	const t = ramp(f, P.WH_IN - 8, 14, EASE.SOFT);
-	const out = ramp(f, P.WH_OUT - 10, 10, EASE.EXIT);
-	if (f < P.WH_IN - 10 || out >= 1) return null;
+	const t = ramp(f, P.WH_IN - 6, 16, EASE.SOFT);
+	const out = ramp(f, P.WH_OUT - 12, 12, EASE.EXIT);
+	if (f < P.WH_IN - 8 || out >= 1) return null;
 	const o = t * (1 - out);
-	const br = 0.5 + 0.5 * Math.sin((f - P.WH_IN) / 9);
+	const push = ramp(f, P.WH_IN, P.WH_OUT - P.WH_IN, EASE.LINEAR); // on se rapproche doucement
+	const lean = ramp(f, P.WH_LISTEN - 4, 14, EASE.FAST_LOCK);      // « écoute bien »
+	const br = 0.5 + 0.5 * Math.sin((f - P.WH_IN) / 16);
 	return (
 		<div style={{position: 'absolute', inset: 0, opacity: o}}>
-			<div style={{position: 'absolute', inset: 0, background: `radial-gradient(70% 42% at 50% 46%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.93) 70%)`}} />
-			<div style={{position: 'absolute', left: 0, right: 0, top: 700, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 46}}>
-				<div style={{display: 'flex', gap: 16, alignItems: 'center'}}>
-					{[0, 1, 2, 3, 4, 5, 6].map((i) => (
-						<div key={i} style={{width: 10, height: lerp(14, 74, Math.abs(Math.sin((f - P.WH_IN) / 7 + i * 0.8))) * lerp(0.5, 1, br), borderRadius: 6, background: C.accentBright, opacity: 0.42 + 0.3 * br}} />
-					))}
+			<div style={{position: 'absolute', inset: 0, background: 'radial-gradient(74% 46% at 50% 44%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.88) 72%)'}} />
+			<div style={{position: 'absolute', left: 0, right: 0, top: 540, display: 'flex', justifyContent: 'center', transform: `scale(${lerp(1.0, 1.06, push) * lerp(1, 0.96, lean)})`}}>
+				<div style={{position: 'relative', width: 560, padding: '64px 0 56px', borderRadius: 48, background: 'rgba(14,14,18,0.72)', border: `1.5px solid rgba(255,255,255,${0.1 + 0.06 * br})`, backdropFilter: 'blur(26px)', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: '0 50px 140px rgba(0,0,0,0.7)'}}>
+					<div style={{fontFamily: GF, fontSize: 230, fontWeight: 700, lineHeight: 1, letterSpacing: '-0.06em', color: C.accentBright, opacity: 0.55 + 0.45 * br, textShadow: `0 0 ${lerp(40, 90, br)}px rgba(${C.accentRGB},0.45)`}}>0</div>
+					<div style={{marginTop: 18, fontFamily: GF, fontSize: 40, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(244,244,246,0.52)'}}>site vendu</div>
+					{/* « écoute bien » : un anneau se referme autour du compteur */}
+					{lean > 0 && (
+						<svg width={620} height={620} viewBox="0 0 620 620" style={{position: 'absolute', left: -30, top: -30, overflow: 'visible'}}>
+							<circle cx={310} cy={310} r={288} fill="none" stroke={C.accentBright} strokeWidth={3} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - lean} opacity={0.55} transform="rotate(-90 310 310)" style={{filter: `drop-shadow(0 0 16px rgba(${C.accentRGB},0.5))`}} />
+						</svg>
+					)}
 				</div>
-				<div style={{width: lerp(120, 560, t), height: 2, background: `linear-gradient(90deg, rgba(244,37,98,0) 0%, rgba(${C.accentRGB},0.8) 50%, rgba(244,37,98,0) 100%)`}} />
 			</div>
 		</div>
 	);

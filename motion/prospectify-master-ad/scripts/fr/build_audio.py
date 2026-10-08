@@ -99,9 +99,9 @@ seg[:, :nin] *= np.linspace(0, 1, nin) ** 0.6
 # retrait sous le chuchotement, re-entrée sur le chaos
 duck_w = np.ones(seg.shape[1])
 a0, a1 = fs(K('WH_IN') - 10), fs(K('WH_OUT') - 4)
-duck_w[a0:a1] = db(-16)
-duck_w[a0 - int(0.35 * SR):a0] = np.linspace(1, db(-16), int(0.35 * SR))
-duck_w[a1:a1 + int(0.5 * SR)] = np.linspace(db(-16), 1, int(0.5 * SR))
+duck_w[a0:a1] = db(-9)
+duck_w[a0 - int(0.35 * SR):a0] = np.linspace(1, db(-9), int(0.35 * SR))
+duck_w[a1:a1 + int(0.5 * SR)] = np.linspace(db(-9), 1, int(0.5 * SR))
 seg *= duck_w
 e0 = fs(DUR) - int(1.8 * SR)
 seg[:, e0:] *= np.linspace(1, 0, seg.shape[1] - e0) ** 1.4

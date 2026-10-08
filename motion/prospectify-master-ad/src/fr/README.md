@@ -1,6 +1,6 @@
 # Publicité française — `ProspectifyFR`
 
-1080 × 1920 · 30 fps · 1350 images (45,00 s) · H.264 + AAC.
+1080 × 1920 · 30 fps · 1257 images (41,90 s) · H.264 + AAC.
 
 ## Rendre
 
@@ -18,7 +18,7 @@ COMP=ProspectifyFR AUDIO=public/fr/audio/fr-mix.wav CONC=4 \
 | `src/fr/Fr.tsx` | la composition : accroche, chuchotement, chaos, déclic, produit, prompt, offre |
 | `src/fr/words.json` | horodatage mot à mot de la prise, mesuré par Whisper (`faster-whisper`, FR) |
 | `src/fr/timeline.json` | repères d'images + blocs de sous-titres, générés |
-| `public/fr/audio/vo.wav` | la voix, prise unique ElevenLabs (`eleven_ttv_v3`, voix conçue FR femme), accélérée à 1,085×, silences resserrés ; la phrase chuchotée est greffée depuis la prise précédente de la même voix (chuchotement réellement non voisé) |
+| `public/fr/audio/vo.wav` | la voix, prise unique ElevenLabs (`eleven_ttv_v3`, voix conçue FR femme), accélérée à 1,167× au total, silences resserrés ; la phrase chuchotée est greffée depuis la prise précédente de la même voix (chuchotement réellement non voisé) |
 | `public/fr/audio/fr-mix.wav` | le mix final, −14 LUFS, −1,35 dBTP |
 
 L'interface Prospectify (`src/versus/app.tsx`), le téléphone (`src/versus/devices.tsx`), le site
