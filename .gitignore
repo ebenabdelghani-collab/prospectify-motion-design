@@ -21,3 +21,6 @@ motion/prospectify-master-ad/renders/versus_voice.log
 motion/prospectify-master-ad/renders/*.log
 motion/prospectify-master-ad/renders/ad_stills/
 motion/prospectify-master-ad/renders/send/
+motion/prospectify-meta-ad-fr/node_modules
+motion/prospectify-meta-ad-fr/exports/_*
+*.video-only.mp4

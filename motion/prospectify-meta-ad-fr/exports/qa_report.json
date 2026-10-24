@@ -1,0 +1,25 @@
+{
+ "duration_s": 29.5,
+ "size_mb": 6.4,
+ "video": "h264 1080x1920 30/1 yuv420p",
+ "audio": "aac 48000 Hz 2 ch",
+ "black_segments": [],
+ "loudness_lufs": -14.04,
+ "true_peak_dbtp": -1.4,
+ "transcript": "Tu sais créer des sites avec l'IA, mais t'as zéro client ? Le problème, c'est pas le site, c'est de trouver des clients. Regarde, avec Prospectify, je choisis une ville et un commerce. Je lance la recherche, et là, je repère des commerces sans site web, avec un score pour savoir lesquels prospecter en priorité. Je peux ensuite leur proposer une démo de site créée avec l'IA. Arrête de créer des sites pour personne. Trouve à qui les proposer. Tes 10 premiers prospects sont gratuits sur Prospectify.",
+ "word_match_ratio": 1.0,
+ "word_diffs": [],
+ "prospectify_heard": 2,
+ "contact_sheet": "exports/qa_contact_sheet.jpg",
+ "checks": {
+  "resolution_1080x1920": true,
+  "fps_30": true,
+  "h264_aac": true,
+  "duration_25_30s": true,
+  "no_black_frames": true,
+  "loudness_-14_pm1": true,
+  "peak_below_-1dBTP": true,
+  "speech_matches_script_95pct": true,
+  "brand_said_twice": true
+ }
+}

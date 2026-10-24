@@ -1,0 +1,27 @@
+{
+  "name": "prospectify-meta-ad-fr",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "timeline": "python3 scripts/build_timeline.py",
+    "audio": "python3 scripts/build_audio.py",
+    "studio": "remotion studio src/index.ts",
+    "render": "node scripts/render.mjs exports/prospectify_fr_meta_conversion_ad_v1.mp4",
+    "qa": "bash scripts/qa.sh exports/prospectify_fr_meta_conversion_ad_v1.mp4"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.532",
+    "@remotion/cli": "4.0.532",
+    "@remotion/fonts": "4.0.532",
+    "@remotion/renderer": "4.0.532",
+    "@remotion/transitions": "4.0.532",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}

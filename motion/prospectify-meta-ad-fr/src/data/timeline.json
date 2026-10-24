@@ -1,0 +1,658 @@
+{
+ "fps": 30,
+ "durationInFrames": 885,
+ "VO_AT": 4,
+ "MAIS": 54,
+ "ZERO": 63,
+ "PROB": 97,
+ "TROUVER": 160,
+ "REGARDE": 198,
+ "BRAND_VO": 242,
+ "VILLE": 285,
+ "COMMERCE": 304,
+ "LANCE": 336,
+ "RECHERCHE": 347,
+ "ETLA": 378,
+ "SANS": 426,
+ "SCORE": 464,
+ "PRIORITE": 513,
+ "JEPEUX": 550,
+ "PROPOSER": 565,
+ "DEMO": 580,
+ "ARRETE": 648,
+ "TROUVE": 710,
+ "DIX": 759,
+ "GRATUITS": 789,
+ "LAST": 833,
+ "RESULTS": 365,
+ "HEAD": [
+  {
+   "a": 3,
+   "b": 53,
+   "lines": [
+    "TU SAIS CRÉER",
+    "DES SITES IA."
+   ],
+   "accent": [
+    "IA."
+   ]
+  },
+  {
+   "a": 54,
+   "b": 96,
+   "lines": [
+    "MAIS 0 CLIENT ?"
+   ],
+   "accent": [
+    "0",
+    "CLIENT"
+   ]
+  },
+  {
+   "a": 97,
+   "b": 159,
+   "lines": [
+    "LE SITE ?",
+    "C'EST FAIT."
+   ],
+   "accent": []
+  },
+  {
+   "a": 160,
+   "b": 197,
+   "lines": [
+    "LES CLIENTS ?"
+   ],
+   "accent": [
+    "CLIENTS"
+   ]
+  },
+  {
+   "a": 198,
+   "b": 335,
+   "lines": [
+    "TROUVE DES COMMERCES",
+    "SANS SITE."
+   ],
+   "accent": [
+    "SANS",
+    "SITE."
+   ]
+  },
+  {
+   "a": 336,
+   "b": 425,
+   "lines": [
+    "MONTPELLIER",
+    "+ BARBIERS"
+   ],
+   "accent": [
+    "+"
+   ]
+  },
+  {
+   "a": 426,
+   "b": 463,
+   "lines": [
+    "DES COMMERCES",
+    "SANS SITE WEB."
+   ],
+   "accent": [
+    "SANS",
+    "SITE",
+    "WEB."
+   ]
+  },
+  {
+   "a": 464,
+   "b": 549,
+   "lines": [
+    "UN SCORE POUR",
+    "LES PRIORISER."
+   ],
+   "accent": [
+    "SCORE"
+   ]
+  },
+  {
+   "a": 550,
+   "b": 579,
+   "lines": [
+    "TROUVE UN PROSPECT."
+   ],
+   "accent": [
+    "PROSPECT."
+   ]
+  },
+  {
+   "a": 580,
+   "b": 647,
+   "lines": [
+    "PROPOSE TON SITE."
+   ],
+   "accent": [
+    "SITE."
+   ]
+  },
+  {
+   "a": 648,
+   "b": 709,
+   "lines": [
+    "ARRÊTE DE CRÉER",
+    "POUR PERSONNE."
+   ],
+   "accent": [
+    "PERSONNE."
+   ]
+  },
+  {
+   "a": 710,
+   "b": 758,
+   "lines": [
+    "TROUVE TES PROSPECTS."
+   ],
+   "accent": [
+    "PROSPECTS."
+   ]
+  }
+ ],
+ "CAPS": [
+  {
+   "text": "Tu sais créer des sites avec l'IA…",
+   "words": [
+    {
+     "w": "Tu",
+     "accent": false
+    },
+    {
+     "w": "sais",
+     "accent": false
+    },
+    {
+     "w": "créer",
+     "accent": false
+    },
+    {
+     "w": "des",
+     "accent": false
+    },
+    {
+     "w": "sites",
+     "accent": false
+    },
+    {
+     "w": "avec",
+     "accent": false
+    },
+    {
+     "w": "l'IA…",
+     "accent": true
+    }
+   ],
+   "a": 2,
+   "b": 52,
+   "sa": 0.0,
+   "sb": 1.32
+  },
+  {
+   "text": "mais t'as zéro client ?",
+   "words": [
+    {
+     "w": "mais",
+     "accent": false
+    },
+    {
+     "w": "t'as",
+     "accent": false
+    },
+    {
+     "w": "zéro",
+     "accent": true
+    },
+    {
+     "w": "client ?",
+     "accent": true
+    }
+   ],
+   "a": 52,
+   "b": 85,
+   "sa": 1.66,
+   "sb": 2.42
+  },
+  {
+   "text": "Le problème, c'est pas le site.",
+   "words": [
+    {
+     "w": "Le",
+     "accent": false
+    },
+    {
+     "w": "problème,",
+     "accent": false
+    },
+    {
+     "w": "c'est",
+     "accent": false
+    },
+    {
+     "w": "pas",
+     "accent": false
+    },
+    {
+     "w": "le",
+     "accent": false
+    },
+    {
+     "w": "site.",
+     "accent": false
+    }
+   ],
+   "a": 95,
+   "b": 148,
+   "sa": 3.1,
+   "sb": 4.52
+  },
+  {
+   "text": "C'est de trouver des clients.",
+   "words": [
+    {
+     "w": "C'est",
+     "accent": false
+    },
+    {
+     "w": "de",
+     "accent": false
+    },
+    {
+     "w": "trouver",
+     "accent": true
+    },
+    {
+     "w": "des",
+     "accent": false
+    },
+    {
+     "w": "clients.",
+     "accent": true
+    }
+   ],
+   "a": 151,
+   "b": 190,
+   "sa": 4.96,
+   "sb": 5.92
+  },
+  {
+   "text": "Regarde.",
+   "words": [
+    {
+     "w": "Regarde.",
+     "accent": false
+    }
+   ],
+   "a": 196,
+   "b": 218,
+   "sa": 6.46,
+   "sb": 6.86
+  },
+  {
+   "text": "Avec Prospectify, je choisis",
+   "words": [
+    {
+     "w": "Avec",
+     "accent": false
+    },
+    {
+     "w": "Prospectify,",
+     "accent": true
+    },
+    {
+     "w": "je",
+     "accent": false
+    },
+    {
+     "w": "choisis",
+     "accent": false
+    }
+   ],
+   "a": 228,
+   "b": 277,
+   "sa": 7.54,
+   "sb": 9.16
+  },
+  {
+   "text": "une ville et un commerce.",
+   "words": [
+    {
+     "w": "une",
+     "accent": false
+    },
+    {
+     "w": "ville",
+     "accent": true
+    },
+    {
+     "w": "et",
+     "accent": false
+    },
+    {
+     "w": "un",
+     "accent": false
+    },
+    {
+     "w": "commerce.",
+     "accent": true
+    }
+   ],
+   "a": 277,
+   "b": 322,
+   "sa": 9.16,
+   "sb": 10.32
+  },
+  {
+   "text": "Je lance la recherche…",
+   "words": [
+    {
+     "w": "Je",
+     "accent": false
+    },
+    {
+     "w": "lance",
+     "accent": false
+    },
+    {
+     "w": "la",
+     "accent": false
+    },
+    {
+     "w": "recherche…",
+     "accent": false
+    }
+   ],
+   "a": 330,
+   "b": 362,
+   "sa": 10.92,
+   "sb": 11.68
+  },
+  {
+   "text": "Et là, je repère des commerces sans site web,",
+   "words": [
+    {
+     "w": "Et",
+     "accent": false
+    },
+    {
+     "w": "là,",
+     "accent": false
+    },
+    {
+     "w": "je",
+     "accent": false
+    },
+    {
+     "w": "repère",
+     "accent": false
+    },
+    {
+     "w": "des",
+     "accent": false
+    },
+    {
+     "w": "commerces",
+     "accent": false
+    },
+    {
+     "w": "sans",
+     "accent": true
+    },
+    {
+     "w": "site",
+     "accent": true
+    },
+    {
+     "w": "web,",
+     "accent": true
+    }
+   ],
+   "a": 376,
+   "b": 442,
+   "sa": 12.48,
+   "sb": 14.68
+  },
+  {
+   "text": "avec un score pour savoir",
+   "words": [
+    {
+     "w": "avec",
+     "accent": false
+    },
+    {
+     "w": "un",
+     "accent": false
+    },
+    {
+     "w": "score",
+     "accent": true
+    },
+    {
+     "w": "pour",
+     "accent": false
+    },
+    {
+     "w": "savoir",
+     "accent": false
+    }
+   ],
+   "a": 442,
+   "b": 482,
+   "sa": 14.68,
+   "sb": 16.0
+  },
+  {
+   "text": "lesquels prospecter en priorité.",
+   "words": [
+    {
+     "w": "lesquels",
+     "accent": false
+    },
+    {
+     "w": "prospecter",
+     "accent": false
+    },
+    {
+     "w": "en",
+     "accent": false
+    },
+    {
+     "w": "priorité.",
+     "accent": true
+    }
+   ],
+   "a": 482,
+   "b": 535,
+   "sa": 16.0,
+   "sb": 17.44
+  },
+  {
+   "text": "Je peux ensuite leur proposer",
+   "words": [
+    {
+     "w": "Je",
+     "accent": false
+    },
+    {
+     "w": "peux",
+     "accent": false
+    },
+    {
+     "w": "ensuite",
+     "accent": false
+    },
+    {
+     "w": "leur",
+     "accent": false
+    },
+    {
+     "w": "proposer",
+     "accent": false
+    }
+   ],
+   "a": 542,
+   "b": 576,
+   "sa": 18.0,
+   "sb": 19.12
+  },
+  {
+   "text": "une démo de site créée avec l'IA.",
+   "words": [
+    {
+     "w": "une",
+     "accent": false
+    },
+    {
+     "w": "démo",
+     "accent": true
+    },
+    {
+     "w": "de",
+     "accent": false
+    },
+    {
+     "w": "site",
+     "accent": false
+    },
+    {
+     "w": "créée",
+     "accent": false
+    },
+    {
+     "w": "avec",
+     "accent": false
+    },
+    {
+     "w": "l'IA.",
+     "accent": true
+    }
+   ],
+   "a": 576,
+   "b": 637,
+   "sa": 19.12,
+   "sb": 20.84
+  },
+  {
+   "text": "Arrête de créer des sites pour personne.",
+   "words": [
+    {
+     "w": "Arrête",
+     "accent": false
+    },
+    {
+     "w": "de",
+     "accent": false
+    },
+    {
+     "w": "créer",
+     "accent": false
+    },
+    {
+     "w": "des",
+     "accent": false
+    },
+    {
+     "w": "sites",
+     "accent": false
+    },
+    {
+     "w": "pour",
+     "accent": false
+    },
+    {
+     "w": "personne.",
+     "accent": true
+    }
+   ],
+   "a": 646,
+   "b": 701,
+   "sa": 21.48,
+   "sb": 22.98
+  },
+  {
+   "text": "Trouve à qui les proposer.",
+   "words": [
+    {
+     "w": "Trouve",
+     "accent": true
+    },
+    {
+     "w": "à",
+     "accent": false
+    },
+    {
+     "w": "qui",
+     "accent": false
+    },
+    {
+     "w": "les",
+     "accent": false
+    },
+    {
+     "w": "proposer.",
+     "accent": false
+    }
+   ],
+   "a": 708,
+   "b": 748,
+   "sa": 23.54,
+   "sb": 24.52
+  },
+  {
+   "text": "Tes 10 premiers prospects",
+   "words": [
+    {
+     "w": "Tes",
+     "accent": false
+    },
+    {
+     "w": "10",
+     "accent": true
+    },
+    {
+     "w": "premiers",
+     "accent": false
+    },
+    {
+     "w": "prospects",
+     "accent": false
+    }
+   ],
+   "a": 755,
+   "b": 781,
+   "sa": 25.1,
+   "sb": 25.96
+  },
+  {
+   "text": "sont gratuits sur Prospectify.",
+   "words": [
+    {
+     "w": "sont",
+     "accent": false
+    },
+    {
+     "w": "gratuits",
+     "accent": true
+    },
+    {
+     "w": "sur",
+     "accent": false
+    },
+    {
+     "w": "Prospectify.",
+     "accent": true
+    }
+   ],
+   "a": 781,
+   "b": 841,
+   "sa": 25.96,
+   "sb": 27.62
+  }
+ ]
+}
