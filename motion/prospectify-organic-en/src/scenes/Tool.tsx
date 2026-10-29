@@ -15,17 +15,17 @@ const LEADS = [
 // ── I: "They use a tool called Prospectify. It finds… writes the message… writes the prompt…" ──
 export const Tool: React.FC<P> = ({f, C}) => {
 	const W = 1240, H = 640, X = 960 - W / 2, Y = 560 - H / 2 + 20;
-	const open = p01(f, C.tool - 10, 34, SNAP);
+	const open = p01(f, C.S12 + 4, 34, SNAP);
 	const step = f >= C.prompt - 4 ? 2 : f >= C.writes - 4 ? 1 : f >= C.finds - 4 ? 0 : -1;
 	const tabs = ['01  FIND', '02  MESSAGE', '03  PROMPT'];
 	return (
 		<g>
 			<Spot x={960} y={560} r={820} acc o={p01(f, C.prospectify - 10, 30)} />
 			<Spot x={960} y={560} r={700} />
-			<Label f={f} t={C.S12} x={960} y={150} text="THE ONES WHO SCALE DON'T DO IT BY HAND" size={19} c={DIM} out={C.tool - 6} />
+			<Label f={f} t={C.S12} x={960} y={150} text="THE ONES WHO SCALE DON'T DO IT BY HAND" size={19} c={DIM} out={C.prospectify} />
 			<g transform={`translate(${X} ${Y + (1 - open) * 30})`} opacity={open}>
-				<RRect p={p01(f, C.tool - 10, 40)} w={W} h={H} r={22} fill={BG} fillO={0.92} />
-				<Stroke d={`M 0 66 H ${W}`} p={p01(f, C.tool, 24)} w={2.4} c={DIM} />
+				<RRect p={p01(f, C.S12 + 4, 40)} w={W} h={H} r={22} fill={BG} fillO={0.92} />
+				<Stroke d={`M 0 66 H ${W}`} p={p01(f, C.S12 + 14, 24)} w={2.4} c={DIM} />
 				{[0, 1, 2].map((i) => <circle key={i} cx={32 + i * 22} cy={33} r={5.5} fill={DIM} />)}
 				{/* real logo + name */}
 				<g opacity={p01(f, C.prospectify - 6, 14)}>

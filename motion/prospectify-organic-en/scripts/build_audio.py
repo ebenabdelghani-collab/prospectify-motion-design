@@ -77,7 +77,7 @@ EV = [
     ('pop', C['S10'] - 4, -31, -0.5), ('pop', C['checking'] - 6, -31, 0), ('pop', C['writing'] - 6, -31, 0.5),
     ('type', C['writing'] + 6, -33, 0.5),
     ('thud', C['quit'] + 2, -24, 0.1),
-    ('whoosh', C['tool'] - 10, -28, 0), ('pop', C['prospectify'], -28, 0),
+    ('whoosh', C['S12'] + 4, -28, 0), ('pop', C['prospectify'], -28, 0),
     ('tick', C['finds'] + 4, -32, -0.4), ('tick', C['finds'] + 12, -32, -0.4), ('tick', C['finds'] + 20, -32, -0.4), ('tick', C['finds'] + 28, -32, -0.4),
     ('type', C['writes'] + 4, -33, 0.4), ('type', C['prompt'] + 6, -33, 0.4),
     ('whoosh', C['S13'] - 8, -31, 0), ('rise', C['clients'] - 30, -32, 0),

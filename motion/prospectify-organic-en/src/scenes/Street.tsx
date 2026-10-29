@@ -9,7 +9,7 @@ const GY = 770; // ground line
 export const Street: React.FC<P> = ({f, C}) => {
 	// Camera: centre on the shop → slide left for the search card → pull back to show the competitor.
 	const camX = ip(f, [C.search - 14, C.search + 16], [0, -250], INOUT) + ip(f, [C.S3 - 6, C.S3 + 30], [0, 250 - 120], INOUT);
-	const camS = ip(f, [C.S3 - 6, C.S3 + 30], [1, 0.8], INOUT);
+	const camS = ip(f, [C.S3 - 6, C.S3 + 30], [1.16, 0.86], INOUT);
 	const searchOut = C.S3 - 4;
 
 	// Walkers in act 3: arrive at the shop, hesitate, leave for the competitor.
