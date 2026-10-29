@@ -24,3 +24,5 @@ motion/prospectify-master-ad/renders/send/
 motion/prospectify-meta-ad-fr/node_modules
 motion/prospectify-meta-ad-fr/exports/_*
 *.video-only.mp4
+motion/prospectify-organic-en/node_modules
+motion/prospectify-organic-en/exports/_*
